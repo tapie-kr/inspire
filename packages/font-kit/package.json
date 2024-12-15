@@ -1,0 +1,11 @@
+{
+  "name": "@tapie-kr/inspire-font-kit",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Font Kit for INSPIRE",
+  "scripts": {
+    "build": "python3 scripts/merger.py \"INSPIRE Font Kit\" ./fonts/pretendard ./fonts/urbanist ./dist",
+    "debug": "python3 scripts/merger.py \"INSPIRE Font Kit\" ./fonts/pretendard ./fonts/urbanist ./dist --debug"
+  },
+  "license": "MIT"
+}
