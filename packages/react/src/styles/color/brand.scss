@@ -1,0 +1,16 @@
+@use 'sass:map';
+@use './solid';
+
+$brand: (
+  solid: (
+    everyday: solid.$blue,
+    family:   solid.$red,
+    world:    solid.$green,
+  ),
+  
+  monochrome: (
+    everyday: ( light: #050505, dark: #FAFAFA ),
+    family:   ( light: #2F2F2F, dark: #EBEBEB ),
+    world:    ( light: #676767, dark: #B8B8B8 ),
+  ),
+);

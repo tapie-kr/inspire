@@ -1,0 +1,50 @@
+@use 'sass:map';
+@use './solid';
+
+$grayscale: (
+  solid: (
+    1: ( light: #EBEBEB, dark: #1A1A1A ),
+    2: ( light: #CCCCCC, dark: #2E2E2E ),
+    3: ( light: #8A8A8A, dark: #3D3D3D ),
+    4: ( light: #707070, dark: #575757 ),
+    5: ( light: #575757, dark: #707070 ),
+    6: ( light: #3D3D3D, dark: #8A8A8A ),
+    7: ( light: #2E2E2E, dark: #CCCCCC ),
+    8: ( light: #1A1A1A, dark: #EBEBEB ),
+  ),
+  
+  translucent: (
+    1: (
+      light: map.get(solid.$solid, translucent, black, 1),
+      dark:  map.get(solid.$solid, translucent, white, 1),
+    ),
+    2: (
+      light: map.get(solid.$solid, translucent, black, 2),
+      dark:  map.get(solid.$solid, translucent, white, 2),
+    ),
+    3: (
+      light: map.get(solid.$solid, translucent, black, 3),
+      dark:  map.get(solid.$solid, translucent, white, 3),
+    ),
+    4: (
+      light: map.get(solid.$solid, translucent, black, 4),
+      dark:  map.get(solid.$solid, translucent, white, 4),
+    ),
+    5: (
+      light: map.get(solid.$solid, translucent, black, 5),
+      dark:  map.get(solid.$solid, translucent, white, 5),
+    ),
+    6: (
+      light: map.get(solid.$solid, translucent, black, 6),
+      dark:  map.get(solid.$solid, translucent, white, 6),
+    ),
+    7: (
+      light: map.get(solid.$solid, translucent, black, 7),
+      dark:  map.get(solid.$solid, translucent, white, 7),
+    ),
+    8: (
+      light: map.get(solid.$solid, translucent, black, 8),
+      dark:  map.get(solid.$solid, translucent, white, 8),
+    ),
+  ),
+);

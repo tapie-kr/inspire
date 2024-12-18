@@ -1,0 +1,25 @@
+@use 'sass:map';
+@use './solid';
+@use './grayscale';
+@use './brand';
+@use './background.scss';
+@use './content.scss';
+@use './line.scss';
+
+@use '../utils';
+
+$color: (
+  solid:      solid.$solid,
+  grayscale:  grayscale.$grayscale,
+  brand:      brand.$brand,
+  background: background.$background,
+  content:    content.$content,
+  line:       line.$line,
+);
+
+[data-theme='light'] {
+  @include utils.generate-color-vars($color, 'color', 'light');
+}
+[data-theme='dark'] {
+  @include utils.generate-color-vars($color, 'color', 'dark');
+}

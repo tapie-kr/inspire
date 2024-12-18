@@ -4,7 +4,17 @@
   "version": "1.0.0",
   "description": "React Component Collection for INSPIRE",
   "scripts": {
-
+    "build": "rimraf dist && rollup -c"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.6",
+    "postcss": "^8.4.49",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.28.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-scss": "^4.0.1",
+    "sass": "^1.83.0"
+  }
 }

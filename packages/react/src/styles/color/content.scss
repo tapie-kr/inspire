@@ -1,0 +1,24 @@
+@use 'sass:map';
+@use './solid';
+@use './grayscale';
+
+$content: (
+  primary:   map.get(grayscale.$grayscale, translucent, 8),
+  secondary: map.get(grayscale.$grayscale, translucent, 4),
+  tertiary:  map.get(grayscale.$grayscale, translucent, 3),
+
+  inverted: (
+    primary: (
+      light: map.get(solid.$solid, translucent, white, 8),
+      dark:  map.get(solid.$solid, translucent, black, 8),
+    ),
+    secondary: (
+      light: map.get(solid.$solid, translucent, white, 4),
+      dark:  map.get(solid.$solid, translucent, black, 5),
+    ),
+    tertiary: (
+      light: map.get(solid.$solid, translucent, white, 3),
+      dark:  map.get(solid.$solid, translucent, black, 3),
+    ),
+  ),
+);

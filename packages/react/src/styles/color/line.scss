@@ -1,0 +1,11 @@
+@use 'sass:map';
+@use './grayscale.scss';
+
+$line: (
+  border: map.get(grayscale.$grayscale, translucent, 4),
+
+  divider: (
+    light: map.get(grayscale.$grayscale, solid, 3),
+    dark:  map.get(grayscale.$grayscale, solid, 4),
+  ),
+);

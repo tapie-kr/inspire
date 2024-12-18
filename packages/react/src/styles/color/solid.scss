@@ -1,0 +1,75 @@
+@use 'sass:map';
+@use '../utils' as *;
+
+$white:  #FFFFFF;
+$black:  #0A0A0A;
+$red:    #F74C43;
+$green:  #07D957;
+$blue:   #3130F0;
+$yellow: #FFE100;
+
+$translucent: (
+  white: (
+    1: rgba-hex($white, .08),
+    2: rgba-hex($white, .20),
+    3: rgba-hex($white, .46),
+    4: rgba-hex($white, .56),
+    5: rgba-hex($white, .66),
+    6: rgba-hex($white, .76),
+    7: rgba-hex($white, .82),
+    8: rgba-hex($white, .90),
+  ),
+  black: (
+    1: rgba-hex($black, .08),
+    2: rgba-hex($black, .20),
+    3: rgba-hex($black, .46),
+    4: rgba-hex($black, .56),
+    5: rgba-hex($black, .66),
+    6: rgba-hex($black, .76),
+    7: rgba-hex($black, .82),
+    8: rgba-hex($black, .90),
+  ),
+  red: (
+    1: ( light: rgba-hex($red, .05), dark: rgba-hex($red, .10) ),
+    2: ( light: rgba-hex($red, .20), dark: rgba-hex($red, .25) ),
+    3: ( light: rgba-hex($red, .35), dark: rgba-hex($red, .40) ),
+    4: ( light: rgba-hex($red, .55), dark: rgba-hex($red, .60) ),
+    5: ( light: rgba-hex($red, .65), dark: rgba-hex($red, .70) ),
+    6: ( light: rgba-hex($red, .80), dark: rgba-hex($red, .85) ),
+  ),
+  green: (
+    1: ( light: rgba-hex($green, .05), dark: rgba-hex($green, .10) ),
+    2: ( light: rgba-hex($green, .20), dark: rgba-hex($green, .25) ),
+    3: ( light: rgba-hex($green, .35), dark: rgba-hex($green, .40) ),
+    4: ( light: rgba-hex($green, .55), dark: rgba-hex($green, .60) ),
+    5: ( light: rgba-hex($green, .65), dark: rgba-hex($green, .70) ),
+    6: ( light: rgba-hex($green, .80), dark: rgba-hex($green, .85) ),
+  ),
+  blue: (
+    1: ( light: rgba-hex($blue, .05), dark: rgba-hex($blue, .10) ),
+    2: ( light: rgba-hex($blue, .20), dark: rgba-hex($blue, .25) ),
+    3: ( light: rgba-hex($blue, .35), dark: rgba-hex($blue, .40) ),
+    4: ( light: rgba-hex($blue, .55), dark: rgba-hex($blue, .60) ),
+    5: ( light: rgba-hex($blue, .65), dark: rgba-hex($blue, .70) ),
+    6: ( light: rgba-hex($blue, .80), dark: rgba-hex($blue, .85) ),
+  ),
+  yellow: (
+    1: ( light: rgba-hex($yellow, .05), dark: rgba-hex($yellow, .10) ),
+    2: ( light: rgba-hex($yellow, .20), dark: rgba-hex($yellow, .25) ),
+    3: ( light: rgba-hex($yellow, .35), dark: rgba-hex($yellow, .40) ),
+    4: ( light: rgba-hex($yellow, .55), dark: rgba-hex($yellow, .60) ),
+    5: ( light: rgba-hex($yellow, .65), dark: rgba-hex($yellow, .70) ),
+    6: ( light: rgba-hex($yellow, .80), dark: rgba-hex($yellow, .85) ),
+  ),
+);
+
+$solid: (
+  white:  $white,
+  black:  $black,
+  red:    $red,
+  green:  $green,
+  blue:   $blue,
+  yellow: $yellow,
+
+  translucent: $translucent,
+);
