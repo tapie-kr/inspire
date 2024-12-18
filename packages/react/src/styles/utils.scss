@@ -42,7 +42,7 @@
   @return '##{$red-hex}#{$green-hex}#{$blue-hex}#{$alpha-hex}';
 }
 
-@mixin generate-color-vars($colors, $prefix, $mode: 'light') {
+@mixin generate-vars($colors, $prefix, $mode: 'light') {
   @each $key, $value in $colors {
     @if meta.type-of($value) == 'map' {
       @if map.has-key($value, 'light') and map.has-key($value, 'dark') {
@@ -56,7 +56,7 @@
         }
 
       } @else {
-        @include generate-color-vars($value, '#{$prefix}-#{'' + $key}', $mode);
+        @include generate-vars($value, '#{$prefix}-#{'' + $key}', $mode);
       }
     } @else {
       --#{$prefix}-#{'' + $key}: #{$value};

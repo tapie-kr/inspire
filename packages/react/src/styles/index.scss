@@ -1,10 +1,14 @@
 @use './color';
+@use './component';
 
 @use './utils';
 
+:root {
+  @include utils.generate-vars(component.$component, 'component');
+}
 [data-theme='light'] {
-  @include utils.generate-color-vars(color.$color, 'color', 'light');
+  @include utils.generate-vars(color.$color, 'color', 'light');
 }
 [data-theme='dark'] {
-  @include utils.generate-color-vars(color.$color, 'color', 'dark');
+  @include utils.generate-vars(color.$color, 'color', 'dark');
 }
