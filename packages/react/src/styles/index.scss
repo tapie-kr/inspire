@@ -1,0 +1,10 @@
+@use './color';
+
+@use './utils';
+
+[data-theme='light'] {
+  @include utils.generate-color-vars(color.$color, 'color', 'light');
+}
+[data-theme='dark'] {
+  @include utils.generate-color-vars(color.$color, 'color', 'dark');
+}

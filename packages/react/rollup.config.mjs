@@ -12,7 +12,7 @@ const packageJson = JSON.parse(
 
 const config = defineConfig([
   {
-    input: 'src/styles/color/index.scss',
+    input: 'src/styles/index.scss',
     output: {
       file: 'dist/bundle.js',
     },
