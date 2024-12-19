@@ -1,0 +1,10 @@
+@use 'sass:map';
+@use './size.scss';
+@use './line-height.scss';
+@use './weight.scss';
+
+$typography: (
+  size:        size.$size,
+  weight:      weight.$weight,
+  line-height: line-height.$line-height,
+);

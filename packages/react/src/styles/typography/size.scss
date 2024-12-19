@@ -1,0 +1,13 @@
+@use 'sass:map';
+
+$size: (
+  hero:     80px,
+  display:  48px,
+  title:    24px,
+  headline: 20px,
+  body:     16px,
+  callout:  14px,
+  footnote: 13px,
+  caption:  12px,
+  tiny:     10px,
+);

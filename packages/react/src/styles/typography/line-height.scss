@@ -1,0 +1,13 @@
+@use 'sass:map';
+
+$line-height: (
+  hero:     92px,
+  display:  60px,
+  title:    32px,
+  headline: 26px,
+  body:     25px,
+  callout:  20px,
+  footnote: 18px,
+  caption:  18px,
+  tiny:     16px,
+);
