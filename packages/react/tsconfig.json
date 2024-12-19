@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "esnext",
+    "lib": ["esnext"],
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+  },
+  "include": ["scripts"],
+}

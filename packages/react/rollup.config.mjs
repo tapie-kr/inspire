@@ -18,8 +18,8 @@ const config = defineConfig([
     },
     plugins: [
       scss({
-        processor: () => postcss([autoprefixer()]),
-        // outputStyle: 'compressed',
+        processor: () => postcss([autoprefixer(), cssnano()]),
+        outputStyle: 'compressed',
         fileName: 'styles.min.css',
         includePaths: ['node_modules', 'src/styles'],
         silenceDeprecations: ['legacy-js-api'],
