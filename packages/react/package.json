@@ -16,7 +16,7 @@
     "type": "git",
     "url": "https://github.com/tapie-kr/inspire/tree/main/packages/react"
   },
-  "homepage": "https://tapie.kr/inspire",
+  "homepage": "https://inspire.tapie.kr/",
   "keywords": [
     "tapie",
     "inspire",
@@ -54,6 +54,7 @@
     "chalk": "^5.4.0",
     "css": "^3.0.0",
     "cssnano": "^7.0.6",
+    "glob": "^11.0.0",
     "postcss": "^8.4.49",
     "rimraf": "^6.0.1",
     "rollup": "^4.28.1",

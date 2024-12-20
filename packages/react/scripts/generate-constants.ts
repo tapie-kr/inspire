@@ -8,11 +8,6 @@ const PATH = {
   CONSTANTS: 'src/constants',
 } as const
 
-const ALLOWED_SELECTORS = [
-  ':root',
-  '[data-theme=light]',
-  '[data-theme=dark]',
-] as const
 const RESERVED_VARIABLE_NAMES = {
   'line-height': 'lineHeight',
   'letter-spacing': 'letterSpacing',
