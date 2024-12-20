@@ -45,5 +45,6 @@
       "import": "./dist/esm/*",
       "require": "./dist/cjs/*"
     }
-  }
+  },
+  "files": ["dist"]
 }
