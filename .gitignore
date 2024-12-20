@@ -7,3 +7,6 @@ venv/
 .env
 .DS_Store
 .rollup.cache
+
+*storybook.log
+storybook-static/

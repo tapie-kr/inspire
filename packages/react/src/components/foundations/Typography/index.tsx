@@ -1,7 +1,7 @@
 import { JSX } from 'react'
 import TypographyBuilder from './Builder'
 import { TypographyProps, TypographyTag, TypographyVariant } from './shared'
-import { bodyStyle, calloutStyle, captionStyle, displayStyle, footnoteStyle, heroStyle, tinyStyle } from './style.css'
+import { bodyStyle, calloutStyle, captionStyle, displayStyle, footnoteStyle, headlineStyle, heroStyle, tinyStyle, titleStyle } from './style.css'
 
 enum ContractKey {
   TAG,
@@ -11,7 +11,8 @@ enum ContractKey {
 const TypographyContract = {
   [TypographyVariant.HERO]: [TypographyTag.P, heroStyle],
   [TypographyVariant.DISPLAY]: [TypographyTag.H1, displayStyle],
-  [TypographyVariant.HEADLINE]: [TypographyTag.H2, displayStyle],
+  [TypographyVariant.TITLE]: [TypographyTag.H1, titleStyle],
+  [TypographyVariant.HEADLINE]: [TypographyTag.H2, headlineStyle],
   [TypographyVariant.BODY]: [TypographyTag.P, bodyStyle],
   [TypographyVariant.CALLOUT]: [TypographyTag.P, calloutStyle],
   [TypographyVariant.FOOTNOTE]: [TypographyTag.P, footnoteStyle],
@@ -21,7 +22,6 @@ const TypographyContract = {
 
 function typographyFactory(variant: TypographyVariant, tag: TypographyTag = TypographyTag.P) {
   const style = TypographyContract[variant][ContractKey.STYLE]
-
   return (props: TypographyProps) => (
     <TypographyBuilder tag={tag} styleClassName={style} props={props} />
   )

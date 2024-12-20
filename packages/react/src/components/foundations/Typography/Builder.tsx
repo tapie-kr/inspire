@@ -11,14 +11,14 @@ type TypographyBuilderProps = {
 }
 
 export default function TypographyBuilder(props: TypographyBuilderProps) {
-  const { tag, props: baseProps } = props
+  const { tag, styleClassName, props: baseProps } = props
   const {
     className: defaultClassName, monospaced,
     children,
     ...restProps
   } = baseProps
 
-  const classes = [defaultClassName, monospaced && monospacedTypographyStyle]
+  const classes = [defaultClassName, styleClassName, monospaced && monospacedTypographyStyle]
 
   return createElement(
     tag || TypographyTag.P,

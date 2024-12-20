@@ -4,13 +4,27 @@
 
 @use './utils';
 
+body {
+  font-family: 'INSPIRE Font Kit', sans-serif;
+  color: var(--color-content-primary);
+  background-color: var(--color-background-primary);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   @include utils.generate-vars(component.$component, 'component');
   @include utils.generate-vars(typography.$typography, 'typography');
 }
+
 [data-theme='light'] {
   @include utils.generate-vars(color.$color, 'color', 'light');
 }
+
 [data-theme='dark'] {
   @include utils.generate-vars(color.$color, 'color', 'dark');
 }

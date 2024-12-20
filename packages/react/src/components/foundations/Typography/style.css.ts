@@ -21,6 +21,11 @@ export const displayStyle = style([baseStyle, {
   lineHeight: variable(Typography.LineHeight.Display),
 }])
 
+export const titleStyle = style([baseStyle, {
+  fontSize: variable(Typography.Size.Title),
+  lineHeight: variable(Typography.LineHeight.Title),
+}])
+
 export const headlineStyle = style([baseStyle, {
   fontSize: variable(Typography.Size.Headline),
   lineHeight: variable(Typography.LineHeight.Headline),

@@ -14,6 +14,7 @@ export enum TypographyTag {
 export enum TypographyVariant {
   HERO = 'Hero',
   DISPLAY = 'Display',
+  TITLE = 'Title',
   HEADLINE = 'Headline',
   BODY = 'Body',
   CALLOUT = 'Callout',

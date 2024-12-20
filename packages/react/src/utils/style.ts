@@ -1,3 +1,3 @@
 export function variable(variable: string) {
-  return `var(--${variable})`
+  return `var(${variable})`
 }
