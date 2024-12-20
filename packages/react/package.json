@@ -1,15 +1,31 @@
 {
   "name": "@tapie-kr/inspire-react",
-  "private": true,
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "React Component Collection for INSPIRE",
   "scripts": {
+    "prepublishOnly": "pnpm run generate:const && pnpm run build",
     "build:css": "BUILD_TARGET=css rollup -c --silent",
     "build:components": "tsc --project tsconfig.lib.json && BUILD_TARGET=components rollup -c --silent",
     "build": "rimraf dist && pnpm run build:css && pnpm run build:components",
     "generate:const": "pnpm run build:css && tsx scripts/generate-constants.ts"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tapie-kr/inspire/tree/main/packages/react"
+  },
+  "homepage": "https://tapie.kr/inspire",
+  "keywords": [
+    "tapie",
+    "inspire",
+    "creative",
+    "kit",
+    "design",
+    "identity",
+    "branding",
+    "ui",
+    "react"
+  ],
   "peerDependencies": {
     "classnames": "^2.5.1",
     "react": "^19.0.0",
@@ -46,5 +62,11 @@
       "require": "./dist/cjs/*"
     }
   },
-  "files": ["dist"]
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": ["dist"],
+  "engines": {
+    "node": ">=20.0.0"
+  }
 }
