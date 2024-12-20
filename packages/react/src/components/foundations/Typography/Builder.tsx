@@ -1,9 +1,8 @@
-import React from 'react'
-
 import { monospacedTypographyStyle } from './style.css'
 
 import { TypographyProps, TypographyTag } from './shared'
 import cn from 'classnames'
+import { createElement } from 'react'
 
 type TypographyBuilderProps = {
   tag: TypographyTag
@@ -21,7 +20,7 @@ export default function TypographyBuilder(props: TypographyBuilderProps) {
 
   const classes = [defaultClassName, monospaced && monospacedTypographyStyle]
 
-  return React.createElement(
+  return createElement(
     tag || TypographyTag.P,
     {
       className: cn(classes),
