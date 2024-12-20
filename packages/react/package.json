@@ -1,6 +1,6 @@
 {
   "name": "@tapie-kr/inspire-react",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "React Component Collection for INSPIRE",
   "scripts": {
     "prepublishOnly": "pnpm run generate:const && pnpm run build",
@@ -71,7 +71,8 @@
       "types": "./dist/types/*",
       "import": "./dist/esm/*",
       "require": "./dist/cjs/*"
-    }
+    },
+    "./styles.css": "./dist/styles.min.css"
   },
   "publishConfig": {
     "access": "public"
