@@ -7,4 +7,5 @@ $typography: (
   size:        size.$size,
   weight:      weight.$weight,
   line-height: line-height.$line-height,
+  letter-spacing: -0.01px,
 );

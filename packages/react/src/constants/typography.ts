@@ -28,5 +28,6 @@ export const Typography = {
     Footnote: '--typography-line-height-footnote',
     Caption: '--typography-line-height-caption',
     Tiny: '--typography-line-height-tiny'
-  }
+  },
+  LetterSpacing: '--typography-letter-spacing'
 } as const
