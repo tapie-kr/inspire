@@ -77,14 +77,12 @@ const config = defineConfig([
         format: 'esm',
         preserveModules: true,
         preserveModulesRoot: 'src',
-        compact: true,
       },
       {
         dir: 'dist/cjs',
         format: 'cjs',
         preserveModules: true,
         preserveModulesRoot: 'src',
-        compact: true,
       },
     ],
     external: ['react', 'react-dom', 'classnames'],
@@ -100,6 +98,12 @@ const config = defineConfig([
           parser: {
             syntax: 'typescript',
             tsx: true,
+            runtime: 'automatic;',
+          },
+          transform: {
+            react: {
+              runtime: 'automatic',
+            },
           },
         },
         sourceMaps: false,
