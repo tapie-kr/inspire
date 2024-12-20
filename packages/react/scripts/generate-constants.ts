@@ -8,6 +8,11 @@ const PATH = {
   CONSTANTS: 'src/constants',
 } as const
 
+const ALLOWED_SELECTORS = [
+  ':root',
+  '[data-theme=light]',
+  '[data-theme=dark]',
+] as const
 const RESERVED_VARIABLE_NAMES = {
   'line-height': 'lineHeight',
   'letter-spacing': 'letterSpacing',
@@ -28,9 +33,10 @@ const rules = parsed.stylesheet.rules.filter(rule => rule.type === 'rule')
 const rawProperties = rules
   .flatMap(rule => rule.declarations)
   .filter(declaration => declaration?.type === 'declaration')
+  .filter(declaration => declaration)
   .map(declaration => declaration.property) as Array<string>
 
-const properties = [...new Set(rawProperties)]
+const properties = [...new Set(rawProperties)].filter(property => property.startsWith('--'))
 const groupedProperties = Object.groupBy(properties, property => property.replace('--', '').split('-')[0])
 
 const constants = Object.entries(groupedProperties).map(([name, properties]) => {
