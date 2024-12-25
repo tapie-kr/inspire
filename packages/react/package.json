@@ -1,6 +1,6 @@
 {
   "name": "@tapie-kr/inspire-react",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "React Component Collection for INSPIRE",
   "scripts": {
     "prepublishOnly": "pnpm run generate:const && pnpm run build",
@@ -14,7 +14,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tapie-kr/inspire/tree/main/packages/react"
+    "url": "https://github.com/tapie-kr/inspire.git"
   },
   "homepage": "https://inspire.tapie.kr/",
   "keywords": [
