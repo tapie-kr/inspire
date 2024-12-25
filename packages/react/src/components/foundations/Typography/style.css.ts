@@ -1,9 +1,8 @@
 import { Typography } from '@/constants/typography'
-import { variable } from '@/utils/style'
 import { style } from '@vanilla-extract/css'
 
 const baseStyle = style({
-  letterSpacing: variable(Typography.LetterSpacing),
+  letterSpacing: Typography.LetterSpacing,
 })
 
 export const monospacedTypographyStyle = style([baseStyle, {
@@ -11,47 +10,47 @@ export const monospacedTypographyStyle = style([baseStyle, {
 }])
 
 export const heroStyle = style([baseStyle, {
-  fontSize: variable(Typography.Size.Hero),
-  lineHeight: variable(Typography.LineHeight.Hero),
-  fontWeight: variable(Typography.Weight.Semibold),
+  fontSize: Typography.Size.Hero,
+  lineHeight: Typography.LineHeight.Hero,
+  fontWeight: Typography.Weight.Semibold,
 }])
 
 export const displayStyle = style([baseStyle, {
-  fontSize: variable(Typography.Size.Display),
-  lineHeight: variable(Typography.LineHeight.Display),
+  fontSize: Typography.Size.Display,
+  lineHeight: Typography.LineHeight.Display,
 }])
 
 export const titleStyle = style([baseStyle, {
-  fontSize: variable(Typography.Size.Title),
-  lineHeight: variable(Typography.LineHeight.Title),
+  fontSize: Typography.Size.Title,
+  lineHeight: Typography.LineHeight.Title,
 }])
 
 export const headlineStyle = style([baseStyle, {
-  fontSize: variable(Typography.Size.Headline),
-  lineHeight: variable(Typography.LineHeight.Headline),
+  fontSize: Typography.Size.Headline,
+  lineHeight: Typography.LineHeight.Headline,
 }])
 
 export const bodyStyle = style([baseStyle, {
-  fontSize: variable(Typography.Size.Body),
-  lineHeight: variable(Typography.LineHeight.Body),
+  fontSize: Typography.Size.Body,
+  lineHeight: Typography.LineHeight.Body,
 }])
 
 export const calloutStyle = style([baseStyle, {
-  fontSize: variable(Typography.Size.Callout),
-  lineHeight: variable(Typography.LineHeight.Callout),
+  fontSize: Typography.Size.Callout,
+  lineHeight: Typography.LineHeight.Callout,
 }])
 
 export const footnoteStyle = style([baseStyle, {
-  fontSize: variable(Typography.Size.Footnote),
-  lineHeight: variable(Typography.LineHeight.Footnote),
+  fontSize: Typography.Size.Footnote,
+  lineHeight: Typography.LineHeight.Footnote,
 }])
 
 export const captionStyle = style([baseStyle, {
-  fontSize: variable(Typography.Size.Caption),
-  lineHeight: variable(Typography.LineHeight.Caption),
+  fontSize: Typography.Size.Caption,
+  lineHeight: Typography.LineHeight.Caption,
 }])
 
 export const tinyStyle = style([baseStyle, {
-  fontSize: variable(Typography.Size.Tiny),
-  lineHeight: variable(Typography.LineHeight.Tiny),
+  fontSize: Typography.Size.Tiny,
+  lineHeight: Typography.LineHeight.Tiny,
 }])

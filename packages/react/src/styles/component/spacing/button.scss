@@ -1,0 +1,20 @@
+@use 'sass:map';
+@use '../constant';
+
+$button: (
+  large: (
+    vertical:   map.get(constant.$spacing, 12),
+    horizontal: map.get(constant.$spacing, 16),
+    gap:        map.get(constant.$spacing, 8),
+  ),
+  medium: (
+    vertical:   map.get(constant.$spacing, 8),
+    horizontal: map.get(constant.$spacing, 16),
+    gap:        map.get(constant.$spacing, 4),
+  ),
+  small: (
+    vertical:   map.get(constant.$spacing, 6),
+    horizontal: map.get(constant.$spacing, 12),
+    gap:        map.get(constant.$spacing, 4),
+  ),
+);

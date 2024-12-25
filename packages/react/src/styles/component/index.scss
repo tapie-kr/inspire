@@ -1,6 +1,6 @@
 @use 'sass:map';
-@use './radius.scss';
-@use './spacing.scss';
+@use './radius';
+@use './spacing';
 
 $component: (
   radius:  radius.$radius,

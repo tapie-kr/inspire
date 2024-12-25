@@ -1,0 +1,8 @@
+@use 'sass:map';
+@use '../constant';
+
+$icon-button: (
+  large:  map.get(constant.$spacing, 12),
+  medium: map.get(constant.$spacing, 8),
+  small:  map.get(constant.$spacing, 6),
+);

@@ -11,6 +11,8 @@ const PATH = {
 const RESERVED_VARIABLE_NAMES = {
   'line-height': 'lineHeight',
   'letter-spacing': 'letterSpacing',
+  'icon-button': 'iconButton',
+  'text-button': 'textButton',
 } as const
 
 const cssContent = fs.readFileSync(PATH.CSS, 'utf-8')
@@ -50,7 +52,7 @@ const constants = Object.entries(groupedProperties).map(([name, properties]) => 
 
     const keys = key.split('-').map(capitalizeFirstLetter)
 
-    return deepMerge(acc, createNestedObjectFromArray(keys, property))
+    return deepMerge(acc, createNestedObjectFromArray(keys, `var(${property})`))
   }, {} as Record<string, string>)
 })
 const constantNames = Object.keys(groupedProperties)

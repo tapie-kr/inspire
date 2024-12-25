@@ -1,0 +1,27 @@
+@use 'sass:map';
+@use '../constant';
+@use './badge';
+@use './button';
+@use './text-button';
+@use './icon-button';
+
+$spacing: (
+  none: map.get(constant.$spacing, none),
+  2:    map.get(constant.$spacing, 2),
+  4:    map.get(constant.$spacing, 4),
+  6:    map.get(constant.$spacing, 6),
+  8:    map.get(constant.$spacing, 8),
+  12:   map.get(constant.$spacing, 12),
+  16:   map.get(constant.$spacing, 16),
+  20:   map.get(constant.$spacing, 20),
+  24:   map.get(constant.$spacing, 24),
+  28:   map.get(constant.$spacing, 28),
+  32:   map.get(constant.$spacing, 32),
+  36:   map.get(constant.$spacing, 36),
+  40:   map.get(constant.$spacing, 40),
+
+  badge:       badge.$badge,
+  button:      button.$button,
+  text-button: text-button.$text-button,
+  icon-button: icon-button.$icon-button,
+);

@@ -49,8 +49,11 @@
         $color-value: map.get($value, $mode);
 
         @if meta.type-of($color-value) == 'map' and map.has-key($color-value, 'light') and map.has-key($color-value, 'dark') {
-          --#{$prefix}-#{'' + $key}-light: #{map.get($color-value, 'light')};
-          --#{$prefix}-#{'' + $key}-dark: #{map.get($color-value, 'dark')};
+          @if $mode == 'light' {
+            --#{$prefix}-#{'' + $key}: #{map.get($color-value, 'light')};
+          } @else {
+            --#{$prefix}-#{'' + $key}: #{map.get($color-value, 'dark')};
+          }
         } @else {
           --#{$prefix}-#{'' + $key}: #{$color-value};
         }

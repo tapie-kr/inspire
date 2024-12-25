@@ -1,125 +1,146 @@
 export const Color = {
   Solid: {
-    White: '--color-solid-white',
-    Black: '--color-solid-black',
-    Red: '--color-solid-red',
-    Green: '--color-solid-green',
-    Blue: '--color-solid-blue',
-    Yellow: '--color-solid-yellow',
+    White: 'var(--color-solid-white)',
+    Black: 'var(--color-solid-black)',
+    Red: 'var(--color-solid-red)',
+    Green: 'var(--color-solid-green)',
+    Blue: 'var(--color-solid-blue)',
+    Yellow: 'var(--color-solid-yellow)',
     Translucent: {
       White: {
-        _1: '--color-solid-translucent-white-1',
-        _2: '--color-solid-translucent-white-2',
-        _3: '--color-solid-translucent-white-3',
-        _4: '--color-solid-translucent-white-4',
-        _5: '--color-solid-translucent-white-5',
-        _6: '--color-solid-translucent-white-6',
-        _7: '--color-solid-translucent-white-7',
-        _8: '--color-solid-translucent-white-8'
+        _5: 'var(--color-solid-translucent-white-5)',
+        _10: 'var(--color-solid-translucent-white-10)',
+        _15: 'var(--color-solid-translucent-white-15)',
+        _20: 'var(--color-solid-translucent-white-20)',
+        _30: 'var(--color-solid-translucent-white-30)',
+        _40: 'var(--color-solid-translucent-white-40)',
+        _50: 'var(--color-solid-translucent-white-50)',
+        _60: 'var(--color-solid-translucent-white-60)',
+        _70: 'var(--color-solid-translucent-white-70)',
+        _80: 'var(--color-solid-translucent-white-80)',
+        _90: 'var(--color-solid-translucent-white-90)'
       },
       Black: {
-        _1: '--color-solid-translucent-black-1',
-        _2: '--color-solid-translucent-black-2',
-        _3: '--color-solid-translucent-black-3',
-        _4: '--color-solid-translucent-black-4',
-        _5: '--color-solid-translucent-black-5',
-        _6: '--color-solid-translucent-black-6',
-        _7: '--color-solid-translucent-black-7',
-        _8: '--color-solid-translucent-black-8'
+        _5: 'var(--color-solid-translucent-black-5)',
+        _10: 'var(--color-solid-translucent-black-10)',
+        _15: 'var(--color-solid-translucent-black-15)',
+        _20: 'var(--color-solid-translucent-black-20)',
+        _30: 'var(--color-solid-translucent-black-30)',
+        _40: 'var(--color-solid-translucent-black-40)',
+        _50: 'var(--color-solid-translucent-black-50)',
+        _60: 'var(--color-solid-translucent-black-60)',
+        _70: 'var(--color-solid-translucent-black-70)',
+        _80: 'var(--color-solid-translucent-black-80)',
+        _90: 'var(--color-solid-translucent-black-90)'
       },
       Red: {
-        _1: '--color-solid-translucent-red-1',
-        _2: '--color-solid-translucent-red-2',
-        _3: '--color-solid-translucent-red-3',
-        _4: '--color-solid-translucent-red-4',
-        _5: '--color-solid-translucent-red-5',
-        _6: '--color-solid-translucent-red-6'
+        _10: 'var(--color-solid-translucent-red-10)',
+        _20: 'var(--color-solid-translucent-red-20)',
+        _30: 'var(--color-solid-translucent-red-30)',
+        _40: 'var(--color-solid-translucent-red-40)',
+        _50: 'var(--color-solid-translucent-red-50)',
+        _60: 'var(--color-solid-translucent-red-60)'
       },
       Green: {
-        _1: '--color-solid-translucent-green-1',
-        _2: '--color-solid-translucent-green-2',
-        _3: '--color-solid-translucent-green-3',
-        _4: '--color-solid-translucent-green-4',
-        _5: '--color-solid-translucent-green-5',
-        _6: '--color-solid-translucent-green-6'
+        _10: 'var(--color-solid-translucent-green-10)',
+        _20: 'var(--color-solid-translucent-green-20)',
+        _30: 'var(--color-solid-translucent-green-30)',
+        _40: 'var(--color-solid-translucent-green-40)',
+        _50: 'var(--color-solid-translucent-green-50)',
+        _60: 'var(--color-solid-translucent-green-60)'
       },
       Blue: {
-        _1: '--color-solid-translucent-blue-1',
-        _2: '--color-solid-translucent-blue-2',
-        _3: '--color-solid-translucent-blue-3',
-        _4: '--color-solid-translucent-blue-4',
-        _5: '--color-solid-translucent-blue-5',
-        _6: '--color-solid-translucent-blue-6'
+        _10: 'var(--color-solid-translucent-blue-10)',
+        _20: 'var(--color-solid-translucent-blue-20)',
+        _30: 'var(--color-solid-translucent-blue-30)',
+        _40: 'var(--color-solid-translucent-blue-40)',
+        _50: 'var(--color-solid-translucent-blue-50)',
+        _60: 'var(--color-solid-translucent-blue-60)'
       },
       Yellow: {
-        _1: '--color-solid-translucent-yellow-1',
-        _2: '--color-solid-translucent-yellow-2',
-        _3: '--color-solid-translucent-yellow-3',
-        _4: '--color-solid-translucent-yellow-4',
-        _5: '--color-solid-translucent-yellow-5',
-        _6: '--color-solid-translucent-yellow-6'
+        _10: 'var(--color-solid-translucent-yellow-10)',
+        _20: 'var(--color-solid-translucent-yellow-20)',
+        _30: 'var(--color-solid-translucent-yellow-30)',
+        _40: 'var(--color-solid-translucent-yellow-40)',
+        _50: 'var(--color-solid-translucent-yellow-50)',
+        _60: 'var(--color-solid-translucent-yellow-60)'
       }
     }
   },
   Grayscale: {
     Solid: {
-      _1: '--color-grayscale-solid-1',
-      _2: '--color-grayscale-solid-2',
-      _3: '--color-grayscale-solid-3',
-      _4: '--color-grayscale-solid-4',
-      _5: '--color-grayscale-solid-5',
-      _6: '--color-grayscale-solid-6',
-      _7: '--color-grayscale-solid-7',
-      _8: '--color-grayscale-solid-8'
+      _5: 'var(--color-grayscale-solid-5)',
+      _10: 'var(--color-grayscale-solid-10)',
+      _15: 'var(--color-grayscale-solid-15)',
+      _20: 'var(--color-grayscale-solid-20)',
+      _30: 'var(--color-grayscale-solid-30)',
+      _40: 'var(--color-grayscale-solid-40)',
+      _50: 'var(--color-grayscale-solid-50)',
+      _60: 'var(--color-grayscale-solid-60)',
+      _70: 'var(--color-grayscale-solid-70)',
+      _80: 'var(--color-grayscale-solid-80)',
+      _90: 'var(--color-grayscale-solid-90)'
     },
     Translucent: {
-      _1: '--color-grayscale-translucent-1',
-      _2: '--color-grayscale-translucent-2',
-      _3: '--color-grayscale-translucent-3',
-      _4: '--color-grayscale-translucent-4',
-      _5: '--color-grayscale-translucent-5',
-      _6: '--color-grayscale-translucent-6',
-      _7: '--color-grayscale-translucent-7',
-      _8: '--color-grayscale-translucent-8'
+      _5: 'var(--color-grayscale-translucent-5)',
+      _10: 'var(--color-grayscale-translucent-10)',
+      _15: 'var(--color-grayscale-translucent-15)',
+      _20: 'var(--color-grayscale-translucent-20)',
+      _30: 'var(--color-grayscale-translucent-30)',
+      _40: 'var(--color-grayscale-translucent-40)',
+      _50: 'var(--color-grayscale-translucent-50)',
+      _60: 'var(--color-grayscale-translucent-60)',
+      _70: 'var(--color-grayscale-translucent-70)',
+      _80: 'var(--color-grayscale-translucent-80)',
+      _90: 'var(--color-grayscale-translucent-90)'
     }
   },
   Brand: {
     Solid: {
-      Everyday: '--color-brand-solid-everyday',
-      Family: '--color-brand-solid-family',
-      World: '--color-brand-solid-world'
+      Everyday: 'var(--color-brand-solid-everyday)',
+      Family: 'var(--color-brand-solid-family)',
+      World: 'var(--color-brand-solid-world)'
     },
     Monochrome: {
-      Everyday: '--color-brand-monochrome-everyday',
-      Family: '--color-brand-monochrome-family',
-      World: '--color-brand-monochrome-world'
+      Everyday: 'var(--color-brand-monochrome-everyday)',
+      Family: 'var(--color-brand-monochrome-family)',
+      World: 'var(--color-brand-monochrome-world)'
     }
   },
-  Background: {
-    Primary: '--color-background-primary',
-    Secondary: '--color-background-secondary',
-    Tertiary: '--color-background-tertiary',
+  Surface: {
+    Default: 'var(--color-surface-default)',
+    Elevated: 'var(--color-surface-elevated)',
+    Raised: 'var(--color-surface-raised)',
     Inverted: {
-      Primary: '--color-background-inverted-primary',
-      Secondary: '--color-background-inverted-secondary',
-      Tertiary: '--color-background-inverted-tertiary'
+      Default: 'var(--color-surface-inverted-default)',
+      Elevated: 'var(--color-surface-inverted-elevated)',
+      Raised: 'var(--color-surface-inverted-raised)'
     }
   },
   Content: {
-    Primary: '--color-content-primary',
-    Secondary: '--color-content-secondary',
-    Tertiary: '--color-content-tertiary',
+    Primary: 'var(--color-content-primary)',
+    Secondary: 'var(--color-content-secondary)',
+    Tertiary: 'var(--color-content-tertiary)',
     Inverted: {
-      Primary: '--color-content-inverted-primary',
-      Secondary: '--color-content-inverted-secondary',
-      Tertiary: '--color-content-inverted-tertiary'
+      Primary: 'var(--color-content-inverted-primary)',
+      Secondary: 'var(--color-content-inverted-secondary)',
+      Tertiary: 'var(--color-content-inverted-tertiary)'
     }
   },
   Line: {
-    Border: '--color-line-border',
-    Divider: {
-      Light: '--color-line-divider-light',
-      Dark: '--color-line-divider-dark'
+    Border: 'var(--color-line-border)',
+    Divider: 'var(--color-line-divider)'
+  },
+  Interaction: {
+    Hovered: 'var(--color-interaction-hovered)',
+    Pressed: 'var(--color-interaction-pressed)',
+    Focused: 'var(--color-interaction-focused)',
+    Disabled: 'var(--color-interaction-disabled)',
+    Inverted: {
+      Hovered: 'var(--color-interaction-inverted-hovered)',
+      Pressed: 'var(--color-interaction-inverted-pressed)',
+      Focused: 'var(--color-interaction-inverted-focused)',
+      Disabled: 'var(--color-interaction-inverted-disabled)'
     }
   }
 } as const

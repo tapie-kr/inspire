@@ -1,33 +1,33 @@
 export const Typography = {
   Size: {
-    Hero: '--typography-size-hero',
-    Display: '--typography-size-display',
-    Title: '--typography-size-title',
-    Headline: '--typography-size-headline',
-    Body: '--typography-size-body',
-    Callout: '--typography-size-callout',
-    Footnote: '--typography-size-footnote',
-    Caption: '--typography-size-caption',
-    Tiny: '--typography-size-tiny'
+    Hero: 'var(--typography-size-hero)',
+    Display: 'var(--typography-size-display)',
+    Title: 'var(--typography-size-title)',
+    Headline: 'var(--typography-size-headline)',
+    Body: 'var(--typography-size-body)',
+    Callout: 'var(--typography-size-callout)',
+    Footnote: 'var(--typography-size-footnote)',
+    Caption: 'var(--typography-size-caption)',
+    Tiny: 'var(--typography-size-tiny)'
   },
   Weight: {
-    Extrabold: '--typography-weight-extrabold',
-    Bold: '--typography-weight-bold',
-    Semibold: '--typography-weight-semibold',
-    Medium: '--typography-weight-medium',
-    Regular: '--typography-weight-regular',
-    Light: '--typography-weight-light'
+    Extrabold: 'var(--typography-weight-extrabold)',
+    Bold: 'var(--typography-weight-bold)',
+    Semibold: 'var(--typography-weight-semibold)',
+    Medium: 'var(--typography-weight-medium)',
+    Regular: 'var(--typography-weight-regular)',
+    Light: 'var(--typography-weight-light)'
   },
   LineHeight: {
-    Hero: '--typography-line-height-hero',
-    Display: '--typography-line-height-display',
-    Title: '--typography-line-height-title',
-    Headline: '--typography-line-height-headline',
-    Body: '--typography-line-height-body',
-    Callout: '--typography-line-height-callout',
-    Footnote: '--typography-line-height-footnote',
-    Caption: '--typography-line-height-caption',
-    Tiny: '--typography-line-height-tiny'
+    Hero: 'var(--typography-line-height-hero)',
+    Display: 'var(--typography-line-height-display)',
+    Title: 'var(--typography-line-height-title)',
+    Headline: 'var(--typography-line-height-headline)',
+    Body: 'var(--typography-line-height-body)',
+    Callout: 'var(--typography-line-height-callout)',
+    Footnote: 'var(--typography-line-height-footnote)',
+    Caption: 'var(--typography-line-height-caption)',
+    Tiny: 'var(--typography-line-height-tiny)'
   },
-  LetterSpacing: '--typography-letter-spacing'
+  LetterSpacing: 'var(--typography-letter-spacing)'
 } as const
