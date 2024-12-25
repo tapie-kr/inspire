@@ -2,17 +2,19 @@
 @use './solid';
 @use './grayscale';
 @use './brand';
-@use './background.scss';
-@use './content.scss';
-@use './line.scss';
+@use './surface';
+@use './content';
+@use './line';
+@use './interaction';
 
 @use '../utils';
 
 $color: (
-  solid:      solid.$solid,
-  grayscale:  grayscale.$grayscale,
-  brand:      brand.$brand,
-  background: background.$background,
-  content:    content.$content,
-  line:       line.$line,
+  solid:       solid.$solid,
+  grayscale:   grayscale.$grayscale,
+  brand:       brand.$brand,
+  surface:     surface.$surface,
+  content:     content.$content,
+  line:        line.$line,
+  interaction: interaction.$interaction,
 );

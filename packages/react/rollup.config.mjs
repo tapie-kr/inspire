@@ -67,10 +67,9 @@ const config = defineConfig([
     },
   },
   {
-    input: [
-      glob.sync('src/**/*.tsx'),
-      glob.sync('src/**/*.ts'),
-    ].flat(),
+    input: glob.sync('src/**/*.{ts,tsx}', { 
+      ignore: ['src/**/*.stories.{ts,tsx}'] 
+    }),
     output: [
       {
         dir: 'dist/esm',
@@ -101,9 +100,7 @@ const config = defineConfig([
             runtime: 'automatic;',
           },
           transform: {
-            react: {
-              runtime: 'automatic',
-            },
+            react: { runtime: 'automatic' },
           },
         },
         sourceMaps: false,

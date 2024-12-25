@@ -2,10 +2,10 @@
 @use './grayscale.scss';
 
 $line: (
-  border: map.get(grayscale.$grayscale, translucent, 4),
+  border: map.get(grayscale.$grayscale, translucent, 10),
 
   divider: (
-    light: map.get(grayscale.$grayscale, solid, 3),
-    dark:  map.get(grayscale.$grayscale, solid, 4),
+    light: map.get(grayscale.$grayscale, solid, 40),
+    dark:  map.get(grayscale.$grayscale, solid, 50),
   ),
 );

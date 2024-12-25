@@ -1,0 +1,33 @@
+@use 'sass:map';
+@use './solid';
+@use './grayscale';
+
+$surface: (
+  default: (
+    light: map.get(solid.$solid, white),
+    dark:  map.get(solid.$solid, black),
+  ),
+  elevated: (
+    light: map.get(grayscale.$grayscale, solid, 5),
+    dark:  map.get(grayscale.$grayscale, solid, 5),
+  ),
+  raised: (
+    light: map.get(grayscale.$grayscale, solid, 10),
+    dark:  map.get(grayscale.$grayscale, solid, 10),
+  ),
+
+  inverted: (
+    default: (
+      light: map.get(solid.$solid, black),
+      dark:  map.get(solid.$solid, white),
+    ),
+    elevated: (
+      light: map.get(grayscale.$grayscale, solid, 90),
+      dark:  map.get(grayscale.$grayscale, solid, 90),
+    ),
+    raised: (
+      light: map.get(grayscale.$grayscale, solid, 80),
+      dark:  map.get(grayscale.$grayscale, solid, 80),
+    ),
+  ),
+);

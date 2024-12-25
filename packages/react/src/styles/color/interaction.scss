@@ -1,0 +1,29 @@
+@use 'sass:map';
+@use './grayscale.scss';
+@use './solid.scss';
+
+$interaction: (
+  hovered:  map.get(grayscale.$grayscale, translucent, 5),
+  pressed:  map.get(grayscale.$grayscale, translucent, 10),
+  focused:  map.get(grayscale.$grayscale, translucent, 5),
+  disabled: transparent,
+
+  inverted: (
+    hovered: (
+      light: map.get(solid.$solid, translucent, white, 10),
+      dark:  map.get(solid.$solid, translucent, black, 10),
+    ),
+    pressed: (
+      light: map.get(solid.$solid, translucent, white, 15),
+      dark:  map.get(solid.$solid, translucent, black, 15),
+    ),
+    focused: (
+      light: map.get(solid.$solid, translucent, white, 5),
+      dark:  map.get(solid.$solid, translucent, black, 5),
+    ),
+    disabled: (
+      light: map.get(solid.$solid, translucent, white, 50),
+      dark:  map.get(solid.$solid, translucent, black, 50),
+    ),
+  ),
+);

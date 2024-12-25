@@ -3,22 +3,22 @@
 @use './grayscale';
 
 $content: (
-  primary:   map.get(grayscale.$grayscale, translucent, 8),
-  secondary: map.get(grayscale.$grayscale, translucent, 4),
-  tertiary:  map.get(grayscale.$grayscale, translucent, 3),
+  primary:   map.get(grayscale.$grayscale, translucent, 80),
+  secondary: map.get(grayscale.$grayscale, translucent, 40),
+  tertiary:  map.get(grayscale.$grayscale, translucent, 30),
 
   inverted: (
     primary: (
-      light: map.get(solid.$solid, translucent, white, 8),
-      dark:  map.get(solid.$solid, translucent, black, 8),
+      light: map.get(solid.$solid, translucent, white, 80),
+      dark:  map.get(solid.$solid, translucent, black, 80),
     ),
     secondary: (
-      light: map.get(solid.$solid, translucent, white, 4),
-      dark:  map.get(solid.$solid, translucent, black, 5),
+      light: map.get(solid.$solid, translucent, white, 40),
+      dark:  map.get(solid.$solid, translucent, black, 50),
     ),
     tertiary: (
-      light: map.get(solid.$solid, translucent, white, 3),
-      dark:  map.get(solid.$solid, translucent, black, 3),
+      light: map.get(solid.$solid, translucent, white, 30),
+      dark:  map.get(solid.$solid, translucent, black, 30),
     ),
   ),
 );
