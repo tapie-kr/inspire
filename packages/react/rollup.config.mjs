@@ -126,13 +126,13 @@ const config = defineConfig([
     input: 'src/constants/index.ts',
     output: [
       {
-        file: packageJson.exports['./constants'].import,
+        file: packageJson.exports['./variables'].import,
         format: 'esm',
         sourcemap: true,
         exports: 'named',
       },
       {
-        file: packageJson.exports['./constants'].require,
+        file: packageJson.exports['./variables'].require,
         format: 'cjs',
         sourcemap: true,
         exports: 'named',

@@ -1,9 +1,9 @@
 {
   "name": "@tapie-kr/inspire-react",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "React Component Collection for INSPIRE",
   "scripts": {
-    "prepublishOnly": "pnpm run generate:const && pnpm run build",
+    "prepublishOnly": "pnpm run build",
     "build:css": "BUILD_TARGET=css rollup -c --silent",
     "build:components": "tsc --project tsconfig.lib.json && BUILD_TARGET=components rollup -c --silent",
     "build:constants": "tsc --project tsconfig.lib.json && BUILD_TARGET=constants rollup -c --silent",
@@ -78,7 +78,7 @@
       "import": "./dist/index.esm.js",
       "require": "./dist/index.js"
     },
-    "./constants": {
+    "./variables": {
       "types": "./dist/types/constants/index.d.ts",
       "import": "./dist/constants.esm.js",
       "require": "./dist/constants.js"
