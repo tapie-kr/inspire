@@ -118,13 +118,15 @@ export const ColorVariable = {
     }
   },
   Content: {
-    Primary: 'var(--color-content-primary)',
-    Secondary: 'var(--color-content-secondary)',
-    Tertiary: 'var(--color-content-tertiary)',
+    Emphasized: 'var(--color-content-emphasized)',
+    Default: 'var(--color-content-default)',
+    Muted: 'var(--color-content-muted)',
+    Disabled: 'var(--color-content-disabled)',
     Inverted: {
-      Primary: 'var(--color-content-inverted-primary)',
-      Secondary: 'var(--color-content-inverted-secondary)',
-      Tertiary: 'var(--color-content-inverted-tertiary)'
+      Emphasized: 'var(--color-content-inverted-emphasized)',
+      Default: 'var(--color-content-inverted-default)',
+      Muted: 'var(--color-content-inverted-muted)',
+      Disabled: 'var(--color-content-inverted-disabled)'
     }
   },
   Line: {

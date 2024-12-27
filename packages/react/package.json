@@ -1,13 +1,13 @@
 {
   "name": "@tapie-kr/inspire-react",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "React Component Collection for INSPIRE",
   "scripts": {
     "prepublishOnly": "pnpm run generate:const && pnpm run build",
-    "build:css": "BUILD_TARGET=css rollup -c --silent",
+    "build:css": "BUILD_TARGET=css rollup -c --silent && pnpm run generate:const",
     "build:components": "tsc --project tsconfig.lib.json && pnpm run generate:barrel && BUILD_TARGET=components rollup -c --silent",
     "build": "rimraf dist && pnpm run build:css && pnpm run build:components",
-    "generate:const": "pnpm run build:css && tsx scripts/generate-constants.ts",
+    "generate:const": "tsx scripts/generate-constants.ts",
     "generate:barrel": "tsx scripts/generate-barrel.ts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -68,10 +68,12 @@
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/types/index.d.ts",
   "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    },
     "./styles.css": "./dist/styles.min.css"
   },
   "publishConfig": {
