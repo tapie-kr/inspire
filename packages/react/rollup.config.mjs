@@ -25,9 +25,9 @@ const packageJson = JSON.parse(
  * @returns {import('rollup').Plugin}
  */
 function customLogger(title) {
-  /** @type {import('rollup').Plugin} */
   let buildStartedTime = null
 
+  /** @type {import('rollup').Plugin} */
   const plugin = {
     name: 'custom-logger',
     buildStart() {

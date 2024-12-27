@@ -1,35 +1,17 @@
-@font-face {
-  font-family: 'INSPIRE Font Kit';
-  font-weight: 800;
-  src: url('./assets/fonts/INSPIRE_Font_Kit-Extrabold.woff2') format('woff2');
-}
+$weights: (
+  800: Extrabold,
+  700: Bold,
+  600: Semibold,
+  500: Medium,
+  400: Regular,
+  300: Light
+);
 
-@font-face {
-  font-family: 'INSPIRE Font Kit';
-  font-weight: 700;
-  src: url('./assets/fonts/INSPIRE_Font_Kit-Bold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'INSPIRE Font Kit';
-  font-weight: 600;
-  src: url('./assets/fonts/INSPIRE_Font_Kit-Semibold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'INSPIRE Font Kit';
-  font-weight: 500;
-  src: url('./assets/fonts/INSPIRE_Font_Kit-Medium.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'INSPIRE Font Kit';
-  font-weight: 400;
-  src: url('./assets/fonts/INSPIRE_Font_Kit-Regular.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'INSPIRE Font Kit';
-  font-weight: 300;
-  src: url('./assets/fonts/INSPIRE_Font_Kit-Light.woff2') format('woff2');
+@each $weight, $style in $weights {
+  @font-face {
+    font-family: 'INSPIRE Font Kit';
+    font-weight: $weight;
+    src: url('./assets/fonts/INSPIRE_Font_Kit-#{$style}.woff2') format('woff2');
+    font-display: block;
+  }
 }
