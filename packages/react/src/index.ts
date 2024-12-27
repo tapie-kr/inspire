@@ -1,3 +1,6 @@
+export * from './components/foundations/Icon/icon-set'
+export * from './components/foundations/Icon/index'
+export * from './components/foundations/Icon/shared'
 export * from './components/foundations/TAPIE-Symbol/index'
 export * from './components/foundations/TAPIE-Symbol/shared'
 export * from './components/foundations/Typography/Builder'
