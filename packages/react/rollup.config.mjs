@@ -73,13 +73,13 @@ const config = defineConfig([
     input: 'src/index.ts',
     output: [
       {
-        file: packageJson.exports['./*'].import,
+        file: packageJson.module,
         format: 'esm',
         sourcemap: true,
         exports: 'named',
       },
       {
-        file: packageJson.exports['./*'].require,
+        file: packageJson.main,
         format: 'cjs',
         sourcemap: true,
         exports: 'named',
