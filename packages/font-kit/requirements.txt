@@ -1,1 +1,2 @@
 fonttools>=4.38.0
+brotli
