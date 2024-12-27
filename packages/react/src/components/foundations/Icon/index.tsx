@@ -15,5 +15,7 @@ export function Icon(props: IconProps) {
     Icon = BrandIconMap[props.name]
   }
 
-  return <Icon width={props.size} height={props.size} fill={props.fill} />
+  const size = props.size || 24
+
+  return <Icon width={size} height={size} fill={props.fill} />
 }

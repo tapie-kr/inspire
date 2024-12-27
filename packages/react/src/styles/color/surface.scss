@@ -4,15 +4,15 @@
 
 $surface: (
   default: (
-    light: map.get(solid.$solid, white),
+    light: map.get(grayscale.$grayscale, solid, 5),
     dark:  map.get(solid.$solid, black),
   ),
   elevated: (
-    light: map.get(grayscale.$grayscale, solid, 5),
+    light: map.get(grayscale.$grayscale, solid, 10),
     dark:  map.get(grayscale.$grayscale, solid, 5),
   ),
   raised: (
-    light: map.get(grayscale.$grayscale, solid, 10),
+    light: map.get(grayscale.$grayscale, solid, 15),
     dark:  map.get(grayscale.$grayscale, solid, 10),
   ),
 
