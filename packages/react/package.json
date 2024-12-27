@@ -1,14 +1,16 @@
 {
   "name": "@tapie-kr/inspire-react",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "React Component Collection for INSPIRE",
   "scripts": {
     "prepublishOnly": "pnpm run generate:const && pnpm run build",
-    "build:css": "BUILD_TARGET=css rollup -c --silent && pnpm run generate:const",
-    "build:components": "pnpm run generate:barrel && tsc --project tsconfig.lib.json && BUILD_TARGET=components rollup -c --silent",
-    "build": "rimraf dist && pnpm run build:css && pnpm run build:components",
+    "build:css": "BUILD_TARGET=css rollup -c --silent",
+    "build:components": "tsc --project tsconfig.lib.json && BUILD_TARGET=components rollup -c --silent",
+    "build:constants": "tsc --project tsconfig.lib.json && BUILD_TARGET=constants rollup -c --silent",
+    "build": "rimraf dist && pnpm run build:css && pnpm run generate && pnpm run build:components && pnpm run build:constants",
     "generate:const": "tsx scripts/generate-constants.ts",
-    "generate:barrel": "tsx scripts/generate-barrel.ts",
+    "generate:barrel": "tsx scripts/generate-barrel.ts ./src constants && tsx scripts/generate-barrel.ts ./src/constants",
+    "generate": "pnpm run generate:const && pnpm run generate:barrel",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -75,6 +77,11 @@
       "types": "./dist/types/index.d.ts",
       "import": "./dist/index.esm.js",
       "require": "./dist/index.js"
+    },
+    "./constants": {
+      "types": "./dist/types/constants/index.d.ts",
+      "import": "./dist/constants.esm.js",
+      "require": "./dist/constants.js"
     },
     "./styles.css": "./dist/styles.min.css"
   },

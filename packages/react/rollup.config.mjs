@@ -121,6 +121,41 @@ const config = defineConfig([
       }),
       customLogger('components'),
     ],
+  },
+  {
+    input: 'src/constants/index.ts',
+    output: [
+      {
+        file: packageJson.exports['./constants'].import,
+        format: 'esm',
+        sourcemap: true,
+        exports: 'named',
+      },
+      {
+        file: packageJson.exports['./constants'].require,
+        format: 'cjs',
+        sourcemap: true,
+        exports: 'named',
+      },
+    ],
+    plugins: [
+      peerDepsExternal(),
+      resolve({
+        extensions: ['.ts']
+      }),
+      commonjs(),
+      swc({
+        jsc: {
+          parser: {
+            syntax: 'typescript',
+            runtime: 'automatic;',
+          },
+        },
+        sourceMaps: false,
+        minify: true,
+      }),
+      customLogger('constants'),
+    ],
   }
 ])
 
@@ -133,6 +168,7 @@ export default () => {
   switch (target) {
     case 'css': return config[0]
     case 'components': return config[1]
+    case 'constants': return config[2]
     
     case 'all': return config
     default: throw new Error(`Unknown BUILD_TARGET: ${target}`)

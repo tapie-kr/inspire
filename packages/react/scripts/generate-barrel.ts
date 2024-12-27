@@ -33,8 +33,8 @@ class SingleBarrelGenerator {
     this.options = {
       ...defaultOptions,
       ...options,
-      include: options.include || defaultOptions.include,
-      exclude: options.exclude || defaultOptions.exclude
+      include: Array.from(new Set([...defaultOptions.include, ...(options.include || [])])),
+      exclude: Array.from(new Set([...defaultOptions.exclude, ...(options.exclude || [])])),
     }
   }
 
@@ -94,10 +94,13 @@ class SingleBarrelGenerator {
   }
 }
 
-const generator = new SingleBarrelGenerator()
-
 const run = async () => {
   const targetDirectory = process.argv[2] || './src'
+  const excludeDirectories = process.argv.slice(3) || []
+
+  const generator = new SingleBarrelGenerator({
+    exclude: excludeDirectories.map(dir => `${dir}/**`)
+  })
   await generator.generate(targetDirectory)
 }
 
