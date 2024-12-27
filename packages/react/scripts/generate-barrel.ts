@@ -24,10 +24,10 @@ class SingleBarrelGenerator {
         '**/*.stories.{ts,tsx}',
         '**/*.styles.{ts,tsx}',
         '**/*.type.{ts,tsx}',
-        '**/*.d.ts'
+        '**/*.d.ts',
       ],
       exportStyle: 'star',
-      barrelFileName: 'index.ts'
+      barrelFileName: 'index.ts',
     }
 
     this.options = {
@@ -94,16 +94,7 @@ class SingleBarrelGenerator {
   }
 }
 
-const generator = new SingleBarrelGenerator({
-  include: ['**/*.{ts,tsx}'],
-  exclude: [
-    '**/index.ts',
-    '**/node_modules/**',
-    '**/*.stories.{ts,tsx}',
-    '**/*.test.{ts,tsx}'
-  ],
-  exportStyle: 'star'
-})
+const generator = new SingleBarrelGenerator()
 
 const run = async () => {
   const targetDirectory = process.argv[2] || './src'

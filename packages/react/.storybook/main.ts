@@ -1,5 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-vite'
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
+import svgr from 'vite-plugin-svgr'
 
 import { join, dirname, resolve } from 'path'
 
@@ -25,12 +26,13 @@ const config: StorybookConfig = {
       }
     }
 
-    if (config.plugins) {
-      config.plugins = [
-        ...config.plugins,
-        vanillaExtractPlugin(),
-      ]
-    }
+    config.plugins?.push(
+      svgr({
+        svgrOptions: { exportType: 'default' },
+        include: /\.svg$/,
+      }),
+      vanillaExtractPlugin()
+    )
 
     return config
   }

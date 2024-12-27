@@ -8,6 +8,7 @@ import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import _swc from 'rollup-plugin-swc'
 import { vanillaExtractPlugin } from '@vanilla-extract/rollup-plugin'
+import svgr from '@svgr/rollup'
 
 import chalk from 'chalk'
 import { readFileSync } from 'fs'
@@ -33,9 +34,16 @@ function customLogger(title) {
       buildStartedTime = Date.now()
     },
     transform(_code, id) {
-      const isComponent = id.endsWith('.tsx')
-      const file = chalk[isComponent ? 'blue' : 'white'](id.replace(currentPath, ''))
-      console.log(chalk.gray(`🔄 Processing: ${file}`))
+      const colorMap = {
+        'ts': 'white',
+        'tsx': 'blue',
+        'scss': 'magenta',
+        'svg': 'cyan',
+      }
+
+      const file = id.replace(currentPath, '')
+      const extension = file.split('.').pop()
+      console.log(chalk.gray(`🔄 Processing: ${chalk[colorMap[extension]](file)}`))
     },
     buildEnd() {
       const time = Date.now() - buildStartedTime
@@ -88,10 +96,14 @@ const config = defineConfig([
     external: ['react', 'react-dom', 'classnames'],
     plugins: [
       peerDepsExternal(),
-      resolve({ extensions: ['.ts', '.tsx'], }),
+      resolve({
+        extensions: ['.ts', '.tsx', '.svg']
+      }),
       commonjs(),
-      vanillaExtractPlugin({
-        identifiers: 'short',
+      vanillaExtractPlugin({ identifiers: 'short' }),
+      svgr({
+        svgrOptions: { exportType: 'default' },
+        include: /\.svg$/,
       }),
       swc({
         jsc: {
