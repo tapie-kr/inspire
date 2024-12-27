@@ -1,4 +1,4 @@
-export const Typography = {
+export const TypographyVariable = {
   Size: {
     Hero: 'var(--typography-size-hero)',
     Display: 'var(--typography-size-display)',

@@ -60,7 +60,7 @@ const constantNames = Object.keys(groupedProperties)
 for (const constant of constants) {
   const name = constantNames[constants.indexOf(constant)]
   const stringified = JSON.stringify(constant, null, 2).replace(/"(\w+)":/g, '$1:').replace(/"/g, "'")
-  const content = `export const ${capitalizeFirstLetter(name)} = ${stringified} as const\n`
+  const content = `export const ${capitalizeFirstLetter(name)}Variable = ${stringified} as const\n`
   fs.writeFileSync(`${PATH.CONSTANTS}/${name}.ts`, content)
 }
 

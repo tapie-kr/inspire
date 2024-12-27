@@ -8,12 +8,15 @@ import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import _swc from 'rollup-plugin-swc'
 import { vanillaExtractPlugin } from '@vanilla-extract/rollup-plugin'
-import chalk from 'chalk'
 
-import * as glob from 'glob'
+import chalk from 'chalk'
+import { readFileSync } from 'fs'
 
 const swc = _swc.default
 const currentPath = new URL('.', import.meta.url).pathname
+const packageJson = JSON.parse(
+  readFileSync(new URL('./package.json', import.meta.url)).toString()
+)
 
 /**
  * @param {string} title
@@ -67,21 +70,19 @@ const config = defineConfig([
     },
   },
   {
-    input: glob.sync('src/**/*.{ts,tsx}', { 
-      ignore: ['src/**/*.stories.{ts,tsx}'] 
-    }),
+    input: 'src/index.ts',
     output: [
       {
-        dir: 'dist/esm',
+        file: packageJson.exports['./*'].import,
         format: 'esm',
-        preserveModules: true,
-        preserveModulesRoot: 'src',
+        sourcemap: true,
+        exports: 'named',
       },
       {
-        dir: 'dist/cjs',
+        file: packageJson.exports['./*'].require,
         format: 'cjs',
-        preserveModules: true,
-        preserveModulesRoot: 'src',
+        sourcemap: true,
+        exports: 'named',
       },
     ],
     external: ['react', 'react-dom', 'classnames'],

@@ -1,4 +1,4 @@
-export const Color = {
+export const ColorVariable = {
   Solid: {
     White: 'var(--color-solid-white)',
     Black: 'var(--color-solid-black)',

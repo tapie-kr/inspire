@@ -1,4 +1,4 @@
-export const Component = {
+export const ComponentVariable = {
   Radius: {
     None: 'var(--component-radius-none)',
     _4: 'var(--component-radius-4)',
