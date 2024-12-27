@@ -6,7 +6,7 @@
   "scripts": {
     "merge": "python3 scripts/merger.py \"INSPIRE Font Kit\" ./fonts/pretendard ./fonts/urbanist ./dist",
     "merge:debug": "python3 scripts/merger.py \"INSPIRE Font Kit\" ./fonts/pretendard ./fonts/urbanist ./dist --debug",
-    "convert": "python3 scripts/converter.py ./dist ./dist/woff2",
+    "convert": "python3 scripts/converter.py ./dist ./dist/otf ./dist/woff2",
     "clean": "python3 scripts/rimraf.py ./dist",
     "build": "pnpm run clean && pnpm run merge && pnpm run convert"
   },
