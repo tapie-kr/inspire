@@ -1,18 +1,18 @@
 import { TypographyVariable } from '@/constants/typography'
 import { style } from '@vanilla-extract/css'
+import { regularStyle, semiboldStyle } from './weight.css'
 
 const baseStyle = style({
   letterSpacing: TypographyVariable.LetterSpacing,
 })
 
-export const monospacedTypographyStyle = style([baseStyle, {
+export const monospacedTypographyStyle = style([baseStyle, regularStyle, {
   fontFamily: ['Geist Mono', 'monospace'],
 }])
 
-export const heroStyle = style([baseStyle, {
+export const heroStyle = style([baseStyle, semiboldStyle, {
   fontSize: TypographyVariable.Size.Hero,
   lineHeight: TypographyVariable.LineHeight.Hero,
-  fontWeight: TypographyVariable.Weight.Semibold,
 }])
 
 export const displayStyle = style([baseStyle, {

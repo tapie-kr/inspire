@@ -1,4 +1,4 @@
-import { DetailsHTMLAttributes } from 'react'
+import { DetailsHTMLAttributes, ReactNode } from 'react'
 
 export enum TypographyTag {
   H1 = 'h1',
@@ -8,19 +8,28 @@ export enum TypographyTag {
   H5 = 'h5',
   H6 = 'h6',
   P = 'p',
-  SPAN = 'span',
+  Span = 'span',
 }
 
 export enum TypographyVariant {
-  HERO = 'Hero',
-  DISPLAY = 'Display',
-  TITLE = 'Title',
-  HEADLINE = 'Headline',
-  BODY = 'Body',
-  CALLOUT = 'Callout',
-  FOOTNOTE = 'Footnote',
-  CAPTION = 'Caption',
-  TINY = 'Tiny',
+  Hero = 'Hero',
+  Display = 'Display',
+  Title = 'Title',
+  Headline = 'Headline',
+  Body = 'Body',
+  Callout = 'Callout',
+  Footnote = 'Footnote',
+  Caption = 'Caption',
+  Tiny = 'Tiny',
+}
+
+export enum TypographyWeight {
+  Extrabold = 'extraboldStyle',
+  Bold = 'boldStyle',
+  Semibold = 'semiboldStyle',
+  Medium = 'mediumStyle',
+  Regular = 'regularStyle',
+  Light = 'lightStyle',
 }
 
 export type TypographyPropsBase = DetailsHTMLAttributes<
@@ -32,5 +41,6 @@ export type TypographyPropsBase = DetailsHTMLAttributes<
 export type TypographyProps = TypographyPropsBase & {
   tag?: TypographyTag
   monospaced?: boolean
-  children?: React.ReactNode
+  weight?: TypographyWeight
+  children?: ReactNode
 }

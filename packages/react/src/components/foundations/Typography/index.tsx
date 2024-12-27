@@ -1,7 +1,7 @@
 import { JSX } from 'react'
 import TypographyBuilder from './Builder'
-import { TypographyProps, TypographyTag, TypographyVariant } from './shared'
-import { bodyStyle, calloutStyle, captionStyle, displayStyle, footnoteStyle, headlineStyle, heroStyle, tinyStyle, titleStyle } from './style.css'
+import { TypographyProps, TypographyTag, TypographyVariant, TypographyWeight } from './shared'
+import { bodyStyle, calloutStyle, captionStyle, displayStyle, footnoteStyle, headlineStyle, heroStyle, tinyStyle, titleStyle } from './styles/glyph.css'
 
 enum ContractKey {
   TAG,
@@ -9,15 +9,15 @@ enum ContractKey {
 }
 
 const TypographyContract = {
-  [TypographyVariant.HERO]: [TypographyTag.P, heroStyle],
-  [TypographyVariant.DISPLAY]: [TypographyTag.H1, displayStyle],
-  [TypographyVariant.TITLE]: [TypographyTag.H1, titleStyle],
-  [TypographyVariant.HEADLINE]: [TypographyTag.H2, headlineStyle],
-  [TypographyVariant.BODY]: [TypographyTag.P, bodyStyle],
-  [TypographyVariant.CALLOUT]: [TypographyTag.P, calloutStyle],
-  [TypographyVariant.FOOTNOTE]: [TypographyTag.P, footnoteStyle],
-  [TypographyVariant.CAPTION]: [TypographyTag.P, captionStyle],
-  [TypographyVariant.TINY]: [TypographyTag.P, tinyStyle],
+  [TypographyVariant.Hero]: [TypographyTag.P, heroStyle],
+  [TypographyVariant.Display]: [TypographyTag.H1, displayStyle],
+  [TypographyVariant.Title]: [TypographyTag.H1, titleStyle],
+  [TypographyVariant.Headline]: [TypographyTag.H2, headlineStyle],
+  [TypographyVariant.Body]: [TypographyTag.P, bodyStyle],
+  [TypographyVariant.Callout]: [TypographyTag.P, calloutStyle],
+  [TypographyVariant.Footnote]: [TypographyTag.P, footnoteStyle],
+  [TypographyVariant.Caption]: [TypographyTag.P, captionStyle],
+  [TypographyVariant.Tiny]: [TypographyTag.P, tinyStyle],
 } as const
 
 function typographyFactory(variant: TypographyVariant, tag: TypographyTag = TypographyTag.P) {
