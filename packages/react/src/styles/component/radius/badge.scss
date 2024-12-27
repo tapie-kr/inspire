@@ -1,7 +1,0 @@
-@use 'sass:map';
-@use '../constant';
-
-$badge: (
-  large: map.get(constant.$radius, 8),
-  small: map.get(constant.$radius, 4),
-);

@@ -1,8 +1,0 @@
-@use 'sass:map';
-@use '../constant';
-
-$button: (
-  large:  map.get(constant.$radius, 8),
-  medium: map.get(constant.$radius, 6),
-  small:  map.get(constant.$radius, 4),
-);
