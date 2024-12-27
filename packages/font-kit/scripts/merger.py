@@ -6,6 +6,8 @@ import traceback
 import json
 import argparse
 from fontTools.ttLib import TTFont
+from multiprocessing import Pool, cpu_count
+from typing import Tuple
 
 class FontMerger:
   def __init__(self, debug=False):
@@ -40,12 +42,9 @@ class FontMerger:
 
   def get_style(self, filename):
     name = filename.replace('.ttf', '')
-    
     style = name.split('-')[-1].lower()
-    
     if style not in self.styles:
       return 'regular'
-    
     return style
 
   def set_meta(self, font, family, style):
@@ -103,9 +102,12 @@ class FontMerger:
 
     self.debug_print(f"디버그: 메타데이터 설정 완료 - 스타일: {style}")
 
-  def merge_fonts(self, korean_font_path, english_font_path, output_path, family, style):
+  def merge_fonts(self, merge_params: Tuple[str, str, str, str, str, bool]):
+    korean_font_path, english_font_path, output_path, family, style, debug = merge_params
+    
     try:
-      self.debug_print(f"디버그: 폰트 병합 시작 - 스타일: {style}")
+      if debug:
+        print(f"디버그: 폰트 병합 시작 - 스타일: {style}")
       
       kr_font = TTFont(korean_font_path)
       en_font = TTFont(english_font_path)
@@ -138,19 +140,23 @@ class FontMerger:
 
             en_cmap[code] = glyph_name
           except Exception as e:
-            self.debug_print(f"글리프 복사 중 오류: {glyph_name} - {e}")
+            if debug:
+              print(f"글리프 복사 중 오류: {glyph_name} - {e}")
 
-      self.debug_print(f"디버그: 메타데이터 설정 호출 직전 - 스타일: {style}")
+      if debug:
+        print(f"디버그: 메타데이터 설정 호출 직전 - 스타일: {style}")
       self.set_meta(en_font, family, style)
 
       en_font['maxp'].recalc(en_font)
-
       en_font.save(output_path)
+      
       print(f"폰트 병합 완료: {os.path.basename(output_path)}")
+      return True
 
     except Exception as e:
       print(f"폰트 병합 중 오류 발생: {e}")
       traceback.print_exc()
+      return False
 
   def scan_fonts(self, directory):
     fonts = []
@@ -181,6 +187,7 @@ class FontMerger:
     for font in en_fonts:
       self.debug_print(f"- {font['name']}: {font['style']} 스타일")
 
+    merge_tasks = []
     for kr_font in kr_fonts:
       matched_en_font = next(
         (en_font for en_font in en_fonts if en_font['style'] == kr_font['style']), 
@@ -191,19 +198,30 @@ class FontMerger:
         output_filename = f"{family_name.replace(' ', '_')}-{kr_font['style'].capitalize()}.ttf"
         output_path = os.path.join(output_dir, output_filename)
 
-        print(f"\n{kr_font['style'].capitalize()} 스타일 처리 중")
+        print(f"\n{kr_font['style'].capitalize()} 스타일 처리 준비 중")
         print(f"한글 폰트: {kr_font['name']}")
         print(f"영문 폰트: {matched_en_font['name']}")
 
-        self.merge_fonts(
-          kr_font['path'], 
-          matched_en_font['path'], 
+        merge_tasks.append((
+          kr_font['path'],
+          matched_en_font['path'],
           output_path,
           family_name,
-          kr_font['style']
-        )
+          kr_font['style'],
+          self.debug
+        ))
       else:
         print(f"\n경고: {kr_font['style']} 스타일의 매칭되는 영문 폰트가 없습니다.")
+
+    num_cores = cpu_count()
+    print(f"\n{num_cores}개의 CPU 코어를 사용하여 병렬 처리를 시작합니다.")
+    
+    with Pool(num_cores) as pool:
+      results = pool.map(self.merge_fonts, merge_tasks)
+    
+    successful = sum(1 for result in results if result)
+    failed = len(results) - successful
+    print(f"\n처리 완료: 성공 {successful}개, 실패 {failed}개")
 
 def main():
   parser = argparse.ArgumentParser(description='폰트 병합 스크립트')
