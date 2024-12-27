@@ -4,6 +4,8 @@
 
 @use './utils';
 
+@use './font-faces';
+
 body {
   font-family: 'INSPIRE Font Kit', sans-serif;
   color: var(--color-content-emphasized);
@@ -20,6 +22,12 @@ svg {
   fill: currentColor;
   flex-shrink: 0;
   user-select: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar {

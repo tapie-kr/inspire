@@ -9,6 +9,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import _swc from 'rollup-plugin-swc'
 import { vanillaExtractPlugin } from '@vanilla-extract/rollup-plugin'
 import svgr from '@svgr/rollup'
+import copy from 'rollup-plugin-copy'
 
 import chalk from 'chalk'
 import { readFileSync } from 'fs'
@@ -61,6 +62,11 @@ const config = defineConfig([
       file: 'dist/styles.min.css',
     },
     plugins: [
+      copy({
+        targets: [
+          { src: 'src/assets/fonts/*.woff2', dest: 'dist/assets/fonts' },
+        ],
+      }),
       scss({
         processor: () => postcss([autoprefixer(), cssnano()]),
         outputStyle: 'compressed',
