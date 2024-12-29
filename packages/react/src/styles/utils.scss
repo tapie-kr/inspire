@@ -5,6 +5,10 @@
 @use 'sass:list';
 @use 'sass:math';
 
+$characters: 'abcdefghijklmnopqrstuvwxyz'
+  + 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  + '0123456789';
+
 @function dec-to-hex($d) {
   $hexVals: 'A' 'B' 'C' 'D' 'E' 'F';
   $base: 16;

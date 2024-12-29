@@ -1,13 +1,27 @@
 @use 'sass:map';
 
-$line-height: (
-  hero:     92px,
-  display:  60px,
-  title:    32px,
-  headline: 26px,
-  body:     25px,
-  callout:  20px,
-  footnote: 18px,
-  caption:  18px,
-  tiny:     16px,
+$line-height-desktop: (
+  giant:  92px,
+  jumbo:  60px,
+  large:  46px,
+  medium: 32px,
+  small:  26px,
+  base:   24px,
+  petite: 20px,
+  micro:  18px,
+  tiny:   18px,
+  mini:   16px,
+);
+
+$line-height-mobile: (
+  giant:  60px,
+  jumbo:  40px,
+  large:  36px,
+  medium: 28px,
+  small:  24px,
+  base:   24px,
+  petite: 20px,
+  micro:  18px,
+  tiny:   18px,
+  mini:   16px,
 );

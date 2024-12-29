@@ -1,36 +1,31 @@
 import { JSX } from 'react'
 import TypographyBuilder from './Builder'
-import { TypographyProps, TypographyTag, TypographyVariant, TypographyWeight } from './shared'
-import { bodyStyle, calloutStyle, captionStyle, displayStyle, footnoteStyle, headlineStyle, heroStyle, tinyStyle, titleStyle } from './styles/glyph.css'
-
-enum ContractKey {
-  TAG,
-  STYLE,
-}
+import { TypographyProps, TypographyTag, TypographyVariant, TypographyVariantClass } from './shared'
 
 const TypographyContract = {
-  [TypographyVariant.Hero]: [TypographyTag.P, heroStyle],
-  [TypographyVariant.Display]: [TypographyTag.H1, displayStyle],
-  [TypographyVariant.Title]: [TypographyTag.H1, titleStyle],
-  [TypographyVariant.Headline]: [TypographyTag.H2, headlineStyle],
-  [TypographyVariant.Body]: [TypographyTag.P, bodyStyle],
-  [TypographyVariant.Callout]: [TypographyTag.P, calloutStyle],
-  [TypographyVariant.Footnote]: [TypographyTag.P, footnoteStyle],
-  [TypographyVariant.Caption]: [TypographyTag.P, captionStyle],
-  [TypographyVariant.Tiny]: [TypographyTag.P, tinyStyle],
+  [TypographyVariant.Giant]: TypographyTag.H1,
+  [TypographyVariant.Jumbo]: TypographyTag.H1,
+  [TypographyVariant.Large]: TypographyTag.H1,
+  [TypographyVariant.Medium]: TypographyTag.H2,
+  [TypographyVariant.Small]: TypographyTag.H3,
+  [TypographyVariant.Base]: TypographyTag.P,
+  [TypographyVariant.Petite]: TypographyTag.P,
+  [TypographyVariant.Micro]: TypographyTag.P,
+  [TypographyVariant.Tiny]: TypographyTag.P,
+  [TypographyVariant.Mini]: TypographyTag.P,
 } as const
 
 function typographyFactory(variant: TypographyVariant, tag: TypographyTag = TypographyTag.P) {
-  const style = TypographyContract[variant][ContractKey.STYLE]
+  const defaultTag = TypographyContract[variant] || tag
   return (props: TypographyProps) => (
-    <TypographyBuilder tag={tag} styleClassName={style} props={props} />
+    <TypographyBuilder tag={defaultTag} className={TypographyVariantClass[variant]} props={props} />
   )
 }
 
 const Typography = Object.keys(TypographyVariant).reduce((acc, key) => {
   const variant = TypographyVariant[key as keyof typeof TypographyVariant]
-  const contract = TypographyContract[variant]
-  acc[variant] = typographyFactory(variant, contract[ContractKey.TAG])
+  const tag = TypographyContract[variant]
+  acc[variant] = typographyFactory(variant, tag)
   return acc
 }, {} as Record<TypographyVariant, (props: TypographyProps) => JSX.Element>)
 

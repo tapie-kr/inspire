@@ -1,13 +1,27 @@
 @use 'sass:map';
 
-$size: (
-  hero:     80px,
-  display:  48px,
-  title:    24px,
-  headline: 20px,
-  body:     16px,
-  callout:  14px,
-  footnote: 13px,
-  caption:  12px,
-  tiny:     10px,
+$size-desktop: (
+  giant:  80px,
+  jumbo:  48px,
+  large:  36px,
+  medium: 24px,
+  small:  20px,
+  base:   16px,
+  petite: 14px,
+  micro:  13px,
+  tiny:   12px,
+  mini:   10px,
+);
+
+$size-mobile: (
+  giant:  48px,
+  jumbo:  32px,
+  large:  28px,
+  medium: 20px,
+  small:  18px,
+  base:   16px,
+  petite: 14px,
+  micro:  13px,
+  tiny:   12px,
+  mini:   10px,
 );

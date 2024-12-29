@@ -9,8 +9,6 @@ const PATH = {
 } as const
 
 const RESERVED_VARIABLE_NAMES = {
-  'line-height': 'lineHeight',
-  'letter-spacing': 'letterSpacing',
   'icon-button': 'iconButton',
   'text-button': 'textButton',
 } as const
@@ -27,13 +25,14 @@ if (!parsed.stylesheet) {
 
 const rules = parsed.stylesheet.rules.filter(rule => rule.type === 'rule')
 
-const rawProperties = rules
+const rootProperties = rules
+  .filter(rule => rule.selectors?.[0]?.startsWith(':root'))
   .flatMap(rule => rule.declarations)
   .filter(declaration => declaration?.type === 'declaration')
   .filter(declaration => declaration)
   .map(declaration => declaration.property) as Array<string>
 
-const properties = [...new Set(rawProperties)].filter(property => property.startsWith('--'))
+const properties = [...new Set(rootProperties)].filter(property => property.startsWith('--'))
 const groupedProperties = Object.groupBy(properties, property => property.replace('--', '').split('-')[0])
 
 const constants = Object.entries(groupedProperties).map(([name, properties]) => {

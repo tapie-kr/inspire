@@ -1,7 +1,12 @@
+@use './typography';
+
 body {
   font-family: 'INSPIRE Font Kit', -system-ui, sans-serif;
   color: var(--color-content-emphasized);
   background-color: var(--color-surface-default);
+  letter-spacing: typography.$letter-spacing;
+  word-break: keep-all;
+  word-wrap: break-word;
 }
 
 * {

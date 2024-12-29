@@ -24,7 +24,7 @@ const packageJson = JSON.parse(
  * @param {string} title
  * @returns {import('rollup').Plugin}
  */
-function customLogger(title) {
+const customLogger = title => {
   let buildStartedTime = null
 
   /** @type {import('rollup').Plugin} */
@@ -55,11 +55,20 @@ function customLogger(title) {
   return plugin
 }
 
-const config = defineConfig([
-  {
+/**
+ * 
+ * @param {'production' | 'development'} type 
+ * @returns {import('rollup').Plugin}
+ */
+const scssConfigGenerator = type => {
+  const isProduction = type === 'production'
+  const postcssPlugins = isProduction ? [autoprefixer(), cssnano()] : [autoprefixer()]
+  const outputFileName = isProduction ? 'styles.min.css' : 'styles.debug.css'
+
+  return {
     input: 'src/styles/index.scss',
     output: {
-      file: 'dist/styles.min.css',
+      file: `dist/${outputFileName}`,
     },
     plugins: [
       copy({
@@ -68,11 +77,11 @@ const config = defineConfig([
         ],
       }),
       scss({
-        processor: () => postcss([autoprefixer(), cssnano()]),
-        outputStyle: 'compressed',
+        processor: () => postcss(postcssPlugins),
+        outputStyle: isProduction ? 'compressed' : 'expanded',
         includePaths: ['src/styles'],
         silenceDeprecations: ['legacy-js-api'],
-        fileName: 'styles.min.css',
+        fileName: outputFileName,
       }),
       customLogger('css'),
     ],
@@ -82,7 +91,10 @@ const config = defineConfig([
         warn(warning)
       }
     },
-  },
+  }
+}
+
+const config = defineConfig([
   {
     input: 'src/index.ts',
     output: [
@@ -172,9 +184,10 @@ export default () => {
   }
   
   switch (target) {
-    case 'css': return config[0]
-    case 'components': return config[1]
-    case 'constants': return config[2]
+    case 'css': return scssConfigGenerator('production')
+    case 'css-dev': return scssConfigGenerator('development')
+    case 'components': return config[0]
+    case 'constants': return config[1]
     
     case 'all': return config
     default: throw new Error(`Unknown BUILD_TARGET: ${target}`)

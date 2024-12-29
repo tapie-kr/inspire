@@ -12,25 +12,48 @@ export enum TypographyTag {
 }
 
 export enum TypographyVariant {
-  Hero = 'Hero',
-  Display = 'Display',
-  Title = 'Title',
-  Headline = 'Headline',
-  Body = 'Body',
-  Callout = 'Callout',
-  Footnote = 'Footnote',
-  Caption = 'Caption',
+  Giant = 'Giant',
+  Jumbo = 'Jumbo',
+  Large = 'Large',
+  Medium = 'Medium',
+  Small = 'Small',
+  Base = 'Base',
+  Petite = 'Petite',
+  Micro = 'Micro',
   Tiny = 'Tiny',
+  Mini = 'Mini',
 }
 
+export const TypographyVariantClass = {
+  Giant: 'typo-giant',
+  Jumbo: 'typo-jumbo',
+  Large: 'typo-large',
+  Medium: 'typo-medium',
+  Small: 'typo-small',
+  Base: 'typo-base',
+  Petite: 'typo-petite',
+  Micro: 'typo-micro',
+  Tiny: 'typo-tiny',
+  Mini: 'typo-mini',
+} as const
+
 export enum TypographyWeight {
-  Extrabold = 'extraboldStyle',
-  Bold = 'boldStyle',
-  Semibold = 'semiboldStyle',
-  Medium = 'mediumStyle',
-  Regular = 'regularStyle',
-  Light = 'lightStyle',
+  Extrabold = 'Extrabold',
+  Bold = 'Bold',
+  Semibold = 'Semibold',
+  Medium = 'Medium',
+  Regular = 'Regular',
+  Light = 'Light',
 }
+
+export const TypographyWeightClass = {
+  Extrabold: 'typo-weight-extrabold',
+  Bold: 'typo-weight-bold',
+  Semibold: 'typo-weight-semibold',
+  Medium: 'typo-weight-medium',
+  Regular: 'typo-weight-regular',
+  Light: 'typo-weight-light',
+} as const
 
 export type TypographyPropsBase = DetailsHTMLAttributes<
   | HTMLHeadingElement

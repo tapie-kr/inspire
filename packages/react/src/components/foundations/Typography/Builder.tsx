@@ -1,34 +1,35 @@
-import { monospacedTypographyStyle } from './styles/glyph.css'
-import * as weightStyles from './styles/weight.css'
+import { monospacedTypographyStyle } from './styles.css'
 
-import { TypographyProps, TypographyTag, TypographyWeight } from './shared'
+import { TypographyProps, TypographyTag, TypographyWeight, TypographyWeightClass } from './shared'
 import cn from 'classnames'
 import { createElement } from 'react'
 
 type TypographyBuilderProps = {
   tag: TypographyTag
-  styleClassName?: string
+  className?: string
   props: TypographyProps
 }
 
 export default function TypographyBuilder(props: TypographyBuilderProps) {
-  const { tag, styleClassName, props: baseProps } = props
+  const { tag: defaultTag, className: defaultClassName, props: baseProps } = props
   const {
-    className: defaultClassName, monospaced,
+    tag, className, monospaced,
     weight, children,
     ...restProps
   } = baseProps
 
   const classes = [
     defaultClassName,
-    styleClassName,,
+    className,
     monospaced ?
       monospacedTypographyStyle :
-      weightStyles[weight || TypographyWeight.Regular],
+      TypographyWeightClass[weight || TypographyWeight.Regular],
   ]
 
+  console.log(props)
+
   return createElement(
-    tag || TypographyTag.P,
+    tag || defaultTag || TypographyTag.P,
     {
       className: cn(classes),
       ...restProps,
