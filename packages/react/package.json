@@ -1,6 +1,6 @@
 {
   "name": "@tapie-kr/inspire-react",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "React Component Collection for INSPIRE",
   "scripts": {
     "prepublishOnly": "pnpm run build",
@@ -43,6 +43,7 @@
     "@chromatic-com/storybook": "^3.2.3",
     "@rollup/plugin-commonjs": "^28.0.2",
     "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-strip": "^3.0.4",
     "@storybook/addon-essentials": "^8.4.7",
     "@storybook/addon-toolbars": "^8.4.7",
     "@storybook/blocks": "^8.4.7",

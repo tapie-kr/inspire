@@ -26,8 +26,6 @@ export default function TypographyBuilder(props: TypographyBuilderProps) {
       TypographyWeightClass[weight || TypographyWeight.Regular],
   ]
 
-  console.log(props)
-
   return createElement(
     tag || defaultTag || TypographyTag.P,
     {
