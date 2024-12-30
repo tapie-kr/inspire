@@ -13,7 +13,7 @@ type TypographyBuilderProps = {
 export default function TypographyBuilder(props: TypographyBuilderProps) {
   const { tag: defaultTag, className: defaultClassName, props: baseProps } = props
   const {
-    tag, className, monospaced,
+    tag, className, monospaced, nowrap,
     weight, color, style,
     children,
     ...restProps
@@ -34,6 +34,7 @@ export default function TypographyBuilder(props: TypographyBuilderProps) {
       className: cn(classes),
       style: {
         color,
+        whiteSpace: nowrap ? 'nowrap' : undefined,
         ...style,
       },
     },

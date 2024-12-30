@@ -66,5 +66,6 @@ export type TypographyProps = TypographyPropsBase & {
   monospaced?: boolean
   weight?: TypographyWeight
   color?: string
+  nowrap?: boolean
   children?: ReactNode
 }

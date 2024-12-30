@@ -21,11 +21,13 @@ const meta: Meta = {
     },
     children: { control: 'text' },
     monospaced: { control: 'boolean' },
+    nowrap: { control: 'boolean' },
   },
   args: {
     children: 'Hello, world!',
     monospaced: false,
     weight: TypographyWeight.Regular,
+    nowrap: false,
   },
 }
 
