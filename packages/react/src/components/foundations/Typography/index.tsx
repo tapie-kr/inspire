@@ -7,7 +7,7 @@ const TypographyContract = {
   [TypographyVariant.Jumbo]: TypographyTag.H1,
   [TypographyVariant.Large]: TypographyTag.H1,
   [TypographyVariant.Medium]: TypographyTag.H2,
-  [TypographyVariant.Small]: TypographyTag.H3,
+  [TypographyVariant.Moderate]: TypographyTag.H3,
   [TypographyVariant.Base]: TypographyTag.P,
   [TypographyVariant.Petite]: TypographyTag.P,
   [TypographyVariant.Micro]: TypographyTag.P,

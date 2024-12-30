@@ -1,29 +1,25 @@
 export const ComponentVariable = {
   Radius: {
     None: 'var(--component-radius-none)',
-    _4: 'var(--component-radius-4)',
-    _6: 'var(--component-radius-6)',
-    _8: 'var(--component-radius-8)',
-    _12: 'var(--component-radius-12)',
-    _16: 'var(--component-radius-16)',
-    _24: 'var(--component-radius-24)',
-    _28: 'var(--component-radius-28)',
-    _32: 'var(--component-radius-32)',
+    Sharp: 'var(--component-radius-sharp)',
+    Default: 'var(--component-radius-default)',
+    Smooth: 'var(--component-radius-smooth)',
+    Rounded: 'var(--component-radius-rounded)',
+    Pill: 'var(--component-radius-pill)',
     Circle: 'var(--component-radius-circle)'
   },
   Spacing: {
     None: 'var(--component-spacing-none)',
-    _2: 'var(--component-spacing-2)',
-    _4: 'var(--component-spacing-4)',
-    _6: 'var(--component-spacing-6)',
-    _8: 'var(--component-spacing-8)',
-    _12: 'var(--component-spacing-12)',
-    _16: 'var(--component-spacing-16)',
-    _20: 'var(--component-spacing-20)',
-    _24: 'var(--component-spacing-24)',
-    _28: 'var(--component-spacing-28)',
-    _32: 'var(--component-spacing-32)',
-    _36: 'var(--component-spacing-36)',
-    _40: 'var(--component-spacing-40)'
+    Optical: 'var(--component-spacing-optical)',
+    Mini: 'var(--component-spacing-mini)',
+    Tiny: 'var(--component-spacing-tiny)',
+    Micro: 'var(--component-spacing-micro)',
+    Petite: 'var(--component-spacing-petite)',
+    Base: 'var(--component-spacing-base)',
+    Moderate: 'var(--component-spacing-moderate)',
+    Medium: 'var(--component-spacing-medium)',
+    Large: 'var(--component-spacing-large)',
+    Jumbo: 'var(--component-spacing-jumbo)',
+    Giant: 'var(--component-spacing-giant)'
   }
 } as const

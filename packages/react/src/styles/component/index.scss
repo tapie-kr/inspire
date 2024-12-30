@@ -3,7 +3,12 @@
 @use './radius.scss';
 @use './spacing.scss';
 
-$component: (
-  radius: radius.$radius,
-  spacing: spacing.$spacing,
+$component-desktop: (
+  radius: radius.$radius-desktop,
+  spacing: spacing.$spacing-desktop,
+);
+
+$component-mobile: (
+  radius: radius.$radius-mobile,
+  spacing: spacing.$spacing-mobile,
 );

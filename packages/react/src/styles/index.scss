@@ -9,9 +9,15 @@
 
 :root {
   @include utils.generate-vars(color.$color, 'color', 'light');
-  @include utils.generate-vars(component.$component, 'component');
+  @include utils.generate-vars(component.$component-desktop, 'component');
 }
 
 [data-theme='dark'] {
   @include utils.generate-vars(color.$color, 'color', 'dark');
+}
+
+@media (max-width: 1024px) {
+  :root {
+    @include utils.generate-vars(component.$component-mobile, 'component');
+  }
 }
