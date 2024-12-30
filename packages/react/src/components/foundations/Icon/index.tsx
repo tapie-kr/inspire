@@ -4,7 +4,7 @@ import { IconType, isGlyphIconName } from './shared'
 type IconProps = {
   name: IconType
   size?: number
-  fill?: string
+  color?: string
 }
 
 export function Icon(props: IconProps) {
@@ -17,5 +17,5 @@ export function Icon(props: IconProps) {
 
   const size = props.size || 24
 
-  return <Icon width={size} height={size} fill={props.fill} />
+  return <Icon width={size} height={size} color={props.color} />
 }

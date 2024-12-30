@@ -1,7 +1,6 @@
 import fs from 'fs/promises'
 import path from 'path'
 import { DOMParser, XMLSerializer } from 'xmldom'
-import { ColorVariable } from '@/constants'
 
 const PATH = {
   GLYPH: 'src/components/foundations/Icon/assets/glyph',
@@ -9,7 +8,7 @@ const PATH = {
   RESULT: 'src/components/foundations/Icon/icon-set.ts',
 } as const
 
-const FILL_COLOR = ColorVariable.Content.Emphasized
+const FILL_COLOR = 'currentColor'
 
 function fileNameToKey(fileName: string): string {
   return fileName

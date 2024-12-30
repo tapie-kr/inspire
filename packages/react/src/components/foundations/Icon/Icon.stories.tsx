@@ -12,12 +12,12 @@ const meta: Meta = {
       control: 'select',
     },
     size: { control: 'number' },
-    fill: { control: 'color' },
+    color: { control: 'color' },
   },
   args: {
     name: GlyphIcon.Face,
     size: 24,
-    fill: ColorVariable.Content.Emphasized,
+    color: ColorVariable.Content.Emphasized,
   },
 }
 
