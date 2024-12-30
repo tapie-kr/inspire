@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Typo } from '.'
 import { TypographyTag, TypographyWeight } from './shared'
+import { ColorVariable } from '@/constants'
 
 const meta: Meta = {
   title: 'Foundations/Typography',
@@ -12,6 +13,10 @@ const meta: Meta = {
     },
     weight: {
       options: Object.values(TypographyWeight),
+      control: 'select',
+    },
+    color: {
+      options: Object.values(ColorVariable.Content).filter(v => typeof v === 'string'),
       control: 'select',
     },
     children: { control: 'text' },
@@ -42,8 +47,8 @@ export const Medium: TypographyStory = {
   render: props => <Typo.Medium {...props} />,
 }
 
-export const Small: TypographyStory = {
-  render: props => <Typo.Small {...props} />,
+export const Moderate: TypographyStory = {
+  render: props => <Typo.Moderate {...props} />,
 }
 
 export const Base: TypographyStory = {

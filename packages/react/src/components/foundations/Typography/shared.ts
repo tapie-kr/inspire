@@ -65,5 +65,6 @@ export type TypographyProps = TypographyPropsBase & {
   tag?: TypographyTag
   monospaced?: boolean
   weight?: TypographyWeight
+  color?: string
   children?: ReactNode
 }

@@ -14,7 +14,8 @@ export default function TypographyBuilder(props: TypographyBuilderProps) {
   const { tag: defaultTag, className: defaultClassName, props: baseProps } = props
   const {
     tag, className, monospaced,
-    weight, children,
+    weight, color, style,
+    children,
     ...restProps
   } = baseProps
 
@@ -29,8 +30,12 @@ export default function TypographyBuilder(props: TypographyBuilderProps) {
   return createElement(
     tag || defaultTag || TypographyTag.P,
     {
-      className: cn(classes),
       ...restProps,
+      className: cn(classes),
+      style: {
+        color,
+        ...style,
+      },
     },
     children,
   )
