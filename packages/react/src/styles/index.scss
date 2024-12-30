@@ -16,7 +16,7 @@
   @include utils.generate-vars(color.$color, 'color', 'dark');
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   :root {
     @include utils.generate-vars(component.$component-mobile, 'component');
   }
