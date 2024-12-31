@@ -13,6 +13,11 @@ const RESERVED_VARIABLE_NAMES = {
   'text-button': 'textButton',
 } as const
 
+const RESERVED_FOOTER = {
+  color: 'export { ColorVariable as Color }',
+  component: 'const Radius = ComponentVariable.Radius\nconst Spacing = ComponentVariable.Spacing\n\nexport { Radius, Spacing }',
+} as const
+
 const cssContent = fs.readFileSync(PATH.CSS, 'utf-8')
 if (!cssContent) {
   throw new Error('CSS 파일이 비었습니다. build:css 스크립트를 먼저 실행해주세요.')
@@ -59,8 +64,16 @@ const constantNames = Object.keys(groupedProperties)
 for (const constant of constants) {
   const name = constantNames[constants.indexOf(constant)]
   const stringified = JSON.stringify(constant, null, 2).replace(/"(\w+)":/g, '$1:').replace(/"/g, "'")
-  const content = `export const ${capitalizeFirstLetter(name)}Variable = ${stringified} as const\n`
-  fs.writeFileSync(`${PATH.CONSTANTS}/${name}.ts`, content)
+  let content = `export const ${capitalizeFirstLetter(name)}Variable = ${stringified} as const\n`
+
+  if (Object.keys(RESERVED_FOOTER).includes(name)) {
+    const footer = Object.entries(RESERVED_FOOTER).find(([key]) => key === name)
+    if (footer) {
+      content = content.concat(`\n${footer[1]}`)
+    }
+  }
+
+  fs.writeFileSync(`${PATH.CONSTANTS}/${name}.ts`, content.concat('\n'))
 }
 
 console.log('🎨 INSPIRE CSS Variable 바인딩 작업 완료')

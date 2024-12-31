@@ -1,8 +1,8 @@
 import { GlyphIconMap, BrandIconMap } from './icon-set'
-import { IconType, isGlyphIconName } from './shared'
+import { IconName, isGlyphIconName } from './shared'
 
 type IconProps = {
-  name: IconType
+  name: IconName
   size?: number
   color?: string
   className?: string

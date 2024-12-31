@@ -146,3 +146,5 @@ export const ColorVariable = {
     }
   }
 } as const
+
+export { ColorVariable as Color }

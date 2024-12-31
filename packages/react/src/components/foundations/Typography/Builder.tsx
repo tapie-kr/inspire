@@ -1,11 +1,11 @@
 import { monospacedTypographyStyle } from './styles.css'
 
-import { TypographyProps, TypographyTag, TypographyWeight, TypographyWeightClass } from './shared'
+import { TypographyProps, Tag, Weight, TypographyWeightClass } from './shared'
 import cn from 'classnames'
 import { createElement } from 'react'
 
 type TypographyBuilderProps = {
-  tag: TypographyTag
+  tag: Tag
   className?: string
   props: TypographyProps
 }
@@ -24,11 +24,11 @@ export default function TypographyBuilder(props: TypographyBuilderProps) {
     className,
     monospaced ?
       monospacedTypographyStyle :
-      TypographyWeightClass[weight || TypographyWeight.Regular],
+      TypographyWeightClass[weight || Weight.Regular],
   ]
 
   return createElement(
-    tag || defaultTag || TypographyTag.P,
+    tag || defaultTag || Tag.P,
     {
       ...restProps,
       className: cn(classes),

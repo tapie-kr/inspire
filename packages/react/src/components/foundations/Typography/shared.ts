@@ -46,6 +46,12 @@ export enum TypographyWeight {
   Light = 'Light',
 }
 
+export {
+  TypographyTag as Tag,
+  TypographyVariant as Variant,
+  TypographyWeight as Weight,
+}
+
 export const TypographyWeightClass = {
   Extrabold: 'typo-weight-extrabold',
   Bold: 'typo-weight-bold',

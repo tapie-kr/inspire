@@ -23,3 +23,8 @@ export const ComponentVariable = {
     Giant: 'var(--component-spacing-giant)'
   }
 } as const
+
+const Radius = ComponentVariable.Radius
+const Spacing = ComponentVariable.Spacing
+
+export { Radius, Spacing }

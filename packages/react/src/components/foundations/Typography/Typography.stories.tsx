@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Typo } from '.'
-import { TypographyTag, TypographyWeight } from './shared'
+import { Tag, Weight } from './shared'
 import { ColorVariable } from '@/constants'
 
 const meta: Meta = {
@@ -8,11 +8,11 @@ const meta: Meta = {
   component: Typo.Giant,
   argTypes: {
     tag: {
-      options: Object.values(TypographyTag),
+      options: Object.values(Tag),
       control: 'select',
     },
     weight: {
-      options: Object.values(TypographyWeight),
+      options: Object.values(Weight),
       control: 'select',
     },
     color: {
@@ -26,7 +26,7 @@ const meta: Meta = {
   args: {
     children: 'Hello, world!',
     monospaced: false,
-    weight: TypographyWeight.Regular,
+    weight: Weight.Regular,
     nowrap: false,
   },
 }
