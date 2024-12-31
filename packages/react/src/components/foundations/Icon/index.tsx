@@ -1,5 +1,7 @@
 import { GlyphIconMap, BrandIconMap } from './icon-set'
 import { IconName, isGlyphIconName } from './shared'
+import cn from 'classnames'
+import { transition } from './styles.css'
 
 type IconProps = {
   name: IconName
@@ -18,5 +20,11 @@ export function Icon(props: IconProps) {
 
   const size = props.size || 24
 
-  return <Icon className={props.className} width={size} height={size} color={props.color} />
+  return <>
+    <Icon
+      className={cn(props.className, transition)}
+      width={size} height={size}
+      color={props.color}
+    />
+  </>
 }

@@ -1,4 +1,4 @@
-import { monospacedTypographyStyle } from './styles.css'
+import { monospaced as monospacedStyle, transition } from './styles.css'
 
 import { TypographyProps, Tag, Weight, TypographyWeightClass } from './shared'
 import cn from 'classnames'
@@ -23,8 +23,9 @@ export default function TypographyBuilder(props: TypographyBuilderProps) {
     defaultClassName,
     className,
     monospaced ?
-      monospacedTypographyStyle :
+      monospacedStyle :
       TypographyWeightClass[weight || Weight.Regular],
+    transition,
   ]
 
   return createElement(
