@@ -36,8 +36,13 @@ async function modifySvgFile(filePath: string) {
     const parser = new DOMParser()
     const doc = parser.parseFromString(content, 'image/svg+xml')
     
+    const svg = doc.getElementsByTagName('svg')[0]
     const paths = doc.getElementsByTagName('path')
     
+    svg.removeAttribute('width')
+    svg.removeAttribute('height')
+    svg.removeAttribute('fill-opacity')
+
     for (let i = 0; i < paths.length; i++) {
       const path = paths[i]
       
