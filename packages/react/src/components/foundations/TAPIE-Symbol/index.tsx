@@ -1,4 +1,5 @@
 import type { TAPIESymbolSize } from './shared'
+import cn from 'classnames'
 
 import GrayscaleSymbol from './assets/grayscale-symbol.svg'
 import GrayscaleLabel from './assets/grayscale-label.svg'
@@ -10,6 +11,7 @@ type TAPIESymbolProps = {
   solid?: boolean
   withLabel?: boolean
   inverted?: boolean
+  className?: string
 }
 
 export function TAPIESymbol(props: TAPIESymbolProps) {
@@ -20,5 +22,10 @@ export function TAPIESymbol(props: TAPIESymbolProps) {
     SvgToRender = props.withLabel ? GrayscaleLabel : GrayscaleSymbol
   }
 
-  return <SvgToRender className={props.inverted ? 'inverted' : ''} height={props.size} />
+  return <>
+    <SvgToRender
+      className={cn(props.inverted && 'inverted', props.className)}
+      height={props.size}
+    />
+  </>
 }
