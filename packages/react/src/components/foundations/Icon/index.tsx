@@ -5,6 +5,7 @@ type IconProps = {
   name: IconType
   size?: number
   color?: string
+  className?: string
 }
 
 export function Icon(props: IconProps) {
@@ -17,5 +18,5 @@ export function Icon(props: IconProps) {
 
   const size = props.size || 24
 
-  return <Icon width={size} height={size} color={props.color} />
+  return <Icon className={props.className} width={size} height={size} color={props.color} />
 }
