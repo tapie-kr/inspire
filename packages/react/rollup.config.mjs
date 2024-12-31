@@ -134,7 +134,7 @@ const config = defineConfig([
     plugins: [
       peerDepsExternal(),
       resolve({
-        extensions: ['.ts', '.tsx', '.svg']
+        extensions: ['.ts', '.tsx', '.svg'],
       }),
       commonjs(),
       vanillaExtractPlugin({ identifiers: 'short' }),

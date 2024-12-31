@@ -25,6 +25,7 @@ class SingleBarrelGenerator {
         '**/*.styles.{ts,tsx}',
         '**/*.type.{ts,tsx}',
         '**/*.d.ts',
+        '**/*.css.ts',
       ],
       exportStyle: 'star',
       barrelFileName: 'index.ts',
