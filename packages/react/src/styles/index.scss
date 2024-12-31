@@ -10,10 +10,16 @@
 :root {
   @include utils.generate-vars(color.$color, 'color', 'light');
   @include utils.generate-vars(component.$component-desktop, 'component');
+  .inverted {
+    @include utils.generate-vars(color.$color, 'color', 'dark');
+  }
 }
 
 [data-theme='dark'] {
   @include utils.generate-vars(color.$color, 'color', 'dark');
+  .inverted {
+    @include utils.generate-vars(color.$color, 'color', 'light');
+  }
 }
 
 @media (max-width: 768px) {
