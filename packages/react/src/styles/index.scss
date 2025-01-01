@@ -26,6 +26,10 @@
   display: none;
 }
 
+.hide-overflow {
+  overflow: hidden;
+}
+
 @media (max-width: 768px) {
   :root {
     @include utils.generate-vars(component.$component-mobile, 'component');
