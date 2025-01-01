@@ -23,7 +23,7 @@
 }
 
 .mobile-only, .mobile-only-flex, .mobile-only-grid {
-  display: none !important;
+  display: none;
 }
 
 @media (max-width: 768px) {
@@ -40,6 +40,6 @@
     display: grid;
   }
   .desktop-only {
-    display: none !important;
+    display: none;
   }
 }
