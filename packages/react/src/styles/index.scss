@@ -22,8 +22,24 @@
   }
 }
 
+.mobile-only, .mobile-only-flex, .mobile-only-grid {
+  display: none !important;
+}
+
 @media (max-width: 768px) {
   :root {
     @include utils.generate-vars(component.$component-mobile, 'component');
+  }
+  .mobile-only {
+    display: block;
+  }
+  .mobile-only-flex {
+    display: flex;
+  }
+  .mobile-only-grid {
+    display: grid;
+  }
+  .desktop-only {
+    display: none !important;
   }
 }
