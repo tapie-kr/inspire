@@ -30,6 +30,15 @@
   overflow: hidden;
 }
 
+.force-hide {
+  display: none !important;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  user-select: none;
+}
+
 @media (max-width: 768px) {
   :root {
     @include utils.generate-vars(component.$component-mobile, 'component');
