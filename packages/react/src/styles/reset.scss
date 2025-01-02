@@ -1,6 +1,6 @@
 @use './typography';
 
-body {
+html, body {
   font-family: 'INSPIRE Font Kit', -system-ui, sans-serif;
   color: var(--color-content-emphasized);
   background-color: var(--color-surface-default);
