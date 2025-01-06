@@ -46,7 +46,7 @@ class SingleBarrelGenerator {
       }
 
       const files = await this.findExportableFiles(directory)
-      const exports = this.getExportPaths(directory, files)
+      const exports = this.getExportPaths(files)
       const content = this.generateBarrelContent(exports)
       this.writeBarrelFile(directory, content)
 
@@ -68,7 +68,7 @@ class SingleBarrelGenerator {
     return files
   }
 
-  private getExportPaths(baseDir: string, files: string[]): string[] {
+  private getExportPaths(files: string[]): string[] {
     return files.map(file => {
       const extension = path.extname(file)
       return file.slice(0, -extension.length)
