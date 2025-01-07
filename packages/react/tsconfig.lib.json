@@ -5,6 +5,7 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext", "ESNext.AsyncIterable"],
     "module": "ESNext",
     "declaration": true,
+    "declarationMap": true,
     "declarationDir": "dist/types",
     "emitDeclarationOnly": true,
     "outDir": "dist",
