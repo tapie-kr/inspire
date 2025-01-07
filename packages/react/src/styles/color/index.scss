@@ -7,8 +7,6 @@
 @use './line';
 @use './interaction';
 
-@use '../utils';
-
 $color: (
   solid:       solid.$solid,
   grayscale:   grayscale.$grayscale,

@@ -2,11 +2,12 @@ export const ComponentVariable = {
   Radius: {
     None: 'var(--component-radius-none)',
     Sharp: 'var(--component-radius-sharp)',
+    Subtle: 'var(--component-radius-subtle)',
     Default: 'var(--component-radius-default)',
     Smooth: 'var(--component-radius-smooth)',
     Rounded: 'var(--component-radius-rounded)',
     Pill: 'var(--component-radius-pill)',
-    Circle: 'var(--component-radius-circle)'
+    Full: 'var(--component-radius-full)'
   },
   Spacing: {
     None: 'var(--component-spacing-none)',

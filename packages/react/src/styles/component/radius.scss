@@ -3,19 +3,21 @@
 $radius-desktop: (
   none:    0px,
   sharp:   4px,
+  subtle:  6px,
   default: 8px,
   smooth:  12px,
   rounded: 16px,
   pill:    24px,
-  circle:  9999px,
+  full:    9999px,
 );
 
 $radius-mobile: (
   none:    0px,
   sharp:   4px,
+  subtle:  6px,
   default: 8px,
   smooth:  10px,
   rounded: 12px,
   pill:    20px,
-  circle:  9999px,
+  full:    9999px,
 );

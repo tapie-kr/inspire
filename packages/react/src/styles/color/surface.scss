@@ -5,29 +5,37 @@
 $surface: (
   default: (
     light: map.get(grayscale.$grayscale, solid, 5),
-    dark:  map.get(solid.$solid, black),
+    dark:  map.get(grayscale.$grayscale, solid, 5),
   ),
   elevated: (
     light: map.get(grayscale.$grayscale, solid, 10),
-    dark:  map.get(grayscale.$grayscale, solid, 5),
+    dark:  map.get(grayscale.$grayscale, solid, 10),
   ),
   raised: (
     light: map.get(grayscale.$grayscale, solid, 15),
-    dark:  map.get(grayscale.$grayscale, solid, 10),
+    dark:  map.get(grayscale.$grayscale, solid, 15),
+  ),
+  clear: (
+    light: map.get(solid.$solid, white),
+    dark:  map.get(solid.$solid, black),
   ),
 
   inverted: (
     default: (
-      light: map.get(solid.$solid, black),
-      dark:  map.get(solid.$solid, white),
+      light: map.get(grayscale.$grayscale, solid, 95),
+      dark:  map.get(grayscale.$grayscale, solid, 95),
     ),
     elevated: (
       light: map.get(grayscale.$grayscale, solid, 90),
       dark:  map.get(grayscale.$grayscale, solid, 90),
     ),
     raised: (
-      light: map.get(grayscale.$grayscale, solid, 80),
-      dark:  map.get(grayscale.$grayscale, solid, 80),
+      light: map.get(grayscale.$grayscale, solid, 85),
+      dark:  map.get(grayscale.$grayscale, solid, 85),
+    ),
+    clear: (
+      light: map.get(solid.$solid, black),
+      dark:  map.get(solid.$solid, white),
     ),
   ),
 );

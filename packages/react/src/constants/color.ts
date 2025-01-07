@@ -79,7 +79,9 @@ export const ColorVariable = {
       _60: 'var(--color-grayscale-solid-60)',
       _70: 'var(--color-grayscale-solid-70)',
       _80: 'var(--color-grayscale-solid-80)',
-      _90: 'var(--color-grayscale-solid-90)'
+      _85: 'var(--color-grayscale-solid-85)',
+      _90: 'var(--color-grayscale-solid-90)',
+      _95: 'var(--color-grayscale-solid-95)'
     },
     Translucent: {
       _5: 'var(--color-grayscale-translucent-5)',
@@ -92,7 +94,9 @@ export const ColorVariable = {
       _60: 'var(--color-grayscale-translucent-60)',
       _70: 'var(--color-grayscale-translucent-70)',
       _80: 'var(--color-grayscale-translucent-80)',
-      _90: 'var(--color-grayscale-translucent-90)'
+      _85: 'var(--color-grayscale-translucent-85)',
+      _90: 'var(--color-grayscale-translucent-90)',
+      _95: 'var(--color-grayscale-translucent-95)'
     }
   },
   Brand: {
@@ -111,10 +115,12 @@ export const ColorVariable = {
     Default: 'var(--color-surface-default)',
     Elevated: 'var(--color-surface-elevated)',
     Raised: 'var(--color-surface-raised)',
+    Clear: 'var(--color-surface-clear)',
     Inverted: {
       Default: 'var(--color-surface-inverted-default)',
       Elevated: 'var(--color-surface-inverted-elevated)',
-      Raised: 'var(--color-surface-inverted-raised)'
+      Raised: 'var(--color-surface-inverted-raised)',
+      Clear: 'var(--color-surface-inverted-clear)'
     }
   },
   Content: {

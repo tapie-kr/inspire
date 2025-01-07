@@ -3,17 +3,19 @@
 
 $grayscale: (
   solid: (
-    5:  ( light: #F5F5F5, dark: #1A1A1A ),
-    10: ( light: #EBEBEB, dark: #2E2E2E ),
-    15: ( light: #E0E0E0, dark: #3D3D3D ),
-    20: ( light: #CCCCCC, dark: #575757 ),
-    30: ( light: #ABABAB, dark: #707070 ),
-    40: ( light: #8A8A8A, dark: #8A8A8A ),
-    50: ( light: #707070, dark: #ABABAB ),
-    60: ( light: #575757, dark: #CCCCCC ),
-    70: ( light: #3D3D3D, dark: #E0E0E0 ),
-    80: ( light: #2E2E2E, dark: #EBEBEB ),
-    90: ( light: #1A1A1A, dark: #F5F5F5 ),
+    5:  ( light: #F5F5F5, dark: #0D0D0D ),
+    10: ( light: #EBEBEB, dark: #1A1A1A ),
+    15: ( light: #E0E0E0, dark: #242424 ),
+    20: ( light: #CCCCCC, dark: #2E2E2E ),
+    30: ( light: #ABABAB, dark: #3D3D3D ),
+    40: ( light: #8A8A8A, dark: #575757 ),
+    50: ( light: #707070, dark: #707070 ),
+    60: ( light: #575757, dark: #8A8A8A ),
+    70: ( light: #3D3D3D, dark: #ABABAB ),
+    80: ( light: #2E2E2E, dark: #CCCCCC ),
+    85: ( light: #242424, dark: #DCDCDC ),
+    90: ( light: #1A1A1A, dark: #EBEBEB ),
+    95: ( light: #0D0D0D, dark: #F5F5F5 ),
   ),
   
   translucent: (
@@ -57,9 +59,17 @@ $grayscale: (
       light: map.get(solid.$solid, translucent, black, 80),
       dark:  map.get(solid.$solid, translucent, white, 80),
     ),
+    85: (
+      light: map.get(solid.$solid, translucent, black, 86),
+      dark:  map.get(solid.$solid, translucent, white, 86),
+    ),
     90: (
-      light: map.get(solid.$solid, translucent, black, 80),
-      dark:  map.get(solid.$solid, translucent, white, 80),
+      light: map.get(solid.$solid, translucent, black, 90),
+      dark:  map.get(solid.$solid, translucent, white, 90),
+    ),
+    95: (
+      light: map.get(solid.$solid, translucent, black, 95),
+      dark:  map.get(solid.$solid, translucent, white, 95),
     ),
   ),
 );

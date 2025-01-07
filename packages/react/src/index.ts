@@ -1,3 +1,6 @@
+export * from './components/atoms/Button/categories/default'
+export * from './components/atoms/Button/icon'
+export * from './components/atoms/Button/shared'
 export * from './components/foundations/Icon/icon-set'
 export * from './components/foundations/Icon/index'
 export * from './components/foundations/Icon/shared'

@@ -2,57 +2,28 @@
 @use './component';
 @use './typography';
 
-@use './utils';
+@use './functions';
 
 @use './reset';
 @use './font-faces';
 
 :root {
-  @include utils.generate-vars(color.$color, 'color', 'light');
-  @include utils.generate-vars(component.$component-desktop, 'component');
+  @include functions.generate-vars(color.$color, 'color', 'light');
+  @include functions.generate-vars(component.$component-desktop, 'component');
   .inverted {
-    @include utils.generate-vars(color.$color, 'color', 'dark');
+    @include functions.generate-vars(color.$color, 'color', 'dark');
   }
 }
 
 [data-theme='dark'] {
-  @include utils.generate-vars(color.$color, 'color', 'dark');
+  @include functions.generate-vars(color.$color, 'color', 'dark');
   .inverted {
-    @include utils.generate-vars(color.$color, 'color', 'light');
+    @include functions.generate-vars(color.$color, 'color', 'light');
   }
-}
-
-.mobile-only, .mobile-only-flex, .mobile-only-grid {
-  display: none;
-}
-
-.hide-overflow {
-  overflow: hidden;
-}
-
-.force-hide {
-  display: none !important;
-  visibility: hidden;
-  width: 0;
-  height: 0;
-  opacity: 0;
-  user-select: none;
 }
 
 @media (max-width: 768px) {
   :root {
-    @include utils.generate-vars(component.$component-mobile, 'component');
-  }
-  .mobile-only {
-    display: block;
-  }
-  .mobile-only-flex {
-    display: flex;
-  }
-  .mobile-only-grid {
-    display: grid;
-  }
-  .desktop-only {
-    display: none;
+    @include functions.generate-vars(component.$component-mobile, 'component');
   }
 }
