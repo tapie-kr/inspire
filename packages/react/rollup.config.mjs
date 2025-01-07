@@ -76,6 +76,10 @@ const config = defineConfig([
           transform: {
             react: { runtime: 'automatic' },
           },
+          baseUrl: currentPath,
+          paths: {
+            '@/*': ['./src/*'],
+          },
         },
         sourceMaps: true,
         minify: true,
@@ -118,6 +122,10 @@ const config = defineConfig([
           parser: {
             syntax: 'typescript',
             runtime: 'automatic;',
+          },
+          baseUrl: currentPath,
+          paths: {
+            '@/*': ['./src/*'],
           },
         },
         sourceMaps: true,
