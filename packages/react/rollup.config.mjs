@@ -8,6 +8,7 @@ import _swc from 'rollup-plugin-swc'
 import { vanillaExtractPlugin } from '@vanilla-extract/rollup-plugin'
 import svgr from '@svgr/rollup'
 import strip from '@rollup/plugin-strip'
+import postcss from 'rollup-plugin-postcss'
 
 import customLogger from './scripts/rollup/custom-logger.mjs'
 import scssConfigGenerator from './scripts/rollup/scss-config-generator.mjs'
@@ -54,7 +55,6 @@ const config = defineConfig([
         banner, footer,
       },
     ],
-    external: packageJson.peerDependencies,
     plugins: [
       peerDepsExternal(),
       resolve({
@@ -66,6 +66,7 @@ const config = defineConfig([
         svgrOptions: { exportType: 'default' },
         include: /\.svg$/,
       }),
+      postcss({ inject: true }),
       swc({
         jsc: {
           parser: {
