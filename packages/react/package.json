@@ -1,6 +1,6 @@
 {
   "name": "@tapie-kr/inspire-react",
-  "version": "0.0.43",
+  "version": "0.0.44",
   "description": "React Component Collection for INSPIRE",
   "scripts": {
     "prepublishOnly": "pnpm run build",

@@ -14,7 +14,6 @@ const baseArgsType = {
 
 const meta: Meta = {
   title: 'Atoms/Button',
-  component: Button.Default,
   args: {
     size: ButtonSize.LARGE,
     disabled: false,
@@ -62,7 +61,7 @@ export const Icon: IconButtonStory = {
     },
   },
   args: {
-    icon: GlyphIcon.Flag,
+    icon: GlyphIcon.FLAG,
   },
 }
 

@@ -4,7 +4,6 @@ import { TAPIESymbolSize } from './shared'
 
 const meta: Meta = {
   title: 'Foundations/TAPIE-Symbol',
-  component: TAPIESymbol,
   argTypes: {
     size: {
       options: Object.values(TAPIESymbolSize),

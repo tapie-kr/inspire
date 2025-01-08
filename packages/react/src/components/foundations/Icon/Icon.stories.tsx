@@ -5,7 +5,6 @@ import { ColorVariable } from '@/constants'
 
 const meta: Meta = {
   title: 'Foundations/Icon',
-  component: Icon,
   argTypes: {
     name: {
       options: [...Object.values(GlyphIcon), ...Object.values(BrandIcon)],
@@ -15,7 +14,7 @@ const meta: Meta = {
     color: { control: 'color' },
   },
   args: {
-    name: GlyphIcon.Face,
+    name: GlyphIcon.FACE,
     size: 24,
     color: ColorVariable.Content.Emphasized,
   },

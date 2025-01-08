@@ -5,7 +5,6 @@ import { ColorVariable } from '@/constants'
 
 const meta: Meta = {
   title: 'Foundations/Typography',
-  component: Typo.Giant,
   argTypes: {
     tag: {
       options: Object.values(Tag),
@@ -26,7 +25,7 @@ const meta: Meta = {
   args: {
     children: 'Hello, world!',
     monospaced: false,
-    weight: Weight.Regular,
+    weight: Weight.REGULAR,
     nowrap: false,
   },
 }
