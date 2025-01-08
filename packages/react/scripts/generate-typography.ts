@@ -15,6 +15,13 @@ const POINT = {
 }
 const POINTS = Object.values(POINT)
 
+function fileNameToCapsSnakeCase(fileName: string) {
+  return fileName
+    .replace('.svg', '')
+    .replace(/-|_/g, '_')
+    .toUpperCase()
+}
+
 const cssContent = fs.readFileSync(PATH.CSS, 'utf-8')
 if (!cssContent) {
   throw new Error('CSS 파일이 비었습니다. build:css 스크립트를 먼저 실행해주세요.')
@@ -47,29 +54,31 @@ for (const [index, line] of outputFileContent.entries()) {
   switch (line) {
     case POINT.VARIANT: {
       outputFileContent.splice(index + 1, 0, ...sizeClasses.map(className => {
-        const variant = capitalizeFirstLetter(className.replace('.typo-', ''))
-        return `  ${variant} = '${variant}',`
+        const variant = fileNameToCapsSnakeCase(className.replace('.typo-', ''))
+        const value = capitalizeFirstLetter(variant.toLowerCase())
+        return `  ${variant} = '${value}',`
       }))
       break
     }
     case POINT.VARIANT_CLASS: {
       outputFileContent.splice(index + 1, 0, ...sizeClasses.map(className => {
-        const variant = capitalizeFirstLetter(className.replace('.typo-', ''))
-        return `  ${variant}: '${className.replace('.', '')}',`
+        const variant = fileNameToCapsSnakeCase(className.replace('.typo-', ''))
+        return `  [TypographyVariant.${variant}]: '${className.replace('.', '')}',`
       }))
       break
     }
     case POINT.WEIGHT: {
       outputFileContent.splice(index + 1, 0, ...weightClasses.map(className => {
-        const weight = capitalizeFirstLetter(className.replace('.typo-weight-', ''))
-        return `  ${weight} = '${weight}',`
+        const weight = fileNameToCapsSnakeCase(className.replace('.typo-weight-', ''))
+        const value = capitalizeFirstLetter(weight.toLowerCase())
+        return `  ${weight} = '${value}',`
       }))
       break
     }
     case POINT.WEIGHT_CLASS: {
       outputFileContent.splice(index + 1, 0, ...weightClasses.map(className => {
-        const weight = capitalizeFirstLetter(className.replace('.typo-weight-', ''))
-        return `  ${weight}: '${className.replace('.', '')}',`
+        const weight = fileNameToCapsSnakeCase(className.replace('.typo-weight-', ''))
+        return `  [TypographyWeight.${weight}]: '${className.replace('.', '')}',`
       }))
       break
     }

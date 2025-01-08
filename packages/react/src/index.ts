@@ -1,3 +1,7 @@
+export * from './components/atoms/Badge/categories/default'
+export * from './components/atoms/Badge/categories/indicator'
+export * from './components/atoms/Badge/categories/text-indicator'
+export * from './components/atoms/Badge/shared'
 export * from './components/atoms/Button/categories/default'
 export * from './components/atoms/Button/categories/icon'
 export * from './components/atoms/Button/categories/text'

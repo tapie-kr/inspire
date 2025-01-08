@@ -25,16 +25,16 @@ export enum TypographyVariant {
 }
 
 export const TypographyVariantClass = {
-  Giant: 'typo-giant',
-  Jumbo: 'typo-jumbo',
-  Large: 'typo-large',
-  Medium: 'typo-medium',
-  Moderate: 'typo-moderate',
-  Base: 'typo-base',
-  Petite: 'typo-petite',
-  Micro: 'typo-micro',
-  Tiny: 'typo-tiny',
-  Mini: 'typo-mini',
+  [TypographyVariant.GIANT]: 'typo-giant',
+  [TypographyVariant.JUMBO]: 'typo-jumbo',
+  [TypographyVariant.LARGE]: 'typo-large',
+  [TypographyVariant.MEDIUM]: 'typo-medium',
+  [TypographyVariant.MODERATE]: 'typo-moderate',
+  [TypographyVariant.BASE]: 'typo-base',
+  [TypographyVariant.PETITE]: 'typo-petite',
+  [TypographyVariant.MICRO]: 'typo-micro',
+  [TypographyVariant.TINY]: 'typo-tiny',
+  [TypographyVariant.MINI]: 'typo-mini',
 } as const
 
 export enum TypographyWeight {
