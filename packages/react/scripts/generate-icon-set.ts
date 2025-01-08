@@ -35,6 +35,20 @@ function generateFileContent(imports: string, iconMap: string, iconEnum: string,
   return `${imports}\n\nexport enum GlyphIcon {\n${iconEnum}\n}\n\nexport const GlyphIconMap = {\n${iconMap}\n} as const\n\nexport enum BrandIcon {\n${brandEnum}\n}\n\nexport const BrandIconMap = {\n${brandMap}\n} as const\n`
 }
 
+async function renameSvgFiles(directory: string) {
+  const files = await fs.readdir(directory)
+  for (const file of files) {
+    const filePath = path.join(directory, file)
+    const newFileName = file.toLowerCase().replace(/ /g, '_').replaceAll('.svg', '')
+    const newFilePath = path.join(directory, newFileName + '.svg')
+
+    if (file !== newFileName) {
+      await fs.rename(filePath, newFilePath)
+      console.log(`Renamed: ${file} -> ${newFileName}.svg`)
+    }
+  }
+}
+
 async function modifySvgFile(filePath: string) {
   try {
     const content = await fs.readFile(filePath, 'utf-8')
@@ -133,6 +147,7 @@ async function generateIconSet() {
 async function main() {
   for (const dir of [PATH.GLYPH, PATH.BRAND]) {
     console.log(`\nProcessing directory: ${dir}`)
+    await renameSvgFiles(dir)
     await modifySvgFiles(dir)
   }
 
