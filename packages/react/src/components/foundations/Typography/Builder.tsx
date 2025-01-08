@@ -24,7 +24,7 @@ export default function TypographyBuilder(props: TypographyBuilderProps) {
     className,
     monospaced ?
       monospacedStyle :
-      TypographyWeightClass[weight || Weight.Regular],
+      TypographyWeightClass[weight || Weight.REGULAR],
     transition,
   ]
 

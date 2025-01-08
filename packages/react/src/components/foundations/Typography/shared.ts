@@ -12,16 +12,16 @@ export enum TypographyTag {
 }
 
 export enum TypographyVariant {
-  Giant = 'Giant',
-  Jumbo = 'Jumbo',
-  Large = 'Large',
-  Medium = 'Medium',
-  Moderate = 'Moderate',
-  Base = 'Base',
-  Petite = 'Petite',
-  Micro = 'Micro',
-  Tiny = 'Tiny',
-  Mini = 'Mini',
+  GIANT = 'Giant',
+  JUMBO = 'Jumbo',
+  LARGE = 'Large',
+  MEDIUM = 'Medium',
+  MODERATE = 'Moderate',
+  BASE = 'Base',
+  PETITE = 'Petite',
+  MICRO = 'Micro',
+  TINY = 'Tiny',
+  MINI = 'Mini',
 }
 
 export const TypographyVariantClass = {
@@ -38,12 +38,12 @@ export const TypographyVariantClass = {
 } as const
 
 export enum TypographyWeight {
-  Extrabold = 'Extrabold',
-  Bold = 'Bold',
-  Semibold = 'Semibold',
-  Medium = 'Medium',
-  Regular = 'Regular',
-  Light = 'Light',
+  EXTRABOLD = 'Extrabold',
+  BOLD = 'Bold',
+  SEMIBOLD = 'Semibold',
+  MEDIUM = 'Medium',
+  REGULAR = 'Regular',
+  LIGHT = 'Light',
 }
 
 export {
@@ -53,12 +53,12 @@ export {
 }
 
 export const TypographyWeightClass = {
-  Extrabold: 'typo-weight-extrabold',
-  Bold: 'typo-weight-bold',
-  Semibold: 'typo-weight-semibold',
-  Medium: 'typo-weight-medium',
-  Regular: 'typo-weight-regular',
-  Light: 'typo-weight-light',
+  [TypographyWeight.EXTRABOLD]: 'typo-weight-extrabold',
+  [TypographyWeight.BOLD]: 'typo-weight-bold',
+  [TypographyWeight.SEMIBOLD]: 'typo-weight-semibold',
+  [TypographyWeight.MEDIUM]: 'typo-weight-medium',
+  [TypographyWeight.REGULAR]: 'typo-weight-regular',
+  [TypographyWeight.LIGHT]: 'typo-weight-light',
 } as const
 
 export type TypographyPropsBase = DetailsHTMLAttributes<

@@ -3,16 +3,16 @@ import TypographyBuilder from './Builder'
 import { TypographyProps, Tag, Variant, TypographyVariantClass } from './shared'
 
 const TypographyContract = {
-  [Variant.Giant]: Tag.H1,
-  [Variant.Jumbo]: Tag.H1,
-  [Variant.Large]: Tag.H1,
-  [Variant.Medium]: Tag.H2,
-  [Variant.Moderate]: Tag.H3,
-  [Variant.Base]: Tag.P,
-  [Variant.Petite]: Tag.P,
-  [Variant.Micro]: Tag.P,
-  [Variant.Tiny]: Tag.P,
-  [Variant.Mini]: Tag.P,
+  [Variant.GIANT]: Tag.H1,
+  [Variant.JUMBO]: Tag.H1,
+  [Variant.LARGE]: Tag.H1,
+  [Variant.MEDIUM]: Tag.H2,
+  [Variant.MODERATE]: Tag.H3,
+  [Variant.BASE]: Tag.P,
+  [Variant.PETITE]: Tag.P,
+  [Variant.MICRO]: Tag.P,
+  [Variant.TINY]: Tag.P,
+  [Variant.MINI]: Tag.P,
 } as const
 
 function typographyFactory(variant: Variant, tag: Tag = Tag.P) {

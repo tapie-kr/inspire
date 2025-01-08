@@ -26,66 +26,66 @@ import NpmBrand from './assets/brand/npm.svg'
 import ReactBrand from './assets/brand/react.svg'
 import TapieBrand from './assets/brand/tapie.svg'
 
-export const GlyphIconMap = {
-  arrow_back_ios: ArrowBackIosGlyph,
-  arrow_downward: ArrowDownwardGlyph,
-  arrow_forward: ArrowForwardGlyph,
-  asterisk: AsteriskGlyph,
-  checklist: ChecklistGlyph,
-  close: CloseGlyph,
-  contrast: ContrastGlyph,
-  dark_mode: DarkModeGlyph,
-  delete: DeleteGlyph,
-  face: FaceGlyph,
-  flag: FlagGlyph,
-  groups: GroupsGlyph,
-  keyboard_arrow_up: KeyboardArrowUpGlyph,
-  light_mode: LightModeGlyph,
-  link: LinkGlyph,
-  menu: MenuGlyph,
-  north_east: NorthEastGlyph,
-  qr_code_scanner: QrCodeScannerGlyph,
-  restart_alt: RestartAltGlyph,
-  search: SearchGlyph
-} as const
-
 export enum GlyphIcon {
-  ArrowBackIos = 'arrow_back_ios',
-  ArrowDownward = 'arrow_downward',
-  ArrowForward = 'arrow_forward',
-  Asterisk = 'asterisk',
-  Checklist = 'checklist',
-  Close = 'close',
-  Contrast = 'contrast',
-  DarkMode = 'dark_mode',
-  Delete = 'delete',
-  Face = 'face',
-  Flag = 'flag',
-  Groups = 'groups',
-  KeyboardArrowUp = 'keyboard_arrow_up',
-  LightMode = 'light_mode',
-  Link = 'link',
-  Menu = 'menu',
-  NorthEast = 'north_east',
-  QrCodeScanner = 'qr_code_scanner',
-  RestartAlt = 'restart_alt',
-  Search = 'search'
+  ARROW_BACK_IOS = 'arrow_back_ios',
+  ARROW_DOWNWARD = 'arrow_downward',
+  ARROW_FORWARD = 'arrow_forward',
+  ASTERISK = 'asterisk',
+  CHECKLIST = 'checklist',
+  CLOSE = 'close',
+  CONTRAST = 'contrast',
+  DARK_MODE = 'dark_mode',
+  DELETE = 'delete',
+  FACE = 'face',
+  FLAG = 'flag',
+  GROUPS = 'groups',
+  KEYBOARD_ARROW_UP = 'keyboard_arrow_up',
+  LIGHT_MODE = 'light_mode',
+  LINK = 'link',
+  MENU = 'menu',
+  NORTH_EAST = 'north_east',
+  QR_CODE_SCANNER = 'qr_code_scanner',
+  RESTART_ALT = 'restart_alt',
+  SEARCH = 'search'
 }
 
-export const BrandIconMap = {
-  figma: FigmaBrand,
-  github: GithubBrand,
-  instagram: InstagramBrand,
-  npm: NpmBrand,
-  react: ReactBrand,
-  tapie: TapieBrand
+export const GlyphIconMap = {
+  [GlyphIcon.ARROW_BACK_IOS]: ArrowBackIosGlyph,
+  [GlyphIcon.ARROW_DOWNWARD]: ArrowDownwardGlyph,
+  [GlyphIcon.ARROW_FORWARD]: ArrowForwardGlyph,
+  [GlyphIcon.ASTERISK]: AsteriskGlyph,
+  [GlyphIcon.CHECKLIST]: ChecklistGlyph,
+  [GlyphIcon.CLOSE]: CloseGlyph,
+  [GlyphIcon.CONTRAST]: ContrastGlyph,
+  [GlyphIcon.DARK_MODE]: DarkModeGlyph,
+  [GlyphIcon.DELETE]: DeleteGlyph,
+  [GlyphIcon.FACE]: FaceGlyph,
+  [GlyphIcon.FLAG]: FlagGlyph,
+  [GlyphIcon.GROUPS]: GroupsGlyph,
+  [GlyphIcon.KEYBOARD_ARROW_UP]: KeyboardArrowUpGlyph,
+  [GlyphIcon.LIGHT_MODE]: LightModeGlyph,
+  [GlyphIcon.LINK]: LinkGlyph,
+  [GlyphIcon.MENU]: MenuGlyph,
+  [GlyphIcon.NORTH_EAST]: NorthEastGlyph,
+  [GlyphIcon.QR_CODE_SCANNER]: QrCodeScannerGlyph,
+  [GlyphIcon.RESTART_ALT]: RestartAltGlyph,
+  [GlyphIcon.SEARCH]: SearchGlyph
 } as const
 
 export enum BrandIcon {
-  Figma = 'figma',
-  Github = 'github',
-  Instagram = 'instagram',
-  Npm = 'npm',
-  React = 'react',
-  Tapie = 'tapie'
+  FIGMA = 'figma',
+  GITHUB = 'github',
+  INSTAGRAM = 'instagram',
+  NPM = 'npm',
+  REACT = 'react',
+  TAPIE = 'tapie'
 }
+
+export const BrandIconMap = {
+  [BrandIcon.FIGMA]: FigmaBrand,
+  [BrandIcon.GITHUB]: GithubBrand,
+  [BrandIcon.INSTAGRAM]: InstagramBrand,
+  [BrandIcon.NPM]: NpmBrand,
+  [BrandIcon.REACT]: ReactBrand,
+  [BrandIcon.TAPIE]: TapieBrand
+} as const

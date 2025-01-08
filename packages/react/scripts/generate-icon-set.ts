@@ -10,23 +10,29 @@ const PATH = {
 
 const FILL_COLOR = 'currentColor'
 
-function fileNameToKey(fileName: string): string {
+function fileNameToSnakeCase(fileName: string) {
   return fileName
     .replace('.svg', '')
     .replace(/-./g, x => x[1].toUpperCase())
 }
 
-function fileNameToEnumName(fileName: string): string {
+function fileNameToCapsSnakeCase(fileName: string) {
   return fileName
     .replace('.svg', '')
-    .replace(/-|_/g, ' ')
-    .split(' ')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .replace(/-|_/g, '_')
+    .toUpperCase()
+}
+
+function fileNameToPascalCase(fileName: string) {
+  return fileName
+    .replace('.svg', '')
+    .split('_')
+    .map(word => word[0].toUpperCase() + word.slice(1))
     .join('')
 }
 
 function generateFileContent(imports: string, iconMap: string, iconEnum: string, brandMap: string, brandEnum: string): string {
-  return `${imports}\n\nexport const GlyphIconMap = {\n${iconMap}\n} as const\n\nexport enum GlyphIcon {\n${iconEnum}\n}\n\nexport const BrandIconMap = {\n${brandMap}\n} as const\n\nexport enum BrandIcon {\n${brandEnum}\n}\n`
+  return `${imports}\n\nexport enum GlyphIcon {\n${iconEnum}\n}\n\nexport const GlyphIconMap = {\n${iconMap}\n} as const\n\nexport enum BrandIcon {\n${brandEnum}\n}\n\nexport const BrandIconMap = {\n${brandMap}\n} as const\n`
 }
 
 async function modifySvgFile(filePath: string) {
@@ -90,28 +96,28 @@ async function generateIconSet() {
 
     const imports = [
       ...glyphSvgFiles.map(file => 
-        `import ${fileNameToEnumName(file)}Glyph from './assets/glyph/${file}'`
+        `import ${fileNameToPascalCase(file)}Glyph from './assets/glyph/${file}'`
       ),
       '',
       ...brandSvgFiles.map(file =>
-        `import ${fileNameToEnumName(file)}Brand from './assets/brand/${file}'`
+        `import ${fileNameToPascalCase(file)}Brand from './assets/brand/${file}'`
       ),
     ].join('\n')
 
-    const glyphIconObject = glyphSvgFiles
-      .map(file => `  ${fileNameToKey(file)}: ${fileNameToEnumName(file)}Glyph`)
-      .join(',\n')
-
     const glyphIconEnum = glyphSvgFiles
-      .map(file => `  ${fileNameToEnumName(file)} = '${fileNameToKey(file)}'`)
+      .map(file => `  ${fileNameToCapsSnakeCase(file)} = '${fileNameToSnakeCase(file)}'`)
       .join(',\n')
 
-    const brandIconObject = brandSvgFiles
-      .map(file => `  ${fileNameToKey(file)}: ${fileNameToEnumName(file)}Brand`)
+    const glyphIconObject = glyphSvgFiles
+      .map(file => `  [GlyphIcon.${fileNameToCapsSnakeCase(file)}]: ${fileNameToPascalCase(file)}Glyph`)
       .join(',\n')
 
     const brandIconEnum = brandSvgFiles
-      .map(file => `  ${fileNameToEnumName(file)} = '${fileNameToKey(file)}'`)
+      .map(file => `  ${fileNameToCapsSnakeCase(file)} = '${fileNameToSnakeCase(file)}'`)
+      .join(',\n')
+
+    const brandIconObject = brandSvgFiles
+      .map(file => `  [BrandIcon.${fileNameToCapsSnakeCase(file)}]: ${fileNameToPascalCase(file)}Brand`)
       .join(',\n')
 
     const content = generateFileContent(imports, glyphIconObject, glyphIconEnum, brandIconObject, brandIconEnum)
