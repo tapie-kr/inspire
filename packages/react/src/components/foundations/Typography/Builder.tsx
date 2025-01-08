@@ -1,32 +1,41 @@
-import { monospaced as monospacedStyle, transition } from './styles.css'
+import { monospaced as monospacedStyle, transition } from './styles.css';
 
-import { TypographyProps, Tag, Weight, TypographyWeightClass } from './shared'
-import cn from 'classnames'
-import { createElement } from 'react'
+import { TypographyProps, Tag, Weight, TypographyWeightClass } from './shared';
+import cn from 'classnames';
+import { createElement } from 'react';
 
 type TypographyBuilderProps = {
-  tag: Tag
-  className?: string
-  props: TypographyProps
-}
+  tag: Tag;
+  className?: string;
+  props: TypographyProps;
+};
 
 export default function TypographyBuilder(props: TypographyBuilderProps) {
-  const { tag: defaultTag, className: defaultClassName, props: baseProps } = props
   const {
-    tag, className, monospaced, nowrap,
-    weight, color, style,
+    tag: defaultTag,
+    className: defaultClassName,
+    props: baseProps,
+  } = props;
+  const {
+    tag,
+    className,
+    monospaced,
+    nowrap,
+    weight,
+    color,
+    style,
     children,
     ...restProps
-  } = baseProps
+  } = baseProps;
 
   const classes = [
     defaultClassName,
     className,
-    monospaced ?
-      monospacedStyle :
-      TypographyWeightClass[weight || Weight.REGULAR],
+    monospaced
+      ? monospacedStyle
+      : TypographyWeightClass[weight || Weight.REGULAR],
     transition,
-  ]
+  ];
 
   return createElement(
     tag || defaultTag || Tag.P,
@@ -39,6 +48,6 @@ export default function TypographyBuilder(props: TypographyBuilderProps) {
         ...style,
       },
     },
-    children,
-  )
+    children
+  );
 }
