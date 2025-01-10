@@ -48,6 +48,7 @@ input, textarea, button {
 }
 
 button {
+  flex-shrink: 0;
   cursor: pointer;
 }
 
