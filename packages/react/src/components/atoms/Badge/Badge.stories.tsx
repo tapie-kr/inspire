@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { BadgeSize, BadgeTheme } from './shared'
-import { BrandIcon, GlyphIcon } from '@/components/foundations/Icon/icon-set'
 import { Badge } from '.'
 import { TextIndicatorBadgeVariant } from './categories/text-indicator'
+import { getIconArgType } from '@/lib/storybook/icon'
 
 const baseArgsType = {
   theme: {
@@ -27,10 +27,7 @@ export const Default: DefaultBadgeStory = {
   render: props => <Badge.Default {...props} />,
   argTypes: {
     ...baseArgsType,
-    leadingIcon: {
-      options: [...Object.values(GlyphIcon), ...Object.values(BrandIcon)],
-      control: { type: 'select' },
-    },
+    leadingIcon: getIconArgType(),
     label: { control: { type: 'text' } },
   },
   args: {

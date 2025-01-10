@@ -10,16 +10,17 @@ export const base = style({
   borderRadius: Radius.Default,
   cursor: 'text',
   ':hover': {
-    borderColor: Color.Grayscale.Translucent._50,
+    borderColor: Color.Grayscale.Translucent._30,
   },
   selectors: {
     '&:has(:focus)': {
-      borderColor: Color.Grayscale.Translucent._90,
+      borderColor: Color.Grayscale.Translucent._70,
     },
   },
 })
 
 export const input = style([TypographyVariantClass[Variant.BASE], {
+  width: '100%',
   color: Color.Content.Emphasized,
   '::placeholder': {
     color: Color.Content.Muted,

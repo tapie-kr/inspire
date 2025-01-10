@@ -4,9 +4,9 @@ import { ReactNode, useMemo } from 'react'
 import { ButtonIconSizeMap, ButtonPropsBase, ButtonSize, ButtonTypoSizeMap, ButtonVariant } from '../shared'
 import { HStack } from '@cottons-kr/react-foundation'
 import { Spacing } from '@/constants'
-import { ButtonIcon } from '../icon'
 import cn from 'classnames'
 import { IconName } from '@/components/foundations/Icon/shared'
+import { Icon } from '@/components/foundations/Icon'
 
 const GapMap = {
   [ButtonSize.LARGE]: Spacing.Micro,
@@ -40,9 +40,9 @@ export function DefaultButton(props: DefaultButtonProps) {
   return <>
     <button {...restProps} className={cn(classNames)}>
       <HStack fitContent align='center' justify='center' gap={GapMap[size]}>
-        <ButtonIcon name={props.leadingIcon} size={ButtonIconSizeMap[size]} />
+        <Icon name={props.leadingIcon} size={ButtonIconSizeMap[size]} />
         <Typo>{props.children}</Typo>
-        <ButtonIcon name={props.trailingIcon} size={ButtonIconSizeMap[size]} />
+        <Icon name={props.trailingIcon} size={ButtonIconSizeMap[size]} />
       </HStack>
     </button>
   </>

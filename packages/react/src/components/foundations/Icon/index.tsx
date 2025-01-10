@@ -1,16 +1,24 @@
+import * as s from './styles.css'
+
 import { GlyphIconMap, BrandIconMap } from './icon-set'
 import { IconName, isGlyphIconName } from './shared'
 import cn from 'classnames'
-import { transition } from './styles.css'
+import { SVGAttributes } from 'react'
+
+type FilteredSVGAttributes = Omit<SVGAttributes<SVGElement>, keyof IconProps>
 
 type IconProps = {
-  name: IconName
+  name?: IconName | false
   size?: number
-  color?: string
+  color?: string | false
   className?: string
 }
 
-export function Icon(props: IconProps) {
+export function Icon(props: FilteredSVGAttributes & IconProps) {
+  if (!props.name) return null
+
+  const size = props.size || 24
+
   let Icon = null
   if (isGlyphIconName(props.name)) {
     Icon = GlyphIconMap[props.name]
@@ -18,13 +26,29 @@ export function Icon(props: IconProps) {
     Icon = BrandIconMap[props.name]
   }
 
-  const size = props.size || 24
-
-  return <>
+  const renderedIcon = <>
     <Icon
-      className={cn(props.className, transition)}
+      className={cn(props.className, s.transition)}
       width={size} height={size}
-      color={props.color}
+      color={props.color ? props.color : 'currentColor'}
     />
   </>
+
+  const interactiveProps = Object.entries(props).reduce((acc, [key, value]) => {
+    if (typeof value === 'function') {
+      acc[key] = value
+    }
+    return acc
+  }, {} as Record<string, Function>)
+  if (Object.keys(interactiveProps).length > 0) {
+    return <>
+      <div
+        className={s.interactive}
+        style={{ width: size, height: size }}
+        {...interactiveProps}
+      >{renderedIcon}</div>
+    </>
+  }
+
+  return renderedIcon
 }

@@ -4,7 +4,7 @@ import { IconName } from '@/components/foundations/Icon/shared'
 import { useMemo } from 'react'
 import { ButtonIconSizeMap, ButtonPropsBase, ButtonSize, ButtonVariant } from '../shared'
 import cn from 'classnames'
-import { ButtonIcon } from '../icon'
+import { Icon } from '@/components/foundations/Icon'
 
 type IconButtonProps = ButtonPropsBase & {
   variant?: ButtonVariant
@@ -28,7 +28,7 @@ export function IconButton(props: IconButtonProps) {
 
   return <>
     <button {...restProps} className={cn(classNames)}>
-      <ButtonIcon name={icon} size={ButtonIconSizeMap[size]} />
+      <Icon name={icon} size={ButtonIconSizeMap[size]} />
     </button>
   </>
 }

@@ -1,7 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { BrandIcon, GlyphIcon } from '@/components/foundations/Icon/icon-set'
+import { GlyphIcon } from '@/components/foundations/Icon/icon-set'
 import { ButtonSize, ButtonVariant } from './shared'
 import { Button } from '.'
+import { getIconArgType } from '@/lib/storybook/icon'
 
 const baseArgsType = {
   size: {
@@ -33,14 +34,8 @@ export const Default: DefaultButtonStory = {
       options: Object.values(ButtonVariant),
       control: { type: 'select' },
     },
-    leadingIcon: {
-      options: [...Object.values(GlyphIcon), ...Object.values(BrandIcon)],
-      control: { type: 'select' },
-    },
-    trailingIcon: {
-      options: [...Object.values(GlyphIcon), ...Object.values(BrandIcon)],
-      control: { type: 'select' },
-    },
+    leadingIcon: getIconArgType(),
+    trailingIcon: getIconArgType(),
   }
 }
 
@@ -55,10 +50,7 @@ export const Icon: IconButtonStory = {
   render: props => <Button.Icon {...props} />,
   argTypes: {
     ...baseArgsType,
-    icon: {
-      options: [...Object.values(GlyphIcon), ...Object.values(BrandIcon)],
-      control: { type: 'select' },
-    },
+    icon: getIconArgType(),
   },
   args: {
     icon: GlyphIcon.FLAG,

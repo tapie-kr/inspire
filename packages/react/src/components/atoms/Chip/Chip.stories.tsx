@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { BrandIcon, GlyphIcon } from '@/components/foundations/Icon/icon-set';
 import { Chip } from '.';
+import { getIconArgType } from '@/lib/storybook/icon';
 
 const meta: Meta = {
   title: 'Atoms/Chip',
@@ -8,14 +9,8 @@ const meta: Meta = {
     active: {
       control: { type: 'boolean' },
     },
-    leadingIcon: {
-      options: [...Object.values(GlyphIcon), ...Object.values(BrandIcon)],
-      control: { type: 'select' },
-    },
-    trailingIcon: {
-      options: [...Object.values(GlyphIcon), ...Object.values(BrandIcon)],
-      control: { type: 'select' },
-    },
+    leadingIcon: getIconArgType(),
+    trailingIcon: getIconArgType(),
     children: {
       control: { type: 'text' },
     },

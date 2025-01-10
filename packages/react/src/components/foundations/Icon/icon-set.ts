@@ -70,6 +70,7 @@ import TapieBrand from './assets/brand/tapie.svg'
 import TypescriptBrand from './assets/brand/typescript.svg'
 import UnityBrand from './assets/brand/unity.svg'
 import VercelBrand from './assets/brand/vercel.svg'
+import VisibilityOffBrand from './assets/brand/visibility_off.svg'
 import YarnBerryBrand from './assets/brand/yarn_berry.svg'
 
 export enum GlyphIcon {
@@ -184,6 +185,7 @@ export enum BrandIcon {
   TYPESCRIPT = 'typescript',
   UNITY = 'unity',
   VERCEL = 'vercel',
+  VISIBILITY_OFF = 'visibility_off',
   YARN_BERRY = 'yarn_berry'
 }
 
@@ -225,5 +227,6 @@ export const BrandIconMap = {
   [BrandIcon.TYPESCRIPT]: TypescriptBrand,
   [BrandIcon.UNITY]: UnityBrand,
   [BrandIcon.VERCEL]: VercelBrand,
+  [BrandIcon.VISIBILITY_OFF]: VisibilityOffBrand,
   [BrandIcon.YARN_BERRY]: YarnBerryBrand
 } as const
