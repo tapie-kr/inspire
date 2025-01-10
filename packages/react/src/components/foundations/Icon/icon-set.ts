@@ -1,3 +1,4 @@
+import ArrowBackGlyph from './assets/glyph/arrow_back.svg'
 import ArrowBackIosGlyph from './assets/glyph/arrow_back_ios.svg'
 import ArrowDownwardGlyph from './assets/glyph/arrow_downward.svg'
 import ArrowForwardGlyph from './assets/glyph/arrow_forward.svg'
@@ -106,6 +107,7 @@ import VisibilityOffBrand from './assets/brand/visibility_off.svg'
 import YarnBerryBrand from './assets/brand/yarn_berry.svg'
 
 export enum GlyphIcon {
+  ARROW_BACK = 'arrow_back',
   ARROW_BACK_IOS = 'arrow_back_ios',
   ARROW_DOWNWARD = 'arrow_downward',
   ARROW_FORWARD = 'arrow_forward',
@@ -175,6 +177,7 @@ export enum GlyphIcon {
 }
 
 export const GlyphIconMap = {
+  [GlyphIcon.ARROW_BACK]: ArrowBackGlyph,
   [GlyphIcon.ARROW_BACK_IOS]: ArrowBackIosGlyph,
   [GlyphIcon.ARROW_DOWNWARD]: ArrowDownwardGlyph,
   [GlyphIcon.ARROW_FORWARD]: ArrowForwardGlyph,
