@@ -105,6 +105,5 @@ const darkColorTheme = {
   },
 };
 
-createGlobalTheme(':root', colorVars, lightColorTheme);
-createGlobalTheme('[data-theme=light]', colorVars, lightColorTheme);
+createGlobalTheme(':root, [data-theme=light]', colorVars, lightColorTheme);
 createGlobalTheme('[data-theme=dark]', colorVars, darkColorTheme);

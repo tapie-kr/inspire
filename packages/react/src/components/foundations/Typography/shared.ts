@@ -28,12 +28,12 @@ export enum TypographyVariant {
 }
 
 export enum TypographyWeight {
-  EXTRABOLD,
-  BOLD,
-  SEMIBOLD,
-  MEDIUM,
-  REGULAR,
-  LIGHT,
+  EXTRABOLD = 'extrabold',
+  BOLD = 'bold',
+  SEMIBOLD = 'semibold',
+  MEDIUM = 'medium',
+  REGULAR = 'regular',
+  LIGHT = 'light',
 }
 
 export const typographyVariantClass = {

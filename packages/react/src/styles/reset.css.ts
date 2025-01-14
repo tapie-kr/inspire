@@ -8,6 +8,7 @@ import { globalStyle } from '@vanilla-extract/css';
 
 globalStyle('html, body', {
   background: colorVars.surface.default,
+  color: colorVars.content.emphasized,
   wordBreak: 'keep-all',
   wordWrap: 'break-word',
   scrollBehavior: 'smooth',
