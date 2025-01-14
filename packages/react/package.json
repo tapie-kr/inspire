@@ -1,5 +1,9 @@
 {
   "name": "@tapie-kr/inspire-react",
+  "workspaces": [
+    "packages/font-kit",
+    "packages/react"
+  ],
   "version": "0.0.49",
   "description": "React Component Collection for INSPIRE",
   "scripts": {
@@ -16,7 +20,10 @@
     "generate:typography": "tsx scripts/generate-typography.ts",
     "generate": "pnpm run generate:const && pnpm run generate:icon && pnpm run generate:typography && pnpm run generate:barrel",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "format": "prettier --write .",
+    "lint": "eslint . --fix",
+    "lint:dry": "eslint . --fix-dry-run"
   },
   "license": "MIT",
   "repository": {
@@ -60,6 +67,8 @@
     "@types/react": "19.0.0",
     "@types/react-dom": "19.0.0",
     "@types/xmldom": "^0.1.34",
+    "@typescript-eslint/eslint-plugin": "^8.20.0",
+    "@typescript-eslint/parser": "^8.20.0",
     "@vanilla-extract/css": "^1.16.1",
     "@vanilla-extract/rollup-plugin": "^1.3.12",
     "@vanilla-extract/vite-plugin": "^4.0.19",
@@ -67,8 +76,17 @@
     "chalk": "^5.4.0",
     "css": "^3.0.0",
     "cssnano": "^7.0.6",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-import-resolver-typescript": "^3.7.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
     "glob": "^11.0.0",
     "postcss": "^8.4.49",
+    "prettier": "^3.4.2",
     "rimraf": "^6.0.1",
     "rollup": "^4.28.1",
     "rollup-plugin-copy": "^3.5.0",
@@ -104,6 +122,6 @@
     "dist"
   ],
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=22.0.0"
   }
 }
