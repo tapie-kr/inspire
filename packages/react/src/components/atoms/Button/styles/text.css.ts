@@ -2,18 +2,13 @@ import { colorVars } from '@/lib/style/contract/color.css';
 import { radiusVars, spacingVars } from '@/lib/style/contract/component.css';
 
 import { style } from '@vanilla-extract/css';
-import { UtilityClass } from '@/constants/class';
+import { utilityClass } from '@/lib/style/utility';
 import { getShorthandedValue } from '@/utils/style/shorthand';
 
 export const base = style([
-  UtilityClass.Interactive,
+  utilityClass.interactive,
   {
     color: colorVars.content.emphasized,
-    selectors: {
-      '&:disabled::after': {
-        background: 'transparent',
-      },
-    },
   },
 ]);
 

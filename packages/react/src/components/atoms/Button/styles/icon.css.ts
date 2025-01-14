@@ -2,7 +2,7 @@ import { colorVars } from '@/lib/style/contract/color.css';
 import { radiusVars } from '@/lib/style/contract/component.css';
 
 import { style } from '@vanilla-extract/css';
-import { UtilityClass } from '@/constants/class';
+import { utilityClass } from '@/lib/style/utility';
 
 export const base = style({
   aspectRatio: '1 / 1',
@@ -13,7 +13,7 @@ export const base = style({
 
 export const primary = style([
   base,
-  UtilityClass.InteractiveInverted,
+  utilityClass.interactiveInverted,
   {
     background: colorVars.surface.inverted.elevated,
     color: colorVars.content.inverted.emphasized,
@@ -22,7 +22,7 @@ export const primary = style([
 
 export const secondary = style([
   base,
-  UtilityClass.Interactive,
+  utilityClass.interactive,
   {
     background: colorVars.surface.elevated,
   },

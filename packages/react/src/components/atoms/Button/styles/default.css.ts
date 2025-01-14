@@ -2,11 +2,11 @@ import { colorVars } from '@/lib/style/contract/color.css';
 import { radiusVars, spacingVars } from '@/lib/style/contract/component.css';
 
 import { style } from '@vanilla-extract/css';
-import { UtilityClass } from '@/constants/class';
+import { utilityClass } from '@/lib/style/utility';
 import { getShorthandedValue } from '@/utils/style/shorthand';
 
 export const primary = style([
-  UtilityClass.InteractiveInverted,
+  utilityClass.interactiveInverted,
   {
     background: colorVars.surface.inverted.elevated,
     color: colorVars.content.inverted.emphasized,
@@ -14,7 +14,7 @@ export const primary = style([
 ]);
 
 export const secondary = style([
-  UtilityClass.Interactive,
+  utilityClass.interactive,
   {
     background: colorVars.surface.elevated,
     color: colorVars.content.emphasized,
