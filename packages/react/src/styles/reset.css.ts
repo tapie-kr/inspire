@@ -23,7 +23,6 @@ globalStyle('*', {
   padding: 0,
   fontFamily: inspireFontKit,
   fontSynthesis: 'none',
-  WebkitFontSmoothing: 'antialiased',
   transition: [
     getCSSTransition('background-color', 0.3),
     getCSSTransition('background', 0.3),
