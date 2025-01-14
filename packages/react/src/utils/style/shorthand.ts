@@ -1,10 +1,3 @@
-export function getShorthandedValue(first: string | number): string;
-export function getShorthandedValue(first: string | number, second: string | number): string;
-export function getShorthandedValue(
-  first: string | number,
-  second: string | number,
-  third: string | number,
-): string;
 export function getShorthandedValue(
   first: string | number,
   second?: string | number,

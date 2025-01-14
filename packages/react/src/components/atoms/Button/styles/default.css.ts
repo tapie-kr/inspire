@@ -3,7 +3,7 @@ import { radiusVars, spacingVars } from '@/lib/style/contract/component.css';
 
 import { style } from '@vanilla-extract/css';
 import { UtilityClass } from '@/constants/class';
-import { getShorthandedValue } from '@/utils/color/shorthand';
+import { getShorthandedValue } from '@/utils/style/shorthand';
 
 export const primary = style([
   UtilityClass.InteractiveInverted,

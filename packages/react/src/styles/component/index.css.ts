@@ -1,7 +1,7 @@
 import { componentVars } from '@/lib/style/contract/component.css';
 
 import { assignVars, globalStyle } from '@vanilla-extract/css';
-import { getMobileMediaQuery } from '@/lib/style/media';
+import { getMobileMediaQuery } from '@/utils/style/responsive';
 import { desktopRadius, mobileRadius } from './values/radius';
 import { desktopSpacing, mobileSpacing } from './values/spacing';
 

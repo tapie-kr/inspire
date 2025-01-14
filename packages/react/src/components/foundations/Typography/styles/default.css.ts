@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { getMobileMediaQuery } from '@/lib/style/media';
+import { getMobileMediaQuery } from '@/utils/style/responsive';
 
 export const typography = style({
   letterSpacing: -0.01,

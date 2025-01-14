@@ -3,7 +3,7 @@ import { radiusVars, spacingVars } from '@/lib/style/contract/component.css';
 
 import { style } from '@vanilla-extract/css';
 import { typographyVariantClass, Variant } from '@/components/foundations/Typography/shared';
-import { getShorthandedValue } from '@/utils/color/shorthand';
+import { getShorthandedValue } from '@/utils/style/shorthand';
 
 export const base = style({
   padding: spacingVars.petite,

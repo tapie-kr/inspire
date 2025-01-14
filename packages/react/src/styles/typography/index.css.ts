@@ -1,8 +1,8 @@
 import { typographyVars } from '@/lib/style/contract/typography.css';
 
 import { assignVars, globalFontFace, globalStyle } from '@vanilla-extract/css';
-import { getMobileMediaQuery } from '@/lib/style/media';
 import { capitalizeFirstLetter } from '@/utils/string/capitalize-first-letter';
+import { getMobileMediaQuery } from '@/utils/style/responsive';
 import { desktopLineHeight } from './values/line-height';
 import { desktopSize } from './values/size';
 import { weight } from './values/weight';

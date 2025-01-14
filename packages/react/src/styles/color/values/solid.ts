@@ -1,4 +1,4 @@
-import { addOpacity } from '@/utils/color/opacity';
+import { addOpacity } from '@/utils/style/color/opacity';
 
 const WHITE = '#FFFFFF';
 const BLACK = '#0A0A0A';
