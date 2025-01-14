@@ -22,6 +22,7 @@ class SingleBarrelGenerator {
         '**/__mocks__/**',
         '**/*.test.{ts,tsx}',
         '**/*.stories.{ts,tsx}',
+        '**/storybook/**',
         '**/*.styles.{ts,tsx}',
         '**/*.type.{ts,tsx}',
         '**/styles/**',
