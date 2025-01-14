@@ -1,14 +1,14 @@
-import { Meta, StoryObj } from '@storybook/react'
-import { Label } from '.'
+import { type Meta, type StoryObj } from '@storybook/react';
+import { Label } from '.';
 
 const meta: Meta = {
   title: 'Atoms/Label',
   component: Label,
   argTypes: {
-    essential: {
+    isEssential: {
       control: { type: 'boolean' },
     },
-    disabled: {
+    isDisabled: {
       control: { type: 'boolean' },
     },
     children: {
@@ -16,16 +16,16 @@ const meta: Meta = {
     },
   },
   args: {
-    essential: false,
-    disabled: false,
+    isEssential: false,
+    isDisabled: false,
     children: 'Label',
   },
-}
+};
 
-type DefaultLabelStory = StoryObj<typeof Label>
+type DefaultLabelStory = StoryObj<typeof Label>;
 
 export const Default: DefaultLabelStory = {
-  render: (props) => <Label {...props} />,
-}
+  render: props => <Label {...props} />,
+};
 
-export default meta
+export default meta;

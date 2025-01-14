@@ -1,8 +1,9 @@
-import { Meta, StoryObj } from '@storybook/react'
-import { GlyphIcon } from '@/components/foundations/Icon/icon-set'
-import { ButtonSize, ButtonVariant } from './shared'
-import { Button } from '.'
-import { getIconArgType } from '@/lib/storybook/icon'
+import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
+
+import { type Meta, type StoryObj } from '@storybook/react';
+import { getIconArgType } from '@/lib/storybook/icon';
+import { Button } from '.';
+import { ButtonSize, ButtonVariant } from './shared';
 
 const baseArgsType = {
   size: {
@@ -11,7 +12,7 @@ const baseArgsType = {
   },
   disabled: { control: { type: 'boolean' } },
   children: { control: { type: 'text' } },
-} as const
+} as const;
 
 const meta: Meta = {
   title: 'Atoms/Button',
@@ -20,11 +21,11 @@ const meta: Meta = {
     disabled: false,
     children: 'Button',
   },
-}
+};
 
-type DefaultButtonStory = StoryObj<typeof Button.Default>
-type TextButtonStory = StoryObj<typeof Button.Text>
-type IconButtonStory = StoryObj<typeof Button.Icon>
+type DefaultButtonStory = StoryObj<typeof Button.Default>;
+type TextButtonStory = StoryObj<typeof Button.Text>;
+type IconButtonStory = StoryObj<typeof Button.Icon>;
 
 export const Default: DefaultButtonStory = {
   render: props => <Button.Default {...props} />,
@@ -36,15 +37,15 @@ export const Default: DefaultButtonStory = {
     },
     leadingIcon: getIconArgType(),
     trailingIcon: getIconArgType(),
-  }
-}
+  },
+};
 
 export const Text: TextButtonStory = {
   render: props => <Button.Text {...props} />,
   argTypes: {
     ...baseArgsType,
   },
-}
+};
 
 export const Icon: IconButtonStory = {
   render: props => <Button.Icon {...props} />,
@@ -55,6 +56,6 @@ export const Icon: IconButtonStory = {
   args: {
     icon: GlyphIcon.FLAG,
   },
-}
+};
 
-export default meta
+export default meta;

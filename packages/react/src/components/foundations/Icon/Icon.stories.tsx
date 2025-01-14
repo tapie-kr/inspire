@@ -1,8 +1,7 @@
-import { Meta, StoryObj } from '@storybook/react'
-import { Icon } from '.'
-import { GlyphIcon } from './icon-set'
-import { ColorVariable } from '@/constants'
-import { getIconArgType } from '@/lib/storybook/icon'
+import { type Meta, type StoryObj } from '@storybook/react';
+import { getIconArgType } from '@/lib/storybook/icon';
+import { Icon } from '.';
+import { GlyphIcon } from './icon-set';
 
 const meta: Meta = {
   title: 'Foundations/Icon',
@@ -14,14 +13,13 @@ const meta: Meta = {
   args: {
     name: GlyphIcon.FACE,
     size: 24,
-    color: ColorVariable.Content.Emphasized,
   },
-}
+};
 
-type IconStory = StoryObj<typeof Icon>
+type IconStory = StoryObj<typeof Icon>;
 
 export const Default: IconStory = {
   render: props => <Icon {...props} />,
-}
+};
 
-export default meta
+export default meta;

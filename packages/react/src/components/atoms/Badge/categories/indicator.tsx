@@ -1,20 +1,15 @@
-import * as s from '../styles/indicator.css'
+import * as s from '../styles/indicator.css';
 
-import { BadgeSize, BadgeTheme } from '../shared'
-import cn from 'classnames'
+import cn from 'classnames';
+import { BadgeSize, BadgeTheme } from '../shared';
 
 type IndicatorBadgeProps = {
-  theme?: BadgeTheme,
-  size?: BadgeSize,
-}
+  theme?: BadgeTheme;
+  size?: BadgeSize;
+};
 
 export function IndicatorBadge(props: IndicatorBadgeProps) {
-  const {
-    theme = BadgeTheme.MONOCHROME,
-    size = BadgeSize.LARGE,
-  } = props
+  const { theme = BadgeTheme.MONOCHROME, size = BadgeSize.LARGE } = props;
 
-  return <>
-    <div className={cn(s.indicator, s[theme], s[size])} />
-  </>
+  return <div className={cn(s.indicator, s[theme], s[size])} />;
 }

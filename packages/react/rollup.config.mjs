@@ -1,24 +1,20 @@
-import { readFileSync } from 'fs'
-import { defineConfig } from 'rollup'
+import { readFileSync } from 'fs';
+import { defineConfig } from 'rollup';
 
-import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-import resolve from '@rollup/plugin-node-resolve'
-import commonjs from '@rollup/plugin-commonjs'
-import _swc from 'rollup-plugin-swc'
-import { vanillaExtractPlugin } from '@vanilla-extract/rollup-plugin'
-import svgr from '@svgr/rollup'
-import strip from '@rollup/plugin-strip'
-import postcss from 'rollup-plugin-postcss'
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import _swc from 'rollup-plugin-swc';
+import { vanillaExtractPlugin } from '@vanilla-extract/rollup-plugin';
+import svgr from '@svgr/rollup';
+import strip from '@rollup/plugin-strip';
+import postcss from 'rollup-plugin-postcss';
 
-import customLogger from './scripts/rollup/custom-logger.mjs'
-import scssConfigGenerator from './scripts/rollup/scss-config-generator.mjs'
-import injectCSS from './scripts/rollup/inject-css.mjs'
+import customLogger from './scripts/rollup/custom-logger.mjs';
 
-const swc = _swc.default
-const currentPath = new URL('.', import.meta.url).pathname
-const packageJson = JSON.parse(
-  readFileSync(new URL('./package.json', import.meta.url)).toString()
-)
+const swc = _swc.default;
+const currentPath = new URL('.', import.meta.url).pathname;
+const packageJson = JSON.parse(readFileSync(new URL('./package.json', import.meta.url)).toString());
 
 const banner = [
   '/* eslint-disable */',
@@ -33,8 +29,8 @@ const banner = [
   ` * (c) ${new Date().getFullYear()} TAPIE. All rights reserved.`,
   ` * ${packageJson.license} License`,
   '*/',
-].join('\n')
-const footer = ''
+].join('\n');
+const footer = '';
 
 const config = defineConfig([
   {
@@ -45,14 +41,16 @@ const config = defineConfig([
         format: 'esm',
         sourcemap: true,
         exports: 'named',
-        banner, footer,
+        banner,
+        footer,
       },
       {
         file: packageJson.exports['.'].require,
         format: 'cjs',
         sourcemap: true,
         exports: 'named',
-        banner, footer,
+        banner,
+        footer,
       },
     ],
     plugins: [
@@ -91,65 +89,23 @@ const config = defineConfig([
         exclude: ['**/*.scss', '**/*.css', '**/*.svg'],
       }),
       customLogger('components', currentPath),
-      injectCSS(),
     ],
   },
-  {
-    input: 'src/constants/index.ts',
-    output: [
-      {
-        file: packageJson.exports['./variables'].import,
-        format: 'esm',
-        sourcemap: true,
-        exports: 'named',
-        banner,
-      },
-      {
-        file: packageJson.exports['./variables'].require,
-        format: 'cjs',
-        sourcemap: true,
-        exports: 'named',
-        banner,
-      },
-    ],
-    plugins: [
-      peerDepsExternal(),
-      resolve({
-        extensions: ['.ts']
-      }),
-      commonjs(),
-      swc({
-        jsc: {
-          parser: {
-            syntax: 'typescript',
-            runtime: 'automatic;',
-          },
-          baseUrl: currentPath,
-          paths: {
-            '@/*': ['./src/*'],
-          },
-        },
-        sourceMaps: true,
-        minify: true,
-      }),
-      customLogger('constants', currentPath),
-    ],
-  }
-])
+]);
 
 export default () => {
-  const target = process.env.BUILD_TARGET
+  const target = process.env.BUILD_TARGET;
   if (!target) {
-    throw new Error('Missing BUILD_TARGET environment variable')
+    throw new Error('Missing BUILD_TARGET environment variable');
   }
-  
+
   switch (target) {
-    case 'css': return scssConfigGenerator('production', currentPath)
-    case 'css-dev': return scssConfigGenerator('development', currentPath)
-    case 'components': return config[0]
-    case 'constants': return config[1]
-    
-    case 'all': return config
-    default: throw new Error(`Unknown BUILD_TARGET: ${target}`)
+    case 'components':
+      return config[0];
+
+    case 'all':
+      return config;
+    default:
+      throw new Error(`Unknown BUILD_TARGET: ${target}`);
   }
-}
+};

@@ -1,0 +1,34 @@
+import { typographyVars } from '@/lib/style/contract/typography.css';
+
+import { assignVars, globalFontFace, globalStyle } from '@vanilla-extract/css';
+import { getMobileMediaQuery } from '@/lib/style/media';
+import { capitalizeFirstLetter } from '@/utils/string/capitalize-first-letter';
+import { desktopLineHeight } from './values/line-height';
+import { desktopSize } from './values/size';
+import { weight } from './values/weight';
+
+export const inspireFontKit = 'INSPIRE Font Kit';
+
+globalFontFace(
+  inspireFontKit,
+  Object.entries(weight).map(([name, weight]) => ({
+    src: `url('./src/assets/fonts/INSPIRE_Font_Kit-${capitalizeFirstLetter(name)}.woff2') format('woff2')`,
+    fontWeight: weight,
+    fontDisplay: 'block',
+  })),
+);
+
+globalStyle(':root', {
+  vars: assignVars(typographyVars, {
+    weight,
+    size: desktopSize,
+    'line-height': desktopLineHeight,
+  }),
+  ...getMobileMediaQuery({
+    vars: assignVars(typographyVars, {
+      weight,
+      size: desktopSize,
+      'line-height': desktopLineHeight,
+    }),
+  }),
+});

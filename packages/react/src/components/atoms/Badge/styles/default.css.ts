@@ -1,37 +1,40 @@
-import { Color, Radius, Spacing } from '@/constants'
-import { style } from '@vanilla-extract/css'
+import { colorVars } from '@/lib/style/contract/color.css';
+import { radiusVars, spacingVars } from '@/lib/style/contract/component.css';
+
+import { style } from '@vanilla-extract/css';
+import { getShorthandedValue } from '@/utils/color/shorthand';
 
 export const monochrome = style({
-  background: Color.Grayscale.Translucent._10,
-  color: Color.Content.Emphasized,
-})
+  background: colorVars.grayscale.translucent._10,
+  color: colorVars.content.emphasized,
+});
 
 export const red = style({
-  background: Color.Solid.Translucent.Red._10,
-  color: Color.Solid.Red,
-})
+  background: colorVars.solid.translucent.red._10,
+  color: colorVars.solid.red,
+});
 
 export const green = style({
-  background: Color.Solid.Translucent.Green._10,
-  color: Color.Solid.Green,
-})
+  background: colorVars.solid.translucent.green._10,
+  color: colorVars.solid.green,
+});
 
 export const blue = style({
-  background: Color.Solid.Translucent.Blue._10,
-  color: Color.Solid.Blue,
-})
+  background: colorVars.solid.translucent.blue._10,
+  color: colorVars.solid.blue,
+});
 
 export const yellow = style({
-  background: Color.Solid.Translucent.Yellow._10,
-  color: Color.Solid.Yellow,
-})
+  background: colorVars.solid.translucent.yellow._10,
+  color: colorVars.solid.yellow,
+});
 
 export const large = style({
-  padding: `${Spacing.Mini} ${Spacing.Micro}`,
-  borderRadius: Radius.Subtle,
-})
+  padding: getShorthandedValue(spacingVars.mini, spacingVars.micro),
+  borderRadius: radiusVars.subtle,
+});
 
 export const small = style({
-  padding: `${Spacing.Optical} ${Spacing.Mini}`,
-  borderRadius: Radius.Sharp,
-})
+  padding: getShorthandedValue(spacingVars.optical, spacingVars.mini),
+  borderRadius: radiusVars.sharp,
+});

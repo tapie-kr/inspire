@@ -1,26 +1,33 @@
-import { Color, Radius, Spacing, UtilityClass } from '@/constants'
-import { style } from '@vanilla-extract/css'
+import { colorVars } from '@/lib/style/contract/color.css';
+import { radiusVars, spacingVars } from '@/lib/style/contract/component.css';
 
-export const base = style([UtilityClass.Interactive, {
-  color: Color.Content.Emphasized,
-  selectors: {
-    '&:disabled::after': {
-      background: 'transparent',
+import { style } from '@vanilla-extract/css';
+import { UtilityClass } from '@/constants/class';
+import { getShorthandedValue } from '@/utils/color/shorthand';
+
+export const base = style([
+  UtilityClass.Interactive,
+  {
+    color: colorVars.content.emphasized,
+    selectors: {
+      '&:disabled::after': {
+        background: 'transparent',
+      },
     },
   },
-}])
+]);
 
 export const large = style({
-  padding: `${Spacing.Tiny} ${Spacing.Micro}`,
-  borderRadius: Radius.Default,
-})
+  padding: getShorthandedValue(spacingVars.tiny, spacingVars.micro),
+  borderRadius: radiusVars.default,
+});
 
 export const medium = style({
-  padding: `${Spacing.Mini} ${Spacing.Tiny}`,
-  borderRadius: Radius.Subtle,
-})
+  padding: getShorthandedValue(spacingVars.micro, spacingVars.tiny),
+  borderRadius: radiusVars.subtle,
+});
 
 export const small = style({
-  padding: `${Spacing.Optical} ${Spacing.Mini}`,
-  borderRadius: Radius.Sharp,
-})
+  padding: getShorthandedValue(spacingVars.optical, spacingVars.mini),
+  borderRadius: radiusVars.sharp,
+});

@@ -5,4 +5,4 @@ export const UtilityClass = {
   ForceHide: 'force-hide',
   Interactive: 'interactive',
   InteractiveInverted: 'interactive interactive-inverted',
-} as const
+} as const;

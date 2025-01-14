@@ -1,31 +1,31 @@
-import type { TAPIESymbolSize } from './shared'
-import cn from 'classnames'
+import { colorBinding } from './styles.css';
 
-import GrayscaleSymbol from './assets/grayscale-symbol.svg'
-import GrayscaleLabel from './assets/grayscale-label.svg'
-import SolidSymbol from './assets/solid-symbol.svg'
-import SolidLabel from './assets/solid-label.svg'
+import cn from 'classnames';
+import GrayscaleLabel from './assets/grayscale-label.svg';
+import GrayscaleSymbol from './assets/grayscale-symbol.svg';
+import SolidLabel from './assets/solid-label.svg';
+import SolidSymbol from './assets/solid-symbol.svg';
+import type { TAPIESymbolSize } from './shared';
 
 type TAPIESymbolProps = {
-  size: TAPIESymbolSize
-  solid?: boolean
-  withLabel?: boolean
-  inverted?: boolean
-  className?: string
-}
+  size: TAPIESymbolSize;
+  isSolid?: boolean;
+  hasLabel?: boolean;
+  className?: string;
+};
 
 export function TAPIESymbol(props: TAPIESymbolProps) {
-  let SvgToRender = GrayscaleSymbol
-  if (props.solid) {
-    SvgToRender = props.withLabel ? SolidLabel : SolidSymbol
+  let SvgToRender = GrayscaleSymbol;
+  if (props.isSolid) {
+    SvgToRender = props.hasLabel ? SolidLabel : SolidSymbol;
   } else {
-    SvgToRender = props.withLabel ? GrayscaleLabel : GrayscaleSymbol
+    SvgToRender = props.hasLabel ? GrayscaleLabel : GrayscaleSymbol;
   }
 
-  return <>
+  return (
     <SvgToRender
-      className={cn(props.inverted && 'inverted', props.className)}
+      className={cn(props.className, colorBinding)}
       height={props.size}
     />
-  </>
+  );
 }

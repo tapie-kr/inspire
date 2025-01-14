@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from '@storybook/react'
-import { TAPIESymbol } from '.'
-import { TAPIESymbolSize } from './shared'
+import { type Meta, type StoryObj } from '@storybook/react';
+import { TAPIESymbol } from '.';
+import { TAPIESymbolSize } from './shared';
 
 const meta: Meta = {
   title: 'Foundations/TAPIE-Symbol',
@@ -9,20 +9,20 @@ const meta: Meta = {
       options: Object.values(TAPIESymbolSize),
       control: 'select',
     },
-    solid: { control: 'boolean' },
-    withLabel: { control: 'boolean' },
+    isSolid: { control: 'boolean' },
+    hasLabel: { control: 'boolean' },
   },
   args: {
     size: 96,
-    solid: false,
-    withLabel: true,
+    isSolid: false,
+    hasLabel: true,
   },
-}
+};
 
-type TAPIESymbolStory = StoryObj<typeof TAPIESymbol>
+type TAPIESymbolStory = StoryObj<typeof TAPIESymbol>;
 
 export const Default: TAPIESymbolStory = {
   render: props => <TAPIESymbol {...props} />,
-}
+};
 
-export default meta
+export default meta;

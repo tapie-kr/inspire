@@ -1,32 +1,42 @@
-import * as s from './styles.css'
+import * as s from './styles.css';
+import { spacingVars } from '@/lib/style/contract/component.css';
 
-import { HStack } from '@cottons-kr/react-foundation'
-import { IconName } from '@/components/foundations/Icon/shared'
-import { Icon } from '@/components/foundations/Icon'
-import { Typo } from '@/components/foundations/Typography'
-import { Spacing } from '@/constants'
-import { Weight } from '@/components/foundations/Typography/shared'
-import cn from 'classnames'
+import { HStack } from '@cottons-kr/react-foundation';
+import { Icon } from '@/components/foundations/Icon';
+import { Typo } from '@/components/foundations/Typography';
+
+import cn from 'classnames';
+import { type IconName } from '@/components/foundations/Icon/shared';
+import { Weight } from '@/components/foundations/Typography/shared';
 
 type ChipProps = {
-  leadingIcon?: IconName
-  trailingIcon?: IconName
-  active?: boolean
-  children?: string
-}
+  leadingIcon?: IconName;
+  trailingIcon?: IconName;
+  isActive?: boolean;
+  children?: string;
+};
 
 export function Chip(props: ChipProps) {
-  const { leadingIcon, trailingIcon, active = false } = props
+  const { leadingIcon, trailingIcon, isActive = false } = props;
 
   return (
-    <>
-      <button className={cn(s.base, active && s.active)}>
-        <HStack fitContent align='center' justify='center' gap={Spacing.Tiny}>
-          <Icon name={leadingIcon} size={20} />
-          <Typo.Base weight={Weight.MEDIUM}>{props.children}</Typo.Base>
-          <Icon name={trailingIcon} size={20} />
-        </HStack>
-      </button>
-    </>
-  )
+    <button className={cn(s.base, isActive && s.active)}>
+      <HStack
+        fitContent
+        align='center'
+        justify='center'
+        gap={spacingVars.tiny}
+      >
+        <Icon
+          name={leadingIcon}
+          size={20}
+        />
+        <Typo.Base weight={Weight.MEDIUM}>{props.children}</Typo.Base>
+        <Icon
+          name={trailingIcon}
+          size={20}
+        />
+      </HStack>
+    </button>
+  );
 }

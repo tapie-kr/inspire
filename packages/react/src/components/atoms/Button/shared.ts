@@ -1,5 +1,6 @@
-import { Typo } from '@/components/foundations/Typography'
-import { ButtonHTMLAttributes } from 'react'
+import { Typo } from '@/components/foundations/Typography';
+
+import { type ButtonHTMLAttributes } from 'react';
 
 export enum ButtonVariant {
   PRIMARY = 'primary',
@@ -13,17 +14,17 @@ export enum ButtonSize {
 }
 
 export type ButtonPropsBase = ButtonHTMLAttributes<HTMLButtonElement> & {
-  size?: ButtonSize
-}
+  size?: ButtonSize;
+};
 
 export const ButtonTypoSizeMap = {
   [ButtonSize.LARGE]: Typo.Base,
   [ButtonSize.MEDIUM]: Typo.Petite,
   [ButtonSize.SMALL]: Typo.Tiny,
-} as const
+} as const;
 
 export const ButtonIconSizeMap = {
   [ButtonSize.LARGE]: 24,
   [ButtonSize.MEDIUM]: 18,
   [ButtonSize.SMALL]: 16,
-}
+};

@@ -1,47 +1,62 @@
-import * as s from '../styles/text.css'
+import * as s from '../styles/text.css';
+import { spacingVars } from '@/lib/style/contract/component.css';
 
-import { ReactNode, useMemo } from 'react'
-import { ButtonIconSizeMap, ButtonPropsBase, ButtonSize, ButtonTypoSizeMap } from '../shared'
-import { HStack } from '@cottons-kr/react-foundation'
-import { Spacing } from '@/constants'
-import cn from 'classnames'
-import { IconName } from '@/components/foundations/Icon/shared'
-import { Icon } from '@/components/foundations/Icon'
+import { HStack } from '@cottons-kr/react-foundation';
+import { Icon } from '@/components/foundations/Icon';
+
+import cn from 'classnames';
+import { type ReactNode, useMemo } from 'react';
+import { type IconName } from '@/components/foundations/Icon/shared';
+import { ButtonIconSizeMap, type ButtonPropsBase, ButtonSize, ButtonTypoSizeMap } from '../shared';
 
 const GapMap = {
-  [ButtonSize.LARGE]: Spacing.Tiny,
-  [ButtonSize.MEDIUM]: Spacing.Mini,
-  [ButtonSize.SMALL]: Spacing.Optical,
-} as const
+  [ButtonSize.LARGE]: spacingVars.tiny,
+  [ButtonSize.MEDIUM]: spacingVars.mini,
+  [ButtonSize.SMALL]: spacingVars.optical,
+} as const;
 
 type DefaultButtonProps = ButtonPropsBase & {
-  leadingIcon?: IconName
-  trailingIcon?: IconName
-  children?: ReactNode
-}
+  leadingIcon?: IconName;
+  trailingIcon?: IconName;
+  children?: ReactNode;
+};
 
 export function TextButton(props: DefaultButtonProps) {
   const {
-    size: propSize, leadingIcon, trailingIcon,
-    className: propClassName, ...restProps
-  } = props
+    size: propSize,
+    leadingIcon,
+    trailingIcon,
+    className: propClassName,
+    children,
+    ...restProps
+  } = props;
 
-  const size = useMemo(() => propSize || ButtonSize.LARGE, [propSize])
-  const Typo = useMemo(() => ButtonTypoSizeMap[size], [size])
+  const size = useMemo(() => propSize || ButtonSize.LARGE, [propSize]);
+  const Typo = useMemo(() => ButtonTypoSizeMap[size], [size]);
 
-  const classNames = [
-    propClassName,
-    s.base,
-    s[size],
-  ]
+  const classNames = [propClassName, s.base, s[size]];
 
-  return <>
-    <button {...restProps} className={cn(classNames)}>
-      <HStack fitContent align='center' justify='center' gap={GapMap[size]}>
-        <Icon name={props.leadingIcon} size={ButtonIconSizeMap[size]} />
-        <Typo>{props.children}</Typo>
-        <Icon name={props.trailingIcon} size={ButtonIconSizeMap[size]} />
+  return (
+    <button
+      {...restProps}
+      className={cn(classNames)}
+    >
+      <HStack
+        fitContent
+        align='center'
+        justify='center'
+        gap={GapMap[size]}
+      >
+        <Icon
+          name={leadingIcon}
+          size={ButtonIconSizeMap[size]}
+        />
+        <Typo>{children}</Typo>
+        <Icon
+          name={trailingIcon}
+          size={ButtonIconSizeMap[size]}
+        />
       </HStack>
     </button>
-  </>
+  );
 }

@@ -1,6 +1,6 @@
-import { JSX } from 'react'
-import TypographyBuilder from './Builder'
-import { TypographyProps, Tag, Variant, TypographyVariantClass } from './shared'
+import { type JSX } from 'react';
+import TypographyBuilder from './Builder';
+import { Tag, type TypographyProps, typographyVariantClass, Variant } from './shared';
 
 const TypographyContract = {
   [Variant.GIANT]: Tag.H1,
@@ -13,20 +13,27 @@ const TypographyContract = {
   [Variant.MICRO]: Tag.P,
   [Variant.TINY]: Tag.P,
   [Variant.MINI]: Tag.P,
-} as const
+} as const;
 
 function typographyFactory(variant: Variant, tag: Tag = Tag.P) {
-  const defaultTag = TypographyContract[variant] || tag
+  const defaultTag = TypographyContract[variant] || tag;
   return (props: TypographyProps) => (
-    <TypographyBuilder tag={defaultTag} className={TypographyVariantClass[variant]} props={props} />
-  )
+    <TypographyBuilder
+      tag={defaultTag}
+      className={typographyVariantClass[variant]}
+      props={props}
+    />
+  );
 }
 
-const Typography = Object.keys(Variant).reduce((acc, key) => {
-  const variant = Variant[key as keyof typeof Variant]
-  const tag = TypographyContract[variant]
-  acc[variant] = typographyFactory(variant, tag)
-  return acc
-}, {} as Record<Variant, (props: TypographyProps) => JSX.Element>)
+const Typography = Object.keys(Variant).reduce(
+  (acc, key) => {
+    const variant = Variant[key as keyof typeof Variant];
+    const tag = TypographyContract[variant];
+    acc[variant] = typographyFactory(variant, tag);
+    return acc;
+  },
+  {} as Record<Variant, (props: TypographyProps) => JSX.Element>,
+);
 
-export { Typography, Typography as Typo }
+export { Typography, Typography as Typo };

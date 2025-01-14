@@ -1,4 +1,7 @@
-import { DetailsHTMLAttributes, ReactNode } from 'react'
+import * as variantStyles from './styles/variant.css';
+import * as weightStyles from './styles/weight.css';
+
+import { type DetailsHTMLAttributes, type ReactNode } from 'react';
 
 export enum TypographyTag {
   H1 = 'h1',
@@ -8,7 +11,7 @@ export enum TypographyTag {
   H5 = 'h5',
   H6 = 'h6',
   P = 'p',
-  Span = 'span',
+  SPAN = 'span',
 }
 
 export enum TypographyVariant {
@@ -24,54 +27,48 @@ export enum TypographyVariant {
   MINI = 'Mini',
 }
 
-export const TypographyVariantClass = {
-  [TypographyVariant.GIANT]: 'typo-giant',
-  [TypographyVariant.JUMBO]: 'typo-jumbo',
-  [TypographyVariant.LARGE]: 'typo-large',
-  [TypographyVariant.MEDIUM]: 'typo-medium',
-  [TypographyVariant.MODERATE]: 'typo-moderate',
-  [TypographyVariant.BASE]: 'typo-base',
-  [TypographyVariant.PETITE]: 'typo-petite',
-  [TypographyVariant.MICRO]: 'typo-micro',
-  [TypographyVariant.TINY]: 'typo-tiny',
-  [TypographyVariant.MINI]: 'typo-mini',
-} as const
-
 export enum TypographyWeight {
-  EXTRABOLD = 'Extrabold',
-  BOLD = 'Bold',
-  SEMIBOLD = 'Semibold',
-  MEDIUM = 'Medium',
-  REGULAR = 'Regular',
-  LIGHT = 'Light',
+  EXTRABOLD,
+  BOLD,
+  SEMIBOLD,
+  MEDIUM,
+  REGULAR,
+  LIGHT,
 }
 
-export {
-  TypographyTag as Tag,
-  TypographyVariant as Variant,
-  TypographyWeight as Weight,
-}
+export const typographyVariantClass = {
+  [TypographyVariant.GIANT]: variantStyles.giant,
+  [TypographyVariant.JUMBO]: variantStyles.jumbo,
+  [TypographyVariant.LARGE]: variantStyles.large,
+  [TypographyVariant.MEDIUM]: variantStyles.medium,
+  [TypographyVariant.MODERATE]: variantStyles.moderate,
+  [TypographyVariant.BASE]: variantStyles.base,
+  [TypographyVariant.PETITE]: variantStyles.petite,
+  [TypographyVariant.MICRO]: variantStyles.micro,
+  [TypographyVariant.TINY]: variantStyles.tiny,
+  [TypographyVariant.MINI]: variantStyles.mini,
+};
 
-export const TypographyWeightClass = {
-  [TypographyWeight.EXTRABOLD]: 'typo-weight-extrabold',
-  [TypographyWeight.BOLD]: 'typo-weight-bold',
-  [TypographyWeight.SEMIBOLD]: 'typo-weight-semibold',
-  [TypographyWeight.MEDIUM]: 'typo-weight-medium',
-  [TypographyWeight.REGULAR]: 'typo-weight-regular',
-  [TypographyWeight.LIGHT]: 'typo-weight-light',
-} as const
+export const typographyWeightClass = {
+  [TypographyWeight.EXTRABOLD]: weightStyles.extrabold,
+  [TypographyWeight.BOLD]: weightStyles.bold,
+  [TypographyWeight.SEMIBOLD]: weightStyles.semibold,
+  [TypographyWeight.MEDIUM]: weightStyles.medium,
+  [TypographyWeight.REGULAR]: weightStyles.regular,
+  [TypographyWeight.LIGHT]: weightStyles.light,
+};
+
+export { TypographyTag as Tag, TypographyVariant as Variant, TypographyWeight as Weight };
 
 export type TypographyPropsBase = DetailsHTMLAttributes<
-  | HTMLHeadingElement
-  | HTMLParagraphElement
-  | HTMLSpanElement
->
+  HTMLHeadingElement | HTMLParagraphElement | HTMLSpanElement
+>;
 
 export type TypographyProps = TypographyPropsBase & {
-  tag?: TypographyTag
-  monospaced?: boolean
-  weight?: TypographyWeight
-  color?: string
-  nowrap?: boolean
-  children?: ReactNode
-}
+  tag?: TypographyTag;
+  monospaced?: boolean;
+  weight?: TypographyWeight;
+  color?: string;
+  nowrap?: boolean;
+  children?: ReactNode;
+};

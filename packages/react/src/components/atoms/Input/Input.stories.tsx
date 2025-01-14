@@ -1,24 +1,25 @@
-import { Meta, StoryObj } from '@storybook/react'
-import { Input } from '.'
-import { GlyphIcon } from '@/components/foundations/Icon/icon-set'
-import { getIconArgType } from '@/lib/storybook/icon'
+import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
+
+import { type Meta, type StoryObj } from '@storybook/react';
+import { getIconArgType } from '@/lib/storybook/icon';
+import { Input } from '.';
 
 const meta: Meta = {
   title: 'Atoms/Input',
   component: Input,
   argTypes: {
     leadingIcon: getIconArgType(),
-    secure: { control: 'boolean' },
+    isSecure: { control: 'boolean' },
     placeholder: { control: 'text' },
   },
   args: {
     leadingIcon: GlyphIcon.SEARCH,
-    secure: false,
+    isSecure: false,
     placeholder: 'Search',
   },
-}
+};
 
-type InputStory = StoryObj<typeof Input>
+type InputStory = StoryObj<typeof Input>;
 
 export const Default: InputStory = {
   render: props => (
@@ -26,6 +27,6 @@ export const Default: InputStory = {
       <Input {...props} />
     </div>
   ),
-}
+};
 
-export default meta
+export default meta;

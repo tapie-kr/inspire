@@ -1,14 +1,17 @@
-import { Color, Radius, Spacing } from '@/constants'
-import { style } from '@vanilla-extract/css'
+import { colorVars } from '@/lib/style/contract/color.css';
+import { radiusVars, spacingVars } from '@/lib/style/contract/component.css';
+
+import { style } from '@vanilla-extract/css';
+import { getShorthandedValue } from '@/utils/color/shorthand';
 
 export const textIndicator = style({
-  padding: `0 ${Spacing.Mini}`,
-  borderRadius: Radius.Pill,
-  background: Color.Surface.Inverted.Default,
-  color: Color.Content.Inverted.Emphasized,
-})
+  padding: getShorthandedValue(0, spacingVars.mini),
+  borderRadius: radiusVars.pill,
+  background: colorVars.surface.inverted.default,
+  color: colorVars.content.inverted.emphasized,
+});
 
 export const emphasized = style({
-  background: Color.Solid.Red,
-  color: Color.Solid.White,
-})
+  background: colorVars.solid.red,
+  color: colorVars.solid.white,
+});

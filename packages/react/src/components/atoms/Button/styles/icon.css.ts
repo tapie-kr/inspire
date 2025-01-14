@@ -1,33 +1,44 @@
-import { Color, Radius, UtilityClass } from '@/constants'
-import { style } from '@vanilla-extract/css'
+import { colorVars } from '@/lib/style/contract/color.css';
+import { radiusVars } from '@/lib/style/contract/component.css';
+
+import { style } from '@vanilla-extract/css';
+import { UtilityClass } from '@/constants/class';
 
 export const base = style({
   aspectRatio: '1 / 1',
   display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'center',
-})
+});
 
-export const primary = style([base, UtilityClass.InteractiveInverted, {
-  background: Color.Surface.Inverted.Elevated,
-  color: Color.Content.Inverted.Emphasized,
-}])
+export const primary = style([
+  base,
+  UtilityClass.InteractiveInverted,
+  {
+    background: colorVars.surface.inverted.elevated,
+    color: colorVars.content.inverted.emphasized,
+  },
+]);
 
-export const secondary = style([base, UtilityClass.Interactive, {
-  background: Color.Surface.Elevated,
-}])
+export const secondary = style([
+  base,
+  UtilityClass.Interactive,
+  {
+    background: colorVars.surface.elevated,
+  },
+]);
 
 export const large = style({
   width: 48,
-  borderRadius: Radius.Default,
-})
+  borderRadius: radiusVars.default,
+});
 
 export const medium = style({
   width: 34,
-  borderRadius: Radius.Subtle,
-})
+  borderRadius: radiusVars.subtle,
+});
 
 export const small = style({
   width: 28,
-  borderRadius: Radius.Sharp,
-})
+  borderRadius: radiusVars.subtle,
+});

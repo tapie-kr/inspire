@@ -1,28 +1,34 @@
-import { Variant, TypographyVariantClass } from '@/components/foundations/Typography/shared'
-import { Color, Radius, Spacing } from '@/constants'
-import { style } from '@vanilla-extract/css'
+import { colorVars } from '@/lib/style/contract/color.css';
+import { radiusVars, spacingVars } from '@/lib/style/contract/component.css';
+
+import { style } from '@vanilla-extract/css';
+import { typographyVariantClass, Variant } from '@/components/foundations/Typography/shared';
+import { getShorthandedValue } from '@/utils/color/shorthand';
 
 export const base = style({
-  padding: Spacing.Petite,
-  background: Color.Surface.Default,
-  color: Color.Content.Default,
-  border: `1px solid ${Color.Grayscale.Translucent._10}`,
-  borderRadius: Radius.Default,
+  padding: spacingVars.petite,
+  background: colorVars.surface.default,
+  color: colorVars.content.default,
+  border: getShorthandedValue('1px', 'solid', colorVars.grayscale.translucent._10),
+  borderRadius: radiusVars.default,
   cursor: 'text',
   ':hover': {
-    borderColor: Color.Grayscale.Translucent._30,
+    borderColor: colorVars.grayscale.translucent._30,
   },
   selectors: {
     '&:has(:focus)': {
-      borderColor: Color.Grayscale.Translucent._70,
+      borderColor: colorVars.grayscale.translucent._70,
     },
   },
-})
+});
 
-export const input = style([TypographyVariantClass[Variant.BASE], {
-  width: '100%',
-  color: Color.Content.Emphasized,
-  '::placeholder': {
-    color: Color.Content.Muted,
+export const input = style([
+  typographyVariantClass[Variant.BASE],
+  {
+    width: '100%',
+    color: colorVars.content.emphasized,
+    '::placeholder': {
+      color: colorVars.content.muted,
+    },
   },
-}])
+]);

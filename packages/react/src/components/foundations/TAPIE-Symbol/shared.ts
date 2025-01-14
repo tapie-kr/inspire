@@ -9,8 +9,8 @@ export const TAPIESymbolSize = {
   _72: 72,
   _80: 80,
   _96: 96,
-} as const
+} as const;
 
-export type TAPIESymbolSize = typeof TAPIESymbolSize[keyof typeof TAPIESymbolSize]
+export type TAPIESymbolSize = (typeof TAPIESymbolSize)[keyof typeof TAPIESymbolSize];
 
-export { TAPIESymbolSize as Size }
+export { TAPIESymbolSize as Size };

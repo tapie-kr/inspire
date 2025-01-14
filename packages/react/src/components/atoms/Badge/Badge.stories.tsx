@@ -1,8 +1,8 @@
-import { Meta, StoryObj } from '@storybook/react'
-import { BadgeSize, BadgeTheme } from './shared'
-import { Badge } from '.'
-import { TextIndicatorBadgeVariant } from './categories/text-indicator'
-import { getIconArgType } from '@/lib/storybook/icon'
+import { type Meta, type StoryObj } from '@storybook/react';
+import { getIconArgType } from '@/lib/storybook/icon';
+import { Badge } from '.';
+import { TextIndicatorBadgeVariant } from './categories/text-indicator';
+import { BadgeSize, BadgeTheme } from './shared';
 
 const baseArgsType = {
   theme: {
@@ -13,15 +13,15 @@ const baseArgsType = {
     options: Object.values(BadgeSize),
     control: { type: 'select' },
   },
-} as const
+} as const;
 
 const meta: Meta = {
   title: 'Atoms/Badge',
-}
+};
 
-type DefaultBadgeStory = StoryObj<typeof Badge.Default>
-type IndicatorBadgeStory = StoryObj<typeof Badge.Indicator>
-type TextIndicatorBadgeStory = StoryObj<typeof Badge.TextIndicator>
+type DefaultBadgeStory = StoryObj<typeof Badge.Default>;
+type IndicatorBadgeStory = StoryObj<typeof Badge.Indicator>;
+type TextIndicatorBadgeStory = StoryObj<typeof Badge.TextIndicator>;
 
 export const Default: DefaultBadgeStory = {
   render: props => <Badge.Default {...props} />,
@@ -35,7 +35,7 @@ export const Default: DefaultBadgeStory = {
     size: BadgeSize.LARGE,
     label: 'Badge',
   },
-}
+};
 
 export const Indicator: IndicatorBadgeStory = {
   render: props => <Badge.Indicator {...props} />,
@@ -44,7 +44,7 @@ export const Indicator: IndicatorBadgeStory = {
     theme: BadgeTheme.MONOCHROME,
     size: BadgeSize.LARGE,
   },
-}
+};
 
 export const TextIndicator: TextIndicatorBadgeStory = {
   render: props => <Badge.TextIndicator {...props} />,
@@ -59,7 +59,7 @@ export const TextIndicator: TextIndicatorBadgeStory = {
     variant: TextIndicatorBadgeVariant.DEFAULT,
     children: 'Badge',
   },
-}
+};
 
 export const TextIndicatorWithNumber: TextIndicatorBadgeStory = {
   render: props => <Badge.TextIndicator {...props} />,
@@ -74,6 +74,6 @@ export const TextIndicatorWithNumber: TextIndicatorBadgeStory = {
     variant: TextIndicatorBadgeVariant.DEFAULT,
     children: 100,
   },
-}
+};
 
-export default meta
+export default meta;

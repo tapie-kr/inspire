@@ -1,10 +1,11 @@
-import { Color, Radius, Spacing, UtilityClass } from '@/constants';
+import { colorVars } from '@/lib/style/contract/color.css';
+
 import { style } from '@vanilla-extract/css';
 
 export const base = style({
-  color: Color.Content.Emphasized,
+  color: colorVars.content.emphasized,
 });
 
 export const disabled = style({
-  color: Color.Content.Disabled,
+  color: colorVars.content.disabled,
 });

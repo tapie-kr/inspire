@@ -1,55 +1,74 @@
-import * as s from './styles.css'
+import * as s from './styles.css';
+import { colorVars } from '@/lib/style/contract/color.css';
+import { spacingVars } from '@/lib/style/contract/component.css';
 
-import { Icon } from '@/components/foundations/Icon'
-import { IconName } from '@/components/foundations/Icon/shared'
-import { Color, Spacing } from '@/constants'
-import { HStack } from '@cottons-kr/react-foundation'
-import { useInputController } from './hooks/use-input-controller'
-import { HTMLInputProps } from './shared'
-import { useMemo } from 'react'
-import { GlyphIcon } from '@/components/foundations/Icon/icon-set'
-import { useToggle } from '@/hooks/use-toggle'
+import { HStack } from '@cottons-kr/react-foundation';
+import { Icon } from '@/components/foundations/Icon';
+import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
+
+import { useCallback, useMemo } from 'react';
+import { type IconName } from '@/components/foundations/Icon/shared';
+import { useToggle } from '@/hooks/use-toggle';
+import { useInputController } from './hooks/use-input-controller';
+import { type HTMLInputProps } from './shared';
 
 type InputProps = HTMLInputProps & {
-  leadingIcon?: IconName
-  secure?: boolean
-}
+  leadingIcon?: IconName;
+  isSecure?: boolean;
+};
 
 export function Input(props: InputProps) {
-  const {
-    leadingIcon, secure,
-    ...restProps
-  } = props
-  const { value, isFocused, tools, controller } = useInputController(restProps)
-  const [hideValue, toggleHideValue] = useToggle(secure)
-  
-  const hasValue = useMemo(() => value.length > 0, [value])
-  const showClearButton = hasValue
-  const showVisibilityButton = useMemo(() => hasValue && secure, [hasValue, secure])
+  const { leadingIcon, isSecure, ...restProps } = props;
+  const { value, isFocused, tools, controller } = useInputController(restProps);
+  const [hideValue, toggleHideValue] = useToggle(isSecure);
 
-  return <>
-    <HStack tag='label' className={s.base} align='center' fullWidth gap={Spacing.Mini}>
-      <HStack align='center' gap={Spacing.Micro}>
-        <Icon name={props.leadingIcon} color={isFocused && Color.Content.Emphasized} />
+  const hasValue = useMemo(() => value.length > 0, [value]);
+  const showClearButton = hasValue;
+  const showVisibilityButton = useMemo(() => hasValue && isSecure, [hasValue, isSecure]);
+
+  const handleVisibilityButton = useCallback(() => toggleHideValue(), [toggleHideValue]);
+  const handleClearButton = useCallback(() => tools.clearValue(), [tools]);
+
+  return (
+    <HStack
+      tag='label'
+      className={s.base}
+      align='center'
+      fullWidth
+      gap={spacingVars.mini}
+    >
+      <HStack
+        align='center'
+        gap={spacingVars.micro}
+      >
+        <Icon
+          name={leadingIcon}
+          color={isFocused && colorVars.content.emphasized}
+        />
         <input
           {...restProps}
-          className={s.input} type={hideValue ? 'password' : 'text'}
+          className={s.input}
+          type={hideValue ? 'password' : 'text'}
           {...controller}
         />
       </HStack>
-      <HStack gap={Spacing.Micro} fitContent>
+      <HStack
+        gap={spacingVars.micro}
+        fitContent
+      >
         <Icon
           name={
-            showVisibilityButton &&
-            (hideValue ? GlyphIcon.VISIBILITY : GlyphIcon.DEFAULT) // TODO: Change DEFAULT to VISIBILITY_OFF
-          } size={20}
-          onClick={toggleHideValue}
+            showVisibilityButton && (hideValue ? GlyphIcon.VISIBILITY : GlyphIcon.DEFAULT) // TODO: Change DEFAULT to VISIBILITY_OFF
+          }
+          size={20}
+          onClick={handleVisibilityButton}
         />
         <Icon
-          name={showClearButton && GlyphIcon.CLOSE} size={20}
-          onClick={tools.clearValue}
+          name={showClearButton && GlyphIcon.CLOSE}
+          size={20}
+          onClick={handleClearButton}
         />
       </HStack>
     </HStack>
-  </>
+  );
 }

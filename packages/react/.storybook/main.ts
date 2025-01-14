@@ -1,27 +1,23 @@
-import type { StorybookConfig } from '@storybook/react-vite'
-import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
-import svgr from 'vite-plugin-svgr'
+import type { StorybookConfig } from '@storybook/react-vite';
+import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
+import { resolve } from 'path';
+import svgr from 'vite-plugin-svgr';
 
-import { resolve } from 'path'
-
-const currentPath = new URL('.', import.meta.url).pathname
+const currentPath = new URL('.', import.meta.url).pathname;
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.stories.tsx'],
-  addons: [
-    '@storybook/addon-toolbars',
-    '@storybook/addon-essentials',
-  ],
+  addons: ['@storybook/addon-toolbars', '@storybook/addon-essentials'],
   framework: {
     name: '@storybook/react-vite',
     options: {},
   },
-  viteFinal: (config) => {
+  viteFinal: config => {
     if (config.resolve) {
       config.resolve.alias = {
         ...config.resolve.alias,
         '@': resolve(currentPath, '../src'),
-      }
+      };
     }
 
     config.plugins?.push(
@@ -29,11 +25,11 @@ const config: StorybookConfig = {
         svgrOptions: { exportType: 'default' },
         include: /\.svg$/,
       }),
-      vanillaExtractPlugin()
-    )
+      vanillaExtractPlugin(),
+    );
 
-    return config
-  }
-}
+    return config;
+  },
+};
 
-export default config
+export default config;

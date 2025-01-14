@@ -1,6 +1,6 @@
-import '../dist/styles.min.css'
+import { InspireProvider } from '@/components/foundations/Provider';
 
-import { Decorator } from '@storybook/react'
+import { type Decorator } from '@storybook/react';
 
 export const parameters = {
   themes: {
@@ -10,15 +10,19 @@ export const parameters = {
       { name: 'dark', class: '', color: '#000000' },
     ],
   },
-}
+};
 
 export const decorators: Array<Decorator> = [
   (Story, context) => {
-    const theme = context.globals.theme || 'light'
-    document.documentElement.setAttribute('data-theme', theme)
-    return <Story />
+    const theme = context.globals.theme || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    return (
+      <InspireProvider>
+        <Story />
+      </InspireProvider>
+    );
   },
-]
+];
 
 export const globalTypes = {
   theme: {
@@ -31,4 +35,4 @@ export const globalTypes = {
       showName: true,
     },
   },
-}
+};

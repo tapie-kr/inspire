@@ -1,27 +1,36 @@
-import * as s from './styles.css'
+import * as s from './styles.css';
+import { colorVars } from '@/lib/style/contract/color.css';
+import { spacingVars } from '@/lib/style/contract/component.css';
 
-import { Typo } from '@/components/foundations/Typography'
-import { Color, Spacing } from '@/constants'
-import { HStack } from '@cottons-kr/react-foundation'
-import cn from 'classnames'
-import { GlyphIcon } from '@/components/foundations/Icon/icon-set'
-import { Icon } from '@/components/foundations/Icon'
+import { HStack } from '@cottons-kr/react-foundation';
+import { Icon } from '@/components/foundations/Icon';
+import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
+import { Typo } from '@/components/foundations/Typography';
+
+import cn from 'classnames';
 
 type LabelProps = {
-  essential?: boolean
-  disabled?: boolean
-  children?: string
-}
+  isEssential?: boolean;
+  isDisabled?: boolean;
+  children?: string;
+};
 
 export function Label(props: LabelProps) {
-  const { essential, disabled } = props
+  const { isEssential, isDisabled } = props;
 
   return (
-    <>
-      <HStack className={cn(s.base, disabled && s.disabled)} fitContent align='center' gap={Spacing.Mini}>
-        <Typo.Base>{props.children}</Typo.Base>
-        <Icon name={props.essential && GlyphIcon.ASTERISK} size={12} color={disabled ? Color.Solid.Translucent.Red._30 : Color.Solid.Red} />
-      </HStack>
-    </>
-  )
+    <HStack
+      className={cn(s.base, isDisabled && s.disabled)}
+      fitContent
+      align='center'
+      gap={spacingVars.mini}
+    >
+      <Typo.Base>{props.children}</Typo.Base>
+      <Icon
+        name={isEssential && GlyphIcon.ASTERISK}
+        size={12}
+        color={isDisabled ? colorVars.solid.translucent.red._30 : colorVars.solid.red}
+      />
+    </HStack>
+  );
 }

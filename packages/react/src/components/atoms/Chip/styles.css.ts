@@ -1,14 +1,21 @@
-import { Color, Radius, Spacing, UtilityClass } from '@/constants'
-import { style } from '@vanilla-extract/css'
+import { colorVars } from '@/lib/style/contract/color.css';
+import { radiusVars, spacingVars } from '@/lib/style/contract/component.css';
 
-export const base = style([UtilityClass.InteractiveInverted, {
-  padding: `${Spacing.Tiny} ${Spacing.Base}`,
-  borderRadius: Radius.Subtle,
-  background: Color.Surface.Elevated,
-  color: Color.Content.Default,
-}])
+import { style } from '@vanilla-extract/css';
+import { UtilityClass } from '@/constants/class';
+import { getShorthandedValue } from '@/utils/color/shorthand';
+
+export const base = style([
+  UtilityClass.InteractiveInverted,
+  {
+    padding: getShorthandedValue(spacingVars.tiny, spacingVars.base),
+    borderRadius: radiusVars.subtle,
+    background: colorVars.surface.elevated,
+    color: colorVars.content.default,
+  },
+]);
 
 export const active = style({
-  background: Color.Surface.Inverted.Elevated,
-  color: Color.Content.Inverted.Emphasized,
-})
+  background: colorVars.surface.inverted.elevated,
+  color: colorVars.content.inverted.emphasized,
+});

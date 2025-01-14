@@ -1,13 +1,14 @@
-import { Meta, StoryObj } from '@storybook/react'
-import { GlyphIcon } from '@/components/foundations/Icon/icon-set'
-import { Chip } from '.'
-import { getIconArgType } from '@/lib/storybook/icon'
+import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
+
+import { type Meta, type StoryObj } from '@storybook/react';
+import { getIconArgType } from '@/lib/storybook/icon';
+import { Chip } from '.';
 
 const meta: Meta = {
   title: 'Atoms/Chip',
   component: Chip,
   argTypes: {
-    active: {
+    isActive: {
       control: { type: 'boolean' },
     },
     leadingIcon: getIconArgType(),
@@ -17,17 +18,17 @@ const meta: Meta = {
     },
   },
   args: {
-    active: false,
+    isActive: false,
     leadingIcon: GlyphIcon.DEFAULT,
     trailingIcon: GlyphIcon.CLOSE,
     children: 'Chip',
   },
-}
+};
 
-type DefaultChipStory = StoryObj<typeof Chip>
+type DefaultChipStory = StoryObj<typeof Chip>;
 
 export const Default: DefaultChipStory = {
-  render: (props) => <Chip {...props} />,
-}
+  render: props => <Chip {...props} />,
+};
 
-export default meta
+export default meta;
