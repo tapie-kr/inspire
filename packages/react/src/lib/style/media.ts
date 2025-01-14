@@ -1,11 +1,17 @@
-import { type GlobalStyleRule } from '@vanilla-extract/css';
+import { type CSSProperties } from '@vanilla-extract/css';
 
-export function getMobileMediaQuery(properties: GlobalStyleRule) {
+type CSSPropertiesWithVars = CSSProperties & {
+  vars?: {
+    [key: string]: string;
+  };
+};
+
+export function getMobileMediaQuery(properties: CSSPropertiesWithVars) {
   return {
     '@media': {
       'screen and (max-width: 768px)': {
         ...properties,
       },
     },
-  };
+  } as const;
 }

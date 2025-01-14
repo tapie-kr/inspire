@@ -110,13 +110,13 @@ async function generateIconSet() {
     const brandSvgFiles = brandFiles.filter(file => path.extname(file).toLowerCase() === '.svg');
 
     const imports = [
-      ...glyphSvgFiles.map(
-        file => `import ${fileNameToPascalCase(file)}Glyph from './assets/glyph/${file}'`,
-      ),
+      ...brandSvgFiles
+        .map(file => `import ${fileNameToPascalCase(file)}Brand from './assets/brand/${file}'`)
+        .sort((a, b) => a.localeCompare(b)),
+      ...glyphSvgFiles
+        .map(file => `import ${fileNameToPascalCase(file)}Glyph from './assets/glyph/${file}'`)
+        .sort((a, b) => a.localeCompare(b)),
       '',
-      ...brandSvgFiles.map(
-        file => `import ${fileNameToPascalCase(file)}Brand from './assets/brand/${file}'`,
-      ),
     ].join('\n');
 
     const glyphIconEnum = glyphSvgFiles

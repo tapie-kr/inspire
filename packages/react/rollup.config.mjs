@@ -9,6 +9,7 @@ import { vanillaExtractPlugin } from '@vanilla-extract/rollup-plugin';
 import svgr from '@svgr/rollup';
 import strip from '@rollup/plugin-strip';
 import postcss from 'rollup-plugin-postcss';
+import copy from 'rollup-plugin-copy';
 
 import customLogger from './scripts/rollup/custom-logger.mjs';
 
@@ -59,7 +60,9 @@ const config = defineConfig([
         extensions: ['.ts', '.tsx', '.svg'],
       }),
       commonjs(),
-      vanillaExtractPlugin({ identifiers: 'short' }),
+      vanillaExtractPlugin({
+        identifiers: 'short',
+      }),
       svgr({
         svgrOptions: { exportType: 'default' },
         include: /\.svg$/,
@@ -88,7 +91,56 @@ const config = defineConfig([
         sourceMap: true,
         exclude: ['**/*.scss', '**/*.css', '**/*.svg'],
       }),
+      copy({
+        targets: [
+          {
+            src: 'src/assets/fonts/*.woff2',
+            dest: 'dist/assets/src/styles/typography/src/assets/fonts',
+          },
+        ],
+      }),
       customLogger('components', currentPath),
+    ],
+  },
+  {
+    input: 'src/constants/index.ts',
+    output: [
+      {
+        file: packageJson.exports['./variables'].import,
+        format: 'esm',
+        sourcemap: true,
+        exports: 'named',
+        banner,
+      },
+      {
+        file: packageJson.exports['./variables'].require,
+        format: 'cjs',
+        sourcemap: true,
+        exports: 'named',
+        banner,
+      },
+    ],
+    plugins: [
+      peerDepsExternal(),
+      resolve({
+        extensions: ['.ts'],
+      }),
+      commonjs(),
+      swc({
+        jsc: {
+          parser: {
+            syntax: 'typescript',
+            runtime: 'automatic;',
+          },
+          baseUrl: currentPath,
+          paths: {
+            '@/*': ['./src/*'],
+          },
+        },
+        sourceMaps: true,
+        minify: true,
+      }),
+      customLogger('constants', currentPath),
     ],
   },
 ]);
@@ -102,6 +154,8 @@ export default () => {
   switch (target) {
     case 'components':
       return config[0];
+    case 'constants':
+      return config[1];
 
     case 'all':
       return config;

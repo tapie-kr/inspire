@@ -10,13 +10,15 @@
     "prepublishOnly": "pnpm run build",
     "build:types": "tsc --project tsconfig.lib.json && tsc-alias -p tsconfig.lib.json",
     "build:components": "pnpm run build:types && BUILD_TARGET=components rollup -c --silent",
-    "build": "rimraf dist && pnpm run generate && pnpm run build:components",
+    "build:constants": "pnpm run build:types && BUILD_TARGET=constants rollup -c --silent",
+    "build": "rimraf dist && pnpm run generate && pnpm run build:components && pnpm run build:constants",
     "generate:barrel": "tsx scripts/generate-barrel.ts ./src constants && tsx scripts/generate-barrel.ts ./src/constants",
     "generate:icon": "tsx scripts/generate-icon-set.ts",
-    "generate": "pnpm run generate:icon && pnpm run generate:barrel",
+    "generate": "pnpm run generate:icon && pnpm run generate:barrel && pnpm run format",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "format": "prettier --write .",
+    "format": "pnpm run lint && pnpm run prettier",
+    "prettier": "prettier --write .",
     "lint": "eslint . --fix",
     "lint:dry": "eslint . --fix-dry-run"
   },
@@ -107,8 +109,7 @@
       "types": "./dist/types/constants/index.d.ts",
       "import": "./dist/constants.esm.js",
       "require": "./dist/constants.js"
-    },
-    "./styles.css": "./dist/styles.min.css"
+    }
   },
   "publishConfig": {
     "access": "public"
