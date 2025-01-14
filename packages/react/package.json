@@ -4,15 +4,14 @@
     "packages/font-kit",
     "packages/react"
   ],
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React Component Collection for INSPIRE",
   "scripts": {
     "prepublishOnly": "pnpm run build",
     "build:types": "tsc --project tsconfig.lib.json && tsc-alias -p tsconfig.lib.json",
     "build:components": "pnpm run build:types && BUILD_TARGET=components rollup -c --silent",
-    "build:constants": "pnpm run build:types && BUILD_TARGET=constants rollup -c --silent",
-    "build": "rimraf dist && pnpm run generate && pnpm run build:components && pnpm run build:constants",
-    "generate:barrel": "tsx scripts/generate-barrel.ts ./src constants && tsx scripts/generate-barrel.ts ./src/constants",
+    "build": "rimraf dist && pnpm run generate && pnpm run build:components",
+    "generate:barrel": "tsx scripts/generate-barrel.ts ./src",
     "generate:icon": "tsx scripts/generate-icon-set.ts",
     "generate": "pnpm run generate:icon && pnpm run generate:barrel && pnpm run format",
     "storybook": "storybook dev -p 6006",
@@ -104,11 +103,6 @@
       "types": "./dist/types/index.d.ts",
       "import": "./dist/index.esm.js",
       "require": "./dist/index.js"
-    },
-    "./variables": {
-      "types": "./dist/types/constants/index.d.ts",
-      "import": "./dist/constants.esm.js",
-      "require": "./dist/constants.js"
     }
   },
   "publishConfig": {

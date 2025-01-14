@@ -102,47 +102,6 @@ const config = defineConfig([
       customLogger('components', currentPath),
     ],
   },
-  {
-    input: 'src/constants/index.ts',
-    output: [
-      {
-        file: packageJson.exports['./variables'].import,
-        format: 'esm',
-        sourcemap: true,
-        exports: 'named',
-        banner,
-      },
-      {
-        file: packageJson.exports['./variables'].require,
-        format: 'cjs',
-        sourcemap: true,
-        exports: 'named',
-        banner,
-      },
-    ],
-    plugins: [
-      peerDepsExternal(),
-      resolve({
-        extensions: ['.ts'],
-      }),
-      commonjs(),
-      swc({
-        jsc: {
-          parser: {
-            syntax: 'typescript',
-            runtime: 'automatic;',
-          },
-          baseUrl: currentPath,
-          paths: {
-            '@/*': ['./src/*'],
-          },
-        },
-        sourceMaps: true,
-        minify: true,
-      }),
-      customLogger('constants', currentPath),
-    ],
-  },
 ]);
 
 export default () => {
