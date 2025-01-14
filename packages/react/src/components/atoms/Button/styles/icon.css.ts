@@ -9,6 +9,7 @@ export const base = style({
   display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'center',
+  flexShrink: 0,
 });
 
 export const primary = style([
