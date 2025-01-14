@@ -1,10 +1,13 @@
 import '@/styles/color/index.css';
 import '@/styles/component/index.css';
 import '@/styles/typography/index.css';
+import '@/styles/interactive.css';
+import '@/styles/utility.css';
 import { inspireFontKit } from './typography/index.css';
 import { colorVars } from '@/lib/style/contract/color.css';
 
 import { globalStyle } from '@vanilla-extract/css';
+import { getCSSTransition } from '@/lib';
 
 globalStyle('html, body', {
   background: colorVars.surface.default,
@@ -21,12 +24,12 @@ globalStyle('*', {
   fontFamily: inspireFontKit,
   fontSynthesis: 'none',
   WebkitFontSmoothing: 'antialiased',
-  transition: `
-    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  `,
+  transition: [
+    getCSSTransition('background-color', 0.3),
+    getCSSTransition('background', 0.3),
+    getCSSTransition('border-color', 0.3),
+    getCSSTransition('box-shadow', 0.3),
+  ].join(', '),
 });
 
 globalStyle('*:focus', {

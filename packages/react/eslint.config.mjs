@@ -1,4 +1,3 @@
-// eslint.config.mjs
 import js from '@eslint/js';
 import typescript from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
@@ -45,7 +44,6 @@ export default [
       },
     },
     rules: {
-      // TypeScript 관련 규칙
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '^_' }],
@@ -60,7 +58,6 @@ export default [
 
       'comma-dangle': ['error', 'always-multiline'],
 
-      // 에러 방지 규칙
       'no-console': ['warn', { allow: ['warn', 'error'] }],
       'no-debugger': 'error',
       'no-alert': 'error',
@@ -71,7 +68,6 @@ export default [
       'no-undef': 'off',
       'no-redeclare': 'off',
 
-      // React 관련 규칙
       'react/prop-types': 'off',
       'react/react-in-jsx-scope': 'off',
       'react/jsx-props-no-spreading': 'off',
@@ -121,25 +117,14 @@ export default [
         'error',
         {
           groups: [
-            // 1. CSS 모듈
             ['^.+\\.css$'],
-
-            // 2. 컴포넌트 (shared로 끝나지 않는 것들만)
-            [
-              '^@cottons-kr/react-foundation',
-              '^@/components/(?!.*?/shared$)', // /shared로 끝나지 않는 컴포넌트 경로만
-            ],
-
-            // 3. 나머지 imports (/shared 포함)
+            ['^@cottons-kr/react-foundation', '^@/components/(?!.*?/shared$)'],
             ['^@?\\w', '^@/', '^\\.'],
-
-            // Side effect imports
             ['^\\u0000'],
           ],
         },
       ],
 
-      // 접근성 규칙
       'jsx-a11y/anchor-is-valid': 'error',
     },
   },
@@ -147,7 +132,7 @@ export default [
     // JavaScript Configuration
     files: ['**/*.{js,mjs,cjs,jsx}'],
     rules: {
-      'no-unused-vars': 'error',
+      'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
       'no-undef': 'off',
     },
   },

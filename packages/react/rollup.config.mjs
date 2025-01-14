@@ -4,6 +4,7 @@ import copy from 'rollup-plugin-copy';
 import customLogger from './scripts/rollup/custom-logger.mjs';
 import defaultPlugins from './scripts/rollup/default-plugins.mjs';
 import outputGenerator from './scripts/rollup/output-generator.mjs';
+import removeCSS from './scripts/rollup/remove-css.mjs';
 
 const currentPath = new URL('.', import.meta.url).pathname;
 const packageJson = JSON.parse(readFileSync(new URL('./package.json', import.meta.url)).toString());
@@ -44,12 +45,12 @@ const config = defineConfig([
   {
     input: 'src/lib/index.ts',
     output: outputGenerator(packageJson.exports['./lib'], banner, footer),
-    plugins: [...defaultPlugins(currentPath), customLogger('lib', currentPath)],
+    plugins: [...defaultPlugins(currentPath), removeCSS(), customLogger('lib', currentPath)],
   },
   {
     input: 'src/utils/index.ts',
     output: outputGenerator(packageJson.exports['./utils'], banner, footer),
-    plugins: [...defaultPlugins(currentPath), customLogger('utils', currentPath)],
+    plugins: [...defaultPlugins(currentPath), removeCSS(), customLogger('utils', currentPath)],
   },
 ]);
 
