@@ -15,7 +15,8 @@
     "skipLibCheck": true,
     "strict": true,
     "incremental": false,
-    "noEmit": false
+    "noEmit": false,
+    "preserveSymlinks": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist", "**/*.stories.tsx", "**/storybook/*", "**/*.css.ts"]

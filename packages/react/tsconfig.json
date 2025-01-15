@@ -13,7 +13,6 @@
     "jsx": "react-jsx",
     "incremental": true,
     "allowSyntheticDefaultImports": true,
-    "preserveSymlinks": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
