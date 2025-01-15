@@ -18,5 +18,5 @@
     "noEmit": false
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist", "**/*.stories.tsx", "**/*.css.ts"]
+  "exclude": ["node_modules", "dist", "**/*.stories.tsx", "**/storybook/*", "**/*.css.ts"]
 }
