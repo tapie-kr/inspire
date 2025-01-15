@@ -1,3 +1,4 @@
+import { base } from '../styles/base.css';
 import * as s from '../styles/default.css';
 import { spacingVars } from '@/lib/style/contract/component.css';
 
@@ -34,7 +35,7 @@ export function DefaultBadge(props: BadgeProps) {
 
   return (
     <HStack
-      className={cn(s[theme], s[size])}
+      className={cn(s[theme], s[size], base)}
       fitContent
       align='center'
       gap={GapMap[size]}
