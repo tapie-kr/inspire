@@ -14,5 +14,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "prettier.enable": true,
+  "eslint.enable": true,
+  "eslint.format.enable": false
 }
