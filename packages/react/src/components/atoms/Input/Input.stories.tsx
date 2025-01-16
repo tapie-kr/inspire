@@ -4,6 +4,7 @@ import { type Meta, type StoryObj } from '@storybook/react';
 import { getIconArgType } from '@/lib/storybook/icon';
 import { Input } from '.';
 import { ImagePreviewShape } from './categories/image-preview';
+import { ParagraphInputResize } from './categories/paragraph';
 import { InputSize } from './shared';
 
 const meta: Meta = {
@@ -11,6 +12,7 @@ const meta: Meta = {
 };
 
 type TextInputStory = StoryObj<typeof Input.Text>;
+type ParagraphInputStory = StoryObj<typeof Input.Paragraph>;
 type FileInputStory = StoryObj<typeof Input.File>;
 type DraggableFileInputStory = StoryObj<typeof Input.File.Draggable>;
 type ImagePreviewInputStory = StoryObj<typeof Input.ImagePreview>;
@@ -34,6 +36,33 @@ export const Text: TextInputStory = {
     leadingIcon: GlyphIcon.SEARCH,
     isSecure: true,
     placeholder: 'Placeholder',
+  },
+};
+
+export const Paragraph: ParagraphInputStory = {
+  render: props => (
+    <div style={{ width: 350 }}>
+      <Input.Paragraph {...props} />
+    </div>
+  ),
+  argTypes: {
+    resize: {
+      options: Object.values(ParagraphInputResize),
+      control: { type: 'select' },
+    },
+    size: {
+      options: Object.values(InputSize),
+      control: { type: 'select' },
+    },
+    height: { control: 'number' },
+    placeholder: { control: 'text' },
+    maxLength: { control: 'number' },
+  },
+  args: {
+    resize: ParagraphInputResize.NONE,
+    placeholder: 'Placeholder',
+    height: 160,
+    maxLength: 100,
   },
 };
 

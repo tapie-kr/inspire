@@ -21,7 +21,7 @@ type TextInputProps = HTMLInputProps & {
 
 export function TextInput(props: TextInputProps) {
   const { leadingIcon, isSecure, size = InputSize.LARGE, ...restProps } = props;
-  const { value, isFocused, tools, controller } = useTextInputController(restProps);
+  const { value, isFocused, tools, controller } = useTextInputController<TextInputProps>(restProps);
   const [hideValue, toggleHideValue] = useToggle(isSecure);
 
   const hasValue = useMemo(() => value.length > 0, [value]);

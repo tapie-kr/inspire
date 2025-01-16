@@ -1,16 +1,31 @@
 import { type ChangeEvent, useCallback, useState } from 'react';
 import { useToggle } from '@/hooks/use-toggle';
-import { type HTMLInputProps } from '../shared';
+import { type HTMLInputProps, type HTMLTextAreaProps } from '../shared';
 
-export function useTextInputController(inputProps: HTMLInputProps) {
+type ElementType<T> = T extends HTMLInputProps
+  ? HTMLInputElement
+  : T extends HTMLTextAreaProps
+    ? HTMLTextAreaElement
+    : never;
+
+export function useTextInputController<T extends HTMLInputProps | HTMLTextAreaProps>(
+  inputProps: T,
+) {
   const [value, setValue] = useState(
     valueConverter(inputProps.value || inputProps.defaultValue || ''),
   );
   const [isFocused, _, setIsFocused] = useToggle(false);
 
-  const onChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    setValue(valueConverter(e.target.value));
-  }, []);
+  const onChange = useCallback(
+    (e: ChangeEvent<ElementType<T>>) => {
+      if (inputProps.maxLength && e.target.value.length > inputProps.maxLength) {
+        return;
+      }
+
+      setValue(valueConverter(e.target.value));
+    },
+    [inputProps.maxLength],
+  );
   const onFocus = useCallback(() => setIsFocused(true), [setIsFocused]);
   const onBlur = useCallback(() => setIsFocused(false), [setIsFocused]);
 
