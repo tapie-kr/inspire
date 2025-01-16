@@ -64,17 +64,14 @@ export function FileInput(props: FileInputProps) {
         <HStack
           className={s.inputContainer}
           fullWidth
+          justify={'start'}
         >
           <Label
             className={s.inputText}
             nowrap
             color={hasValue && files ? colorVars.content.emphasized : colorVars.content.muted}
           >
-            {hasValue && files
-              ? files.length === 1
-                ? files[0].name
-                : `${files[0].name} 외 ${files.length - 1}개`
-              : placeholder}
+            {hasValue && files ? files[0].name + String.fromCharCode(160) : placeholder}
           </Label>
           <Label
             nowrap

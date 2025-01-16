@@ -53,8 +53,6 @@ export const input = style({
 export const inputText = style({
   overflow: 'hidden',
   textOverflow: 'ellipsis',
-  maxWidth: '100%',
-  flex: 1,
 });
 
 export const inputLarge = style([typographyVariantClass[Variant.BASE]]);
