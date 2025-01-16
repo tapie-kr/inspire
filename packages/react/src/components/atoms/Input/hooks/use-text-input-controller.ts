@@ -2,7 +2,7 @@ import { type ChangeEvent, useCallback, useState } from 'react';
 import { useToggle } from '@/hooks/use-toggle';
 import { type HTMLInputProps } from '../shared';
 
-export function useInputController(inputProps: HTMLInputProps) {
+export function useTextInputController(inputProps: HTMLInputProps) {
   const [value, setValue] = useState(
     valueConverter(inputProps.value || inputProps.defaultValue || ''),
   );
@@ -39,5 +39,6 @@ function valueConverter(value: HTMLInputProps['value']): string {
   if (typeof value === 'object') {
     return value.join(', ');
   }
+
   return value?.toString() || '';
 }

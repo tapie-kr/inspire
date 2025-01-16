@@ -9,7 +9,7 @@ export * from './components/atoms/Button/categories/text';
 export * from './components/atoms/Button/index';
 export * from './components/atoms/Button/shared';
 export * from './components/atoms/Chip/index';
-export * from './components/atoms/Input/hooks/use-input-controller';
+export * from './components/atoms/Input/hooks/use-text-input-controller';
 export * from './components/atoms/Input/index';
 export * from './components/atoms/Input/shared';
 export * from './components/atoms/Label/index';

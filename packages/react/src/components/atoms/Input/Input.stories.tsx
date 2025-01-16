@@ -31,7 +31,7 @@ export const Text: TextInputStory = {
   args: {
     leadingIcon: GlyphIcon.SEARCH,
     isSecure: true,
-    placeholder: 'Sex',
+    placeholder: 'Placeholder',
   },
 };
 
@@ -41,6 +41,20 @@ export const File: FileInputStory = {
       <Input.File {...props} />
     </div>
   ),
+  argTypes: {
+    leadingIcon: getIconArgType(),
+    placeholder: { control: 'text' },
+    multiple: { control: 'boolean' },
+    size: {
+      options: Object.values(TextInputSize),
+      control: { type: 'select' },
+    },
+  },
+  args: {
+    leadingIcon: GlyphIcon.SEARCH,
+    placeholder: 'Placeholder',
+    multiple: true,
+  },
 };
 
 export const ImagePreview: ImagePreviewInputStory = {

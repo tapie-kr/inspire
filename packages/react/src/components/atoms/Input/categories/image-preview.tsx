@@ -9,7 +9,7 @@ import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
 import { useCallback, useMemo } from 'react';
 import { type IconName } from '@/components/foundations/Icon/shared';
 import { useToggle } from '@/hooks/use-toggle';
-import { useInputController } from '../hooks/use-input-controller';
+import { useTextInputController } from '../hooks/use-text-input-controller';
 import { type HTMLInputProps } from '../shared';
 
 type InputProps = HTMLInputProps & {
@@ -19,7 +19,7 @@ type InputProps = HTMLInputProps & {
 
 export function ImagePreviewInput(props: InputProps) {
   const { leadingIcon, isSecure, ...restProps } = props;
-  const { value, isFocused, tools, controller } = useInputController(restProps);
+  const { value, isFocused, tools, controller } = useTextInputController(restProps);
   const [hideValue, toggleHideValue] = useToggle(isSecure);
 
   const hasValue = useMemo(() => value.length > 0, [value]);

@@ -1,38 +1,52 @@
-import * as s from '../styles/text.css';
+import * as s from '../styles/file.css';
 import { colorVars } from '@/lib/style/contract/color.css';
 import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { HStack } from '@cottons-kr/react-foundation';
 import { Icon } from '@/components/foundations/Icon';
 import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
+import { Typo } from '@/components/foundations/Typography';
 
-import { useCallback, useMemo } from 'react';
+import cn from 'classnames';
+import React, { useCallback, useMemo } from 'react';
 import { type IconName } from '@/components/foundations/Icon/shared';
-import { useToggle } from '@/hooks/use-toggle';
-import { useInputController } from '../hooks/use-input-controller';
+import { useFileInputController } from '../hooks/use-file-input-controller';
 import { type HTMLInputProps } from '../shared';
 
-type InputProps = HTMLInputProps & {
+export enum FileInputSize {
+  LARGE = 'large',
+  MEDIUM = 'medium',
+}
+
+type FileInputProps = HTMLInputProps & {
   leadingIcon?: IconName;
-  isSecure?: boolean;
+  size?: FileInputSize;
 };
 
-export function FileInput(props: InputProps) {
-  const { leadingIcon, isSecure, ...restProps } = props;
-  const { value, isFocused, tools, controller } = useInputController(restProps);
-  const [hideValue, toggleHideValue] = useToggle(isSecure);
+export function FileInput(props: FileInputProps) {
+  const { leadingIcon, size = FileInputSize.LARGE, placeholder, ...restProps } = props;
+  const { files, tools, controller } = useFileInputController();
 
-  const hasValue = useMemo(() => value.length > 0, [value]);
+  const hasValue = useMemo(() => files != null && files.length > 0, [files]);
   const showClearButton = hasValue;
-  const showVisibilityButton = useMemo(() => hasValue && isSecure, [hasValue, isSecure]);
 
-  const handleVisibilityButton = useCallback(() => toggleHideValue(), [toggleHideValue]);
-  const handleClearButton = useCallback(() => tools.clearValue(), [tools]);
+  const isLarge = size === FileInputSize.LARGE;
+
+  const handleClearButton = useCallback(
+    (e: React.MouseEvent<SVGElement>) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      setTimeout(() => {
+        tools.clearFiles();
+      }, 0);
+    },
+    [tools],
+  );
 
   return (
     <HStack
-      tag='label'
-      className={s.base}
+      className={cn(s.base, isLarge ? s.baseLarge : s.baseMedium)}
       align='center'
       fullWidth
       gap={spacingVars.mini}
@@ -40,29 +54,42 @@ export function FileInput(props: InputProps) {
       <HStack
         align='center'
         gap={spacingVars.micro}
+        fullWidth
+        className={cn(s.label, isLarge ? s.labelLarge : s.labelMedium)}
+        tag='label'
       >
         <Icon
           name={leadingIcon}
-          color={isFocused && colorVars.content.emphasized}
+          color={hasValue ? colorVars.content.emphasized : colorVars.content.default}
         />
-        <input
-          {...restProps}
-          className={s.input}
-          type={hideValue ? 'password' : 'text'}
-          {...controller}
-        />
-      </HStack>
-      <HStack
-        gap={spacingVars.micro}
-        fitContent
-      >
-        <Icon
-          name={
-            showVisibilityButton && (hideValue ? GlyphIcon.VISIBILITY : GlyphIcon.DEFAULT) // TODO: Change DEFAULT to VISIBILITY_OFF
-          }
-          size={20}
-          onClick={handleVisibilityButton}
-        />
+        <HStack
+          className={s.inputContainer}
+          fullWidth
+        >
+          <Typo.Base
+            className={s.inputText}
+            nowrap
+            color={hasValue && files ? colorVars.content.emphasized : colorVars.content.muted}
+          >
+            {hasValue && files
+              ? files.length === 1
+                ? files[0].name
+                : `${files[0].name} 외 ${files.length - 1}개`
+              : placeholder}
+          </Typo.Base>
+          <Typo.Base
+            nowrap
+            color={colorVars.content.emphasized}
+          >
+            {hasValue && files && files.length > 1 ? `외 ${files.length - 1}개` : ''}
+          </Typo.Base>
+          <input
+            {...restProps}
+            className={s.input}
+            type={'file'}
+            {...controller}
+          />
+        </HStack>
         <Icon
           name={showClearButton && GlyphIcon.CLOSE}
           size={20}

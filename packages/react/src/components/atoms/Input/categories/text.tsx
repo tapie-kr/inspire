@@ -10,7 +10,7 @@ import cn from 'classnames';
 import { useCallback, useMemo } from 'react';
 import { type IconName } from '@/components/foundations/Icon/shared';
 import { useToggle } from '@/hooks/use-toggle';
-import { useInputController } from '../hooks/use-input-controller';
+import { useTextInputController } from '../hooks/use-text-input-controller';
 import { type HTMLInputProps } from '../shared';
 
 export enum TextInputSize {
@@ -26,7 +26,7 @@ type TextInputProps = HTMLInputProps & {
 
 export function TextInput(props: TextInputProps) {
   const { leadingIcon, isSecure, size = TextInputSize.LARGE, ...restProps } = props;
-  const { value, isFocused, tools, controller } = useInputController(restProps);
+  const { value, isFocused, tools, controller } = useTextInputController(restProps);
   const [hideValue, toggleHideValue] = useToggle(isSecure);
 
   const hasValue = useMemo(() => value.length > 0, [value]);
@@ -46,7 +46,10 @@ export function TextInput(props: TextInputProps) {
       fullWidth
       gap={isLarge ? spacingVars.mini : spacingVars.tiny}
     >
-      <HStack align='center'>
+      <HStack
+        align='center'
+        gap={isLarge ? spacingVars.mini : spacingVars.optical}
+      >
         <Icon
           name={leadingIcon}
           color={isFocused && colorVars.content.emphasized}
