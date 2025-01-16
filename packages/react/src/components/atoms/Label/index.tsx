@@ -9,14 +9,26 @@ import { Typo } from '@/components/foundations/Typography';
 
 import cn from 'classnames';
 
+export enum LabelSize {
+  LARGE = 'large',
+  MEDIUM = 'medium',
+  SMALL = 'small',
+}
+
 type LabelProps = {
   isEssential?: boolean;
   isDisabled?: boolean;
   children?: string;
+  size?: LabelSize;
 };
 
 export function Label(props: LabelProps) {
-  const { isEssential, isDisabled } = props;
+  const { isEssential, isDisabled, size = LabelSize.LARGE } = props;
+
+  const isLarge = size === LabelSize.LARGE;
+  const isMedium = size === LabelSize.MEDIUM;
+
+  const LabelTypo = isLarge ? Typo.Petite : isMedium ? Typo.Tiny : Typo.Mini;
 
   return (
     <HStack
@@ -25,10 +37,10 @@ export function Label(props: LabelProps) {
       align='center'
       gap={spacingVars.mini}
     >
-      <Typo.Base>{props.children}</Typo.Base>
+      <LabelTypo>{props.children}</LabelTypo>
       <Icon
         name={isEssential && GlyphIcon.ASTERISK}
-        size={12}
+        size={isLarge ? 10 : isMedium ? 8 : 6}
         color={isDisabled ? colorVars.solid.translucent.red._30 : colorVars.solid.red}
       />
     </HStack>

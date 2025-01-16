@@ -1,5 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react';
-import { Label } from '.';
+import { Label, LabelSize } from '.';
 
 const meta: Meta = {
   title: 'Atoms/Label',
@@ -14,11 +14,16 @@ const meta: Meta = {
     children: {
       control: { type: 'text' },
     },
+    size: {
+      options: Object.values(LabelSize),
+      control: { type: 'select' },
+    },
   },
   args: {
     isEssential: false,
     isDisabled: false,
     children: 'Label',
+    size: LabelSize.LARGE,
   },
 };
 
