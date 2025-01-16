@@ -11,26 +11,22 @@ import cn from 'classnames';
 import React, { useCallback, useMemo } from 'react';
 import { type IconName } from '@/components/foundations/Icon/shared';
 import { useFileInputController } from '../hooks/use-file-input-controller';
-import { type HTMLInputProps } from '../shared';
-
-export enum FileInputSize {
-  LARGE = 'large',
-  MEDIUM = 'medium',
-}
+import { type HTMLInputProps, InputSize } from '../shared';
+import { DraggableFileInput } from './draggable-file';
 
 type FileInputProps = HTMLInputProps & {
   leadingIcon?: IconName;
-  size?: FileInputSize;
+  size?: InputSize;
 };
 
 export function FileInput(props: FileInputProps) {
-  const { leadingIcon, size = FileInputSize.LARGE, placeholder, ...restProps } = props;
+  const { leadingIcon, size = InputSize.LARGE, placeholder, ...restProps } = props;
   const { files, tools, controller } = useFileInputController();
 
   const hasValue = useMemo(() => files != null && files.length > 0, [files]);
   const showClearButton = hasValue;
 
-  const isLarge = size === FileInputSize.LARGE;
+  const isLarge = size === InputSize.LARGE;
 
   const handleClearButton = useCallback(
     (e: React.MouseEvent<SVGElement>) => {
@@ -102,3 +98,5 @@ export function FileInput(props: FileInputProps) {
     </HStack>
   );
 }
+
+FileInput.Draggable = DraggableFileInput;

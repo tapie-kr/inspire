@@ -11,21 +11,16 @@ import { useCallback, useMemo } from 'react';
 import { type IconName } from '@/components/foundations/Icon/shared';
 import { useToggle } from '@/hooks/use-toggle';
 import { useTextInputController } from '../hooks/use-text-input-controller';
-import { type HTMLInputProps } from '../shared';
-
-export enum TextInputSize {
-  LARGE = 'large',
-  MEDIUM = 'medium',
-}
+import { type HTMLInputProps, InputSize } from '../shared';
 
 type TextInputProps = HTMLInputProps & {
   leadingIcon?: IconName;
   isSecure?: boolean;
-  size?: TextInputSize;
+  size?: InputSize;
 };
 
 export function TextInput(props: TextInputProps) {
-  const { leadingIcon, isSecure, size = TextInputSize.LARGE, ...restProps } = props;
+  const { leadingIcon, isSecure, size = InputSize.LARGE, ...restProps } = props;
   const { value, isFocused, tools, controller } = useTextInputController(restProps);
   const [hideValue, toggleHideValue] = useToggle(isSecure);
 
@@ -33,7 +28,7 @@ export function TextInput(props: TextInputProps) {
   const showClearButton = hasValue;
   const showVisibilityButton = useMemo(() => hasValue && isSecure, [hasValue, isSecure]);
 
-  const isLarge = size === TextInputSize.LARGE;
+  const isLarge = size === InputSize.LARGE;
 
   const handleVisibilityButton = useCallback(() => toggleHideValue(), [toggleHideValue]);
   const handleClearButton = useCallback(() => tools.clearValue(), [tools]);
