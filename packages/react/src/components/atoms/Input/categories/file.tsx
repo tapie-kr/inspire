@@ -44,6 +44,8 @@ export function FileInput(props: FileInputProps) {
     [tools],
   );
 
+  const Label = isLarge ? Typo.Base : Typo.Petite;
+
   return (
     <HStack
       className={cn(s.base, isLarge ? s.baseLarge : s.baseMedium)}
@@ -61,12 +63,13 @@ export function FileInput(props: FileInputProps) {
         <Icon
           name={leadingIcon}
           color={hasValue ? colorVars.content.emphasized : colorVars.content.default}
+          size={isLarge ? 24 : 18}
         />
         <HStack
           className={s.inputContainer}
           fullWidth
         >
-          <Typo.Base
+          <Label
             className={s.inputText}
             nowrap
             color={hasValue && files ? colorVars.content.emphasized : colorVars.content.muted}
@@ -76,13 +79,13 @@ export function FileInput(props: FileInputProps) {
                 ? files[0].name
                 : `${files[0].name} 외 ${files.length - 1}개`
               : placeholder}
-          </Typo.Base>
-          <Typo.Base
+          </Label>
+          <Label
             nowrap
             color={colorVars.content.emphasized}
           >
             {hasValue && files && files.length > 1 ? `외 ${files.length - 1}개` : ''}
-          </Typo.Base>
+          </Label>
           <input
             {...restProps}
             className={s.input}
@@ -92,7 +95,7 @@ export function FileInput(props: FileInputProps) {
         </HStack>
         <Icon
           name={showClearButton && GlyphIcon.CLOSE}
-          size={20}
+          size={isLarge ? 20 : 16}
           onClick={handleClearButton}
         />
       </HStack>
