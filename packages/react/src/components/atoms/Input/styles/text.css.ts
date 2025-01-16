@@ -6,11 +6,9 @@ import { typographyVariantClass, Variant } from '@/components/foundations/Typogr
 import { getShorthandedValue } from '@/utils/style/shorthand';
 
 export const base = style({
-  padding: spacingVars.petite,
   background: colorVars.surface.default,
   color: colorVars.content.default,
   border: getShorthandedValue('1px', 'solid', colorVars.grayscale.translucent._10),
-  borderRadius: radiusVars.default,
   cursor: 'text',
   ':hover': {
     borderColor: colorVars.grayscale.translucent._30,
@@ -22,13 +20,28 @@ export const base = style({
   },
 });
 
-export const input = style([
-  typographyVariantClass[Variant.BASE],
-  {
-    width: '100%',
-    color: colorVars.content.emphasized,
-    '::placeholder': {
-      color: colorVars.content.muted,
-    },
+export const baseLarge = style({
+  padding: spacingVars.petite,
+  borderRadius: radiusVars.default,
+});
+
+export const baseMedium = style({
+  padding: spacingVars.micro,
+  borderRadius: radiusVars.subtle,
+});
+
+export const inputContainer = style({
+  padding: `0 ${spacingVars.mini}`,
+});
+
+export const input = style({
+  width: '100%',
+  color: colorVars.content.emphasized,
+  '::placeholder': {
+    color: colorVars.content.muted,
   },
-]);
+});
+
+export const inputLarge = style([typographyVariantClass[Variant.BASE]]);
+
+export const inputMedium = style([typographyVariantClass[Variant.PETITE]]);

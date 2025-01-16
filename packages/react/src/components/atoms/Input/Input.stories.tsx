@@ -3,28 +3,50 @@ import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
 import { type Meta, type StoryObj } from '@storybook/react';
 import { getIconArgType } from '@/lib/storybook/icon';
 import { Input } from '.';
+import { TextInputSize } from './categories/text';
 
 const meta: Meta = {
   title: 'Atoms/Input',
-  component: Input,
+};
+
+type TextInputStory = StoryObj<typeof Input.Text>;
+type FileInputStory = StoryObj<typeof Input.File>;
+type ImagePreviewInputStory = StoryObj<typeof Input.ImagePreview>;
+
+export const Text: TextInputStory = {
+  render: props => (
+    <div style={{ width: 350 }}>
+      <Input.Text {...props} />
+    </div>
+  ),
   argTypes: {
     leadingIcon: getIconArgType(),
     isSecure: { control: 'boolean' },
     placeholder: { control: 'text' },
+    size: {
+      options: Object.values(TextInputSize),
+      control: { type: 'select' },
+    },
   },
   args: {
     leadingIcon: GlyphIcon.SEARCH,
-    isSecure: false,
-    placeholder: 'Search',
+    isSecure: true,
+    placeholder: 'Sex',
   },
 };
 
-type InputStory = StoryObj<typeof Input>;
-
-export const Default: InputStory = {
+export const File: FileInputStory = {
   render: props => (
     <div style={{ width: 350 }}>
-      <Input {...props} />
+      <Input.File {...props} />
+    </div>
+  ),
+};
+
+export const ImagePreview: ImagePreviewInputStory = {
+  render: props => (
+    <div style={{ width: 350 }}>
+      <Input.ImagePreview {...props} />
     </div>
   ),
 };
