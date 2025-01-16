@@ -3,6 +3,7 @@ import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
 import { type Meta, type StoryObj } from '@storybook/react';
 import { getIconArgType } from '@/lib/storybook/icon';
 import { Input } from '.';
+import { ImagePreviewShape } from './categories/image-preview';
 import { InputSize } from './shared';
 
 const meta: Meta = {
@@ -86,6 +87,22 @@ export const ImagePreview: ImagePreviewInputStory = {
       <Input.ImagePreview {...props} />
     </div>
   ),
+  argTypes: {
+    placeholder: { control: 'text' },
+    shape: {
+      options: Object.values(ImagePreviewShape),
+      control: { type: 'select' },
+    },
+    width: { control: 'number' },
+    height: { control: 'number' },
+    preview: { control: 'text' },
+  },
+  args: {
+    placeholder: 'Placeholder',
+    shape: ImagePreviewShape.DEFAULT,
+    width: 100,
+    height: 100,
+  },
 };
 
 export default meta;

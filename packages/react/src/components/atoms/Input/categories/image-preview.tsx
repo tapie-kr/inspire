@@ -1,74 +1,119 @@
-import * as s from '../styles/text.css';
+import * as s from '../styles/image-preview.css';
 import { colorVars } from '@/lib/style/contract/color.css';
 import { spacingVars } from '@/lib/style/contract/component.css';
 
-import { HStack } from '@cottons-kr/react-foundation';
+import { HStack, VStack } from '@cottons-kr/react-foundation';
 import { Icon } from '@/components/foundations/Icon';
 import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
+import { Typo } from '@/components/foundations/Typography';
 
-import { useCallback, useMemo } from 'react';
-import { type IconName } from '@/components/foundations/Icon/shared';
-import { useToggle } from '@/hooks/use-toggle';
-import { useTextInputController } from '../hooks/use-text-input-controller';
+import cn from 'classnames';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { Weight } from '@/components/foundations/Typography/shared';
+import { useFileInputController } from '../hooks/use-file-input-controller';
 import { type HTMLInputProps } from '../shared';
 
-type InputProps = HTMLInputProps & {
-  leadingIcon?: IconName;
-  isSecure?: boolean;
+export enum ImagePreviewShape {
+  DEFAULT = 'default',
+  CIRCLE = 'circle',
+}
+
+type ImagePreviewInputProps = HTMLInputProps & {
+  shape?: ImagePreviewShape;
+  width?: string | number;
+  height?: string | number;
+  preview?: string;
 };
 
-export function ImagePreviewInput(props: InputProps) {
-  const { leadingIcon, isSecure, ...restProps } = props;
-  const { value, isFocused, tools, controller } = useTextInputController(restProps);
-  const [hideValue, toggleHideValue] = useToggle(isSecure);
+export function ImagePreviewInput(props: ImagePreviewInputProps) {
+  const { shape = ImagePreviewShape.DEFAULT, preview, placeholder, ...restProps } = props;
+  const { files, controller } = useFileInputController();
 
-  const hasValue = useMemo(() => value.length > 0, [value]);
-  const showClearButton = hasValue;
-  const showVisibilityButton = useMemo(() => hasValue && isSecure, [hasValue, isSecure]);
+  const [isHover, setIsHover] = useState(false);
+  const hasValue = useMemo(() => files != null && files.length > 0, [files]);
+  const showPreview = (hasValue && files) || preview;
 
-  const handleVisibilityButton = useCallback(() => toggleHideValue(), [toggleHideValue]);
-  const handleClearButton = useCallback(() => tools.clearValue(), [tools]);
+  const isCircle = shape === ImagePreviewShape.CIRCLE;
+
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
+
+  const widthText = typeof props.width === 'number' ? `${props.width}px` : props.width;
+  const heightText = typeof props.height === 'number' ? `${props.height}px` : props.height;
+
+  useEffect(() => {
+    if (hasValue && files) {
+      setPreviewImage(URL.createObjectURL(files[0]));
+    } else if (preview) {
+      setPreviewImage(preview);
+    }
+  }, [hasValue, files, preview]);
+
+  const handleMouseEnter = useCallback(() => {
+    setIsHover(true);
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setIsHover(false);
+  }, []);
+
+  const backgroundImageSrc = useMemo(() => {
+    if (showPreview) {
+      return `url(${previewImage})`;
+    }
+  }, [previewImage, showPreview]);
 
   return (
-    <HStack
-      tag='label'
-      className={s.base}
+    <VStack
+      className={cn(s.base, isCircle && s.baseCircle, showPreview && s.baseHasValue)}
+      justify='center'
       align='center'
-      fullWidth
+      style={{
+        width: widthText,
+        height: heightText,
+        backgroundImage: backgroundImageSrc,
+      }}
       gap={spacingVars.mini}
+      tag='label'
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
-      <HStack
-        align='center'
-        gap={spacingVars.micro}
-      >
-        <Icon
-          name={leadingIcon}
-          color={isFocused && colorVars.content.emphasized}
-        />
-        <input
-          {...restProps}
-          className={s.input}
-          type={hideValue ? 'password' : 'text'}
-          {...controller}
-        />
-      </HStack>
-      <HStack
-        gap={spacingVars.micro}
-        fitContent
-      >
-        <Icon
-          name={
-            showVisibilityButton && (hideValue ? GlyphIcon.VISIBILITY : GlyphIcon.DEFAULT) // TODO: Change DEFAULT to VISIBILITY_OFF
-          }
-          size={20}
-          onClick={handleVisibilityButton}
-        />
-        <Icon
-          name={showClearButton && GlyphIcon.CLOSE}
-          size={20}
-          onClick={handleClearButton}
-        />
-      </HStack>
-    </HStack>
+      {showPreview ? (
+        <HStack
+          justify={'center'}
+          align={'center'}
+          className={cn(s.overlay, isHover && s.overlayVisible)}
+          fitContent
+        >
+          <Typo.Micro
+            weight={Weight.MEDIUM}
+            color={colorVars.solid.translucent.white._90}
+            nowrap
+          >
+            클릭해 바꾸기
+          </Typo.Micro>
+        </HStack>
+      ) : (
+        <>
+          <Icon
+            name={GlyphIcon.DEFAULT}
+            size={24}
+            color={colorVars.content.emphasized}
+          />
+          <Typo.Petite
+            weight={Weight.MEDIUM}
+            color={colorVars.content.emphasized}
+          >
+            {placeholder}
+          </Typo.Petite>
+        </>
+      )}
+      <input
+        {...restProps}
+        className={s.input}
+        type={'file'}
+        accept={'image/*'}
+        {...controller}
+      />
+    </VStack>
   );
 }
