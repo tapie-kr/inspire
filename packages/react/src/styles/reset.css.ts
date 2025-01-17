@@ -3,6 +3,7 @@ import '@/styles/component/index.css';
 import '@/styles/typography/index.css';
 import '@/styles/interactive.css';
 import '@/styles/utility.css';
+import '@/styles/layer.css';
 import { resetGlobalStyle } from './layer.css';
 import { inspireFontKit } from './typography/index.css';
 import { colorVars } from '@/lib/style/contract/color.css';

@@ -19,12 +19,12 @@ function customLogger(title, currentPath) {
       const colorMap = {
         ts: 'white',
         tsx: 'blue',
-        scss: 'magenta',
+        'css.ts': 'magenta',
         svg: 'cyan',
       };
 
       const file = id.replace(currentPath, '');
-      const extension = file.split('.').pop();
+      const extension = file.split('.').slice(1).join('.');
       const color = colorMap[extension] || 'gray';
 
       console.log(chalk.gray(`🔄 Processing: ${chalk[color](file)}`));

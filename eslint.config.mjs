@@ -57,7 +57,7 @@ export default [
       ],
       '@typescript-eslint/naming-convention': [
         'error',
-        { selector: 'enumMember', format: ['UPPER_CASE'] },
+        { selector: 'enumMember', format: ['UPPER_CASE'], leadingUnderscore: 'allow' },
       ],
 
       'comma-dangle': ['error', 'always-multiline'],
