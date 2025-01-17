@@ -2,11 +2,16 @@ import { globalStyle as _globalStyle, style as _style, type StyleRule } from '@v
 
 type StyleFunction = typeof _style;
 type GlobalStyleFunction = typeof _globalStyle;
+type ClassNames = string | Array<ClassNames>;
 
 export function getLayerApplier(layer: string) {
   function style(...args: Parameters<StyleFunction>) {
     const [rule, debugId] = args;
-    return _style(Array.isArray(rule) ? rule : applyLayer(layer, rule), debugId);
+    const appliedRule =
+      rule instanceof Array
+        ? rule.map(r => (isLayerApplicable(r) ? applyLayer(layer, r) : r))
+        : applyLayer(layer, rule);
+    return _style(appliedRule, debugId);
   }
 
   function globalStyle(...args: Parameters<GlobalStyleFunction>) {
@@ -23,4 +28,8 @@ export function applyLayer(layer: string, rule: StyleRule) {
       [layer]: rule,
     },
   };
+}
+
+function isLayerApplicable(rule: StyleRule | ClassNames): rule is StyleRule {
+  return typeof rule === 'object' && !Array.isArray(rule);
 }
