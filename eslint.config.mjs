@@ -55,6 +55,10 @@ export default [
           disallowTypeAnnotations: true,
         },
       ],
+      '@typescript-eslint/naming-convention': [
+        'error',
+        { selector: 'enumMember', format: ['UPPER_CASE'] },
+      ],
 
       'comma-dangle': ['error', 'always-multiline'],
 
