@@ -1,40 +1,39 @@
 import { colorVars } from '@/lib/style/contract/color.css';
 import { radiusVars } from '@/lib/style/contract/component.css';
+import { componentStyle } from '@/styles/layer.css';
 
-import { style } from '@vanilla-extract/css';
-
-export const indicator = style({
+export const indicator = componentStyle({
   borderRadius: radiusVars.full,
   aspectRatio: '1',
   flexShrink: 0,
 });
 
-export const monochrome = style({
+export const monochrome = componentStyle({
   background: colorVars.grayscale.translucent._90,
 });
 
-export const red = style({
+export const red = componentStyle({
   background: colorVars.solid.red,
 });
 
-export const green = style({
+export const green = componentStyle({
   background: colorVars.solid.green,
 });
 
-export const blue = style({
+export const blue = componentStyle({
   background: colorVars.solid.blue,
 });
 
-export const yellow = style({
+export const yellow = componentStyle({
   background: colorVars.solid.yellow,
 });
 
-export const large = style({
+export const large = componentStyle({
   width: 7,
   height: 7,
 });
 
-export const small = style({
+export const small = componentStyle({
   width: 5,
   height: 5,
 });

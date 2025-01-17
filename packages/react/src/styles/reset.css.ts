@@ -3,17 +3,13 @@ import '@/styles/component/index.css';
 import '@/styles/typography/index.css';
 import '@/styles/interactive.css';
 import '@/styles/utility.css';
-import { resetLayer } from './layer.css';
+import { resetGlobalStyle } from './layer.css';
 import { inspireFontKit } from './typography/index.css';
 import { colorVars } from '@/lib/style/contract/color.css';
 
-import { globalStyle as _globalStyle } from '@vanilla-extract/css';
 import { getCSSTransition } from '@/lib';
-import { getLayerApplier } from '@/utils/style/layer';
 
-const { globalStyle } = getLayerApplier(resetLayer);
-
-globalStyle('html, body', {
+resetGlobalStyle('html, body', {
   background: colorVars.surface.default,
   color: colorVars.content.emphasized,
   wordBreak: 'keep-all',
@@ -21,7 +17,7 @@ globalStyle('html, body', {
   scrollBehavior: 'smooth',
 });
 
-globalStyle('*', {
+resetGlobalStyle('*', {
   boxSizing: 'border-box',
   margin: 0,
   padding: 0,
@@ -35,17 +31,17 @@ globalStyle('*', {
   ].join(', '),
 });
 
-globalStyle('*:focus', {
+resetGlobalStyle('*:focus', {
   outline: 'none',
 });
 
-globalStyle('a', {
+resetGlobalStyle('a', {
   color: 'inherit',
   textDecoration: 'none',
   cursor: 'pointer',
 });
 
-globalStyle('input, textarea, button', {
+resetGlobalStyle('input, textarea, button', {
   fontFamily: 'inherit',
   color: 'inherit',
   background: 'transparent',
@@ -53,6 +49,6 @@ globalStyle('input, textarea, button', {
   outline: 'none',
 });
 
-globalStyle('::-webkit-scrollbar', {
+resetGlobalStyle('::-webkit-scrollbar', {
   display: 'none',
 });

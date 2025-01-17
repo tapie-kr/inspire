@@ -1,40 +1,40 @@
 import { colorVars } from '@/lib/style/contract/color.css';
 import { radiusVars, spacingVars } from '@/lib/style/contract/component.css';
+import { componentStyle } from '@/styles/layer.css';
 
-import { style } from '@vanilla-extract/css';
 import { getShorthandedValue } from '@/utils/style/shorthand';
 
-export const monochrome = style({
+export const monochrome = componentStyle({
   background: colorVars.grayscale.translucent._10,
   color: colorVars.content.emphasized,
 });
 
-export const red = style({
+export const red = componentStyle({
   background: colorVars.solid.translucent.red._10,
   color: colorVars.solid.red,
 });
 
-export const green = style({
+export const green = componentStyle({
   background: colorVars.solid.translucent.green._10,
   color: colorVars.solid.green,
 });
 
-export const blue = style({
+export const blue = componentStyle({
   background: colorVars.solid.translucent.blue._10,
   color: colorVars.solid.blue,
 });
 
-export const yellow = style({
+export const yellow = componentStyle({
   background: colorVars.solid.translucent.yellow._10,
   color: colorVars.solid.yellow,
 });
 
-export const large = style({
+export const large = componentStyle({
   padding: getShorthandedValue(spacingVars.mini, spacingVars.micro),
   borderRadius: radiusVars.subtle,
 });
 
-export const small = style({
+export const small = componentStyle({
   padding: getShorthandedValue(spacingVars.optical, spacingVars.mini),
   borderRadius: radiusVars.sharp,
 });

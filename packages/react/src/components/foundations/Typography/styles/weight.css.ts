@@ -1,27 +1,26 @@
 import { typographyVars } from '@/lib/style/contract/typography.css';
+import { componentStyle } from '@/styles/layer.css';
 
-import { style } from '@vanilla-extract/css';
-
-export const extrabold = style({
+export const extrabold = componentStyle({
   fontWeight: typographyVars.weight.extrabold,
 });
 
-export const bold = style({
+export const bold = componentStyle({
   fontWeight: typographyVars.weight.bold,
 });
 
-export const semibold = style({
+export const semibold = componentStyle({
   fontWeight: typographyVars.weight.semibold,
 });
 
-export const medium = style({
+export const medium = componentStyle({
   fontWeight: typographyVars.weight.medium,
 });
 
-export const regular = style({
+export const regular = componentStyle({
   fontWeight: typographyVars.weight.regular,
 });
 
-export const light = style({
+export const light = componentStyle({
   fontWeight: typographyVars.weight.light,
 });

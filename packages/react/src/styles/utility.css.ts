@@ -1,15 +1,12 @@
-import { utilityLayer } from './layer.css';
+import { utilityStyle } from './layer.css';
 
-import { getLayerApplier } from '@/utils/style/layer';
-import { getMobileMediaQuery } from '@/utils/style/responsive';
+import { getMobileMediaQuery } from '@/utils';
 
-const { style } = getLayerApplier(utilityLayer);
-
-export const hideOverflow = style({
+export const hideOverflow = utilityStyle({
   overflow: 'hidden',
 });
 
-export const forceHide = style({
+export const forceHide = utilityStyle({
   display: 'none !important',
   visibility: 'hidden',
   width: 0,
@@ -18,28 +15,28 @@ export const forceHide = style({
   userSelect: 'none',
 });
 
-export const mobileOnly = style({
+export const mobileOnly = utilityStyle({
   display: 'none',
   ...getMobileMediaQuery({
     display: 'block',
   }),
 });
 
-export const mobileOnlyFlex = style({
+export const mobileOnlyFlex = utilityStyle({
   display: 'none',
   ...getMobileMediaQuery({
     display: 'flex',
   }),
 });
 
-export const mobileOnlyGrid = style({
+export const mobileOnlyGrid = utilityStyle({
   display: 'none',
   ...getMobileMediaQuery({
     display: 'grid',
   }),
 });
 
-export const desktopOnly = style({
+export const desktopOnly = utilityStyle({
   ...getMobileMediaQuery({
     display: 'none',
   }),

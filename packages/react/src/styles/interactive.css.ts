@@ -1,12 +1,9 @@
-import { utilityLayer } from './layer.css';
+import { utilityStyle } from './layer.css';
 import { colorVars } from '@/lib/style/contract/color.css';
 
 import { getCSSTransition } from '@/lib/animation/css';
-import { getLayerApplier } from '@/utils/style/layer';
 
-const { style } = getLayerApplier(utilityLayer);
-
-export const interactive = style({
+export const interactive = utilityStyle({
   position: 'relative',
   overflow: 'hidden',
   userSelect: 'none',
@@ -42,7 +39,7 @@ export const interactive = style({
   },
 });
 
-export const interactiveInverted = style([
+export const interactiveInverted = utilityStyle([
   interactive,
   {
     ':disabled': {

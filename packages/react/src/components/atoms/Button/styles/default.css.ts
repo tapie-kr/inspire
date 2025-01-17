@@ -1,11 +1,11 @@
 import { colorVars } from '@/lib/style/contract/color.css';
 import { radiusVars, spacingVars } from '@/lib/style/contract/component.css';
+import { componentStyle } from '@/styles/layer.css';
 
-import { style } from '@vanilla-extract/css';
 import { utilityClass } from '@/lib/style/utility';
 import { getShorthandedValue } from '@/utils/style/shorthand';
 
-export const primary = style([
+export const primary = componentStyle([
   utilityClass.interactiveInverted,
   {
     background: colorVars.surface.inverted.elevated,
@@ -13,7 +13,7 @@ export const primary = style([
   },
 ]);
 
-export const secondary = style([
+export const secondary = componentStyle([
   utilityClass.interactive,
   {
     background: colorVars.surface.elevated,
@@ -21,17 +21,17 @@ export const secondary = style([
   },
 ]);
 
-export const large = style({
+export const large = componentStyle({
   padding: getShorthandedValue(spacingVars.petite, spacingVars.base),
   borderRadius: radiusVars.default,
 });
 
-export const medium = style({
+export const medium = componentStyle({
   padding: getShorthandedValue(spacingVars.micro, spacingVars.base),
   borderRadius: radiusVars.subtle,
 });
 
-export const small = style({
+export const small = componentStyle({
   padding: getShorthandedValue(spacingVars.optical, spacingVars.micro),
   borderRadius: radiusVars.subtle,
 });

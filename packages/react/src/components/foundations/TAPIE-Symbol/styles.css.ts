@@ -1,8 +1,7 @@
 import { colorVars } from '@/lib/style/contract/color.css';
+import { componentStyle } from '@/styles/layer.css';
 
-import { style } from '@vanilla-extract/css';
-
-export const colorBinding = style({
+export const colorBinding = componentStyle({
   vars: {
     '--color-brand-monochrome-everyday': colorVars.brand.monochrome.everyday,
     '--color-brand-monochrome-family': colorVars.brand.monochrome.family,

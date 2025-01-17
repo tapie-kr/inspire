@@ -1,11 +1,11 @@
 import { colorVars } from '@/lib/style/contract/color.css';
 import { radiusVars, spacingVars } from '@/lib/style/contract/component.css';
+import { componentStyle } from '@/styles/layer.css';
 
-import { style } from '@vanilla-extract/css';
 import { utilityClass } from '@/lib/style/utility';
 import { getShorthandedValue } from '@/utils/style/shorthand';
 
-export const base = style([
+export const base = componentStyle([
   utilityClass.interactiveInverted,
   {
     padding: getShorthandedValue(spacingVars.tiny, spacingVars.base),
@@ -15,7 +15,7 @@ export const base = style([
   },
 ]);
 
-export const active = style({
+export const active = componentStyle({
   background: colorVars.surface.inverted.elevated,
   color: colorVars.content.inverted.emphasized,
 });

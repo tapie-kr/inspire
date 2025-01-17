@@ -1,9 +1,9 @@
-import { style } from '@vanilla-extract/css';
+import { layoutStyle } from '@/styles/layer.css';
 
-export const fullWidth = style({
+export const fullWidth = layoutStyle({
   width: '100%',
 });
 
-export const fullHeight = style({
+export const fullHeight = layoutStyle({
   height: '100%',
 });
