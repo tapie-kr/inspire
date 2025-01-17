@@ -1,7 +1,10 @@
+import { utilityLayer } from './layer.css';
 import { colorVars } from '@/lib/style/contract/color.css';
 
-import { style } from '@vanilla-extract/css';
 import { getCSSTransition } from '@/lib/animation/css';
+import { getLayerApplier } from '@/utils/style/layer';
+
+const { style } = getLayerApplier(utilityLayer);
 
 export const interactive = style({
   position: 'relative',

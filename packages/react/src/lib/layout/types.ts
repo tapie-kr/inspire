@@ -36,3 +36,37 @@ export type BaseLayoutProps<T extends LayoutTag> = LayoutElementProps<T> & {
   className?: string;
   children?: ReactNode;
 };
+
+export enum StackDirection {
+  ROW = 'row',
+  COLUMN = 'column',
+}
+
+export enum StackAlign {
+  START = 'start',
+  CENTER = 'center',
+  END = 'end',
+  STRETCH = 'stretch',
+}
+
+export enum StackJustify {
+  START = 'start',
+  CENTER = 'center',
+  END = 'end',
+  BETWEEN = 'between',
+  AROUND = 'around',
+}
+
+export enum StackWrap {
+  NO_WRAP = 'nowrap',
+  WRAP = 'wrap',
+  REVERSE = 'reverse',
+}
+
+export type BaseStackProps<T extends LayoutTag> = BaseLayoutProps<T> & {
+  direction?: StackDirection;
+  align?: StackAlign;
+  justify?: StackJustify;
+  spacing?: string | number;
+  wrap?: StackWrap;
+};

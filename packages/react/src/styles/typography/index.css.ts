@@ -1,13 +1,16 @@
+import { typographyLayer } from '../layer.css';
 import { typographyVars } from '@/lib/style/contract/typography.css';
 
-import { assignVars, globalFontFace, globalStyle } from '@vanilla-extract/css';
+import { assignVars, globalFontFace } from '@vanilla-extract/css';
 import { capitalizeFirstLetter } from '@/utils/string/capitalize-first-letter';
+import { getLayerApplier } from '@/utils/style/layer';
 import { getMobileMediaQuery } from '@/utils/style/responsive';
 import { desktopLineHeight } from './values/line-height';
 import { desktopSize } from './values/size';
 import { weight } from './values/weight';
 
 export const inspireFontKit = 'INSPIRE Font Kit';
+const { globalStyle } = getLayerApplier(typographyLayer);
 
 globalFontFace(
   inspireFontKit,

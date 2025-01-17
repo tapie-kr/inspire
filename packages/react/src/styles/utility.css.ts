@@ -1,5 +1,9 @@
-import { style } from '@vanilla-extract/css';
+import { utilityLayer } from './layer.css';
+
+import { getLayerApplier } from '@/utils/style/layer';
 import { getMobileMediaQuery } from '@/utils/style/responsive';
+
+const { style } = getLayerApplier(utilityLayer);
 
 export const hideOverflow = style({
   overflow: 'hidden',
