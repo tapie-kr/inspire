@@ -4,13 +4,13 @@
     "packages/font-kit",
     "packages/react"
   ],
-  "version": "0.1.7",
+  "version": "0.2.0-experiment.4+20250119",
   "description": "React Component Collection for INSPIRE",
   "scripts": {
     "prepublishOnly": "pnpm run build",
     "build:types": "tsc --project tsconfig.lib.json && tsc-alias -p tsconfig.lib.json",
     "build": "rimraf dist && pnpm run generate && pnpm run build:types && rollup -c --silent",
-    "generate:barrel": "tsx scripts/generate-barrel.ts ./src ./lib ./utils && tsx scripts/generate-barrel.ts ./src/lib && tsx scripts/generate-barrel.ts ./src/utils",
+    "generate:barrel": "tsx scripts/generate-barrel.ts ./src",
     "generate:icon": "tsx scripts/generate-icon-set.ts",
     "generate": "pnpm run generate:icon && pnpm run generate:barrel && pnpm run format",
     "storybook": "storybook dev -p 6006",
@@ -101,18 +101,13 @@
   "exports": {
     ".": {
       "types": "./dist/types/index.d.ts",
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.js"
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
     },
-    "./lib": {
-      "types": "./dist/types/lib/index.d.ts",
-      "import": "./dist/lib.esm.js",
-      "require": "./dist/lib.js"
-    },
-    "./utils": {
-      "types": "./dist/types/utils/index.d.ts",
-      "import": "./dist/utils.esm.js",
-      "require": "./dist/utils.js"
+    "./*": {
+      "types": "./dist/types/*",
+      "import": "./dist/esm/*",
+      "require": "./dist/cjs/*"
     }
   },
   "publishConfig": {
