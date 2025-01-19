@@ -56,7 +56,10 @@ const config = defineConfig([
         targets: [
           {
             src: 'src/assets/fonts/*.woff2',
-            dest: 'dist/assets/src/styles/typography/src/assets/fonts',
+            dest: [
+              'dist/esm/assets/src/styles/typography/src/assets/fonts',
+              'dist/cjs/assets/src/styles/typography/src/assets/fonts',
+            ],
           },
         ],
       }),
