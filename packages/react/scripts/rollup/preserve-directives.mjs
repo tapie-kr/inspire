@@ -11,40 +11,37 @@ function preserveDirectives() {
 
   return {
     name: 'preserve-directives',
-    transform: {
-      order: 'post',
-      handler(code, id) {
-        let isCodeModified = false;
-        const source = new MagicString(code);
-        const ast = this.parse(code, { allowReturnOutsideFunction: true, allowShebang: true });
+    transform(code, id) {
+      let isCodeModified = false;
+      const source = new MagicString(code);
+      const ast = this.parse(code, { allowReturnOutsideFunction: true, allowShebang: true });
 
-        for (const node of ast.body) {
-          if (node.type === 'ExpressionStatement' && node.expression.type === 'Literal') {
-            const directive = node.expression.value.toString();
-            const value = node.expression.raw;
+      for (const node of ast.body) {
+        if (node.type === 'ExpressionStatement' && node.expression.type === 'Literal') {
+          const directive = node.expression.value.toString();
+          const value = node.expression.raw;
 
-            if (!value) {
-              continue;
-            }
-
-            const set = directives.get(directive) || new Set();
-            set.add(value);
-            directives.set(id, set);
-
-            source.remove(node.start, node.end);
-            isCodeModified = true;
+          if (!value) {
+            continue;
           }
-        }
 
-        if (!isCodeModified) {
-          return null;
-        }
+          const set = directives.get(directive) || new Set();
+          set.add(value);
+          directives.set(id, set);
 
-        return {
-          code: source.toString(),
-          map: source.generateMap({ hires: true }),
-        };
-      },
+          source.remove(node.start, node.end);
+          isCodeModified = true;
+        }
+      }
+
+      if (!isCodeModified) {
+        return null;
+      }
+
+      return {
+        code: source.toString(),
+        map: source.generateMap({ hires: true }),
+      };
     },
     renderChunk(code, chunk, _options) {
       const targetDirectives = chunk.moduleIds

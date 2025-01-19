@@ -24,7 +24,6 @@ const banner = [
   ` * ${packageJson.license} License`,
   '*/',
 ].join('\n');
-const footer = '';
 
 const config = defineConfig([
   {
@@ -33,21 +32,19 @@ const config = defineConfig([
       {
         format: 'esm',
         dir: 'dist/esm',
-        sourcemap: false,
+        sourcemap: true,
         preserveModules: true,
         preserveModulesRoot: 'src',
         banner,
-        footer,
         exports: 'named',
       },
       {
         format: 'cjs',
         dir: 'dist/cjs',
-        sourcemap: false,
+        sourcemap: true,
         preserveModules: true,
         preserveModulesRoot: 'src',
         banner,
-        footer,
         exports: 'named',
       },
     ],
