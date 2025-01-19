@@ -28,6 +28,8 @@ function customLogger(title, currentPath) {
       const color = colorMap[extension] || 'gray';
 
       console.log(chalk.gray(`🔄 Processing: ${chalk[color](file)}`));
+
+      return null;
     },
     buildEnd() {
       const time = Date.now() - buildStartedTime;

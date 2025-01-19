@@ -1,3 +1,5 @@
+'use client';
+
 import * as s from '../styles/icon.css';
 
 import { Icon } from '@/components/foundations/Icon';

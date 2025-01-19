@@ -33,7 +33,7 @@ function defaultPlugins(currentPath) {
         parser: {
           syntax: 'typescript',
           tsx: true,
-          runtime: 'automatic;',
+          runtime: 'automatic',
         },
         transform: {
           react: { runtime: 'automatic' },

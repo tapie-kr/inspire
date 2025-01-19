@@ -51,8 +51,6 @@ class SingleBarrelGenerator {
       const exports = this.getExportPaths(files);
       const content = this.generateBarrelContent(exports);
       this.writeBarrelFile(directory, content);
-
-      console.log('✅ Barrel file generated successfully!');
     } catch (error) {
       console.error(
         '❌ Error generating barrel file:',
@@ -99,8 +97,6 @@ class SingleBarrelGenerator {
   private writeBarrelFile(directory: string, content: string): void {
     const barrelPath = path.join(directory, this.options.barrelFileName);
     fs.writeFileSync(barrelPath, content);
-    console.log(`📝 Generated barrel file: ${barrelPath}`);
-    console.log(`📊 Total exports: ${content.split('\n').length - 1}`);
   }
 }
 
