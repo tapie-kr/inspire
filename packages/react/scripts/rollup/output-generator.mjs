@@ -1,27 +1,26 @@
 /**
- *
- * @param {{ import: string, require: string }} exports
  * @param {string} banner
- * @param {string} footer
  * @returns
  */
-function outputGenerator(exports, banner, footer) {
+function outputGenerator(banner) {
   return [
     {
-      file: exports.import,
       format: 'esm',
+      dir: 'dist/esm',
       sourcemap: true,
       exports: 'named',
+      preserveModules: true,
+      preserveModulesRoot: 'src',
       banner,
-      footer,
     },
     {
-      file: exports.require,
       format: 'cjs',
+      dir: 'dist/cjs',
       sourcemap: true,
       exports: 'named',
+      preserveModules: true,
+      preserveModulesRoot: 'src',
       banner,
-      footer,
     },
   ];
 }

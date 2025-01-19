@@ -4,8 +4,7 @@ import copy from 'rollup-plugin-copy';
 import customLogger from './scripts/rollup/custom-logger.mjs';
 import defaultPlugins from './scripts/rollup/default-plugins.mjs';
 import preserveDirectives from './scripts/rollup/preserve-directives.mjs';
-// import outputGenerator from './scripts/rollup/output-generator.mjs';
-// import removeCSS from './scripts/rollup/remove-css.mjs';
+import outputGenerator from './scripts/rollup/output-generator.mjs';
 
 const currentPath = new URL('.', import.meta.url).pathname;
 const packageJson = JSON.parse(readFileSync(new URL('./package.json', import.meta.url)).toString());
@@ -28,26 +27,7 @@ const banner = [
 const config = defineConfig([
   {
     input: 'src/index.ts',
-    output: [
-      {
-        format: 'esm',
-        dir: 'dist/esm',
-        sourcemap: true,
-        preserveModules: true,
-        preserveModulesRoot: 'src',
-        banner,
-        exports: 'named',
-      },
-      {
-        format: 'cjs',
-        dir: 'dist/cjs',
-        sourcemap: true,
-        preserveModules: true,
-        preserveModulesRoot: 'src',
-        banner,
-        exports: 'named',
-      },
-    ],
+    output: outputGenerator(banner),
     plugins: [
       ...defaultPlugins(currentPath),
       copy({
