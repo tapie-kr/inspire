@@ -4,15 +4,18 @@
     "packages/font-kit",
     "packages/react"
   ],
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "React Component Collection for INSPIRE",
   "scripts": {
     "prepublishOnly": "pnpm run build",
     "build:types": "tsc --project tsconfig.lib.json && tsc-alias -p tsconfig.lib.json",
     "build": "rimraf dist && pnpm run generate && pnpm run build:types && rollup -c --silent",
-    "generate:barrel": "tsx scripts/generate-barrel.ts ./src",
     "generate:icon": "tsx scripts/generate-icon-set.ts",
-    "generate": "pnpm run generate:icon && pnpm run generate:barrel && pnpm run format",
+    "generate": "pnpm run generate:icon && pnpm run barrel && pnpm run format",
+    "barrel": "pnpm run barrel:main && pnpm run barrel:lib && pnpm run barrel:utils",
+    "barrel:main": "tsx scripts/generate-barrel.ts ./src ./lib ./utils",
+    "barrel:lib": "tsx scripts/generate-barrel.ts ./src/lib",
+    "barrel:utils": "tsx scripts/generate-barrel.ts ./src/utils",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "format": "pnpm run lint && pnpm run prettier",
@@ -105,6 +108,16 @@
       "types": "./dist/types/index.d.ts",
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js"
+    },
+    "./lib": {
+      "types": "./dist/types/lib/index.d.ts",
+      "import": "./dist/esm/lib/index.js",
+      "require": "./dist/cjs/lib/index.js"
+    },
+    "./utils": {
+      "types": "./dist/types/utils/index.d.ts",
+      "import": "./dist/esm/utils/index.js",
+      "require": "./dist/cjs/utils/index.js"
     },
     "./*": {
       "types": "./dist/types/*",
