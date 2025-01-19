@@ -16,7 +16,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "format": "pnpm run lint && pnpm run prettier",
-    "prettier": "prettier --write .",
+    "prettier": "prettier --write . --log-level warn",
     "lint": "eslint . --fix",
     "lint:dry": "eslint . --fix-dry-run"
   },

@@ -45,7 +45,6 @@ async function renameSvgFiles(directory: string) {
 
     if (file !== newFileName) {
       await fs.rename(filePath, newFilePath);
-      console.log(`Renamed: ${file} -> ${newFileName}.svg`);
     }
   }
 }
@@ -78,8 +77,6 @@ async function modifySvgFile(filePath: string) {
     const modifiedContent = serializer.serializeToString(doc);
 
     await fs.writeFile(filePath, modifiedContent, 'utf-8');
-
-    console.log(`Modified: ${path.basename(filePath)}`);
   } catch (error) {
     console.error(`Error processing file ${filePath}:`, error);
   }
@@ -94,8 +91,6 @@ async function modifySvgFiles(directory: string) {
       const filePath = path.join(directory, file);
       await modifySvgFile(filePath);
     }
-
-    console.log(`\nCompleted processing directory: ${directory}`);
   } catch (error) {
     console.error(`Error processing directory ${directory}:`, error);
   }
@@ -150,7 +145,6 @@ async function generateIconSet() {
     );
 
     await fs.writeFile(PATH.RESULT, content, 'utf-8');
-    console.log('Successfully generated icon-set.ts');
   } catch (error) {
     console.error('Error generating icon-set.ts:', error);
   }
@@ -158,7 +152,6 @@ async function generateIconSet() {
 
 async function main() {
   for (const dir of [PATH.GLYPH, PATH.BRAND]) {
-    console.log(`\nProcessing directory: ${dir}`);
     await renameSvgFiles(dir);
     await modifySvgFiles(dir);
   }
