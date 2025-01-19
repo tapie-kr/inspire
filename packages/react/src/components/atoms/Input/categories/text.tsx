@@ -1,3 +1,5 @@
+'use client';
+
 import * as s from '../styles/text.css';
 import { colorVars } from '@/lib/style/contract/color.css';
 import { spacingVars } from '@/lib/style/contract/component.css';

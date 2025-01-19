@@ -1,3 +1,5 @@
+'use client';
+
 import * as s from '../styles/paragraph.css';
 
 import { VStack } from '@cottons-kr/react-foundation';

@@ -1,3 +1,5 @@
+'use client';
+
 import * as s from '../styles/text-indicator.css';
 
 import { Flex } from '@cottons-kr/react-foundation';

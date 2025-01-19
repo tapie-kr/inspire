@@ -130,6 +130,11 @@ export default [
       ],
 
       'jsx-a11y/anchor-is-valid': 'error',
+
+      'padding-line-between-statements': [
+        'error',
+        { blankLine: 'always', prev: 'directive', next: 'import' },
+      ],
     },
   },
   {

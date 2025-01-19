@@ -1,3 +1,5 @@
+'use client';
+
 import * as s from '../styles/default.css';
 import { spacingVars } from '@/lib/style/contract/component.css';
 
