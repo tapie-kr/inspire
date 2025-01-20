@@ -5,6 +5,7 @@ import customLogger from './scripts/rollup/custom-logger.mjs';
 import defaultPlugins from './scripts/rollup/default-plugins.mjs';
 import preserveDirectives from './scripts/rollup/preserve-directives.mjs';
 import outputGenerator from './scripts/rollup/output-generator.mjs';
+import removeCSS from './scripts/rollup/remove-css.mjs';
 
 const currentPath = new URL('.', import.meta.url).pathname;
 const packageJson = JSON.parse(readFileSync(new URL('./package.json', import.meta.url)).toString());
@@ -43,6 +44,7 @@ const config = defineConfig([
       }),
       customLogger('index', currentPath),
       preserveDirectives(),
+      removeCSS(),
     ],
   },
 ]);
