@@ -1,6 +1,6 @@
 import { utilityStyle } from './layer.css';
 
-import { getMobileMediaQuery } from '@/utils';
+import { getMobileMediaQuery } from '@/utils/style/responsive';
 
 export const hideOverflow = utilityStyle({
   overflow: 'hidden',

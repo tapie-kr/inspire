@@ -8,7 +8,7 @@ import { resetGlobalStyle } from './layer.css';
 import { inspireFontKit } from './typography/index.css';
 import { colorVars } from '@/lib/style/contract/color.css';
 
-import { getCSSTransition } from '@/lib';
+import { getCSSTransition } from '@/lib/animation/css';
 
 resetGlobalStyle('html, body', {
   background: colorVars.surface.default,

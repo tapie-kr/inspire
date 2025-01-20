@@ -107,6 +107,16 @@
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js"
     },
+    "./lib": {
+      "types": "./dist/types/lib/index.d.ts",
+      "import": "./dist/esm/lib/index.js",
+      "require": "./dist/cjs/lib/index.js"
+    },
+    "./utils": {
+      "types": "./dist/types/utils/index.d.ts",
+      "import": "./dist/esm/utils/index.js",
+      "require": "./dist/cjs/utils/index.js"
+    },
     "./*": {
       "types": "./dist/types/*",
       "import": "./dist/esm/*",
