@@ -6,6 +6,8 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import _swc from 'rollup-plugin-swc';
+import preserveDirectives from './preserve-directives.mjs';
+import removeCSS from './remove-css.mjs';
 
 const swc = _swc.default;
 
@@ -51,6 +53,8 @@ function defaultPlugins(currentPath) {
       sourceMap: true,
       exclude: ['**/*.svg'],
     }),
+    preserveDirectives(),
+    removeCSS(),
   ];
 }
 

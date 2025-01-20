@@ -4,7 +4,7 @@
     "packages/font-kit",
     "packages/react"
   ],
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "React Component Collection for INSPIRE",
   "scripts": {
     "prepublishOnly": "pnpm run build",
@@ -106,16 +106,6 @@
       "types": "./dist/types/index.d.ts",
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js"
-    },
-    "./lib": {
-      "types": "./dist/types/lib/index.d.ts",
-      "import": "./dist/esm/lib/index.js",
-      "require": "./dist/cjs/lib/index.js"
-    },
-    "./utils": {
-      "types": "./dist/types/utils/index.d.ts",
-      "import": "./dist/esm/utils/index.js",
-      "require": "./dist/cjs/utils/index.js"
     },
     "./*": {
       "types": "./dist/types/*",
