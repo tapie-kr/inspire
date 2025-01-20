@@ -4,6 +4,7 @@ import path from 'path';
 
 async function matchCSSAssets(moduleSystem: string) {
   const cssFiles = await glob(`dist/${moduleSystem}/**/*.css`);
+  cssFiles.push('@cottons-kr/react-foundation/styles.css');
   return cssFiles;
 }
 
@@ -13,7 +14,7 @@ async function generateImportCssCode(
   cssFiles: string[],
 ) {
   const result = cssFiles.map(file => {
-    const relativePath = path.relative(providerDir, file);
+    const relativePath = file.startsWith('@') ? file : path.relative(providerDir, file);
     const token = moduleSystem === 'esm' ? 'import' : 'require';
     if (moduleSystem === 'esm') {
       return `${token} '${relativePath}';`;
