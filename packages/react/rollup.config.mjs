@@ -44,6 +44,7 @@ const config = defineConfig([
       }),
       customLogger('index', currentPath),
       preserveDirectives(),
+      removeCSS(),
     ],
   },
   {
