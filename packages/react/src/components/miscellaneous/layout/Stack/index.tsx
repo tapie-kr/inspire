@@ -19,9 +19,9 @@ type StackProps<T extends LayoutTag> = BaseStackProps<T> & {};
 
 export function Stack<T extends LayoutTag>(props: StackProps<T>) {
   const {
-    align = StackAlign.START,
+    align = StackAlign.CENTER,
     direction = StackDirection.ROW,
-    justify = StackJustify.START,
+    justify = StackJustify.CENTER,
     wrap = StackWrap.NO_WRAP,
     spacing,
     className,
