@@ -1,9 +1,9 @@
 import { type BaseStackProps, type LayoutTag, StackDirection } from '@/lib/layout/types';
 import { Stack } from '../Stack';
 
-type HStackProps<T extends LayoutTag = LayoutTag.DIV> = Omit<BaseStackProps<T>, 'direction'>;
+type HStackProps<T extends LayoutTag> = Omit<BaseStackProps<T>, 'direction'>;
 
-export function HStack(props: HStackProps) {
+export function HStack<T extends LayoutTag>(props: HStackProps<T>) {
   return (
     <Stack
       direction={StackDirection.ROW}

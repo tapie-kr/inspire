@@ -24,6 +24,7 @@ resetGlobalStyle('*', {
   padding: 0,
   fontFamily: inspireFontKit,
   fontSynthesis: 'none',
+  shapeRendering: 'geometricPrecision',
   transition: [
     getCSSTransition('background-color', 0.3),
     getCSSTransition('background', 0.3),

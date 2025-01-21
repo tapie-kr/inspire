@@ -3,11 +3,11 @@ import * as s from './styles.css';
 import cn from 'classnames';
 import { type BaseLayoutProps, LayoutTag } from '@/lib/layout/types';
 
-type BoxProps<T extends LayoutTag = LayoutTag.DIV> = BaseLayoutProps<T> & {
+type BoxProps<T extends LayoutTag> = BaseLayoutProps<T> & {
   padding?: string | number;
 };
 
-export function Box(props: BoxProps) {
+export function Box<T extends LayoutTag>(props: BoxProps<T>) {
   const {
     tag: Tag = LayoutTag.DIV,
     fullWidth,

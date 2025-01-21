@@ -15,9 +15,9 @@ import {
 } from '@/lib/layout/types';
 import { Box } from '../Box';
 
-type StackProps<T extends LayoutTag.DIV = LayoutTag.DIV> = BaseStackProps<T> & {};
+type StackProps<T extends LayoutTag> = BaseStackProps<T> & {};
 
-export function Stack(props: StackProps) {
+export function Stack<T extends LayoutTag>(props: StackProps<T>) {
   const {
     align = StackAlign.START,
     direction = StackDirection.ROW,
