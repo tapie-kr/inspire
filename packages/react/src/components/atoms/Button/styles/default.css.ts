@@ -35,3 +35,10 @@ export const small = componentStyle({
   padding: getShorthandedValue(spacingVars.tiny, spacingVars.petite),
   borderRadius: radiusVars.sharp,
 });
+
+export const fullWidth = componentStyle({
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+});

@@ -28,6 +28,7 @@ type DefaultButtonProps = ButtonPropsBase & {
   leadingIcon?: IconName;
   trailingIcon?: IconName;
   children?: ReactNode;
+  isFullWidth?: boolean;
 };
 
 export function DefaultButton(props: DefaultButtonProps) {
@@ -36,6 +37,7 @@ export function DefaultButton(props: DefaultButtonProps) {
     variant: propVariant,
     leadingIcon,
     trailingIcon,
+    isFullWidth = false,
     className: propClassName,
     ...restProps
   } = props;
@@ -44,7 +46,7 @@ export function DefaultButton(props: DefaultButtonProps) {
   const variant = useMemo(() => propVariant || ButtonVariant.PRIMARY, [propVariant]);
   const Typo = useMemo(() => ButtonTypoSizeMap[size], [size]);
 
-  const classNames = [propClassName, s[variant], s[size]];
+  const classNames = [propClassName, s[variant], s[size], isFullWidth && s.fullWidth];
 
   return (
     <button

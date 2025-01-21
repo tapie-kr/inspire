@@ -22,7 +22,7 @@ type TextInputProps = HTMLInputProps & {
 };
 
 export function TextInput(props: TextInputProps) {
-  const { leadingIcon, isSecure, size = InputSize.LARGE, ...restProps } = props;
+  const { leadingIcon, isSecure = false, size = InputSize.LARGE, ...restProps } = props;
   const { value, isFocused, tools, controller } = useTextInputController<TextInputProps>(restProps);
   const [hideValue, toggleHideValue] = useToggle(isSecure);
 
@@ -38,7 +38,7 @@ export function TextInput(props: TextInputProps) {
   return (
     <HStack
       tag='label'
-      className={cn(s.base, isLarge ? s.baseLarge : s.baseMedium)}
+      className={cn(s.base, isLarge ? s.baseLarge : s.baseMedium, props.className)}
       align='center'
       fullWidth
       gap={isLarge ? spacingVars.mini : spacingVars.tiny}

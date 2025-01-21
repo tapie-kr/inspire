@@ -37,6 +37,7 @@ export const Default: DefaultButtonStory = {
     },
     leadingIcon: getIconArgType(),
     trailingIcon: getIconArgType(),
+    isFullWidth: { control: { type: 'boolean' } },
   },
 };
 
