@@ -31,7 +31,7 @@ export * from './components/foundations/Table/body/row';
 export * from './components/foundations/Table/head/cell';
 export * from './components/foundations/Table/head/index';
 export * from './components/foundations/Table/index';
-export * from './components/foundations/Typography/Builder';
+export * from './components/foundations/Typography/builder';
 export * from './components/foundations/Typography/index';
 export * from './components/foundations/Typography/shared';
 export * from './components/miscellaneous/layout/Box/index';

@@ -1,5 +1,6 @@
+import { spacingVars } from '@/lib/style/contract/component.css';
+
 import { type Meta, type StoryObj } from '@storybook/react';
-import { spacingVars } from '@/lib';
 import { LayoutTag, StackAlign, StackDirection, StackJustify, StackWrap } from '@/lib/layout/types';
 import { getEnumArgType } from '@/lib/storybook/enum';
 import { Box } from '../Box';
