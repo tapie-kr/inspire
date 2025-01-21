@@ -4,13 +4,13 @@
     "packages/font-kit",
     "packages/react"
   ],
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "React Component Collection for INSPIRE",
   "scripts": {
     "prepublishOnly": "pnpm run build",
     "build:types": "tsc --project tsconfig.lib.json && tsc-alias -p tsconfig.lib.json",
     "build": "rimraf dist && pnpm run generate && pnpm run build:types && rollup -c --silent && pnpm run process:css",
-    "generate:barrel": "tsx scripts/generate-barrel.ts ./src",
+    "generate:barrel": "tsx scripts/generate-barrel.ts ./src ./components/foundations/Provider",
     "generate:icon": "tsx scripts/generate-icon-set.ts",
     "generate": "pnpm run generate:icon && pnpm run generate:barrel && pnpm run format",
     "process:css": "tsx scripts/process-css.ts",
@@ -106,6 +106,11 @@
       "types": "./dist/types/index.d.ts",
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js"
+    },
+    "./provider": {
+      "types": "./dist/types/components/foundations/Provider/index.d.ts",
+      "import": "./dist/esm/components/foundations/Provider/index.js",
+      "require": "./dist/cjs/components/foundations/Provider/index.js"
     },
     "./*": {
       "types": "./dist/types/*",

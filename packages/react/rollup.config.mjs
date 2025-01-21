@@ -43,6 +43,11 @@ const config = defineConfig([
       customLogger('index', currentPath),
     ],
   },
+  {
+    input: 'src/components/foundations/Provider/index.tsx',
+    output: outputGenerator(banner),
+    plugins: [...defaultPlugins(currentPath), customLogger('provider', currentPath)],
+  },
 ]);
 
 export default config;
