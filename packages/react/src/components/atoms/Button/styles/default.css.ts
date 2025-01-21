@@ -32,6 +32,6 @@ export const medium = componentStyle({
 });
 
 export const small = componentStyle({
-  padding: getShorthandedValue(spacingVars.optical, spacingVars.micro),
+  padding: getShorthandedValue(spacingVars.tiny, spacingVars.petite),
   borderRadius: radiusVars.subtle,
 });
