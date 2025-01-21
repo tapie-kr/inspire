@@ -2,9 +2,25 @@ import fs from 'fs';
 import { glob } from 'glob';
 import path from 'path';
 
+const PRESERVED_CSS = ['@cottons-kr/react-foundation/styles.css'];
+const CSS_PRIORITY = ['src/styles/layer.css.ts'];
+
 async function matchCSSAssets(moduleSystem: string) {
   const cssFiles = await glob(`dist/${moduleSystem}/**/*.css`);
-  cssFiles.push('@cottons-kr/react-foundation/styles.css');
+
+  cssFiles.sort((a, b) => {
+    const aPriority = CSS_PRIORITY.some(p => a.includes(p));
+    const bPriority = CSS_PRIORITY.some(p => b.includes(p));
+
+    if (aPriority && !bPriority) {
+      return -1;
+    } else if (!aPriority && bPriority) {
+      return 1;
+    }
+    return 0;
+  });
+
+  cssFiles.push(...PRESERVED_CSS);
   return cssFiles;
 }
 
