@@ -55,6 +55,7 @@ export const inputContainer = style({
   padding: `0 ${spacingVars.mini}`,
   minWidth: 0,
   flex: 1,
+  userSelect: 'none',
 });
 
 export const input = style({

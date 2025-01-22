@@ -39,6 +39,7 @@ export const input = style({
   color: colorVars.content.emphasized,
   '::placeholder': {
     color: colorVars.content.muted,
+    userSelect: 'none',
   },
 });
 

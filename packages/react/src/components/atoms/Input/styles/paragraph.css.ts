@@ -22,6 +22,7 @@ export const base = style({
   },
   '::placeholder': {
     color: colorVars.content.muted,
+    userSelect: 'none',
   },
   width: '100%',
 });
