@@ -15,4 +15,5 @@ export type FilterOption = {
   icon?: IconName;
   label: string;
   value: string;
+  onToggle?: (isActive?: boolean) => unknown;
 };
