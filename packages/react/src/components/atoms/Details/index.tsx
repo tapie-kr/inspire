@@ -7,10 +7,12 @@ import { spacingVars } from '@/lib/style/contract/component.css';
 import { Icon } from '@/components/foundations/Icon';
 import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
 import { HStack } from '@/components/miscellaneous/layout/HStack';
+import { VStack } from '@/components/miscellaneous/layout/VStack';
 
 import cn from 'classnames';
-import { motion } from 'motion/react';
+import { AnimatePresence, motion } from 'motion/react';
 import { type MouseEvent, type ReactNode, useCallback, useState } from 'react';
+import { StackAlign } from '@/lib/layout/types';
 import { utilityClass } from '@/lib/style/utility';
 import { type DefaultProps } from '@/types/props';
 import { getTransition } from '@/utils/motion/transition';
@@ -40,7 +42,11 @@ export function Details(props: DetailsProps) {
   );
 
   return (
-    <div>
+    <VStack
+      fullWidth
+      align={StackAlign.START}
+      spacing={spacingVars.micro}
+    >
       <details
         className={details}
         open={isOpened}
@@ -63,23 +69,27 @@ export function Details(props: DetailsProps) {
         <div className={utilityClass.visuallyHidden}>{props.children}</div>
       </details>
       <motion.div
-        className={utilityClass.hideOverflow}
         initial={false}
         animate={{ height: isOpened ? 'auto' : 0 }}
         transition={getTransition({ duration: 0.35 })}
         aria-hidden
       >
-        <motion.div
-          initial={false}
-          animate={{
-            opacity: isOpened ? 1 : 0,
-            y: isOpened ? 0 : -20,
-          }}
-          transition={getTransition({ duration: 0.3, delay: isOpened ? 0.06 : 0 })}
-        >
-          {props.children}
-        </motion.div>
+        <AnimatePresence>
+          {isOpened ? (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: getTransition({ duration: 0.3, delay: 0.06 }),
+              }}
+              exit={{ opacity: 0, y: -20, transition: getTransition({ duration: 0.3 }) }}
+            >
+              {props.children}
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
       </motion.div>
-    </div>
+    </VStack>
   );
 }

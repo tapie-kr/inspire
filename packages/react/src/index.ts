@@ -39,6 +39,8 @@ export * from './components/miscellaneous/layout/Box/index';
 export * from './components/miscellaneous/layout/HStack/index';
 export * from './components/miscellaneous/layout/Stack/index';
 export * from './components/miscellaneous/layout/VStack/index';
+export * from './components/molecules/DataView/index';
+export * from './components/molecules/DataView/shared';
 export * from './hooks/use-toggle';
 export * from './lib/animation/cubic-bezier';
 export * from './lib/layout/types';

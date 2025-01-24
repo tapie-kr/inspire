@@ -7,6 +7,7 @@ import jsxA11y from 'eslint-plugin-jsx-a11y';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import unusedImports from 'eslint-plugin-unused-imports';
 
 export default [
   js.configs.recommended,
@@ -31,6 +32,7 @@ export default [
       'jsx-a11y': jsxA11y,
       import: importPlugin,
       'simple-import-sort': simpleImportSort,
+      'unused-imports': unusedImports,
     },
     settings: {
       react: {
@@ -71,6 +73,8 @@ export default [
       'no-duplicate-imports': 'error',
       'no-undef': 'off',
       'no-redeclare': 'off',
+
+      'unused-imports/no-unused-imports': 'error',
 
       'react/prop-types': 'off',
       'react/react-in-jsx-scope': 'off',

@@ -1,7 +1,9 @@
 import { style } from '@vanilla-extract/css';
 import { getCSSTransition } from '@/utils/motion/css';
 
-export const details = style({});
+export const details = style({
+  zIndex: 1,
+});
 
 export const summary = style({
   listStyleType: 'none',
