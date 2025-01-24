@@ -110,7 +110,7 @@ export default [
           arrow: 'parens',
           condition: 'parens',
           logical: 'parens',
-          prop: 'parens',
+          prop: 'never',
         },
       ],
       'react/jsx-fragments': ['error', 'syntax'],
