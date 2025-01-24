@@ -14,12 +14,14 @@ const meta: Meta = {
   argTypes: {
     title: { control: 'text' },
     defaultOpen: { control: 'boolean' },
+    hideDefaultIcon: { control: 'boolean' },
     disabled: { control: 'boolean' },
     children: { control: 'text' },
   },
   args: {
     title: 'Details',
     defaultOpen: false,
+    hideDefaultIcon: false,
     disabled: false,
     children: loremIpsum,
   },

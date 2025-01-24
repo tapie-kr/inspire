@@ -98,7 +98,7 @@ export default [
         'error',
         {
           propTypeNames: ['bool', 'mutuallyExclusiveTrueProps'],
-          rule: '^(disabled)$|(is|has|can|should|will|default)[A-Z]([A-Za-z0-9]?)+',
+          rule: '^(disabled)$|(is|has|can|should|will|default|show|hide)[A-Z]([A-Za-z0-9]?)+',
         },
       ],
       'react/jsx-wrap-multilines': [

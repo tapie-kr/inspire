@@ -18,12 +18,13 @@ import { getTransition } from '@/utils/motion/transition';
 type DetailsProps = DefaultProps & {
   title: ReactNode;
   defaultOpen?: boolean;
+  hideDefaultIcon?: boolean;
   disabled?: boolean;
   onToggle?: (isOpened: boolean) => unknown;
 };
 
 export function Details(props: DetailsProps) {
-  const { title, defaultOpen, disabled, onToggle } = props;
+  const { title, defaultOpen, hideDefaultIcon, disabled, onToggle } = props;
   const [isOpened, setIsOpened] = useState(defaultOpen || false);
 
   const handleDetailsClick = useCallback(
@@ -52,7 +53,7 @@ export function Details(props: DetailsProps) {
           >
             <Icon
               className={cn(icon, { [rotateIcon]: !isOpened })}
-              name={GlyphIcon.KEYBOARD_ARROW_DOWN}
+              name={!hideDefaultIcon && GlyphIcon.KEYBOARD_ARROW_DOWN}
               color={colorVars.content.default}
               size={16}
             />
@@ -66,6 +67,7 @@ export function Details(props: DetailsProps) {
         initial={false}
         animate={{ height: isOpened ? 'auto' : 0 }}
         transition={getTransition({ duration: 0.35 })}
+        aria-hidden
       >
         <motion.div
           initial={false}
@@ -73,7 +75,7 @@ export function Details(props: DetailsProps) {
             opacity: isOpened ? 1 : 0,
             y: isOpened ? 0 : -20,
           }}
-          transition={getTransition({ delay: isOpened ? 0.06 : 0 })}
+          transition={getTransition({ duration: 0.3, delay: isOpened ? 0.06 : 0 })}
         >
           {props.children}
         </motion.div>
