@@ -1,4 +1,4 @@
-import { defaultCubicBezier } from './cubic-bezier';
+import { defaultCubicBezier } from '@/lib/animation/cubic-bezier';
 
 export function getCSSTransition(
   property: string,

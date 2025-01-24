@@ -1,4 +1,4 @@
-import packageJson from '@/../package.json';
+import { version } from '@/../package.json';
 import { bannerSvg } from './banner';
 
 export function showSignature() {
@@ -13,7 +13,7 @@ export function showSignature() {
   ];
   const content = [
     `%c %c`,
-    `Made with INSPIRE v${packageJson.version} by TAPIE.`,
+    `Made with INSPIRE v${version} by TAPIE.`,
     'See more : https://tapie.kr/',
   ].filter(Boolean);
   // eslint-disable-next-line no-console

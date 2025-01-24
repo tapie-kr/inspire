@@ -43,12 +43,14 @@
     "classnames": "^2.5.1"
   },
   "peerDependencies": {
+    "motion": "^12.0.3",
     "react": "19.0.0",
     "react-dom": "19.0.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.3",
     "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-strip": "^3.0.4",
     "@storybook/addon-essentials": "^8.4.7",

@@ -6,6 +6,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import _swc from 'rollup-plugin-swc';
+import json from '@rollup/plugin-json';
 import preserveDirectives from './preserve-directives.mjs';
 import removeCSS from './remove-css.mjs';
 
@@ -30,6 +31,7 @@ function defaultPlugins(currentPath) {
       include: /\.svg$/,
     }),
     postcss({ inject: true }),
+    json(),
     swc({
       jsc: {
         parser: {

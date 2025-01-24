@@ -1,4 +1,10 @@
+import { spacingVars } from '@/lib/style/contract/component.css';
+
+import { Typo } from '@/components/foundations/Typography';
+import { VStack } from '@/components/miscellaneous/layout/VStack';
+
 import { type Meta, type StoryObj } from '@storybook/react';
+import { StackAlign } from '@/lib/layout/types';
 import { loremIpsum } from '@/lib/storybook/shared';
 import { Details } from '.';
 
@@ -22,7 +28,15 @@ const meta: Meta = {
 type DetailsStory = StoryObj<typeof Details>;
 
 export const Default: DetailsStory = {
-  render: props => <Details {...props} />,
+  render: props => (
+    <VStack
+      spacing={spacingVars.base}
+      align={StackAlign.START}
+    >
+      <Details {...props} />
+      <Typo.Base>This text will move down smoothly</Typo.Base>
+    </VStack>
+  ),
 };
 
 export default meta;

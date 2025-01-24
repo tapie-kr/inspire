@@ -1,7 +1,7 @@
 import { utilityStyle } from './layer.css';
 import { colorVars } from '@/lib/style/contract/color.css';
 
-import { getCSSTransition } from '@/lib/animation/css';
+import { getCSSTransition } from '@/utils/motion/css';
 
 export const interactive = utilityStyle({
   position: 'relative',
@@ -58,3 +58,18 @@ export const interactiveInverted = utilityStyle([
     },
   },
 ]);
+
+export const interactiveNoBackground = utilityStyle({
+  userSelect: 'none',
+  cursor: 'pointer',
+  transition: getCSSTransition('transform', 0.2),
+  ':disabled': {
+    cursor: 'not-allowed',
+    color: colorVars.content.muted,
+  },
+  selectors: {
+    '&:not(:disabled):active': {
+      transform: 'scale(0.98)',
+    },
+  },
+});

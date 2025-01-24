@@ -1,4 +1,8 @@
-import { interactive, interactiveInverted } from '@/styles/interactive.css';
+import {
+  interactive,
+  interactiveInverted,
+  interactiveNoBackground,
+} from '@/styles/interactive.css';
 import {
   desktopOnly,
   forceHide,
@@ -6,12 +10,15 @@ import {
   mobileOnly,
   mobileOnlyFlex,
   mobileOnlyGrid,
+  visuallyHidden,
 } from '@/styles/utility.css';
 
 export const utilityClass = {
   interactive,
   interactiveInverted,
+  interactiveNoBackground,
   hideOverflow,
+  visuallyHidden,
   forceHide,
   mobileOnly,
   mobileOnlyFlex,
