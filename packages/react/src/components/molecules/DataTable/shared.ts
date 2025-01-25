@@ -7,7 +7,7 @@ export type Action = {
   handleClick?: () => unknown;
 };
 
-export type AcceptableData = Record<string | number | symbol, unknown>;
+export type AcceptableData = { [key: string]: unknown };
 
 export type Column<T extends AcceptableData, K extends keyof T> = {
   key: K;
