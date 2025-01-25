@@ -14,7 +14,7 @@ export function showSignature() {
   const content = [
     `%c %c`,
     `Made with INSPIRE v${version} by TAPIE.`,
-    'See more : https://tapie.kr/',
+    'See more : https://inspire.tapie.kr/github',
   ].filter(Boolean);
   // eslint-disable-next-line no-console
   console.log(
