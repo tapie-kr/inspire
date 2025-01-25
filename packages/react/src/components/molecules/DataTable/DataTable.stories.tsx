@@ -15,6 +15,24 @@ const meta: Meta = {
 
 type DataTableStory = StoryObj<typeof DataTable>;
 
+const exampleData = [
+  {
+    name: 'John Doe',
+    age: 32,
+    job: 'Software Engineer',
+  },
+  {
+    name: 'Jane Doe',
+    age: 31,
+    job: 'Designer',
+  },
+  {
+    name: 'James Doe',
+    age: 30,
+    job: 'Product Manager',
+  },
+];
+
 export const Default: DataTableStory = {
   render: () => (
     <DataTable
@@ -38,23 +56,7 @@ export const Default: DataTableStory = {
           width: 300,
         },
       ]}
-      data={[
-        {
-          name: 'John Doe',
-          age: 32,
-          job: 'Software Engineer',
-        },
-        {
-          name: 'Jane Doe',
-          age: 31,
-          job: 'Designer',
-        },
-        {
-          name: 'James Doe',
-          age: 30,
-          job: 'Product Manager',
-        },
-      ]}
+      data={exampleData}
     />
   ),
 };
