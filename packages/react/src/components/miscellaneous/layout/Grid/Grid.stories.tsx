@@ -30,8 +30,6 @@ const meta: Meta = {
   },
   args: {
     gap: 10,
-    rowGap: 10,
-    columnGap: 10,
     columnCount: 3,
   },
 };

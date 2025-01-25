@@ -20,9 +20,8 @@ export function Grid(props: GridProps) {
     <Box
       className={cn(grid, className)}
       style={{
-        gap: gap,
-        rowGap: rowGap,
-        columnGap: columnGap,
+        rowGap: rowGap || gap,
+        columnGap: columnGap || gap,
         gridTemplateColumns: `repeat(${columnCount}, 1fr)`,
         width: fullWidth ? '100%' : undefined,
         height: fullHeight ? '100%' : undefined,
