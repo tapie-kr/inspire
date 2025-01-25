@@ -160,7 +160,7 @@ export default [
   },
   {
     // Storybook Configuration
-    files: ['**/.storybook/**/*.{ts,tsx}'],
+    files: ['**/.storybook/**/*.{ts,tsx}', '**/*.stories.{ts,tsx}'],
     rules: {
       '@typescript-eslint/explicit-function-return-type': 'off',
 

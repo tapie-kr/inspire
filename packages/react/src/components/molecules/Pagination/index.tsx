@@ -13,7 +13,7 @@ type PaginationProps = {
   max: number;
   visiblePages?: number;
   defaultPage?: number;
-  handlePageChange?: (page: number) => unknown;
+  onPageChange?: (page: number) => unknown;
 };
 
 export function Pagination(props: PaginationProps) {
@@ -26,16 +26,24 @@ export function Pagination(props: PaginationProps) {
   const [currentItems, setCurrentItems] = useState(getCurrentVisiblePages());
 
   const handleNext = useCallback(() => {
-    setCurrentPage(prev => Math.min(prev + 1, props.max));
-  }, [props.max]);
+    setCurrentPage(prev => {
+      const newValue = Math.min(prev + 1, props.max);
+      props.onPageChange?.(newValue);
+      return newValue;
+    });
+  }, [props]);
 
   const handlePrevious = useCallback(() => {
-    setCurrentPage(prev => Math.max(prev - 1, props.min));
-  }, [props.min]);
+    setCurrentPage(prev => {
+      const newValue = Math.max(prev - 1, props.min);
+      props.onPageChange?.(newValue);
+      return newValue;
+    });
+  }, [props]);
 
   useEffect(() => {
     setCurrentItems(getCurrentVisiblePages());
-  }, [getCurrentVisiblePages]);
+  }, [currentPage, getCurrentVisiblePages, props]);
 
   return (
     <HStack
@@ -57,7 +65,7 @@ export function Pagination(props: PaginationProps) {
           const handleClick = () => {
             if (c.value) {
               setCurrentPage(c.value);
-              props.handlePageChange?.(c.value);
+              props.onPageChange?.(c.value);
             }
           };
 

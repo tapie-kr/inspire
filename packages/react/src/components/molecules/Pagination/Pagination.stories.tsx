@@ -15,6 +15,7 @@ const meta: Meta = {
     max: 99,
     visiblePages: 10,
     defaultPage: 1,
+    onPageChange: console.log,
   },
 };
 
