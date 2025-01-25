@@ -15,6 +15,8 @@ export enum ButtonSize {
 
 export type ButtonPropsBase = ButtonHTMLAttributes<HTMLButtonElement> & {
   size?: ButtonSize;
+  fullWidth?: boolean;
+  fullHeight?: boolean;
 };
 
 export const ButtonTypoSizeMap = {

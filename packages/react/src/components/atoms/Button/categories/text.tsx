@@ -1,5 +1,6 @@
 'use client';
 
+import * as base from '../styles/base.css';
 import * as s from '../styles/text.css';
 import { spacingVars } from '@/lib/style/contract/component.css';
 
@@ -28,6 +29,8 @@ export function TextButton(props: DefaultButtonProps) {
     size: propSize,
     leadingIcon,
     trailingIcon,
+    fullWidth = false,
+    fullHeight = false,
     className: propClassName,
     children,
     ...restProps
@@ -36,7 +39,15 @@ export function TextButton(props: DefaultButtonProps) {
   const size = useMemo(() => propSize || ButtonSize.LARGE, [propSize]);
   const Typo = useMemo(() => ButtonTypoSizeMap[size], [size]);
 
-  const classNames = [propClassName, s.base, s[size]];
+  const classNames = [
+    propClassName,
+    s.base,
+    s[size],
+    {
+      [base.fullWidth]: fullWidth,
+      [base.fullHeight]: fullHeight,
+    },
+  ];
 
   return (
     <button
@@ -44,7 +55,9 @@ export function TextButton(props: DefaultButtonProps) {
       className={cn(classNames)}
     >
       <HStack
-        fitContent
+        fitContent={!fullWidth}
+        fullWidth={fullWidth}
+        fullHeight={fullHeight}
         align='center'
         justify='center'
         gap={GapMap[size]}

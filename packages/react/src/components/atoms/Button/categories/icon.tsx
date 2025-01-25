@@ -1,5 +1,6 @@
 'use client';
 
+import * as base from '../styles/base.css';
 import * as s from '../styles/icon.css';
 
 import { Icon } from '@/components/foundations/Icon';
@@ -19,6 +20,8 @@ export function IconButton(props: IconButtonProps) {
     variant: propVariant,
     size: propSize,
     icon,
+    fullWidth = false,
+    fullHeight = false,
     className: propClassName,
     ...restProps
   } = props;
@@ -26,7 +29,15 @@ export function IconButton(props: IconButtonProps) {
   const size = useMemo(() => propSize || ButtonSize.LARGE, [propSize]);
   const variant = useMemo(() => propVariant || ButtonVariant.PRIMARY, [propVariant]);
 
-  const classNames = [propClassName, s[variant], s[size]];
+  const classNames = [
+    propClassName,
+    s[variant],
+    s[size],
+    {
+      [base.fullWidth]: fullWidth,
+      [base.fullHeight]: fullHeight,
+    },
+  ];
 
   return (
     <button
