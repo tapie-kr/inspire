@@ -50,22 +50,25 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
             )}
             {props.columns.map(c => (
               <Table.Body.Cell key={c.key.toString()}>
-                {c.cell ? c.cell(d[c.key], i) : String(d[c.key])}
+                {c.cell ? c.cell(d[c.key], i + 1) : String(d[c.key])}
               </Table.Body.Cell>
             ))}
             {shouldShowActions && (
               <Table.Body.Cell>
                 <HStack spacing={spacingVars.base}>
-                  {props.actions?.map(({ icon, onClick: handleClick }, i) => (
-                    <Button.Icon
-                      key={i}
-                      variant={ButtonVariant.SECONDARY}
-                      size={ButtonSize.MEDIUM}
-                      icon={icon}
-                      color={colorVars.content.default}
-                      onClick={handleClick}
-                    />
-                  ))}
+                  {props.actions?.map((a, i) => {
+                    const handleClick = () => a.onClick(i + 1);
+                    return (
+                      <Button.Icon
+                        key={i}
+                        variant={ButtonVariant.SECONDARY}
+                        size={ButtonSize.MEDIUM}
+                        icon={a.icon}
+                        color={colorVars.content.default}
+                        onClick={handleClick}
+                      />
+                    );
+                  })}
                 </HStack>
               </Table.Body.Cell>
             )}

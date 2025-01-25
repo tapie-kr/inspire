@@ -13,5 +13,5 @@ export type Column<T extends object, K extends keyof T> = {
 
 export type ActionIcon = {
   icon: IconName;
-  onClick: () => unknown;
+  onClick: (index: number) => unknown;
 };
