@@ -43,9 +43,20 @@ const exampleData: Array<ExampleData> = [
   },
 ];
 
-export const Default: DataTableStory = {
-  render: () => (
+function ExampleTable() {
+  return (
     <DataTable
+      showIndex
+      actions={[
+        {
+          icon: GlyphIcon.EDIT,
+          onClick: () => {},
+        },
+        {
+          icon: GlyphIcon.DELETE,
+          onClick: () => {},
+        },
+      ]}
       columns={[
         {
           key: 'name',
@@ -69,7 +80,11 @@ export const Default: DataTableStory = {
       ]}
       data={exampleData}
     />
-  ),
+  );
+}
+
+export const Default: DataTableStory = {
+  render: ExampleTable,
 };
 
 export const FullExample: DataTableStory = {
@@ -120,45 +135,7 @@ export const FullExample: DataTableStory = {
             },
           ]}
         />
-        <DataTable
-          columns={[
-            {
-              key: 'name',
-              label: 'Name',
-              width: 200,
-              isSortable: true,
-            },
-            {
-              key: 'age',
-              label: 'Age',
-              width: 100,
-              isSortable: true,
-              cell: age => `${age} years old`,
-            },
-            {
-              key: 'job',
-              label: 'Job',
-              width: 300,
-            },
-          ]}
-          data={[
-            {
-              name: 'John Doe',
-              age: 32,
-              job: 'Software Engineer',
-            },
-            {
-              name: 'Jane Doe',
-              age: 31,
-              job: 'Designer',
-            },
-            {
-              name: 'James Doe',
-              age: 30,
-              job: 'Product Manager',
-            },
-          ]}
-        />
+        <ExampleTable />
       </VStack>
       <Pagination
         min={1}

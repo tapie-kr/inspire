@@ -1,12 +1,6 @@
 import { type ReactNode } from 'react';
 import { type IconName } from '@/components/foundations/Icon/shared';
 
-export type Action = {
-  icon?: IconName;
-  label: string;
-  handleClick?: () => unknown;
-};
-
 export type Column<T extends object, K extends keyof T> = {
   [U in K]: {
     key: U;
@@ -16,3 +10,8 @@ export type Column<T extends object, K extends keyof T> = {
     cell?: (value: T[U]) => ReactNode;
   };
 }[K];
+
+export type ActionIcon = {
+  icon: IconName;
+  onClick: () => unknown;
+};
