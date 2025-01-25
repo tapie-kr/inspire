@@ -58,6 +58,7 @@ export * from './lib/style/contract/color.css';
 export * from './lib/style/contract/component.css';
 export * from './lib/style/contract/typography.css';
 export * from './lib/style/utility';
+export * from './types/prop';
 export * from './utils/motion/css';
 export * from './utils/motion/transition';
 export * from './utils/string/capitalize-first-letter';

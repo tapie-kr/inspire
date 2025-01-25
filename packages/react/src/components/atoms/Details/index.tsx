@@ -14,7 +14,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import { type MouseEvent, type ReactNode, useCallback, useState } from 'react';
 import { StackAlign } from '@/lib/layout/types';
 import { utilityClass } from '@/lib/style/utility';
-import { type DefaultProps } from '@/types/props';
+import { type DefaultProps } from '@/types/prop';
 import { getTransition } from '@/utils/motion/transition';
 
 type DetailsProps = DefaultProps & {
@@ -73,7 +73,7 @@ export function Details(props: DetailsProps) {
         transition={getTransition({ duration: 0.35 })}
         aria-hidden
       >
-        <AnimatePresence>
+        <AnimatePresence initial={false}>
           {isOpened ? (
             <motion.div
               initial={{ opacity: 0, y: -20 }}

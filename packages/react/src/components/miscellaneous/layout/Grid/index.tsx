@@ -1,7 +1,7 @@
 import { grid } from './styles.css';
 
 import cn from 'classnames';
-import { type DefaultProps } from '@/types/props';
+import { type DefaultProps } from '@/types/prop';
 import { Box } from '../Box';
 
 type GridProps = DefaultProps & {
@@ -14,16 +14,7 @@ type GridProps = DefaultProps & {
 };
 
 export function Grid(props: GridProps) {
-  const {
-    gap,
-    rowGap,
-    columnGap,
-    columnCount,
-    fullWidth = true,
-    fullHeight,
-    className,
-    children,
-  } = props;
+  const { gap, rowGap, columnGap, columnCount, fullWidth, fullHeight, className, children } = props;
 
   return (
     <Box

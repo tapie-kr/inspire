@@ -22,7 +22,7 @@ type FilterProps = {
 export function Filter(props: FilterProps) {
   return (
     <Details
-      defaultOpen={props.defaultOpen}
+      defaultOpen={props.defaultOpen !== false ? true : false}
       title={
         <HStack spacing={spacingVars.mini}>
           <Icon name={GlyphIcon.FILTER_LIST} />
