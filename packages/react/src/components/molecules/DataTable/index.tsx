@@ -50,7 +50,7 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
             )}
             {props.columns.map(c => (
               <Table.Body.Cell key={c.key.toString()}>
-                {c.cell ? c.cell(d[c.key]) : String(d[c.key])}
+                {c.cell ? c.cell(d[c.key], i) : String(d[c.key])}
               </Table.Body.Cell>
             ))}
             {shouldShowActions && (

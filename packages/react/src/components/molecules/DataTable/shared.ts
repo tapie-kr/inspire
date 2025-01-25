@@ -7,7 +7,7 @@ export type Column<T extends object, K extends keyof T> = {
     label: string;
     width?: number | string;
     isSortable?: boolean;
-    cell?: (value: T[U]) => ReactNode;
+    cell?: (value: T[U], index: number) => ReactNode;
   };
 }[K];
 
