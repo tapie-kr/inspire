@@ -47,6 +47,7 @@ export function Filter(props: FilterProps) {
             <HStack
               key={f.label}
               spacing={spacingVars.micro}
+              align={StackAlign.START}
             >
               {f.options.map(o => (
                 <Chip
