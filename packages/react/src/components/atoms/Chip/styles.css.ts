@@ -8,7 +8,7 @@ import { getShorthandedValue } from '@/utils/style/shorthand';
 export const base = componentStyle([
   utilityClass.interactiveInverted,
   {
-    padding: getShorthandedValue(spacingVars.tiny, spacingVars.base),
+    padding: getShorthandedValue(spacingVars.tiny, spacingVars.petite),
     borderRadius: radiusVars.subtle,
     background: colorVars.surface.elevated,
     color: colorVars.content.default,

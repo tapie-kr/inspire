@@ -29,12 +29,12 @@ export function Chip(props: ChipProps) {
       >
         <Icon
           name={leadingIcon}
-          size={20}
+          size={16}
         />
-        <Typo.Base weight={Weight.MEDIUM}>{props.children}</Typo.Base>
+        <Typo.Tiny weight={Weight.MEDIUM}>{props.children}</Typo.Tiny>
         <Icon
           name={trailingIcon}
-          size={20}
+          size={16}
         />
       </HStack>
     </button>

@@ -15,21 +15,31 @@ const meta: Meta = {
 
 type DataTableStory = StoryObj<typeof DataTable>;
 
-const exampleData = [
+enum Job {
+  SOFTWARE_ENGINEER = 'Software Engineer',
+  DESIGNER = 'Designer',
+  PRODUCT_MANAGER = 'Product Manager',
+}
+type ExampleData = {
+  name: string;
+  age: number;
+  job: Job;
+};
+const exampleData: Array<ExampleData> = [
   {
     name: 'John Doe',
     age: 32,
-    job: 'Software Engineer',
+    job: Job.SOFTWARE_ENGINEER,
   },
   {
     name: 'Jane Doe',
     age: 31,
-    job: 'Designer',
+    job: Job.DESIGNER,
   },
   {
     name: 'James Doe',
     age: 30,
-    job: 'Product Manager',
+    job: Job.PRODUCT_MANAGER,
   },
 ];
 
@@ -54,6 +64,7 @@ export const Default: DataTableStory = {
           key: 'job',
           label: 'Job',
           width: 300,
+          cell: job => job,
         },
       ]}
       data={exampleData}

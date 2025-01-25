@@ -7,12 +7,12 @@ export type Action = {
   handleClick?: () => unknown;
 };
 
-export type AcceptableData = { [key: string]: unknown };
-
-export type Column<T extends AcceptableData, K extends keyof T> = {
-  key: K;
-  label: string;
-  width?: number | string;
-  isSortable?: boolean;
-  cell?: (data?: T[K]) => ReactNode;
-};
+export type Column<T extends object, K extends keyof T> = {
+  [U in K]: {
+    key: U;
+    label: string;
+    width?: number | string;
+    isSortable?: boolean;
+    cell?: (value: T[U]) => ReactNode;
+  };
+}[K];

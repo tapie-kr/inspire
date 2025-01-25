@@ -1,13 +1,13 @@
 import { Table } from '@/components/foundations/Table';
 
-import { type AcceptableData, type Column } from './shared';
+import { type Column } from './shared';
 
-type DataTableProps<T extends AcceptableData> = {
+type DataTableProps<T extends object> = {
   columns: Array<Column<T, keyof T>>;
   data: Array<T>;
 };
 
-export function DataTable<T extends AcceptableData>(props: DataTableProps<T>) {
+export function DataTable<T extends object>(props: DataTableProps<T>) {
   return (
     <Table>
       <Table.Head>

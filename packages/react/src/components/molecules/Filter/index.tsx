@@ -42,7 +42,10 @@ export function Filter(props: FilterProps) {
             </Stack>
           ))}
         </VStack>
-        <VStack spacing={spacingVars.micro}>
+        <VStack
+          spacing={spacingVars.micro}
+          align={StackAlign.START}
+        >
           {props.filters?.map(f => (
             <HStack
               key={f.label}
