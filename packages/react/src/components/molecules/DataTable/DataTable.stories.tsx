@@ -23,6 +23,7 @@ export const Default: DataTableStory = {
           label: 'Age',
           width: 100,
           isSortable: true,
+          cell: age => `${age} years old`,
         },
         {
           key: 'job',

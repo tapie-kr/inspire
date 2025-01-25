@@ -25,7 +25,9 @@ export function DataTable<T extends AcceptableData>(props: DataTableProps<T>) {
         {props.data.map((d, i) => (
           <Table.Body.Row key={i}>
             {props.columns.map(c => (
-              <Table.Body.Cell key={c.key.toString()}>{String(d[c.key])}</Table.Body.Cell>
+              <Table.Body.Cell key={c.key.toString()}>
+                {c.cell ? c.cell(d[c.key]) : String(d[c.key])}
+              </Table.Body.Cell>
             ))}
           </Table.Body.Row>
         ))}
