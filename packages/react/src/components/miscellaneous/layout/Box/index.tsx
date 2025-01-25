@@ -31,7 +31,7 @@ export function Box<T extends LayoutTag>(props: BoxProps<T>) {
     Tag,
     {
       className: cn(classNames),
-      style: { ...style, padding },
+      style: { padding, ...style },
       ...rest,
     },
     props.children,
