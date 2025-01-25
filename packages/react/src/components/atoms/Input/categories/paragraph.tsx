@@ -34,7 +34,7 @@ export function ParagraphInput(props: ParagraphInputProps) {
 
   return (
     <VStack
-      fitContent
+      fullWidth
       className={cn(s.container)}
     >
       <textarea
@@ -54,7 +54,7 @@ export function ParagraphInput(props: ParagraphInputProps) {
         <Typo.Mini
           color={colorVars.content.muted}
           className={cn(s.maxLength, isLarge ? s.maxLengthLarge : s.maxLengthMedium)}
-        >{`${value.length}/${restProps.maxLength}`}</Typo.Mini>
+        >{`${value.length}/${restProps.maxLength?.toLocaleString()}`}</Typo.Mini>
       )}
     </VStack>
   );
