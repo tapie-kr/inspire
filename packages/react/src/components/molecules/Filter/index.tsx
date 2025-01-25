@@ -12,10 +12,10 @@ import { Stack } from '@/components/miscellaneous/layout/Stack';
 import { VStack } from '@/components/miscellaneous/layout/VStack';
 
 import { StackAlign } from '@/lib/layout/types';
-import { type Filter as FilterType } from './shared';
+import { type FilterGroup } from './shared';
 
 type FilterProps = {
-  filters?: Array<FilterType>;
+  filters?: Array<FilterGroup>;
 };
 
 export function Filter(props: FilterProps) {

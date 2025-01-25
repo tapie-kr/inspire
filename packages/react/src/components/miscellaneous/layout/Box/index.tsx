@@ -1,6 +1,7 @@
 import * as s from './styles.css';
 
 import cn from 'classnames';
+import { createElement } from 'react';
 import { type BaseLayoutProps, LayoutTag } from '@/lib/layout/types';
 
 type BoxProps<T extends LayoutTag> = BaseLayoutProps<T> & {
@@ -26,13 +27,13 @@ export function Box<T extends LayoutTag>(props: BoxProps<T>) {
     },
   ];
 
-  return (
-    <Tag
-      className={cn(classNames)}
-      style={{ ...style, padding }}
-      {...rest}
-    >
-      {props.children}
-    </Tag>
+  return createElement(
+    Tag,
+    {
+      className: cn(classNames),
+      style: { ...style, padding },
+      ...rest,
+    },
+    props.children,
   );
 }
