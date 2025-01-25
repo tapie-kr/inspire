@@ -5,7 +5,7 @@ import { componentStyle } from '@/styles/layer.css';
 import { getShorthandedValue } from '@/utils/style/shorthand';
 
 export const monochrome = componentStyle({
-  background: colorVars.grayscale.translucent._10,
+  background: colorVars.grayscale.translucent._5,
   color: colorVars.content.emphasized,
 });
 

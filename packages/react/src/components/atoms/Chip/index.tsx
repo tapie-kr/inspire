@@ -23,7 +23,10 @@ export function Chip(props: ChipProps) {
   const { leadingIcon, trailingIcon, isActive = false } = props;
 
   return (
-    <button className={cn(s.base, isActive && s.active)}>
+    <button
+      className={cn(s.base, isActive && s.active)}
+      onClick={props.onClick}
+    >
       <HStack
         fitContent
         align='center'
