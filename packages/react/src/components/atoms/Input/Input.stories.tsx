@@ -122,15 +122,13 @@ export const ImagePreview: ImagePreviewInputStory = {
       options: Object.values(ImagePreviewShape),
       control: { type: 'select' },
     },
-    width: { control: 'number' },
-    height: { control: 'number' },
+    size: { control: 'number' },
     preview: { control: 'text' },
   },
   args: {
     placeholder: 'Placeholder',
     shape: ImagePreviewShape.DEFAULT,
-    width: 100,
-    height: 100,
+    size: 150,
   },
 };
 

@@ -1,21 +1,22 @@
 import { container, content } from './styles.css';
 
 import cn from 'classnames';
+import { type CSSProperties } from 'react';
 import { type DefaultProps } from '@/types/prop';
 import { Box } from '../Box';
 
 type AspectRatioProps = DefaultProps & {
   ratio: number;
+  style?: CSSProperties;
 };
 
 export function AspectRatio(props: AspectRatioProps) {
-  const { ratio, className, children } = props;
+  const { ratio, style, className, children } = props;
 
   return (
     <Box
       className={cn(container, className)}
-      fullWidth
-      style={{ paddingBottom: `${(1 / ratio) * 100}%` }}
+      style={{ ...style, aspectRatio: ratio }}
     >
       <Box
         className={content}

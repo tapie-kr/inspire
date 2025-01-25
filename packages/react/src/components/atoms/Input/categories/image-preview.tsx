@@ -8,6 +8,7 @@ import { HStack, VStack } from '@cottons-kr/react-foundation';
 import { Icon } from '@/components/foundations/Icon';
 import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
 import { Typo } from '@/components/foundations/Typography';
+import { AspectRatio } from '@/components/miscellaneous/layout/AspectRatio';
 
 import cn from 'classnames';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -22,13 +23,12 @@ export enum ImagePreviewShape {
 
 type ImagePreviewInputProps = HTMLInputProps & {
   shape?: ImagePreviewShape;
-  width?: string | number;
-  height?: string | number;
+  size?: string | number;
   preview?: string;
 };
 
 export function ImagePreviewInput(props: ImagePreviewInputProps) {
-  const { shape = ImagePreviewShape.DEFAULT, preview, placeholder, ...restProps } = props;
+  const { shape = ImagePreviewShape.DEFAULT, preview, placeholder, size, ...restProps } = props;
   const { files, controller } = useFileInputController();
 
   const [isHover, setIsHover] = useState(false);
@@ -38,9 +38,6 @@ export function ImagePreviewInput(props: ImagePreviewInputProps) {
   const isCircle = shape === ImagePreviewShape.CIRCLE;
 
   const [previewImage, setPreviewImage] = useState<string | null>(null);
-
-  const widthText = typeof props.width === 'number' ? `${props.width}px` : props.width;
-  const heightText = typeof props.height === 'number' ? `${props.height}px` : props.height;
 
   useEffect(() => {
     if (hasValue && files) {
@@ -65,57 +62,62 @@ export function ImagePreviewInput(props: ImagePreviewInputProps) {
   }, [previewImage, showPreview]);
 
   return (
-    <VStack
-      className={cn(s.base, isCircle && s.baseCircle, showPreview && s.baseHasValue)}
-      justify='center'
-      align='center'
-      style={{
-        width: widthText,
-        height: heightText,
-        backgroundImage: backgroundImageSrc,
-      }}
-      gap={spacingVars.mini}
-      tag='label'
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+    <AspectRatio
+      ratio={1}
+      style={{ width: size }}
     >
-      {showPreview ? (
-        <HStack
-          justify={'center'}
-          align={'center'}
-          className={cn(s.overlay, isHover && s.overlayVisible)}
-          fitContent
-        >
-          <Typo.Micro
-            weight={Weight.MEDIUM}
-            color={colorVars.solid.translucent.white._90}
-            nowrap
+      <VStack
+        className={cn(s.base, isCircle && s.baseCircle, showPreview && s.baseHasValue)}
+        justify='center'
+        align='center'
+        fullWidth
+        fullHeight
+        style={{
+          backgroundImage: backgroundImageSrc,
+        }}
+        gap={spacingVars.mini}
+        tag='label'
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {showPreview ? (
+          <HStack
+            justify={'center'}
+            align={'center'}
+            className={cn(s.overlay, isHover && s.overlayVisible)}
+            fitContent
           >
-            클릭해 바꾸기
-          </Typo.Micro>
-        </HStack>
-      ) : (
-        <>
-          <Icon
-            name={GlyphIcon.DEFAULT}
-            size={24}
-            color={colorVars.content.emphasized}
-          />
-          <Typo.Petite
-            weight={Weight.MEDIUM}
-            color={colorVars.content.emphasized}
-          >
-            {placeholder}
-          </Typo.Petite>
-        </>
-      )}
-      <input
-        {...restProps}
-        className={s.input}
-        type={'file'}
-        accept={'image/*'}
-        {...controller}
-      />
-    </VStack>
+            <Typo.Micro
+              weight={Weight.MEDIUM}
+              color={colorVars.solid.translucent.white._90}
+              nowrap
+            >
+              클릭해 바꾸기
+            </Typo.Micro>
+          </HStack>
+        ) : (
+          <>
+            <Icon
+              name={GlyphIcon.DEFAULT}
+              size={24}
+              color={colorVars.content.emphasized}
+            />
+            <Typo.Petite
+              weight={Weight.MEDIUM}
+              color={colorVars.content.emphasized}
+            >
+              {placeholder}
+            </Typo.Petite>
+          </>
+        )}
+        <input
+          {...restProps}
+          className={s.input}
+          type={'file'}
+          accept={'image/*'}
+          {...controller}
+        />
+      </VStack>
+    </AspectRatio>
   );
 }
