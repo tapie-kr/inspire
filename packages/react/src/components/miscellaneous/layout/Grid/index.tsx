@@ -14,7 +14,16 @@ type GridProps = DefaultProps & {
 };
 
 export function Grid(props: GridProps) {
-  const { gap, rowGap, columnGap, columnCount, fullWidth, fullHeight, className, children } = props;
+  const {
+    gap,
+    rowGap,
+    columnGap,
+    columnCount,
+    fullWidth = true,
+    fullHeight,
+    className,
+    children,
+  } = props;
 
   return (
     <Box
