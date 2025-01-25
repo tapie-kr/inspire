@@ -16,11 +16,13 @@ import { type FilterGroup } from './shared';
 
 type FilterProps = {
   filters?: Array<FilterGroup>;
+  defaultOpen?: boolean;
 };
 
 export function Filter(props: FilterProps) {
   return (
     <Details
+      defaultOpen={props.defaultOpen}
       title={
         <HStack spacing={spacingVars.mini}>
           <Icon name={GlyphIcon.FILTER_LIST} />
