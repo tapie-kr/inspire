@@ -27,10 +27,10 @@ export type LayoutElementProps<T extends LayoutTag> = T extends LayoutTag.DIV
               ? HTMLAttributes<HTMLElement>
               : T extends LayoutTag.FOOTER
                 ? HTMLAttributes<HTMLElement>
-                : never;
+                : HTMLAttributes<HTMLElement>;
 
 export type BaseLayoutProps<T extends LayoutTag> = LayoutElementProps<T> & {
-  tag?: T;
+  tag?: T | (string & {});
   fullWidth?: boolean;
   fullHeight?: boolean;
   className?: string;
