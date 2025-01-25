@@ -1,6 +1,6 @@
 'use client';
 
-import { container } from './styles.css';
+import { container, image } from './styles.css';
 
 import { Skeleton } from '@/components/atoms/Skeleton';
 import { Box } from '@/components/miscellaneous/layout/Box';
@@ -45,10 +45,9 @@ export function Image(props: ImageProps) {
         />
       )}
       <img
+        className={image}
         src={src}
         alt={props.alt}
-        width={props.width}
-        height={props.height}
         onLoadStart={handleLoadStart}
         onLoad={handleLoad}
         style={{ display: isLoading ? 'none' : 'block' }}

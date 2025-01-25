@@ -1,3 +1,5 @@
+import { AspectRatio } from '@/components/miscellaneous/layout/AspectRatio';
+
 import { type Meta, type StoryObj } from '@storybook/react';
 import { Image } from '.';
 
@@ -26,6 +28,21 @@ type ImageStory = StoryObj<typeof Image>;
 
 export const Default: ImageStory = {
   render: props => <Image {...props} />,
+};
+
+export const WithAspectRatio: ImageStory = {
+  render: props => (
+    <AspectRatio
+      ratio={16 / 9}
+      style={{ width: props.width }}
+    >
+      <Image
+        {...props}
+        fullWidth
+        fullHeight
+      />
+    </AspectRatio>
+  ),
 };
 
 export default meta;
