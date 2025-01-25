@@ -1,3 +1,5 @@
+'use client';
+
 import * as s from './styles.css';
 import { spacingVars } from '@/lib/style/contract/component.css';
 
@@ -13,6 +15,7 @@ type ChipProps = {
   leadingIcon?: IconName;
   trailingIcon?: IconName;
   isActive?: boolean;
+  onClick?: () => unknown;
   children?: string;
 };
 
