@@ -43,7 +43,6 @@ export function Details(props: DetailsProps) {
 
   return (
     <VStack
-      fullWidth
       align={StackAlign.START}
       spacing={spacingVars.micro}
     >

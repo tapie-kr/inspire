@@ -46,6 +46,14 @@ export const Default: FilterStory = {
               label: '타입2',
               value: GlyphIcon.CLOSE,
             },
+            {
+              label: '타입2',
+              value: GlyphIcon.CLOSE,
+            },
+            {
+              label: '타입2',
+              value: GlyphIcon.CLOSE,
+            },
           ],
         },
       ]}
