@@ -1,22 +1,38 @@
-import { container, content } from './styles.css';
+import {
+  container,
+  content,
+  fullHeight as fullHeightStyle,
+  fullWidth as fullWidthStyle,
+} from './styles.css';
 
 import cn from 'classnames';
-import { type CSSProperties } from 'react';
 import { type DefaultProps } from '@/types/prop';
 import { Box } from '../Box';
 
 type AspectRatioProps = DefaultProps & {
   ratio: number;
-  style?: CSSProperties;
+  width?: string | number;
+  height?: string | number;
+  fullWidth?: boolean;
+  fullHeight?: boolean;
 };
 
 export function AspectRatio(props: AspectRatioProps) {
-  const { ratio, style, className, children } = props;
+  const { ratio, width, height, fullWidth, fullHeight, className, children } = props;
+
+  const classNames = [
+    container,
+    className,
+    {
+      [fullWidthStyle]: fullWidth,
+      [fullHeightStyle]: fullHeight,
+    },
+  ];
 
   return (
     <Box
-      className={cn(container, className)}
-      style={{ ...style, aspectRatio: ratio }}
+      className={cn(classNames)}
+      style={{ width, height, aspectRatio: ratio }}
     >
       <Box
         className={content}

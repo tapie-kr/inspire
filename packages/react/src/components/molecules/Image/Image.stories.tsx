@@ -36,7 +36,7 @@ export const WithAspectRatio: ImageStory = {
   render: props => (
     <AspectRatio
       ratio={16 / 9}
-      style={{ width: props.width }}
+      width={props.width}
     >
       <Image
         {...props}
