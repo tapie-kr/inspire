@@ -9,6 +9,7 @@ const meta: Meta = {
   argTypes: {
     src: { control: 'text' },
     alt: { control: 'text' },
+    delay: { control: 'number' },
     width: { control: 'number' },
     height: { control: 'number' },
     fullWidth: { control: 'boolean' },
@@ -17,6 +18,7 @@ const meta: Meta = {
   args: {
     src: 'https://minio-mgowcsocwso4g0wo0o0wg0sk.apne2a.algorix.cloud/inspire-asset/inspire-cover.png',
     alt: 'placeholder',
+    delay: 1000,
     width: 300,
     height: 300,
     fullWidth: false,

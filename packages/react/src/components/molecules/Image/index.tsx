@@ -1,16 +1,19 @@
 'use client';
 
 import { container, image } from './styles.css';
+import { radiusVars } from '@/lib/style/contract/component.css';
 
 import { Skeleton } from '@/components/atoms/Skeleton';
 import { Box } from '@/components/miscellaneous/layout/Box';
 
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
+import { useMountedState } from '@/hooks/use-mounted-state';
 import { type DefaultProps } from '@/types/prop';
 
 type ImageProps = DefaultProps<true> & {
   src: string | File | Blob;
   alt: string;
+  delay?: number;
   width?: string | number;
   height?: string | number;
   fullWidth?: boolean;
@@ -19,14 +22,19 @@ type ImageProps = DefaultProps<true> & {
 
 export function Image(props: ImageProps) {
   const [isLoading, setIsLoading] = useState(true);
-  const src = typeof props.src === 'string' ? props.src : URL.createObjectURL(props.src);
+  const isMounted = useMountedState();
+  const src = useMemo(
+    () =>
+      isMounted ? (typeof props.src === 'string' ? props.src : URL.createObjectURL(props.src)) : '',
+    [isMounted, props.src],
+  );
 
   const handleLoadStart = useCallback(() => {
     setIsLoading(true);
   }, []);
   const handleLoad = useCallback(() => {
-    setIsLoading(false);
-  }, []);
+    setTimeout(() => setIsLoading(false), props.delay ?? 0);
+  }, [props.delay]);
 
   return (
     <Box
@@ -42,6 +50,7 @@ export function Image(props: ImageProps) {
           height={props.height}
           fullWidth={props.fullWidth}
           fullHeight={props.fullHeight}
+          borderRadius={radiusVars.none}
         />
       )}
       <img
@@ -50,8 +59,8 @@ export function Image(props: ImageProps) {
         alt={props.alt}
         onLoadStart={handleLoadStart}
         onLoad={handleLoad}
+        onError={handleLoad}
         style={{ display: isLoading ? 'none' : 'block' }}
-        loading='lazy'
       />
     </Box>
   );
