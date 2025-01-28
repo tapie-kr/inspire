@@ -73,6 +73,18 @@ export default [
       'no-duplicate-imports': 'error',
       'no-undef': 'off',
       'no-redeclare': 'off',
+      'no-restricted-imports': [
+        'warn',
+        {
+          paths: [
+            {
+              name: '@cottons-kr/react-foundation',
+              message:
+                '이 라이브러리는 더이상 사용되지 않습니다. 대신 INSPIRE 내부 Layout 컴포넌트를 사용해주세요.',
+            },
+          ],
+        },
+      ],
 
       'unused-imports/no-unused-imports': 'error',
 
