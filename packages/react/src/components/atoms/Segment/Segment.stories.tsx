@@ -10,12 +10,12 @@ const meta: Meta<typeof Segment> = {
   argTypes: {
     leadingIcon: getIconArgType(),
     label: { control: 'text' },
-    isActive: { control: 'boolean' },
+    value: { control: 'text' },
   },
   args: {
     leadingIcon: GlyphIcon.DEFAULT,
     label: 'Segment',
-    isActive: false,
+    value: 'segment',
   },
 };
 
