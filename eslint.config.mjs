@@ -82,6 +82,10 @@ export default [
               message:
                 '이 라이브러리는 더이상 사용되지 않습니다. 대신 INSPIRE 내부 Layout 컴포넌트를 사용해주세요.',
             },
+            {
+              name: '@/index',
+              message: 'Barrel 파일을 사용하지 마세요. 정확한 path를 사용해주세요.',
+            },
           ],
         },
       ],
