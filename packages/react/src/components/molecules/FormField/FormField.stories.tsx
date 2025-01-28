@@ -25,11 +25,51 @@ const meta: Meta = {
 
 type FormFieldStory = StoryObj<typeof FormField>;
 
-export const Default: FormFieldStory = {
+export const Text: FormFieldStory = {
   render: props => (
     <Box style={{ width: 320 }}>
       <FormField {...props}>
         <Input.Text placeholder='Placeholder' />
+      </FormField>
+    </Box>
+  ),
+};
+
+export const Paragraph: FormFieldStory = {
+  render: props => (
+    <Box style={{ width: 320 }}>
+      <FormField {...props}>
+        <Input.Paragraph placeholder='Placeholder' />
+      </FormField>
+    </Box>
+  ),
+};
+
+export const File: FormFieldStory = {
+  render: props => (
+    <Box style={{ width: 320 }}>
+      <FormField {...props}>
+        <Input.File placeholder='Placeholder' />
+      </FormField>
+    </Box>
+  ),
+};
+
+export const DraggableFile: FormFieldStory = {
+  render: props => (
+    <Box style={{ width: 320 }}>
+      <FormField {...props}>
+        <Input.DraggableFile placeholder='Placeholder' />
+      </FormField>
+    </Box>
+  ),
+};
+
+export const ImagePreview: FormFieldStory = {
+  render: props => (
+    <Box style={{ width: 320 }}>
+      <FormField {...props}>
+        <Input.ImagePreview placeholder='Placeholder' />
       </FormField>
     </Box>
   ),
