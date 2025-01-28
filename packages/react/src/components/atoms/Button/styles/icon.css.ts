@@ -1,4 +1,3 @@
-import { colorVars } from '@/lib/style/contract/color.css';
 import { radiusVars } from '@/lib/style/contract/component.css';
 import { componentStyle } from '@/styles/layer.css';
 
@@ -12,22 +11,9 @@ export const base = componentStyle({
   flexShrink: 0,
 });
 
-export const primary = componentStyle([
-  base,
-  utilityClass.interactiveInverted,
-  {
-    background: colorVars.surface.inverted.elevated,
-    color: colorVars.content.inverted.emphasized,
-  },
-]);
+export const primary = componentStyle([base, utilityClass.interactiveInverted]);
 
-export const secondary = componentStyle([
-  base,
-  utilityClass.interactive,
-  {
-    background: colorVars.surface.elevated,
-  },
-]);
+export const secondary = componentStyle([base, utilityClass.interactive]);
 
 export const large = componentStyle({
   width: 48,

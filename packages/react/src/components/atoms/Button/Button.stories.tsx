@@ -1,7 +1,9 @@
 import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
 
 import { type Meta, type StoryObj } from '@storybook/react';
+import { getEnumArgType } from '@/lib/storybook/enum';
 import { getIconArgType } from '@/lib/storybook/icon';
+import { Theme } from '@/lib/style/theme';
 import { Button } from '.';
 import { ButtonSize, ButtonVariant } from './shared';
 
@@ -35,9 +37,15 @@ export const Default: DefaultButtonStory = {
       options: Object.values(ButtonVariant),
       control: { type: 'select' },
     },
+    theme: getEnumArgType(Theme),
     leadingIcon: getIconArgType(),
     trailingIcon: getIconArgType(),
-    isFullWidth: { control: { type: 'boolean' } },
+    fullWidth: { control: { type: 'boolean' } },
+    fullHeight: { control: { type: 'boolean' } },
+  },
+  args: {
+    variant: ButtonVariant.PRIMARY,
+    theme: Theme.MONOCHROME,
   },
 };
 
@@ -52,9 +60,16 @@ export const Icon: IconButtonStory = {
   render: props => <Button.Icon {...props} />,
   argTypes: {
     ...baseArgsType,
+    variant: {
+      options: Object.values(ButtonVariant),
+      control: { type: 'select' },
+    },
+    theme: getEnumArgType(Theme),
     icon: getIconArgType(),
   },
   args: {
+    variant: ButtonVariant.PRIMARY,
+    theme: Theme.MONOCHROME,
     icon: GlyphIcon.FLAG,
   },
 };

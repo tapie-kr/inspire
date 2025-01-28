@@ -2,23 +2,27 @@
 
 import * as base from '../styles/base.css';
 import * as s from '../styles/icon.css';
+import { primaryThemes } from '../styles/themes/primary.css';
+import { secondaryThemes } from '../styles/themes/secondary.css';
 
 import { Icon } from '@/components/foundations/Icon';
 
 import cn from 'classnames';
-import { useMemo } from 'react';
 import { type IconName } from '@/components/foundations/Icon/shared';
+import { Theme } from '@/lib/style/theme';
 import { ButtonIconSizeMap, type ButtonPropsBase, ButtonSize, ButtonVariant } from '../shared';
 
 type IconButtonProps = ButtonPropsBase & {
   variant?: ButtonVariant;
+  theme?: Theme;
   icon: IconName;
 };
 
 export function IconButton(props: IconButtonProps) {
   const {
-    variant: propVariant,
-    size: propSize,
+    variant = ButtonVariant.PRIMARY,
+    theme = Theme.MONOCHROME,
+    size = ButtonSize.LARGE,
     icon,
     fullWidth = false,
     fullHeight = false,
@@ -26,12 +30,12 @@ export function IconButton(props: IconButtonProps) {
     ...restProps
   } = props;
 
-  const size = useMemo(() => propSize || ButtonSize.LARGE, [propSize]);
-  const variant = useMemo(() => propVariant || ButtonVariant.PRIMARY, [propVariant]);
+  const themeClassName = variant === ButtonVariant.PRIMARY ? primaryThemes : secondaryThemes;
 
   const classNames = [
     propClassName,
     s[variant],
+    themeClassName[theme],
     s[size],
     {
       [base.fullWidth]: fullWidth,
