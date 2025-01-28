@@ -64,7 +64,7 @@ export function ImagePreviewInput(props: ImagePreviewInputProps) {
   return (
     <AspectRatio
       ratio={1}
-      style={{ width: size }}
+      width={size}
     >
       <VStack
         className={cn(s.base, isCircle && s.baseCircle, showPreview && s.baseHasValue)}
