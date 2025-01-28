@@ -40,7 +40,7 @@ function preserveDirectives() {
 
       return {
         code: source.toString(),
-        map: source.generateMap({ hires: true }),
+        map: null,
       };
     },
     renderChunk(code, chunk, _options) {
@@ -58,7 +58,7 @@ function preserveDirectives() {
 
       return {
         code: source.toString(),
-        map: source.generateMap({ hires: true }),
+        map: null,
       };
     },
   };

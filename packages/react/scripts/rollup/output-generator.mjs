@@ -7,7 +7,7 @@ function outputGenerator(banner) {
     {
       format: 'esm',
       dir: 'dist/esm',
-      sourcemap: true,
+      sourcemap: false,
       exports: 'named',
       preserveModules: true,
       preserveModulesRoot: 'src',
@@ -16,7 +16,7 @@ function outputGenerator(banner) {
     {
       format: 'cjs',
       dir: 'dist/cjs',
-      sourcemap: true,
+      sourcemap: false,
       exports: 'named',
       preserveModules: true,
       preserveModulesRoot: 'src',
