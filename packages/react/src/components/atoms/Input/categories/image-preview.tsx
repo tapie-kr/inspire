@@ -28,7 +28,13 @@ type ImagePreviewInputProps = HTMLInputProps & {
 };
 
 export function ImagePreviewInput(props: ImagePreviewInputProps) {
-  const { shape = ImagePreviewShape.DEFAULT, preview, placeholder, size, ...restProps } = props;
+  const {
+    shape = ImagePreviewShape.DEFAULT,
+    preview,
+    placeholder,
+    size = 100,
+    ...restProps
+  } = props;
   const { files, controller } = useFileInputController();
 
   const [isHover, setIsHover] = useState(false);

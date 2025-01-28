@@ -11,7 +11,10 @@ export const base = style({
   border: getShorthandedValue('1px', 'solid', colorVars.grayscale.translucent._10),
   padding: spacingVars.moderate,
   borderRadius: radiusVars.default,
+  overflow: 'hidden',
   cursor: 'pointer',
+  backgroundSize: 'cover',
+  position: 'relative',
   ':hover': {
     borderColor: colorVars.grayscale.translucent._30,
   },
@@ -20,8 +23,6 @@ export const base = style({
       borderColor: colorVars.grayscale.translucent._70,
     },
   },
-  backgroundSize: 'cover',
-  position: 'relative',
 });
 
 export const baseCircle = style({
