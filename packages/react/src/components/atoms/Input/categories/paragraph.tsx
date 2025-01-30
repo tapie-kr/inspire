@@ -54,7 +54,8 @@ export function ParagraphInput(props: ParagraphInputProps) {
         <Typo.Mini
           color={colorVars.content.muted}
           className={cn(s.maxLength, isLarge ? s.maxLengthLarge : s.maxLengthMedium)}
-        >{`${value.length}/${restProps.maxLength?.toLocaleString()}`}</Typo.Mini>
+        >{`${value.length}/${restProps.maxLength?.toLocaleString()}`}
+        </Typo.Mini>
       )}
     </VStack>
   );

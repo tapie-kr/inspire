@@ -57,7 +57,7 @@ export function Pagination(props: PaginationProps) {
       <HStack spacing={spacingVars.micro}>
         {currentItems.map(c => {
           if (c.type === 'ellipsis') {
-            return <Square key={c.type}>{'...'}</Square>;
+            return <Square key={c.type}>...</Square>;
           }
 
           if (!c.value) return null;

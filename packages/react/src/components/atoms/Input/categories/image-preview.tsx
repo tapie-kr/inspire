@@ -88,8 +88,8 @@ export function ImagePreviewInput(props: ImagePreviewInputProps) {
       >
         {showPreview ? (
           <HStack
-            justify={'center'}
-            align={'center'}
+            justify="center"
+            align="center"
             className={cn(s.overlay, isHover && s.overlayVisible)}
             fitContent
           >
@@ -119,7 +119,7 @@ export function ImagePreviewInput(props: ImagePreviewInputProps) {
         <input
           {...restProps}
           className={s.input}
-          type={'file'}
+          type="file"
           accept={'image/*'}
           {...controller}
         />

@@ -68,10 +68,10 @@ export function DraggableFileInput(props: DraggableFileInputProps) {
       <VStack
         className={s.inputContainer}
         fullWidth
-        align={'center'}
+        align="center"
         gap={spacingVars.mini}
       >
-        {hasValue && files ? (
+        {hasValue && files ? 
           files.map((file, index) => (
             <HStack
               key={index}
@@ -97,7 +97,7 @@ export function DraggableFileInput(props: DraggableFileInputProps) {
               />
             </HStack>
           ))
-        ) : (
+         : (
           <>
             <Label
               nowrap
@@ -118,7 +118,7 @@ export function DraggableFileInput(props: DraggableFileInputProps) {
         <input
           {...restProps}
           className={s.input}
-          type={'file'}
+          type="file"
         />
       </VStack>
     </VStack>

@@ -57,10 +57,10 @@ export function Image(props: ImageProps) {
         className={image}
         src={src}
         alt={props.alt}
+        style={{ display: isLoading ? 'none' : 'block' }}
         onLoadStart={handleLoadStart}
         onLoad={handleLoad}
         onError={handleLoad}
-        style={{ display: isLoading ? 'none' : 'block' }}
       />
     </Box>
   );

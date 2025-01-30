@@ -5,12 +5,10 @@ import postcss from 'rollup-plugin-postcss';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import _swc from 'rollup-plugin-swc';
+import swc from '@rollup/plugin-swc';
 import json from '@rollup/plugin-json';
 import preserveDirectives from './preserve-directives.mjs';
 import removeCSS from './remove-css.mjs';
-
-const swc = _swc.default;
 
 /**
  * @param {string} currentPath
@@ -33,22 +31,24 @@ function defaultPlugins(currentPath) {
     postcss({ inject: true }),
     json(),
     swc({
-      jsc: {
-        parser: {
-          syntax: 'typescript',
-          tsx: true,
-          runtime: 'automatic',
+      swc: {
+        jsc: {
+          parser: {
+            syntax: 'typescript',
+            tsx: true,
+            runtime: 'automatic',
+          },
+          transform: {
+            react: { runtime: 'automatic' },
+          },
+          baseUrl: currentPath,
+          paths: {
+            '@/*': ['./src/*'],
+          },
         },
-        transform: {
-          react: { runtime: 'automatic' },
-        },
-        baseUrl: currentPath,
-        paths: {
-          '@/*': ['./src/*'],
-        },
+        sourceMaps: false,
+        minify: true,
       },
-      sourceMaps: false,
-      minify: true,
     }),
     strip({
       functions: ['console.log', 'console.info', 'console.debug'],

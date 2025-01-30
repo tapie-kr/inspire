@@ -66,7 +66,7 @@ export function FileInput(props: FileInputProps) {
         <HStack
           className={s.inputContainer}
           fullWidth
-          justify={'start'}
+          justify="start"
         >
           <Label
             className={s.inputText}
@@ -84,7 +84,7 @@ export function FileInput(props: FileInputProps) {
           <input
             {...restProps}
             className={s.input}
-            type={'file'}
+            type="file"
             {...controller}
           />
         </HStack>

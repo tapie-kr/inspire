@@ -36,8 +36,8 @@ class SingleBarrelGenerator {
     this.options = {
       ...defaultOptions,
       ...options,
-      include: Array.from(new Set([...defaultOptions.include, ...(options.include || [])])),
-      exclude: Array.from(new Set([...defaultOptions.exclude, ...(options.exclude || [])])),
+      include: Array.from(new Set([...defaultOptions.include, ...options.include || []])),
+      exclude: Array.from(new Set([...defaultOptions.exclude, ...options.exclude || []])),
     };
   }
 
