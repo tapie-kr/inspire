@@ -13,18 +13,22 @@ function customLogger(title, currentPath) {
     name: 'custom-logger',
     buildStart() {
       console.log(chalk.yellow(`🏗️  Building [${chalk.greenBright(title)}]...`));
+
       buildStartedTime = Date.now();
     },
     transform(_code, id) {
       const colorMap = {
-        ts: 'white',
-        tsx: 'blue',
+        ts:       'white',
+        tsx:      'blue',
         'css.ts': 'magenta',
-        svg: 'cyan',
+        svg:      'cyan',
       };
 
       const file = id.replace(currentPath, '');
-      const extension = file.split('.').slice(1).join('.');
+
+      const extension = file.split('.').slice(1)
+        .join('.');
+
       const color = colorMap[extension] || 'gray';
 
       console.log(chalk.gray(`🔄 Processing: ${chalk[color](file)}`));
@@ -33,6 +37,7 @@ function customLogger(title, currentPath) {
     },
     buildEnd() {
       const time = Date.now() - buildStartedTime;
+
       console.log(chalk.greenBright(`✅ Finished building [${title}] in ${time / 1000}s`));
     },
   };

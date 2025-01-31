@@ -1,8 +1,11 @@
 import * as s from './styles.css';
 
 import cn from 'classnames';
+
 import { type SVGAttributes } from 'react';
+
 import { BrandIconMap, GlyphIconMap } from './icon-set';
+
 import { type IconName, isGlyphIconName } from './shared';
 
 type FilteredSVGAttributes = Omit<SVGAttributes<SVGElement>, keyof IconProps>;
@@ -20,6 +23,7 @@ export function Icon(props: FilteredSVGAttributes & IconProps) {
   const size = props.size || 24;
 
   let Icon = null;
+
   if (isGlyphIconName(props.name)) {
     Icon = GlyphIconMap[props.name];
   } else {
@@ -35,21 +39,23 @@ export function Icon(props: FilteredSVGAttributes & IconProps) {
     />
   );
 
-  const interactiveProps = Object.entries(props).reduce(
-    (acc, [key, value]) => {
-      if (typeof value === 'function') {
-        acc[key] = value;
-      }
-      return acc;
-    },
-    {} as Record<string, Function>,
-  );
+  const interactiveProps = Object.entries(props).reduce((acc, [key, value]) => {
+    if (typeof value === 'function') {
+      acc[key] = value;
+    }
+
+    return acc;
+  },
+  {} as Record<string, Function>);
 
   if (Object.keys(interactiveProps).length > 0) {
     return (
       <div
         className={s.interactive}
-        style={{ width: size, height: size }}
+        style={{
+          width:  size,
+          height: size,
+        }}
         {...interactiveProps}
       >
         {renderedIcon}

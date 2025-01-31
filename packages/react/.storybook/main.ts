@@ -1,15 +1,18 @@
 import type { StorybookConfig } from '@storybook/react-vite';
+
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
+
 import { resolve } from 'path';
+
 import svgr from 'vite-plugin-svgr';
 
 const currentPath = new URL('.', import.meta.url).pathname;
 
 const config: StorybookConfig = {
-  stories: ['../src/**/*.stories.tsx'],
-  addons: ['@storybook/addon-toolbars', '@storybook/addon-essentials'],
+  stories:   ['../src/**/*.stories.tsx'],
+  addons:    ['@storybook/addon-toolbars', '@storybook/addon-essentials'],
   framework: {
-    name: '@storybook/react-vite',
+    name:    '@storybook/react-vite',
     options: {},
   },
   viteFinal: config => {
@@ -20,13 +23,11 @@ const config: StorybookConfig = {
       };
     }
 
-    config.plugins?.push(
-      svgr({
-        svgrOptions: { exportType: 'default' },
-        include: /\.svg$/,
-      }),
-      vanillaExtractPlugin(),
-    );
+    config.plugins?.push(svgr({
+      svgrOptions: { exportType: 'default' },
+      include:     /\.svg$/,
+    }),
+    vanillaExtractPlugin());
 
     return config;
   },

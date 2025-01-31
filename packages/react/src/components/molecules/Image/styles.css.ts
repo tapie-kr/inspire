@@ -6,8 +6,8 @@ export const container = style({
 });
 
 export const image = style({
-  width: '100%',
-  height: '100%',
-  objectFit: 'cover',
+  width:          '100%',
+  height:         '100%',
+  objectFit:      'cover',
   objectPosition: 'center',
 });

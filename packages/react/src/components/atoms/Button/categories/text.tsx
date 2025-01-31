@@ -1,21 +1,27 @@
 'use client';
 
 import * as base from '../styles/base.css';
+
 import * as s from '../styles/text.css';
+
 import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { HStack } from '@cottons-kr/react-foundation';
+
 import { Icon } from '@/components/foundations/Icon';
 
 import cn from 'classnames';
+
 import { type ReactNode, useMemo } from 'react';
+
 import { type IconName } from '@/components/foundations/Icon/shared';
+
 import { ButtonIconSizeMap, type ButtonPropsBase, ButtonSize, ButtonTypoSizeMap } from '../shared';
 
 const GapMap = {
-  [ButtonSize.LARGE]: spacingVars.tiny,
+  [ButtonSize.LARGE]:  spacingVars.tiny,
   [ButtonSize.MEDIUM]: spacingVars.mini,
-  [ButtonSize.SMALL]: spacingVars.optical,
+  [ButtonSize.SMALL]:  spacingVars.optical,
 } as const;
 
 type DefaultButtonProps = ButtonPropsBase & {
@@ -37,6 +43,7 @@ export function TextButton(props: DefaultButtonProps) {
   } = props;
 
   const size = useMemo(() => propSize || ButtonSize.LARGE, [propSize]);
+
   const Typo = useMemo(() => ButtonTypoSizeMap[size], [size]);
 
   const classNames = [
@@ -44,7 +51,7 @@ export function TextButton(props: DefaultButtonProps) {
     s.base,
     s[size],
     {
-      [base.fullWidth]: fullWidth,
+      [base.fullWidth]:  fullWidth,
       [base.fullHeight]: fullHeight,
     },
   ];
@@ -66,7 +73,9 @@ export function TextButton(props: DefaultButtonProps) {
           name={leadingIcon}
           size={ButtonIconSizeMap[size]}
         />
+
         <Typo>{children}</Typo>
+
         <Icon
           name={trailingIcon}
           size={ButtonIconSizeMap[size]}

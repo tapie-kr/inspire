@@ -7,6 +7,7 @@ export function useFileInputController() {
 
   const handleFileChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     const fileList = e.target.files;
+
     if (fileList && fileList.length > 0) {
       setFiles(Array.from(fileList));
     }
@@ -19,9 +20,7 @@ export function useFileInputController() {
     onChange: handleFileChange,
   };
 
-  const tools = {
-    clearFiles,
-  };
+  const tools = { clearFiles };
 
   return {
     files,

@@ -1,17 +1,27 @@
 import { filterLabel } from './styles.css';
+
 import { colorVars } from '@/lib/style/contract/color.css';
+
 import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { Chip } from '@/components/atoms/Chip';
+
 import { Details } from '@/components/atoms/Details';
+
 import { Icon } from '@/components/foundations/Icon';
+
 import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
+
 import { Typo } from '@/components/foundations/Typography';
+
 import { HStack } from '@/components/miscellaneous/layout/HStack';
+
 import { Stack } from '@/components/miscellaneous/layout/Stack';
+
 import { VStack } from '@/components/miscellaneous/layout/VStack';
 
 import { StackAlign } from '@/lib/layout/types';
+
 import { type FilterGroup } from './shared';
 
 type FilterProps = {
@@ -23,12 +33,12 @@ export function Filter(props: FilterProps) {
   return (
     <Details
       defaultOpen={props.defaultOpen !== false ? true : false}
-      title={
+      title={(
         <HStack spacing={spacingVars.mini}>
           <Icon name={GlyphIcon.FILTER_LIST} />
           <Typo.Petite>필터</Typo.Petite>
         </HStack>
-      }
+      )}
     >
       <HStack spacing={spacingVars.base}>
         <VStack
@@ -44,6 +54,7 @@ export function Filter(props: FilterProps) {
             </Stack>
           ))}
         </VStack>
+
         <VStack
           spacing={spacingVars.micro}
           align={StackAlign.START}

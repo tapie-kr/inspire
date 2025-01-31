@@ -1,10 +1,11 @@
 import { Segment } from '@/components/atoms/Segment';
 
 import { type Meta, type StoryObj } from '@storybook/react';
+
 import { SegmentGroup } from '.';
 
 const meta: Meta<typeof SegmentGroup> = {
-  title: 'Molecules/SegmentGroup',
+  title:     'Molecules/SegmentGroup',
   component: SegmentGroup,
 };
 
@@ -23,10 +24,12 @@ export const Default: SegmentGroupStory = {
         label='첫번째'
         value={SegmentValue.FIRST}
       />
+
       <Segment
         label='두번째'
         value={SegmentValue.SECOND}
       />
+
       <Segment
         label='세번째'
         value={SegmentValue.THIRD}

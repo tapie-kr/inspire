@@ -1,7 +1,9 @@
 import { grid } from './styles.css';
 
 import cn from 'classnames';
+
 import { type DefaultProps } from '@/types/prop';
+
 import { Box } from '../Box';
 
 type GridProps = DefaultProps & {
@@ -20,11 +22,11 @@ export function Grid(props: GridProps) {
     <Box
       className={cn(grid, className)}
       style={{
-        rowGap: rowGap || gap,
-        columnGap: columnGap || gap,
+        rowGap:              rowGap || gap,
+        columnGap:           columnGap || gap,
         gridTemplateColumns: `repeat(${columnCount}, 1fr)`,
-        width: fullWidth ? '100%' : undefined,
-        height: fullHeight ? '100%' : undefined,
+        width:               fullWidth ? '100%' : undefined,
+        height:              fullHeight ? '100%' : undefined,
       }}
     >
       {children}

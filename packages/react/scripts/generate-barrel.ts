@@ -1,5 +1,7 @@
 import * as fs from 'fs';
+
 import { glob } from 'glob';
+
 import * as path from 'path';
 
 interface BarrelOptions {
@@ -29,7 +31,7 @@ class SingleBarrelGenerator {
         '**/*.d.ts',
         '**/components/**/*.css.ts',
       ],
-      exportStyle: 'star',
+      exportStyle:    'star',
       barrelFileName: 'index.ts',
     };
 
@@ -40,7 +42,6 @@ class SingleBarrelGenerator {
       exclude: Array.from(new Set([...defaultOptions.exclude, ...options.exclude || []])),
     };
   }
-
   public async generate(directory: string): Promise<void> {
     try {
       if (!fs.existsSync(directory)) {
@@ -48,38 +49,37 @@ class SingleBarrelGenerator {
       }
 
       const files = await this.findExportableFiles(directory);
+
       const exports = this.getExportPaths(files);
+
       const content = this.generateBarrelContent(exports);
+
       this.writeBarrelFile(directory, content);
     } catch (error) {
-      console.error(
-        '❌ Error generating barrel file:',
-        error instanceof Error ? error.message : error,
-      );
+      console.error('❌ Error generating barrel file:',
+        error instanceof Error ? error.message : error);
     }
   }
-
   private async findExportableFiles(directory: string): Promise<string[]> {
     const files = await glob(this.options.include, {
-      cwd: directory,
-      ignore: this.options.exclude,
+      cwd:      directory,
+      ignore:   this.options.exclude,
       absolute: false,
-      nodir: true,
-      dot: false,
+      nodir:    true,
+      dot:      false,
     });
 
     return files;
   }
-
   private getExportPaths(files: string[]): string[] {
     return files
       .map(file => {
         const extension = path.extname(file);
+
         return file.slice(0, -extension.length);
       })
       .sort();
   }
-
   private generateBarrelContent(exports: string[]): string {
     return (
       exports
@@ -93,20 +93,20 @@ class SingleBarrelGenerator {
         .join('\n') + '\n'
     );
   }
-
   private writeBarrelFile(directory: string, content: string): void {
     const barrelPath = path.join(directory, this.options.barrelFileName);
+
     fs.writeFileSync(barrelPath, content);
   }
 }
 
 const run = async () => {
   const targetDirectory = process.argv[2] || './src';
+
   const excludeDirectories = process.argv.slice(3) || [];
 
-  const generator = new SingleBarrelGenerator({
-    exclude: excludeDirectories.map(dir => `${dir}/**`),
-  });
+  const generator = new SingleBarrelGenerator({ exclude: excludeDirectories.map(dir => `${dir}/**`) });
+
   await generator.generate(targetDirectory);
 };
 

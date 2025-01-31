@@ -1,14 +1,21 @@
 import { base } from '../styles/base.css';
+
 import * as s from '../styles/default.css';
+
 import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { HStack } from '@cottons-kr/react-foundation';
+
 import { Icon } from '@/components/foundations/Icon';
+
 import { Typo } from '@/components/foundations/Typography';
 
 import cn from 'classnames';
+
 import { type IconName } from '@/components/foundations/Icon/shared';
+
 import { Weight } from '@/components/foundations/Typography/shared';
+
 import { BadgeSize, BadgeTheme } from '../shared';
 
 const IconSizeMap = {
@@ -30,13 +37,15 @@ type BadgeProps = {
 
 export function DefaultBadge(props: BadgeProps) {
   const { theme = BadgeTheme.MONOCHROME, size = BadgeSize.LARGE, leadingIcon, label } = props;
+
   const iconSize = IconSizeMap[size];
+
   const Label = size === BadgeSize.LARGE ? Typo.Tiny : Typo.Mini;
 
   return (
     <HStack
-      className={cn(s[theme], s[size], base)}
       fitContent
+      className={cn(s[theme], s[size], base)}
       align='center'
       gap={GapMap[size]}
     >
@@ -46,6 +55,7 @@ export function DefaultBadge(props: BadgeProps) {
           size={iconSize}
         />
       )}
+
       <Label weight={Weight.MEDIUM}>{label}</Label>
     </HStack>
   );

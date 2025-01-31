@@ -1,25 +1,29 @@
 import { Input } from '@/components/atoms/Input';
+
 import { Box } from '@/components/miscellaneous/layout/Box';
 
 import { type Meta, type StoryObj } from '@storybook/react';
+
 import { getEnumArgType } from '@/lib/storybook/enum';
+
 import { FormField } from '.';
+
 import { FormFieldSize } from './shared';
 
 const meta: Meta = {
-  title: 'Molecules/FormField',
+  title:     'Molecules/FormField',
   component: FormField,
-  argTypes: {
-    label: { control: 'text' },
+  argTypes:  {
+    label:       { control: 'text' },
     isEssential: { control: 'boolean' },
     description: { control: 'text' },
-    size: getEnumArgType(FormFieldSize),
+    size:        getEnumArgType(FormFieldSize),
   },
   args: {
-    label: 'Label',
+    label:       'Label',
     isEssential: false,
     description: 'Description',
-    size: FormFieldSize.LARGE,
+    size:        FormFieldSize.LARGE,
   },
 };
 

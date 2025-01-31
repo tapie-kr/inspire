@@ -1,10 +1,15 @@
 import * as alignStyle from './styles/align.css';
+
 import { base } from './styles/base.css';
+
 import * as directionStyle from './styles/direction.css';
+
 import * as justifyStyle from './styles/justify.css';
+
 import * as wrapStyle from './styles/wrap.css';
 
 import cn from 'classnames';
+
 import {
   type BaseStackProps,
   type LayoutTag,
@@ -13,6 +18,7 @@ import {
   StackJustify,
   StackWrap,
 } from '@/lib/layout/types';
+
 import { Box } from '../Box';
 
 type StackProps<T extends LayoutTag> = BaseStackProps<T> & {};

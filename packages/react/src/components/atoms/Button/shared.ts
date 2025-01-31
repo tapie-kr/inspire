@@ -20,13 +20,13 @@ export type ButtonPropsBase = ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 export const ButtonTypoSizeMap = {
-  [ButtonSize.LARGE]: Typo.Base,
+  [ButtonSize.LARGE]:  Typo.Base,
   [ButtonSize.MEDIUM]: Typo.Petite,
-  [ButtonSize.SMALL]: Typo.Tiny,
+  [ButtonSize.SMALL]:  Typo.Tiny,
 } as const;
 
 export const ButtonIconSizeMap = {
-  [ButtonSize.LARGE]: 24,
+  [ButtonSize.LARGE]:  24,
   [ButtonSize.MEDIUM]: 18,
-  [ButtonSize.SMALL]: 16,
+  [ButtonSize.SMALL]:  16,
 };

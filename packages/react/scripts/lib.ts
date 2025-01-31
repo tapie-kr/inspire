@@ -10,12 +10,14 @@ export type DeepPartial<T> = {
 
 export function capitalizeFirstLetter(str: string) {
   if (!str) return '';
+
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 export function createNestedObjectFromArray<T extends string[]>(keys: T, value: string) {
   return keys.reduceRight((acc, key, index) => {
-    const formattedKey = /^\d+$/.test(key) ? `_${key}` : key;
+    const formattedKey = (/^\d+$/).test(key) ? `_${key}` : key;
+
     if (index === keys.length - 1) {
       return { [formattedKey]: value };
     } else {
@@ -30,14 +32,13 @@ export function deepMerge<T extends Record<string, unknown>>(target: T, source: 
   if (isObject(target) && isObject(source)) {
     Object.keys(source).forEach(key => {
       const targetValue = target[key as keyof T];
+
       const sourceValue = source[key as keyof DeepPartial<T>];
 
       if (isObject(targetValue) && sourceValue !== undefined) {
         if (isObject(sourceValue)) {
-          output[key as keyof T] = deepMerge(
-            targetValue as Record<string, unknown>,
-            sourceValue as DeepPartial<Record<string, unknown>>,
-          ) as T[keyof T];
+          output[key as keyof T] = deepMerge(targetValue as Record<string, unknown>,
+            sourceValue as DeepPartial<Record<string, unknown>>) as T[keyof T];
         } else {
           output[key as keyof T] = sourceValue as T[keyof T];
         }
@@ -46,6 +47,7 @@ export function deepMerge<T extends Record<string, unknown>>(target: T, source: 
       }
     });
   }
+
   return output;
 }
 

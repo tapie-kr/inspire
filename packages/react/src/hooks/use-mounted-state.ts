@@ -5,6 +5,7 @@ export function useMountedState() {
 
   useEffect(() => {
     setIsMounted(true);
+
     return () => {
       setIsMounted(false);
     };

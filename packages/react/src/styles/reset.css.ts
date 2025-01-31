@@ -1,31 +1,39 @@
 import '@/styles/color/index.css';
+
 import '@/styles/component/index.css';
+
 import '@/styles/typography/index.css';
+
 import '@/styles/interactive.css';
+
 import '@/styles/utility.css';
+
 import '@/styles/layer.css';
+
 import { resetGlobalStyle } from './layer.css';
+
 import { inspireFontKit } from './typography/index.css';
+
 import { colorVars } from '@/lib/style/contract/color.css';
 
 import { getCSSTransition } from '@/utils/motion/css';
 
 resetGlobalStyle('html, body', {
-  background: colorVars.surface.default,
-  color: colorVars.content.emphasized,
-  wordBreak: 'keep-all',
-  wordWrap: 'break-word',
+  background:     colorVars.surface.default,
+  color:          colorVars.content.emphasized,
+  wordBreak:      'keep-all',
+  wordWrap:       'break-word',
   scrollBehavior: 'smooth',
 });
 
 resetGlobalStyle('*', {
-  boxSizing: 'border-box',
-  margin: 0,
-  padding: 0,
-  fontFamily: inspireFontKit,
-  fontSynthesis: 'none',
+  boxSizing:      'border-box',
+  margin:         0,
+  padding:        0,
+  fontFamily:     inspireFontKit,
+  fontSynthesis:  'none',
   shapeRendering: 'geometricPrecision',
-  transition: [
+  transition:     [
     getCSSTransition('background-color', 0.3),
     getCSSTransition('background', 0.3),
     getCSSTransition('border-color', 0.3),
@@ -33,24 +41,20 @@ resetGlobalStyle('*', {
   ].join(', '),
 });
 
-resetGlobalStyle('*:focus', {
-  outline: 'none',
-});
+resetGlobalStyle('*:focus', { outline: 'none' });
 
 resetGlobalStyle('a', {
-  color: 'inherit',
+  color:          'inherit',
   textDecoration: 'none',
-  cursor: 'pointer',
+  cursor:         'pointer',
 });
 
 resetGlobalStyle('input, textarea, button', {
   fontFamily: 'inherit',
-  color: 'inherit',
+  color:      'inherit',
   background: 'transparent',
-  border: 'none',
-  outline: 'none',
+  border:     'none',
+  outline:    'none',
 });
 
-resetGlobalStyle('::-webkit-scrollbar', {
-  display: 'none',
-});
+resetGlobalStyle('::-webkit-scrollbar', { display: 'none' });

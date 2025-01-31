@@ -1,4 +1,5 @@
 import { skeleton } from './styles.css';
+
 import { radiusVars } from '@/lib/style/contract/component.css';
 
 import { Box } from '@/components/miscellaneous/layout/Box';
@@ -19,8 +20,8 @@ export function Skeleton(props: SkeletonProps) {
     <Box
       className={cn(skeleton, props.className)}
       style={{
-        width: props.fullWidth ? '100%' : props.width,
-        height: props.fullHeight ? '100%' : props.height,
+        width:        props.fullWidth ? '100%' : props.width,
+        height:       props.fullHeight ? '100%' : props.height,
         borderRadius: props.borderRadius || radiusVars.pill,
       }}
     />

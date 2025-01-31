@@ -30,8 +30,8 @@ export type LayoutElementProps<T extends LayoutTag> = T extends LayoutTag.DIV
                 : HTMLAttributes<HTMLElement>;
 
 export type BaseLayoutProps<T extends LayoutTag> = LayoutElementProps<T> & {
-  tag?: T | (string & {});
-  fullWidth?: boolean;
+  tag?:        T | (string & {});
+  fullWidth?:  boolean;
   fullHeight?: boolean;
   className?: string;
   children?: ReactNode;

@@ -1,12 +1,12 @@
 import * as s from './styles.css';
 
 import cn from 'classnames';
+
 import { createElement } from 'react';
+
 import { type BaseLayoutProps, LayoutTag } from '@/lib/layout/types';
 
-type BoxProps<T extends LayoutTag> = BaseLayoutProps<T> & {
-  padding?: string | number;
-};
+type BoxProps<T extends LayoutTag> = BaseLayoutProps<T> & { padding?: string | number };
 
 export function Box<T extends LayoutTag>(props: BoxProps<T>) {
   const {
@@ -22,18 +22,19 @@ export function Box<T extends LayoutTag>(props: BoxProps<T>) {
   const classNames = [
     className,
     {
-      [s.fullWidth]: fullWidth,
+      [s.fullWidth]:  fullWidth,
       [s.fullHeight]: fullHeight,
     },
   ];
 
-  return createElement(
-    Tag,
+  return createElement(Tag,
     {
       className: cn(classNames),
-      style: { padding, ...style },
+      style:     {
+        padding,
+        ...style,
+      },
       ...rest,
     },
-    props.children,
-  );
+    props.children);
 }

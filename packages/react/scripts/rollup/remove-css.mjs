@@ -7,16 +7,19 @@ function removeCSS() {
     name: 'remove-css',
     renderChunk(code, _chunk, options) {
       const isESM = options.format === 'es';
+
       const lines = code.split('\n');
+
       const importKeyword = isESM ? 'import' : 'require';
 
       code = lines
-        .filter(line =>
-          line.startsWith(importKeyword) ? !parsePath(line, importKeyword).isCSS : true,
-        )
+        .filter(line => line.startsWith(importKeyword) ? !parsePath(line, importKeyword).isCSS : true)
         .join('\n');
 
-      return { code, map: null };
+      return {
+        code,
+        map: null,
+      };
     },
   };
 
@@ -34,6 +37,11 @@ function parsePath(importLine, keyword) {
     .split(keyword)[1]
     .trim()
     .replaceAll(/['";()]/g, '');
+
   const isCSS = path.endsWith('.css');
-  return { path, isCSS };
+
+  return {
+    path,
+    isCSS,
+  };
 }

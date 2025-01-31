@@ -1,6 +1,7 @@
 import * as s from '../styles/indicator.css';
 
 import cn from 'classnames';
+
 import { BadgeSize, BadgeTheme } from '../shared';
 
 type IndicatorBadgeProps = {

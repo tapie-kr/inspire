@@ -1,5 +1,3 @@
 import { style } from '@vanilla-extract/css';
 
-export const filterLabel = style({
-  height: 36,
-});
+export const filterLabel = style({ height: 36 });

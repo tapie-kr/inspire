@@ -1,29 +1,33 @@
 import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { Typo } from '@/components/foundations/Typography';
+
 import { VStack } from '@/components/miscellaneous/layout/VStack';
 
 import { type Meta, type StoryObj } from '@storybook/react';
+
 import { StackAlign } from '@/lib/layout/types';
+
 import { loremIpsum } from '@/lib/storybook/shared';
+
 import { Details } from '.';
 
 const meta: Meta = {
-  title: 'Atoms/Details',
+  title:     'Atoms/Details',
   component: Details,
-  argTypes: {
-    title: { control: 'text' },
-    defaultOpen: { control: 'boolean' },
+  argTypes:  {
+    title:           { control: 'text' },
+    defaultOpen:     { control: 'boolean' },
     hideDefaultIcon: { control: 'boolean' },
-    disabled: { control: 'boolean' },
-    children: { control: 'text' },
+    disabled:        { control: 'boolean' },
+    children:        { control: 'text' },
   },
   args: {
-    title: 'Details',
-    defaultOpen: false,
+    title:           'Details',
+    defaultOpen:     false,
     hideDefaultIcon: false,
-    disabled: false,
-    children: loremIpsum,
+    disabled:        false,
+    children:        loremIpsum,
   },
 };
 

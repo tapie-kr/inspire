@@ -1,4 +1,5 @@
 import * as variantStyles from './styles/variant.css';
+
 import * as weightStyles from './styles/weight.css';
 
 import { type DetailsHTMLAttributes, type ReactNode } from 'react';
@@ -37,25 +38,25 @@ export enum TypographyWeight {
 }
 
 export const typographyVariantClass = {
-  [TypographyVariant.GIANT]: variantStyles.giant,
-  [TypographyVariant.JUMBO]: variantStyles.jumbo,
-  [TypographyVariant.LARGE]: variantStyles.large,
-  [TypographyVariant.MEDIUM]: variantStyles.medium,
+  [TypographyVariant.GIANT]:    variantStyles.giant,
+  [TypographyVariant.JUMBO]:    variantStyles.jumbo,
+  [TypographyVariant.LARGE]:    variantStyles.large,
+  [TypographyVariant.MEDIUM]:   variantStyles.medium,
   [TypographyVariant.MODERATE]: variantStyles.moderate,
-  [TypographyVariant.BASE]: variantStyles.base,
-  [TypographyVariant.PETITE]: variantStyles.petite,
-  [TypographyVariant.MICRO]: variantStyles.micro,
-  [TypographyVariant.TINY]: variantStyles.tiny,
-  [TypographyVariant.MINI]: variantStyles.mini,
+  [TypographyVariant.BASE]:     variantStyles.base,
+  [TypographyVariant.PETITE]:   variantStyles.petite,
+  [TypographyVariant.MICRO]:    variantStyles.micro,
+  [TypographyVariant.TINY]:     variantStyles.tiny,
+  [TypographyVariant.MINI]:     variantStyles.mini,
 };
 
 export const typographyWeightClass = {
   [TypographyWeight.EXTRABOLD]: weightStyles.extrabold,
-  [TypographyWeight.BOLD]: weightStyles.bold,
-  [TypographyWeight.SEMIBOLD]: weightStyles.semibold,
-  [TypographyWeight.MEDIUM]: weightStyles.medium,
-  [TypographyWeight.REGULAR]: weightStyles.regular,
-  [TypographyWeight.LIGHT]: weightStyles.light,
+  [TypographyWeight.BOLD]:      weightStyles.bold,
+  [TypographyWeight.SEMIBOLD]:  weightStyles.semibold,
+  [TypographyWeight.MEDIUM]:    weightStyles.medium,
+  [TypographyWeight.REGULAR]:   weightStyles.regular,
+  [TypographyWeight.LIGHT]:     weightStyles.light,
 };
 
 export { TypographyTag as Tag, TypographyVariant as Variant, TypographyWeight as Weight };

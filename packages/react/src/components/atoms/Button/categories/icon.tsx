@@ -1,15 +1,21 @@
 'use client';
 
 import * as base from '../styles/base.css';
+
 import * as s from '../styles/icon.css';
+
 import { primaryThemes } from '../styles/themes/primary.css';
+
 import { secondaryThemes } from '../styles/themes/secondary.css';
 
 import { Icon } from '@/components/foundations/Icon';
 
 import cn from 'classnames';
+
 import { type IconName } from '@/components/foundations/Icon/shared';
+
 import { Theme } from '@/lib/style/theme';
+
 import { ButtonIconSizeMap, type ButtonPropsBase, ButtonSize, ButtonVariant } from '../shared';
 
 type IconButtonProps = ButtonPropsBase & {
@@ -38,7 +44,7 @@ export function IconButton(props: IconButtonProps) {
     themeClassName[theme],
     s[size],
     {
-      [base.fullWidth]: fullWidth,
+      [base.fullWidth]:  fullWidth,
       [base.fullHeight]: fullHeight,
     },
   ];

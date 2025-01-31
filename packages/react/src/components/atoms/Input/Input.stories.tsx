@@ -1,20 +1,27 @@
 import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
 
 import { type Meta, type StoryObj } from '@storybook/react';
+
 import { getIconArgType } from '@/lib/storybook/icon';
+
 import { Input } from '.';
+
 import { ImagePreviewShape } from './categories/image-preview';
+
 import { ParagraphInputResize } from './categories/paragraph';
+
 import { InputSize } from './shared';
 
-const meta: Meta = {
-  title: 'Atoms/Input',
-};
+const meta: Meta = { title: 'Atoms/Input' };
 
 type TextInputStory = StoryObj<typeof Input.Text>;
+
 type ParagraphInputStory = StoryObj<typeof Input.Paragraph>;
+
 type FileInputStory = StoryObj<typeof Input.File>;
+
 type DraggableFileInputStory = StoryObj<typeof Input.File.Draggable>;
+
 type ImagePreviewInputStory = StoryObj<typeof Input.ImagePreview>;
 
 export const Text: TextInputStory = {
@@ -25,16 +32,16 @@ export const Text: TextInputStory = {
   ),
   argTypes: {
     leadingIcon: getIconArgType(),
-    isSecure: { control: 'boolean' },
+    isSecure:    { control: 'boolean' },
     placeholder: { control: 'text' },
-    size: {
+    size:        {
       options: Object.values(InputSize),
       control: { type: 'select' },
     },
   },
   args: {
     leadingIcon: GlyphIcon.SEARCH,
-    isSecure: true,
+    isSecure:    true,
     placeholder: 'Placeholder',
   },
 };
@@ -54,15 +61,15 @@ export const Paragraph: ParagraphInputStory = {
       options: Object.values(InputSize),
       control: { type: 'select' },
     },
-    height: { control: 'number' },
+    height:      { control: 'number' },
     placeholder: { control: 'text' },
-    maxLength: { control: 'number' },
+    maxLength:   { control: 'number' },
   },
   args: {
-    resize: ParagraphInputResize.NONE,
+    resize:      ParagraphInputResize.NONE,
     placeholder: 'Placeholder',
-    height: 160,
-    maxLength: 100,
+    height:      160,
+    maxLength:   100,
   },
 };
 
@@ -75,8 +82,8 @@ export const File: FileInputStory = {
   argTypes: {
     leadingIcon: getIconArgType(),
     placeholder: { control: 'text' },
-    multiple: { control: 'boolean' },
-    size: {
+    multiple:    { control: 'boolean' },
+    size:        {
       options: Object.values(InputSize),
       control: { type: 'select' },
     },
@@ -84,7 +91,7 @@ export const File: FileInputStory = {
   args: {
     leadingIcon: GlyphIcon.UPLOAD,
     placeholder: 'Placeholder',
-    multiple: true,
+    multiple:    true,
   },
 };
 
@@ -97,8 +104,8 @@ export const DraggableFile: DraggableFileInputStory = {
   argTypes: {
     leadingIcon: getIconArgType(),
     placeholder: { control: 'text' },
-    multiple: { control: 'boolean' },
-    size: {
+    multiple:    { control: 'boolean' },
+    size:        {
       options: Object.values(InputSize),
       control: { type: 'select' },
     },
@@ -106,7 +113,7 @@ export const DraggableFile: DraggableFileInputStory = {
   args: {
     leadingIcon: GlyphIcon.UPLOAD,
     placeholder: 'Placeholder',
-    multiple: true,
+    multiple:    true,
   },
 };
 
@@ -118,17 +125,17 @@ export const ImagePreview: ImagePreviewInputStory = {
   ),
   argTypes: {
     placeholder: { control: 'text' },
-    shape: {
+    shape:       {
       options: Object.values(ImagePreviewShape),
       control: { type: 'select' },
     },
-    size: { control: 'number' },
+    size:    { control: 'number' },
     preview: { control: 'text' },
   },
   args: {
     placeholder: 'Placeholder',
-    shape: ImagePreviewShape.DEFAULT,
-    size: 150,
+    shape:       ImagePreviewShape.DEFAULT,
+    size:        150,
   },
 };
 

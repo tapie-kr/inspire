@@ -1,20 +1,26 @@
 import { colorVars } from '@/lib/style/contract/color.css';
 
 import { createGlobalTheme } from '@vanilla-extract/css';
+
 import { brandSolid, darkBrandMonochrome, lightBrandMonochrome } from './values/brand';
+
 import { content, darkContentInverted, lightContentInverted } from './values/content';
+
 import {
   darkGrayscaleSolid,
   darkGrayscaleTranslucent,
   lightGrayscaleSolid,
   lightGrayscaleTranslucent,
 } from './values/grayscale';
+
 import {
   darkInteractionInverted,
   interaction,
   lightInteractionInverted,
 } from './values/interaction';
+
 import { darkLine, lightLine } from './values/line';
+
 import {
   darkSolidTranslucentBlue,
   darkSolidTranslucentGreen,
@@ -28,6 +34,7 @@ import {
   solidTranslucentBlack,
   solidTranslucentWhite,
 } from './values/solid';
+
 import {
   darkSurface,
   darkSurfaceInverted,
@@ -37,22 +44,22 @@ import {
 
 const lightColorTheme = {
   grayscale: {
-    solid: lightGrayscaleSolid,
+    solid:       lightGrayscaleSolid,
     translucent: lightGrayscaleTranslucent,
   },
   solid: {
     ...solid,
     translucent: {
-      white: solidTranslucentWhite,
-      black: solidTranslucentBlack,
-      red: lightSolidTranslucentRed,
-      green: lightSolidTranslucentGreen,
-      blue: lightSolidTranslucentBlue,
+      white:  solidTranslucentWhite,
+      black:  solidTranslucentBlack,
+      red:    lightSolidTranslucentRed,
+      green:  lightSolidTranslucentGreen,
+      blue:   lightSolidTranslucentBlue,
       yellow: lightSolidTranslucentYellow,
     },
   },
   brand: {
-    solid: brandSolid,
+    solid:      brandSolid,
     monochrome: lightBrandMonochrome,
   },
   surface: {
@@ -63,7 +70,7 @@ const lightColorTheme = {
     ...content,
     inverted: lightContentInverted,
   },
-  line: lightLine,
+  line:        lightLine,
   interaction: {
     ...interaction,
     inverted: lightInteractionInverted,
@@ -72,22 +79,22 @@ const lightColorTheme = {
 
 const darkColorTheme = {
   grayscale: {
-    solid: darkGrayscaleSolid,
+    solid:       darkGrayscaleSolid,
     translucent: darkGrayscaleTranslucent,
   },
   solid: {
     ...solid,
     translucent: {
-      white: solidTranslucentWhite,
-      black: solidTranslucentBlack,
-      red: darkSolidTranslucentRed,
-      green: darkSolidTranslucentGreen,
-      blue: darkSolidTranslucentBlue,
+      white:  solidTranslucentWhite,
+      black:  solidTranslucentBlack,
+      red:    darkSolidTranslucentRed,
+      green:  darkSolidTranslucentGreen,
+      blue:   darkSolidTranslucentBlue,
       yellow: darkSolidTranslucentYellow,
     },
   },
   brand: {
-    solid: brandSolid,
+    solid:      brandSolid,
     monochrome: darkBrandMonochrome,
   },
   surface: {
@@ -98,7 +105,7 @@ const darkColorTheme = {
     ...content,
     inverted: darkContentInverted,
   },
-  line: darkLine,
+  line:        darkLine,
   interaction: {
     ...interaction,
     inverted: darkInteractionInverted,
@@ -106,4 +113,5 @@ const darkColorTheme = {
 };
 
 createGlobalTheme(':root, [data-theme=light]', colorVars, lightColorTheme);
+
 createGlobalTheme('[data-theme=dark]', colorVars, darkColorTheme);

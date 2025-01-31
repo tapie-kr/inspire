@@ -1,11 +1,17 @@
 import { addOpacity } from '@/utils/style/color/opacity';
 
 const WHITE = '#FFFFFF';
+
 const BLACK = '#0A0A0A';
+
 const REAL_BLACK = '#000000';
+
 const RED = '#F74C43';
+
 const GREEN = '#07D957';
+
 const BLUE = '#3130F0';
+
 const YELLOW = '#FFE100';
 
 const DARK_VISIBILITY_COMPENSATION = 0.05;
@@ -36,16 +42,16 @@ enum solidOpacityMap {
 }
 
 export const solid = {
-  white: WHITE,
-  black: BLACK,
-  red: RED,
-  green: GREEN,
-  blue: BLUE,
+  white:  WHITE,
+  black:  BLACK,
+  red:    RED,
+  green:  GREEN,
+  blue:   BLUE,
   yellow: YELLOW,
 };
 
 export const solidTranslucentWhite = {
-  _5: addOpacity(WHITE, grayscaleOpacityMap._5),
+  _5:  addOpacity(WHITE, grayscaleOpacityMap._5),
   _10: addOpacity(WHITE, grayscaleOpacityMap._10),
   _15: addOpacity(WHITE, grayscaleOpacityMap._15),
   _20: addOpacity(WHITE, grayscaleOpacityMap._20),
@@ -61,7 +67,7 @@ export const solidTranslucentWhite = {
 };
 
 export const solidTranslucentBlack = {
-  _5: addOpacity(REAL_BLACK, grayscaleOpacityMap._5),
+  _5:  addOpacity(REAL_BLACK, grayscaleOpacityMap._5),
   _10: addOpacity(REAL_BLACK, grayscaleOpacityMap._10),
   _15: addOpacity(REAL_BLACK, grayscaleOpacityMap._15),
   _20: addOpacity(REAL_BLACK, grayscaleOpacityMap._20),

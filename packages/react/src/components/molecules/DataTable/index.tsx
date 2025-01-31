@@ -1,13 +1,19 @@
 import { colorVars } from '@/lib/style/contract/color.css';
+
 import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { Button } from '@/components/atoms/Button';
+
 import { Table } from '@/components/foundations/Table';
+
 import { Typo } from '@/components/foundations/Typography';
+
 import { HStack } from '@/components/miscellaneous/layout/HStack';
 
 import { ButtonSize, ButtonVariant } from '@/components/atoms/Button/shared';
+
 import { Weight } from '@/components/foundations/Typography/shared';
+
 import { type ActionIcon, type Column } from './shared';
 
 type DataTableProps<T extends object> = {
@@ -24,6 +30,7 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
     <Table>
       <Table.Head>
         {props.showIndex && <Table.Head.Cell width={40}>#</Table.Head.Cell>}
+
         {props.columns.map(c => (
           <Table.Head.Cell
             key={c.key.toString()}
@@ -33,8 +40,10 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
             {c.label}
           </Table.Head.Cell>
         ))}
+
         {shouldShowActions && <Table.Head.Cell width={100}>액션</Table.Head.Cell>}
       </Table.Head>
+
       <Table.Body>
         {props.data.map((d, i) => (
           <Table.Body.Row key={i}>
@@ -48,20 +57,21 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
                 </Typo.Petite>
               </Table.Body.Cell>
             )}
+
             {props.columns.map(c => (
               <Table.Body.Cell key={c.key.toString()}>
-                {c.cell ? (
-                  c.cell(d[c.key], i + 1, d)
-                ) : (
-                  <Typo.Base weight={Weight.MEDIUM}>{String(d[c.key])}</Typo.Base>
-                )}
+                {c.cell
+                  ? c.cell(d[c.key], i + 1, d)
+                  : <Typo.Base weight={Weight.MEDIUM}>{String(d[c.key])}</Typo.Base>}
               </Table.Body.Cell>
             ))}
+
             {shouldShowActions && (
               <Table.Body.Cell>
                 <HStack spacing={spacingVars.base}>
                   {props.actions?.map((a, i) => {
                     const handleClick = () => a.onClick(i + 1);
+
                     return (
                       <Button.Icon
                         key={i}

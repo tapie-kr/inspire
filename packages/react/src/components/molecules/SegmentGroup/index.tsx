@@ -1,11 +1,13 @@
 'use client';
 
 import { segmentGroup } from './styles.css';
+
 import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { HStack } from '@/components/miscellaneous/layout/HStack';
 
 import { type ReactNode, useCallback, useState } from 'react';
+
 import { SegmentGroupContext } from './context';
 
 type SegmentGroupProps = {
@@ -16,19 +18,23 @@ type SegmentGroupProps = {
 
 export function SegmentGroup(props: SegmentGroupProps) {
   const [currentValue, setCurrentValue] = useState(props.defaultValue);
-  const handleChange = useCallback(
-    (value: string) => {
-      setCurrentValue(value);
-      props.onChange?.(value);
-    },
-    [props],
-  );
+
+  const handleChange = useCallback((value: string) => {
+    setCurrentValue(value);
+
+    props.onChange?.(value);
+  },
+  [props]);
 
   return (
-    <SegmentGroupContext.Provider value={{ value: currentValue, onChange: handleChange }}>
+    <SegmentGroupContext.Provider value={{
+      value:    currentValue,
+      onChange: handleChange,
+    }}
+    >
       <HStack
-        className={segmentGroup}
         fullWidth
+        className={segmentGroup}
         spacing={spacingVars.mini}
       >
         {props.children}

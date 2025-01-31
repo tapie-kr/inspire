@@ -5,7 +5,9 @@ import { spacingVars } from '@/lib/style/contract/component.css';
 import { HStack } from '@/components/miscellaneous/layout/HStack';
 
 import { useCallback, useEffect, useState } from 'react';
+
 import { ControlButton, PageButton, Square } from './button';
+
 import { getCurrentItems as _getCurrentVisiblePages } from './shared';
 
 type PaginationProps = {
@@ -18,17 +20,18 @@ type PaginationProps = {
 
 export function Pagination(props: PaginationProps) {
   const [currentPage, setCurrentPage] = useState(props.defaultPage || props.min);
-  const getCurrentVisiblePages = useCallback(
-    () => _getCurrentVisiblePages(props.min, props.max, props.visiblePages || 10, currentPage),
-    [currentPage, props.max, props.min, props.visiblePages],
-  );
+
+  const getCurrentVisiblePages = useCallback(() => _getCurrentVisiblePages(props.min, props.max, props.visiblePages || 10, currentPage),
+    [currentPage, props.max, props.min, props.visiblePages]);
 
   const [currentItems, setCurrentItems] = useState(getCurrentVisiblePages());
 
   const handleNext = useCallback(() => {
     setCurrentPage(prev => {
       const newValue = Math.min(prev + 1, props.max);
+
       props.onPageChange?.(newValue);
+
       return newValue;
     });
   }, [props]);
@@ -36,7 +39,9 @@ export function Pagination(props: PaginationProps) {
   const handlePrevious = useCallback(() => {
     setCurrentPage(prev => {
       const newValue = Math.max(prev - 1, props.min);
+
       props.onPageChange?.(newValue);
+
       return newValue;
     });
   }, [props]);
@@ -54,6 +59,7 @@ export function Pagination(props: PaginationProps) {
         type='previous'
         onClick={handlePrevious}
       />
+
       <HStack spacing={spacingVars.micro}>
         {currentItems.map(c => {
           if (c.type === 'ellipsis') {
@@ -65,6 +71,7 @@ export function Pagination(props: PaginationProps) {
           const handleClick = () => {
             if (c.value) {
               setCurrentPage(c.value);
+
               props.onPageChange?.(c.value);
             }
           };
@@ -78,6 +85,7 @@ export function Pagination(props: PaginationProps) {
           );
         })}
       </HStack>
+
       <ControlButton
         type='next'
         onClick={handleNext}

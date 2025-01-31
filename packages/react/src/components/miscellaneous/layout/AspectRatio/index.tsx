@@ -6,7 +6,9 @@ import {
 } from './styles.css';
 
 import cn from 'classnames';
+
 import { type DefaultProps } from '@/types/prop';
+
 import { Box } from '../Box';
 
 type AspectRatioProps = DefaultProps & {
@@ -24,7 +26,7 @@ export function AspectRatio(props: AspectRatioProps) {
     container,
     className,
     {
-      [fullWidthStyle]: fullWidth,
+      [fullWidthStyle]:  fullWidth,
       [fullHeightStyle]: fullHeight,
     },
   ];
@@ -32,12 +34,16 @@ export function AspectRatio(props: AspectRatioProps) {
   return (
     <Box
       className={cn(classNames)}
-      style={{ width, height, aspectRatio: ratio }}
+      style={{
+        width,
+        height,
+        aspectRatio: ratio,
+      }}
     >
       <Box
-        className={content}
         fullWidth
         fullHeight
+        className={content}
       >
         {children}
       </Box>

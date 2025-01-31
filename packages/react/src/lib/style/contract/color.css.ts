@@ -1,7 +1,7 @@
 import { createThemeContract } from '@vanilla-extract/css';
 
 const grayscaleLevel = createThemeContract({
-  _5: '',
+  _5:  '',
   _10: '',
   _15: '',
   _20: '',
@@ -26,57 +26,57 @@ const solidTranslucentLevel = createThemeContract({
 });
 
 const surfaceVariant = createThemeContract({
-  default: '',
+  default:  '',
   elevated: '',
-  raised: '',
-  clear: '',
+  raised:   '',
+  clear:    '',
 });
 
 const contentVariant = createThemeContract({
   emphasized: '',
-  default: '',
-  muted: '',
-  disabled: '',
+  default:    '',
+  muted:      '',
+  disabled:   '',
 });
 
 const interactiveVariant = createThemeContract({
-  hovered: '',
-  pressed: '',
-  focused: '',
+  hovered:  '',
+  pressed:  '',
+  focused:  '',
   disabled: '',
 });
 
 export const colorVars = createThemeContract({
   grayscale: {
-    solid: grayscaleLevel,
+    solid:       grayscaleLevel,
     translucent: grayscaleLevel,
   },
   solid: {
-    white: '',
-    black: '',
-    red: '',
-    green: '',
-    blue: '',
-    yellow: '',
+    white:       '',
+    black:       '',
+    red:         '',
+    green:       '',
+    blue:        '',
+    yellow:      '',
     translucent: {
-      white: grayscaleLevel,
-      black: grayscaleLevel,
-      red: solidTranslucentLevel,
-      green: solidTranslucentLevel,
-      blue: solidTranslucentLevel,
+      white:  grayscaleLevel,
+      black:  grayscaleLevel,
+      red:    solidTranslucentLevel,
+      green:  solidTranslucentLevel,
+      blue:   solidTranslucentLevel,
       yellow: solidTranslucentLevel,
     },
   },
   brand: {
     solid: {
       everyday: '',
-      family: '',
-      world: '',
+      family:   '',
+      world:    '',
     },
     monochrome: {
       everyday: '',
-      family: '',
-      world: '',
+      family:   '',
+      world:    '',
     },
   },
   surface: {
@@ -88,7 +88,7 @@ export const colorVars = createThemeContract({
     inverted: contentVariant,
   },
   line: {
-    border: '',
+    border:  '',
     divider: '',
   },
   interaction: {

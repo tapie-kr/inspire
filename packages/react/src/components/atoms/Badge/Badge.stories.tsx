@@ -1,7 +1,11 @@
 import { type Meta, type StoryObj } from '@storybook/react';
+
 import { getIconArgType } from '@/lib/storybook/icon';
+
 import { Badge } from '.';
+
 import { TextIndicatorBadgeVariant } from './categories/text-indicator';
+
 import { BadgeSize, BadgeTheme } from './shared';
 
 const baseArgsType = {
@@ -15,39 +19,39 @@ const baseArgsType = {
   },
 } as const;
 
-const meta: Meta = {
-  title: 'Atoms/Badge',
-};
+const meta: Meta = { title: 'Atoms/Badge' };
 
 type DefaultBadgeStory = StoryObj<typeof Badge.Default>;
+
 type IndicatorBadgeStory = StoryObj<typeof Badge.Indicator>;
+
 type TextIndicatorBadgeStory = StoryObj<typeof Badge.TextIndicator>;
 
 export const Default: DefaultBadgeStory = {
-  render: props => <Badge.Default {...props} />,
+  render:   props => <Badge.Default {...props} />,
   argTypes: {
     ...baseArgsType,
     leadingIcon: getIconArgType(),
-    label: { control: { type: 'text' } },
+    label:       { control: { type: 'text' } },
   },
   args: {
     theme: BadgeTheme.MONOCHROME,
-    size: BadgeSize.LARGE,
+    size:  BadgeSize.LARGE,
     label: 'Badge',
   },
 };
 
 export const Indicator: IndicatorBadgeStory = {
-  render: props => <Badge.Indicator {...props} />,
+  render:   props => <Badge.Indicator {...props} />,
   argTypes: baseArgsType,
-  args: {
+  args:     {
     theme: BadgeTheme.MONOCHROME,
-    size: BadgeSize.LARGE,
+    size:  BadgeSize.LARGE,
   },
 };
 
 export const TextIndicator: TextIndicatorBadgeStory = {
-  render: props => <Badge.TextIndicator {...props} />,
+  render:   props => <Badge.TextIndicator {...props} />,
   argTypes: {
     variant: {
       options: Object.values(TextIndicatorBadgeVariant),
@@ -56,13 +60,13 @@ export const TextIndicator: TextIndicatorBadgeStory = {
     children: { control: { type: 'text' } },
   },
   args: {
-    variant: TextIndicatorBadgeVariant.DEFAULT,
+    variant:  TextIndicatorBadgeVariant.DEFAULT,
     children: 'Badge',
   },
 };
 
 export const TextIndicatorWithNumber: TextIndicatorBadgeStory = {
-  render: props => <Badge.TextIndicator {...props} />,
+  render:   props => <Badge.TextIndicator {...props} />,
   argTypes: {
     variant: {
       options: Object.values(TextIndicatorBadgeVariant),
@@ -71,7 +75,7 @@ export const TextIndicatorWithNumber: TextIndicatorBadgeStory = {
     children: { control: { type: 'number' } },
   },
   args: {
-    variant: TextIndicatorBadgeVariant.DEFAULT,
+    variant:  TextIndicatorBadgeVariant.DEFAULT,
     children: 100,
   },
 };

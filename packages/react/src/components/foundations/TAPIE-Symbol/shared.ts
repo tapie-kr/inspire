@@ -1,5 +1,5 @@
 export const TAPIESymbolSize = {
-  _8: 8,
+  _8:  8,
   _16: 16,
   _20: 20,
   _24: 24,

@@ -1,10 +1,11 @@
 import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
 
 import { type Meta, type StoryObj } from '@storybook/react';
+
 import { Filter } from '.';
 
 const meta: Meta = {
-  title: 'Molecules/Filter',
+  title:     'Molecules/Filter',
   component: Filter,
 };
 
@@ -15,7 +16,7 @@ export const Default: FilterStory = {
     <Filter
       filters={[
         {
-          label: '상태',
+          label:   '상태',
           options: [
             {
               label: '전체',
@@ -32,7 +33,7 @@ export const Default: FilterStory = {
           ],
         },
         {
-          label: '타입1234',
+          label:   '타입1234',
           options: [
             {
               label: '전체',

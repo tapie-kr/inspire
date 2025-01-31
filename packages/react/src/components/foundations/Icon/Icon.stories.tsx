@@ -1,13 +1,16 @@
 import { type Meta, type StoryObj } from '@storybook/react';
+
 import { getIconArgType } from '@/lib/storybook/icon';
+
 import { Icon } from '.';
+
 import { GlyphIcon } from './icon-set';
 
 const meta: Meta = {
-  title: 'Foundations/Icon',
+  title:    'Foundations/Icon',
   argTypes: {
-    name: getIconArgType(),
-    size: { control: 'number' },
+    name:  getIconArgType(),
+    size:  { control: 'number' },
     color: { control: 'color' },
   },
   args: {
@@ -18,8 +21,6 @@ const meta: Meta = {
 
 type IconStory = StoryObj<typeof Icon>;
 
-export const Default: IconStory = {
-  render: props => <Icon {...props} />,
-};
+export const Default: IconStory = { render: props => <Icon {...props} /> };
 
 export default meta;

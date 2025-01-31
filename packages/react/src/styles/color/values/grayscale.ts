@@ -1,7 +1,7 @@
 import { colorVars } from '@/lib/style/contract/color.css';
 
 export const lightGrayscaleSolid = {
-  _5: '#F5F5F5',
+  _5:  '#F5F5F5',
   _10: '#EBEBEB',
   _15: '#DCDCDC',
   _20: '#CCCCCC',
@@ -17,7 +17,7 @@ export const lightGrayscaleSolid = {
 };
 
 export const darkGrayscaleSolid = {
-  _5: '#0D0D0D',
+  _5:  '#0D0D0D',
   _10: '#1A1A1A',
   _15: '#242424',
   _20: '#2E2E2E',
@@ -33,7 +33,7 @@ export const darkGrayscaleSolid = {
 };
 
 export const lightGrayscaleTranslucent = {
-  _5: colorVars.solid.translucent.black._5,
+  _5:  colorVars.solid.translucent.black._5,
   _10: colorVars.solid.translucent.black._10,
   _15: colorVars.solid.translucent.black._15,
   _20: colorVars.solid.translucent.black._20,
@@ -49,7 +49,7 @@ export const lightGrayscaleTranslucent = {
 };
 
 export const darkGrayscaleTranslucent = {
-  _5: colorVars.solid.translucent.white._5,
+  _5:  colorVars.solid.translucent.white._5,
   _10: colorVars.solid.translucent.white._10,
   _15: colorVars.solid.translucent.white._15,
   _20: colorVars.solid.translucent.white._20,

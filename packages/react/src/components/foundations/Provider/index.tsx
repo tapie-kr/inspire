@@ -3,6 +3,7 @@
 import '@/styles/reset.css';
 
 import { type ReactNode, useEffect, useState } from 'react';
+
 import { showSignature } from './shared';
 
 type InspireProviderProps = {
@@ -18,6 +19,7 @@ export function InspireProvider(props: InspireProviderProps) {
   useEffect(() => {
     if (!isInitialized) {
       !props.hideSignature && showSignature();
+
       setIsInitialized(true);
     }
   }, [isInitialized, props.hideSignature]);
