@@ -32,8 +32,8 @@ export enum ImagePreviewShape {
 }
 
 type ImagePreviewInputProps = HTMLInputProps & {
-  shape?: ImagePreviewShape;
-  size?: string | number;
+  shape?:   ImagePreviewShape;
+  size?:    string | number;
   preview?: string;
 };
 

@@ -13,9 +13,9 @@ import { Typo } from '../../Typography';
 import { Weight } from '../../Typography/shared';
 
 type TableHeadCellProps = {
-  width?: number | string;
+  width?:      number | string;
   isSortable?: boolean;
-  children?: string;
+  children?:   string;
 };
 
 export function TableHeadCell(props: TableHeadCellProps) {

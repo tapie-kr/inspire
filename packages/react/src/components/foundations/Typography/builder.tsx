@@ -7,9 +7,9 @@ import { createElement } from 'react';
 import { Tag, type TypographyProps, typographyWeightClass, Weight } from './shared';
 
 type TypographyBuilderProps = {
-  tag: Tag;
+  tag:        Tag;
   className?: string;
-  props: TypographyProps;
+  props:      TypographyProps;
 };
 
 export default function TypographyBuilder(props: TypographyBuilderProps) {

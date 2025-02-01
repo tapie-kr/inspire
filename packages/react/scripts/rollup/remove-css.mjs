@@ -13,7 +13,7 @@ function removeCSS() {
       const importKeyword = isESM ? 'import' : 'require';
 
       code = lines
-        .filter(line => line.startsWith(importKeyword) ? !parsePath(line, importKeyword).isCSS : true)
+        .filter(line => (line.startsWith(importKeyword) ? !parsePath(line, importKeyword).isCSS : true))
         .join('\n');
 
       return {

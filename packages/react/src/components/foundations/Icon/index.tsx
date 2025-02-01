@@ -11,9 +11,9 @@ import { type IconName, isGlyphIconName } from './shared';
 type FilteredSVGAttributes = Omit<SVGAttributes<SVGElement>, keyof IconProps>;
 
 type IconProps = {
-  name?: IconName | false;
-  size?: number;
-  color?: string | false;
+  name?:      IconName | false;
+  size?:      number;
+  color?:     string | false;
   className?: string;
 };
 

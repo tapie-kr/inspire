@@ -3,7 +3,7 @@
 import { createContext } from 'react';
 
 type SegmentGroupContextType = {
-  value: string;
+  value:    string;
   onChange: (value: string) => unknown;
 };
 

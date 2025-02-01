@@ -13,7 +13,7 @@ import { type ReactNode } from 'react';
 import { ButtonSize, ButtonVariant } from '@/components/atoms/Button/shared';
 
 type ControlButtonProps = {
-  type?: 'previous' | 'next';
+  type?:    'previous' | 'next';
   onClick?: () => unknown;
 };
 
@@ -40,9 +40,9 @@ export function ControlButton(props: ControlButtonProps) {
 }
 
 type PageButtonProps = {
-  page: number;
+  page:      number;
   isActive?: boolean;
-  onClick?: () => unknown;
+  onClick?:  () => unknown;
 };
 
 export function PageButton(props: PageButtonProps) {

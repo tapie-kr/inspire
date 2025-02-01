@@ -19,11 +19,11 @@ import { StackAlign } from '@/lib/layout/types';
 import { FormFieldSize } from './shared';
 
 type FormFieldProps = {
-  label: string;
+  label:        string;
   isEssential?: boolean;
   description?: string;
-  size?: FormFieldSize;
-  children?: ReactNode;
+  size?:        FormFieldSize;
+  children?:    ReactNode;
 };
 
 export function FormField(props: FormFieldProps) {

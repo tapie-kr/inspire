@@ -28,7 +28,7 @@ import { type HTMLInputProps, InputSize } from '../shared';
 
 type DraggableFileInputProps = HTMLInputProps & {
   leadingIcon?: IconName;
-  size?: InputSize;
+  size?:        InputSize;
 };
 
 export function DraggableFileInput(props: DraggableFileInputProps) {
@@ -45,7 +45,7 @@ export function DraggableFileInput(props: DraggableFileInputProps) {
 
     e.stopPropagation();
 
-    e.nativeEvent.stopImmediatePropagation(); // 추가
+    e.nativeEvent.stopImmediatePropagation();
 
     tools.removeFile(index);
   },

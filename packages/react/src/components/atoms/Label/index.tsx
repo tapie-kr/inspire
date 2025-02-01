@@ -22,9 +22,9 @@ export enum LabelSize {
 
 type LabelProps = {
   isEssential?: boolean;
-  isDisabled?: boolean;
-  children?: string;
-  size?: LabelSize;
+  isDisabled?:  boolean;
+  children?:    string;
+  size?:        LabelSize;
 };
 
 export function Label(props: LabelProps) {

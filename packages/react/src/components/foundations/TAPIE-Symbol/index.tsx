@@ -13,9 +13,9 @@ import SolidSymbol from './assets/solid-symbol.svg';
 import type { TAPIESymbolSize } from './shared';
 
 type TAPIESymbolProps = {
-  size: TAPIESymbolSize;
-  isSolid?: boolean;
-  hasLabel?: boolean;
+  size:       TAPIESymbolSize;
+  isSolid?:   boolean;
+  hasLabel?:  boolean;
   className?: string;
 };
 

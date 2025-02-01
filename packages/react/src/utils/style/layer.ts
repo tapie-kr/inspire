@@ -12,7 +12,7 @@ export function getLayerApplier(layer: string) {
 
     const appliedRule =
       rule instanceof Array
-        ? rule.map(r => isLayerApplicable(r) ? applyLayer(layer, r) : r)
+        ? rule.map(r => (isLayerApplicable(r) ? applyLayer(layer, r) : r))
         : applyLayer(layer, rule);
 
     return _style(appliedRule, debugId);

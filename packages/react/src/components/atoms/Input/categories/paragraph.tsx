@@ -24,7 +24,7 @@ export enum ParagraphInputResize {
 }
 
 type ParagraphInputProps = HTMLTextAreaProps & {
-  size?: InputSize;
+  size?:   InputSize;
   resize?: ParagraphInputResize;
   height?: string | number;
 };

@@ -6,7 +6,7 @@ import { BadgeSize, BadgeTheme } from '../shared';
 
 type IndicatorBadgeProps = {
   theme?: BadgeTheme;
-  size?: BadgeSize;
+  size?:  BadgeSize;
 };
 
 export function IndicatorBadge(props: IndicatorBadgeProps) {

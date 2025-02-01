@@ -12,10 +12,10 @@ import { type DefaultProps } from '@/types/prop';
 import { Box } from '../Box';
 
 type AspectRatioProps = DefaultProps & {
-  ratio: number;
-  width?: string | number;
-  height?: string | number;
-  fullWidth?: boolean;
+  ratio:       number;
+  width?:      string | number;
+  height?:     string | number;
+  fullWidth?:  boolean;
   fullHeight?: boolean;
 };
 

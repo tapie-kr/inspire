@@ -26,8 +26,8 @@ import { type HTMLInputProps, InputSize } from '../shared';
 
 type TextInputProps = HTMLInputProps & {
   leadingIcon?: IconName;
-  isSecure?: boolean;
-  size?: InputSize;
+  isSecure?:    boolean;
+  size?:        InputSize;
 };
 
 export function TextInput(props: TextInputProps) {
@@ -83,7 +83,7 @@ export function TextInput(props: TextInputProps) {
       >
         <Icon
           size={20}
-          name={showVisibilityButton && (hideValue ? GlyphIcon.VISIBILITY : GlyphIcon.DEFAULT) // TODO: Change DEFAULT to VISIBILITY_OFF}
+          name={showVisibilityButton && (hideValue ? GlyphIcon.VISIBILITY : GlyphIcon.VISIBILITY)}
           onClick={handleVisibilityButton}
         />
 

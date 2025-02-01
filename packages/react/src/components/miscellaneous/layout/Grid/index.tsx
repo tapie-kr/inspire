@@ -7,12 +7,12 @@ import { type DefaultProps } from '@/types/prop';
 import { Box } from '../Box';
 
 type GridProps = DefaultProps & {
-  gap?: string | number;
-  rowGap?: string | number;
-  columnGap?: string | number;
+  gap?:         string | number;
+  rowGap?:      string | number;
+  columnGap?:   string | number;
   columnCount?: number;
-  fullWidth?: boolean;
-  fullHeight?: boolean;
+  fullWidth?:   boolean;
+  fullHeight?:  boolean;
 };
 
 export function Grid(props: GridProps) {

@@ -25,9 +25,9 @@ const GapMap = {
 } as const;
 
 type DefaultButtonProps = ButtonPropsBase & {
-  leadingIcon?: IconName;
+  leadingIcon?:  IconName;
   trailingIcon?: IconName;
-  children?: ReactNode;
+  children?:     ReactNode;
 };
 
 export function TextButton(props: DefaultButtonProps) {

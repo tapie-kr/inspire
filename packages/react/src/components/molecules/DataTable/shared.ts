@@ -4,15 +4,15 @@ import { type IconName } from '@/components/foundations/Icon/shared';
 
 export type Column<T extends object, K extends keyof T> = {
   [U in K]: {
-    key: U;
-    label: string;
-    width?: number | string;
+    key:         U;
+    label:       string;
+    width?:      number | string;
     isSortable?: boolean;
-    cell?: (value: T[U], index: number, data: T) => ReactNode;
+    cell?:       (value: T[U], index: number, data: T) => ReactNode;
   };
 }[K];
 
 export type ActionIcon = {
-  icon: IconName;
+  icon:    IconName;
   onClick: (index: number) => unknown;
 };

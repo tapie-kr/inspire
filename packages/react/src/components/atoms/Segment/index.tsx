@@ -22,8 +22,8 @@ import { Weight } from '@/components/foundations/Typography/shared';
 
 type SegmentProps = {
   leadingIcon?: IconName;
-  label: string;
-  value: string;
+  label:        string;
+  value:        string;
 };
 
 export function Segment(props: SegmentProps) {

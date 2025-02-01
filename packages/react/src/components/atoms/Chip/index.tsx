@@ -17,11 +17,11 @@ import { type IconName } from '@/components/foundations/Icon/shared';
 import { Weight } from '@/components/foundations/Typography/shared';
 
 type ChipProps = {
-  leadingIcon?: IconName;
+  leadingIcon?:  IconName;
   trailingIcon?: IconName;
-  isActive?: boolean;
-  onClick?: () => unknown;
-  children?: string;
+  isActive?:     boolean;
+  onClick?:      () => unknown;
+  children?:     string;
 };
 
 export function Chip(props: ChipProps) {

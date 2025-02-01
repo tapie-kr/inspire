@@ -17,9 +17,9 @@ import { Weight } from '@/components/foundations/Typography/shared';
 import { type ActionIcon, type Column } from './shared';
 
 type DataTableProps<T extends object> = {
-  columns: Array<Column<T, keyof T>>;
-  data: Array<T>;
-  actions?: Array<ActionIcon>;
+  columns:    Array<Column<T, keyof T>>;
+  data:       Array<T>;
+  actions?:   Array<ActionIcon>;
   showIndex?: boolean;
 };
 

@@ -5,9 +5,9 @@ import { glob } from 'glob';
 import * as path from 'path';
 
 interface BarrelOptions {
-  include: string[];
-  exclude: string[];
-  exportStyle: 'star' | 'named';
+  include:        string[];
+  exclude:        string[];
+  exportStyle:    'star' | 'named';
   barrelFileName: string;
 }
 

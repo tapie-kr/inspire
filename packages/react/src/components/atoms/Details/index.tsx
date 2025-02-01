@@ -29,11 +29,11 @@ import { type DefaultProps } from '@/types/prop';
 import { getTransition } from '@/utils/motion/transition';
 
 type DetailsProps = DefaultProps & {
-  title: ReactNode;
-  defaultOpen?: boolean;
+  title:            ReactNode;
+  defaultOpen?:     boolean;
   hideDefaultIcon?: boolean;
-  disabled?: boolean;
-  onToggle?: (isOpened: boolean) => unknown;
+  disabled?:        boolean;
+  onToggle?:        (isOpened: boolean) => unknown;
 };
 
 export function Details(props: DetailsProps) {

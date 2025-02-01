@@ -12,8 +12,8 @@ import { SegmentGroupContext } from './context';
 
 type SegmentGroupProps = {
   defaultValue: string;
-  onChange?: (value: string) => unknown;
-  children?: ReactNode;
+  onChange?:    (value: string) => unknown;
+  children?:    ReactNode;
 };
 
 export function SegmentGroup(props: SegmentGroupProps) {

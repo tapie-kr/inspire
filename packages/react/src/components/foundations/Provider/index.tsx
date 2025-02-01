@@ -7,10 +7,10 @@ import { type ReactNode, useEffect, useState } from 'react';
 import { showSignature } from './shared';
 
 type InspireProviderProps = {
-  clarityId?: string;
+  clarityId?:         string;
   googleAnalyticsId?: string;
-  hideSignature?: boolean;
-  children?: ReactNode;
+  hideSignature?:     boolean;
+  children?:          ReactNode;
 };
 
 export function InspireProvider(props: InspireProviderProps) {

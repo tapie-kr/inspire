@@ -66,10 +66,10 @@ export type TypographyPropsBase = DetailsHTMLAttributes<
 >;
 
 export type TypographyProps = TypographyPropsBase & {
-  tag?: TypographyTag;
+  tag?:        TypographyTag;
   monospaced?: boolean;
-  weight?: TypographyWeight;
-  color?: string;
-  nowrap?: boolean;
-  children?: ReactNode;
+  weight?:     TypographyWeight;
+  color?:      string;
+  nowrap?:     boolean;
+  children?:   ReactNode;
 };

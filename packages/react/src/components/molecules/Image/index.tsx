@@ -15,12 +15,12 @@ import { useMountedState } from '@/hooks/use-mounted-state';
 import { type DefaultProps } from '@/types/prop';
 
 type ImageProps = DefaultProps<true> & {
-  src: string | File | Blob;
-  alt: string;
-  delay?: number;
-  width?: string | number;
-  height?: string | number;
-  fullWidth?: boolean;
+  src:         string | File | Blob;
+  alt:         string;
+  delay?:      number;
+  width?:      string | number;
+  height?:     string | number;
+  fullWidth?:  boolean;
   fullHeight?: boolean;
 };
 

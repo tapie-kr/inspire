@@ -14,8 +14,8 @@ export enum ButtonSize {
 }
 
 export type ButtonPropsBase = ButtonHTMLAttributes<HTMLButtonElement> & {
-  size?: ButtonSize;
-  fullWidth?: boolean;
+  size?:       ButtonSize;
+  fullWidth?:  boolean;
   fullHeight?: boolean;
 };
 

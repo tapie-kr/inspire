@@ -25,7 +25,7 @@ import { StackAlign } from '@/lib/layout/types';
 import { type FilterGroup } from './shared';
 
 type FilterProps = {
-  filters?: Array<FilterGroup>;
+  filters?:     Array<FilterGroup>;
   defaultOpen?: boolean;
 };
 

@@ -37,11 +37,11 @@ const GapMap = {
 } as const;
 
 type DefaultButtonProps = ButtonPropsBase & {
-  variant?: ButtonVariant;
-  theme?: Theme;
-  leadingIcon?: IconName;
+  variant?:      ButtonVariant;
+  theme?:        Theme;
+  leadingIcon?:  IconName;
   trailingIcon?: IconName;
-  children?: ReactNode;
+  children?:     ReactNode;
 };
 
 export function DefaultButton(props: DefaultButtonProps) {

@@ -1,5 +1,5 @@
 export type PaginationItem = {
-  type: 'page' | 'ellipsis';
+  type:   'page' | 'ellipsis';
   value?: number;
 };
 
@@ -7,7 +7,7 @@ export function getCurrentItems(min: number,
   max: number,
   visiblePage: number,
   currentPage: number): Array<{
-    type: 'page' | 'ellipsis';
+    type:   'page' | 'ellipsis';
     value?: number;
   }> {
   function getRange(size: number, c: number) {
@@ -16,7 +16,7 @@ export function getCurrentItems(min: number,
 
       return [c - half, c + half];
     } else {
-      return [c - size / 2, c + (size / 2 - 1)];
+      return [c - (size / 2), c + ((size / 2) - 1)];
     }
   }
 

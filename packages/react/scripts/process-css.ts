@@ -46,7 +46,8 @@ async function generateImportCssCode(moduleSystem: string,
   });
 
   if (moduleSystem === 'esm') {
-    result.push(''); // Add an empty line for better readability
+    // Add an empty line for better readability
+    result.push('');
   }
 
   return result.join('\n');

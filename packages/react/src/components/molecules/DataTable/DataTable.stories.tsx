@@ -29,8 +29,8 @@ enum Job {
 
 type ExampleData = {
   name: string;
-  age: number;
-  job: Job;
+  age:  number;
+  job:  Job;
 };
 
 const exampleData: Array<ExampleData> = [

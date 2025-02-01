@@ -20,8 +20,8 @@ import { ButtonIconSizeMap, type ButtonPropsBase, ButtonSize, ButtonVariant } fr
 
 type IconButtonProps = ButtonPropsBase & {
   variant?: ButtonVariant;
-  theme?: Theme;
-  icon: IconName;
+  theme?:   Theme;
+  icon:     IconName;
 };
 
 export function IconButton(props: IconButtonProps) {

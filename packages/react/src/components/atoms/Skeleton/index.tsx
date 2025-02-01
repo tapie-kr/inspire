@@ -7,12 +7,12 @@ import { Box } from '@/components/miscellaneous/layout/Box';
 import cn from 'classnames';
 
 type SkeletonProps = {
-  width?: string | number;
-  height?: string | number;
-  fullWidth?: boolean;
-  fullHeight?: boolean;
+  width?:        string | number;
+  height?:       string | number;
+  fullWidth?:    boolean;
+  fullHeight?:   boolean;
   borderRadius?: string | number;
-  className?: string;
+  className?:    string;
 };
 
 export function Skeleton(props: SkeletonProps) {

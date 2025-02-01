@@ -11,10 +11,10 @@ import { ControlButton, PageButton, Square } from './button';
 import { getCurrentItems as _getCurrentVisiblePages } from './shared';
 
 type PaginationProps = {
-  min: number;
-  max: number;
+  min:           number;
+  max:           number;
   visiblePages?: number;
-  defaultPage?: number;
+  defaultPage?:  number;
   onPageChange?: (page: number) => unknown;
 };
 

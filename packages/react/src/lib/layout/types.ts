@@ -33,8 +33,8 @@ export type BaseLayoutProps<T extends LayoutTag> = LayoutElementProps<T> & {
   tag?:        T | (string & {});
   fullWidth?:  boolean;
   fullHeight?: boolean;
-  className?: string;
-  children?: ReactNode;
+  className?:  string;
+  children?:   ReactNode;
 };
 
 export enum StackDirection {
@@ -65,8 +65,8 @@ export enum StackWrap {
 
 export type BaseStackProps<T extends LayoutTag> = BaseLayoutProps<T> & {
   direction?: StackDirection;
-  align?: StackAlign;
-  justify?: StackJustify;
-  spacing?: string | number;
-  wrap?: StackWrap;
+  align?:     StackAlign;
+  justify?:   StackJustify;
+  spacing?:   string | number;
+  wrap?:      StackWrap;
 };

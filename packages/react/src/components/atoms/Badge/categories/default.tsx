@@ -29,10 +29,10 @@ const GapMap = {
 } as const;
 
 type BadgeProps = {
-  theme?: BadgeTheme;
-  size?: BadgeSize;
+  theme?:       BadgeTheme;
+  size?:        BadgeSize;
   leadingIcon?: IconName;
-  label: string;
+  label:        string;
 };
 
 export function DefaultBadge(props: BadgeProps) {

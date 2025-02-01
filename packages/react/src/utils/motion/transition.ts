@@ -9,7 +9,7 @@ export const resetTransition = getTransition({
 
 type TransitionOptions = {
   duration?: number;
-  delay?: number;
+  delay?:    number;
 };
 
 export function getTransition(options: TransitionOptions = {}): Transition {
