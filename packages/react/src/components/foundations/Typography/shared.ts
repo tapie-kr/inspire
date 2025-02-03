@@ -66,6 +66,7 @@ export type TypographyPropsBase = DetailsHTMLAttributes<
 
 export type TypographyProps = TypographyPropsBase & {
   tag?:        TypographyTag;
+  variant?:    TypographyVariant;
   monospaced?: boolean;
   weight?:     TypographyWeight;
   color?:      string;

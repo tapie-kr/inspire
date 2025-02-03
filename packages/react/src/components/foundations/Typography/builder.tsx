@@ -7,7 +7,7 @@ import { Tag, type TypographyProps, typographyWeightClass, Weight } from './shar
 type TypographyBuilderProps = {
   tag:        Tag;
   className?: string;
-  props:      TypographyProps;
+  props:      Omit<TypographyProps, 'variant'>;
 };
 
 export default function TypographyBuilder(props: TypographyBuilderProps) {

@@ -1,4 +1,3 @@
-import { type JSX } from 'react';
 import TypographyBuilder from './builder';
 import { Tag, type TypographyProps, typographyVariantClass, Variant } from './shared';
 
@@ -18,7 +17,7 @@ const TypographyContract = {
 function typographyFactory(variant: Variant, tag: Tag = Tag.P) {
   const defaultTag = TypographyContract[variant] || tag;
 
-  return (props: TypographyProps) => (
+  return (props: Omit<TypographyProps, 'variant'>) => (
     <TypographyBuilder
       tag={defaultTag}
       className={typographyVariantClass[variant]}
@@ -27,15 +26,30 @@ function typographyFactory(variant: Variant, tag: Tag = Tag.P) {
   );
 }
 
-const Typography = Object.keys(Variant).reduce((acc, key) => {
-  const variant = Variant[key as keyof typeof Variant];
+function Typography(props: TypographyProps) {
+  const TargetTypo = typographyFactory(props.variant || Variant.BASE, props.tag);
 
-  const tag = TypographyContract[variant];
+  return <TargetTypo {...props} />;
+}
 
-  acc[variant] = typographyFactory(variant, tag);
+Typography.Giant = typographyFactory(Variant.GIANT);
 
-  return acc;
-},
-{} as Record<Variant, (props: TypographyProps) => JSX.Element>);
+Typography.Jumbo = typographyFactory(Variant.JUMBO);
+
+Typography.Large = typographyFactory(Variant.LARGE);
+
+Typography.Medium = typographyFactory(Variant.MEDIUM);
+
+Typography.Moderate = typographyFactory(Variant.MODERATE);
+
+Typography.Base = typographyFactory(Variant.BASE);
+
+Typography.Petite = typographyFactory(Variant.PETITE);
+
+Typography.Micro = typographyFactory(Variant.MICRO);
+
+Typography.Tiny = typographyFactory(Variant.TINY);
+
+Typography.Mini = typographyFactory(Variant.MINI);
 
 export { Typography, Typography as Typo };
