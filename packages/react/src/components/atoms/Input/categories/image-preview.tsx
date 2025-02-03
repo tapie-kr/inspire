@@ -1,29 +1,19 @@
 'use client';
 
 import * as s from '../styles/image-preview.css';
-
 import { colorVars } from '@/lib/style/contract/color.css';
-
 import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { HStack, VStack } from '@cottons-kr/react-foundation';
-
 import { Icon } from '@/components/foundations/Icon';
-
 import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
-
 import { Typo } from '@/components/foundations/Typography';
-
 import { AspectRatio } from '@/components/miscellaneous/layout/AspectRatio';
 
 import cn from 'classnames';
-
 import { useCallback, useEffect, useMemo, useState } from 'react';
-
 import { Weight } from '@/components/foundations/Typography/shared';
-
 import { useFileInputController } from '../hooks/use-file-input-controller';
-
 import { type HTMLInputProps } from '../shared';
 
 export enum ImagePreviewShape {

@@ -1,5 +1,4 @@
 import { type Meta, type StoryObj } from '@storybook/react';
-
 import { Label, LabelSize } from '.';
 
 const meta: Meta = {

@@ -1,7 +1,6 @@
 import { layoutLayer } from '@/styles/layer.css';
 
 import { layer, style } from '@vanilla-extract/css';
-
 import { applyLayer } from '@/utils/style/layer';
 
 export const reset = layer({ parent: layoutLayer }, 'reset');

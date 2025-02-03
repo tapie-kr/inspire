@@ -1,27 +1,18 @@
 'use client';
 
 import * as s from '../styles/text.css';
-
 import { colorVars } from '@/lib/style/contract/color.css';
-
 import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { HStack } from '@cottons-kr/react-foundation';
-
 import { Icon } from '@/components/foundations/Icon';
-
 import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
 
 import cn from 'classnames';
-
 import { useCallback, useMemo } from 'react';
-
 import { type IconName } from '@/components/foundations/Icon/shared';
-
 import { useToggle } from '@/hooks/use-toggle';
-
 import { useTextInputController } from '../hooks/use-text-input-controller';
-
 import { type HTMLInputProps, InputSize } from '../shared';
 
 type TextInputProps = HTMLInputProps & {

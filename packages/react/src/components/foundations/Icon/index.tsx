@@ -1,11 +1,8 @@
 import * as s from './styles.css';
 
 import cn from 'classnames';
-
 import { type SVGAttributes } from 'react';
-
 import { BrandIconMap, GlyphIconMap } from './icon-set';
-
 import { type IconName, isGlyphIconName } from './shared';
 
 type FilteredSVGAttributes = Omit<SVGAttributes<SVGElement>, keyof IconProps>;

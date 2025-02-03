@@ -1,5 +1,4 @@
 import { colorVars } from '@/lib/style/contract/color.css';
-
 import { componentStyle } from '@/styles/layer.css';
 
 export const colorBinding = componentStyle({

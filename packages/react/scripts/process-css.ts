@@ -1,7 +1,5 @@
 import fs from 'fs';
-
 import { glob } from 'glob';
-
 import path from 'path';
 
 const PRESERVED_CSS = ['@cottons-kr/react-foundation/styles.css'];

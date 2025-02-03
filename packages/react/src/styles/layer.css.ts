@@ -1,5 +1,4 @@
 import { globalLayer } from '@vanilla-extract/css';
-
 import { getLayerApplier } from '@/utils/style/layer';
 
 export const resetLayer = globalLayer('reset');

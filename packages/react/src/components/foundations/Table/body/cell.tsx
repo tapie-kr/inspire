@@ -1,5 +1,4 @@
 import { cellContent } from '../styles/base.css';
-
 import { cell } from '../styles/body.css';
 
 import { Box } from '@/components/miscellaneous/layout/Box';

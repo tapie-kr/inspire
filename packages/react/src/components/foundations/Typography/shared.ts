@@ -1,5 +1,4 @@
 import * as variantStyles from './styles/variant.css';
-
 import * as weightStyles from './styles/weight.css';
 
 import { type DetailsHTMLAttributes, type ReactNode } from 'react';

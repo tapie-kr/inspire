@@ -1,7 +1,5 @@
 import { type JSX } from 'react';
-
 import TypographyBuilder from './builder';
-
 import { Tag, type TypographyProps, typographyVariantClass, Variant } from './shared';
 
 const TypographyContract = {

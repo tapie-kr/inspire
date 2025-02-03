@@ -1,15 +1,11 @@
 import { active, square } from './styles.css';
 
 import { Button } from '@/components/atoms/Button';
-
 import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
-
 import { Box } from '@/components/miscellaneous/layout/Box';
 
 import cn from 'classnames';
-
 import { type ReactNode } from 'react';
-
 import { ButtonSize, ButtonVariant } from '@/components/atoms/Button/shared';
 
 type ControlButtonProps = {

@@ -1,27 +1,17 @@
 import { filterLabel } from './styles.css';
-
 import { colorVars } from '@/lib/style/contract/color.css';
-
 import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { Chip } from '@/components/atoms/Chip';
-
 import { Details } from '@/components/atoms/Details';
-
 import { Icon } from '@/components/foundations/Icon';
-
 import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
-
 import { Typo } from '@/components/foundations/Typography';
-
 import { HStack } from '@/components/miscellaneous/layout/HStack';
-
 import { Stack } from '@/components/miscellaneous/layout/Stack';
-
 import { VStack } from '@/components/miscellaneous/layout/VStack';
 
 import { StackAlign } from '@/lib/layout/types';
-
 import { type FilterGroup } from './shared';
 
 type FilterProps = {

@@ -1,21 +1,14 @@
 import { descriptionWrapper, largeLabelWrapper, smallLabelWrapper } from './styles.css';
-
 import { colorVars } from '@/lib/style/contract/color.css';
-
 import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { Label } from '@/components/atoms/Label';
-
 import { Typo } from '@/components/foundations/Typography';
-
 import { Box } from '@/components/miscellaneous/layout/Box';
-
 import { VStack } from '@/components/miscellaneous/layout/VStack';
 
 import { type ReactNode } from 'react';
-
 import { StackAlign } from '@/lib/layout/types';
-
 import { FormFieldSize } from './shared';
 
 type FormFieldProps = {

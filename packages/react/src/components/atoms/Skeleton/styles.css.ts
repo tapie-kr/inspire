@@ -1,7 +1,6 @@
 import { colorVars } from '@/lib/style/contract/color.css';
 
 import { keyframes, style } from '@vanilla-extract/css';
-
 import { defaultCubicBezier } from '@/lib/animation/cubic-bezier';
 
 const blinking = keyframes({

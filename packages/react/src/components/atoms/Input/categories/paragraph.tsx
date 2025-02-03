@@ -1,19 +1,14 @@
 'use client';
 
 import * as s from '../styles/paragraph.css';
-
 import { colorVars } from '@/lib/style/contract/color.css';
 
 import { VStack } from '@cottons-kr/react-foundation';
-
 import { Typo } from '@/components/foundations/Typography';
 
 import cn from 'classnames';
-
 import { useTextInputController } from '../hooks/use-text-input-controller';
-
 import { type HTMLTextAreaProps, InputSize } from '../shared';
-
 import { DraggableFileInput } from './draggable-file';
 
 export enum ParagraphInputResize {

@@ -5,9 +5,7 @@ import { spacingVars } from '@/lib/style/contract/component.css';
 import { HStack } from '@/components/miscellaneous/layout/HStack';
 
 import { useCallback, useEffect, useState } from 'react';
-
 import { ControlButton, PageButton, Square } from './button';
-
 import { getCurrentItems as _getCurrentVisiblePages } from './shared';
 
 type PaginationProps = {

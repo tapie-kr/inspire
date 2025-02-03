@@ -1,23 +1,16 @@
 'use client';
 
 import { active, segment } from './styles.css';
-
 import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { Icon } from '@/components/foundations/Icon';
-
 import { Typo } from '@/components/foundations/Typography';
-
 import { HStack } from '@/components/miscellaneous/layout/HStack';
-
 import { SegmentGroupContext } from '@/components/molecules/SegmentGroup/context';
 
 import cn from 'classnames';
-
 import { useCallback, useContext, useMemo } from 'react';
-
 import { type IconName } from '@/components/foundations/Icon/shared';
-
 import { Weight } from '@/components/foundations/Typography/shared';
 
 type SegmentProps = {

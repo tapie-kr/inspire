@@ -1,5 +1,4 @@
 import { version } from '@/../package.json';
-
 import { bannerSvg } from './banner';
 
 export function showSignature() {

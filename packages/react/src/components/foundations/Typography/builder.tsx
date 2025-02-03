@@ -1,9 +1,7 @@
 import { typography } from './styles/default.css';
 
 import cn from 'classnames';
-
 import { createElement } from 'react';
-
 import { Tag, type TypographyProps, typographyWeightClass, Weight } from './shared';
 
 type TypographyBuilderProps = {

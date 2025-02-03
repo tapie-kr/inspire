@@ -1,7 +1,5 @@
 import { type ChangeEvent, useCallback, useState } from 'react';
-
 import { useToggle } from '@/hooks/use-toggle';
-
 import { type HTMLInputProps, type HTMLTextAreaProps } from '../shared';
 
 type ElementType<T> = T extends HTMLInputProps

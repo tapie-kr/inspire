@@ -1,19 +1,13 @@
 import { colorVars } from '@/lib/style/contract/color.css';
-
 import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { Button } from '@/components/atoms/Button';
-
 import { Table } from '@/components/foundations/Table';
-
 import { Typo } from '@/components/foundations/Typography';
-
 import { HStack } from '@/components/miscellaneous/layout/HStack';
 
 import { ButtonSize, ButtonVariant } from '@/components/atoms/Button/shared';
-
 import { Weight } from '@/components/foundations/Typography/shared';
-
 import { type ActionIcon, type Column } from './shared';
 
 type DataTableProps<T extends object> = {

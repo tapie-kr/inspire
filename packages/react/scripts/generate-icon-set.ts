@@ -1,7 +1,5 @@
 import fs from 'fs/promises';
-
 import path from 'path';
-
 import { DOMParser, XMLSerializer } from 'xmldom';
 
 const PATH = {

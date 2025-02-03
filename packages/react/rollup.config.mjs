@@ -1,13 +1,8 @@
 import { readFileSync } from 'fs';
-
 import { defineConfig } from 'rollup';
-
 import copy from 'rollup-plugin-copy';
-
 import customLogger from './scripts/rollup/custom-logger.mjs';
-
 import defaultPlugins from './scripts/rollup/default-plugins.mjs';
-
 import outputGenerator from './scripts/rollup/output-generator.mjs';
 
 const currentPath = new URL('.', import.meta.url).pathname;

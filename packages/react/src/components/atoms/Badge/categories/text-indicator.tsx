@@ -3,13 +3,10 @@
 import * as s from '../styles/text-indicator.css';
 
 import { Flex } from '@cottons-kr/react-foundation';
-
 import { Typo } from '@/components/foundations/Typography';
 
 import cn from 'classnames';
-
 import { useMemo } from 'react';
-
 import { Weight } from '@/components/foundations/Typography/shared';
 
 export enum TextIndicatorBadgeVariant {

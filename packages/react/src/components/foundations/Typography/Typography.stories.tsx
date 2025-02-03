@@ -1,7 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react';
-
 import { Typo } from '.';
-
 import { Tag, Weight } from './shared';
 
 const meta: Meta = {

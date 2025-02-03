@@ -1,5 +1,4 @@
 import { cell as baseCell } from './base.css';
-
 import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { style } from '@vanilla-extract/css';

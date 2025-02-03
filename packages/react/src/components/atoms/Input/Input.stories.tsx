@@ -1,15 +1,10 @@
 import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
 
 import { type Meta, type StoryObj } from '@storybook/react';
-
 import { getIconArgType } from '@/lib/storybook/icon';
-
 import { Input } from '.';
-
 import { ImagePreviewShape } from './categories/image-preview';
-
 import { ParagraphInputResize } from './categories/paragraph';
-
 import { InputSize } from './shared';
 
 const meta: Meta = { title: 'Atoms/Input' };

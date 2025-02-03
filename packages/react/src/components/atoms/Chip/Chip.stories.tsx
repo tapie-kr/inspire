@@ -1,9 +1,7 @@
 import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
 
 import { type Meta, type StoryObj } from '@storybook/react';
-
 import { getIconArgType } from '@/lib/storybook/icon';
-
 import { Chip } from '.';
 
 const meta: Meta = {

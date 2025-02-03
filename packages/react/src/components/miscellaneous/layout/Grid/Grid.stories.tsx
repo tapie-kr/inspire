@@ -1,11 +1,8 @@
 import { colorVars } from '@/lib/style/contract/color.css';
-
 import { radiusVars } from '@/lib/style/contract/component.css';
 
 import { type Meta, type StoryObj } from '@storybook/react';
-
 import { Box } from '../Box';
-
 import { Grid } from '.';
 
 const meta: Meta = {

@@ -1,5 +1,4 @@
 import { type Meta, type StoryObj } from '@storybook/react';
-
 import { Box } from '.';
 
 const meta: Meta = {

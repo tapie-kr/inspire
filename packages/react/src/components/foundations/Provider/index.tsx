@@ -3,7 +3,6 @@
 import '@/styles/reset.css';
 
 import { type ReactNode, useEffect, useState } from 'react';
-
 import { showSignature } from './shared';
 
 type InspireProviderProps = {

@@ -3,13 +3,9 @@ import { cell, cellContent } from '../styles/head.css';
 import { HStack } from '@/components/miscellaneous/layout/HStack';
 
 import { StackAlign, StackJustify } from '@/lib/layout/types';
-
 import { Icon } from '../../Icon';
-
 import { GlyphIcon } from '../../Icon/icon-set';
-
 import { Typo } from '../../Typography';
-
 import { Weight } from '../../Typography/shared';
 
 type TableHeadCellProps = {

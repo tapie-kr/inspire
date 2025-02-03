@@ -1,15 +1,10 @@
 import * as s from './styles.css';
-
 import { colorVars } from '@/lib/style/contract/color.css';
-
 import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { HStack } from '@cottons-kr/react-foundation';
-
 import { Icon } from '@/components/foundations/Icon';
-
 import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
-
 import { Typo } from '@/components/foundations/Typography';
 
 import cn from 'classnames';

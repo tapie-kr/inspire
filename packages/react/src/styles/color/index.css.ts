@@ -1,26 +1,20 @@
 import { colorVars } from '@/lib/style/contract/color.css';
 
 import { createGlobalTheme } from '@vanilla-extract/css';
-
 import { brandSolid, darkBrandMonochrome, lightBrandMonochrome } from './values/brand';
-
 import { content, darkContentInverted, lightContentInverted } from './values/content';
-
 import {
   darkGrayscaleSolid,
   darkGrayscaleTranslucent,
   lightGrayscaleSolid,
   lightGrayscaleTranslucent,
 } from './values/grayscale';
-
 import {
   darkInteractionInverted,
   interaction,
   lightInteractionInverted,
 } from './values/interaction';
-
 import { darkLine, lightLine } from './values/line';
-
 import {
   darkSolidTranslucentBlue,
   darkSolidTranslucentGreen,
@@ -34,7 +28,6 @@ import {
   solidTranslucentBlack,
   solidTranslucentWhite,
 } from './values/solid';
-
 import {
   darkSurface,
   darkSurfaceInverted,

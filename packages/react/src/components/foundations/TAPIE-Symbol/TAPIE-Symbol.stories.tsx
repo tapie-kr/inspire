@@ -1,7 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react';
-
 import { TAPIESymbol } from '.';
-
 import { TAPIESymbolSize } from './shared';
 
 const meta: Meta = {

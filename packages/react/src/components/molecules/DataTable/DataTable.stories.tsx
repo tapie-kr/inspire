@@ -1,17 +1,12 @@
 import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
-
 import { VStack } from '@/components/miscellaneous/layout/VStack';
 
 import { type Meta, type StoryObj } from '@storybook/react';
-
 import { StackAlign } from '@/lib/layout/types';
-
 import { Filter } from '../Filter';
-
 import { Pagination } from '../Pagination';
-
 import { DataTable } from '.';
 
 const meta: Meta = {

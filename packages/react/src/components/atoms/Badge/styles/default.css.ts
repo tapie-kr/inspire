@@ -1,7 +1,5 @@
 import { colorVars } from '@/lib/style/contract/color.css';
-
 import { radiusVars, spacingVars } from '@/lib/style/contract/component.css';
-
 import { componentStyle } from '@/styles/layer.css';
 
 import { getShorthandedValue } from '@/utils/style/shorthand';

@@ -1,5 +1,4 @@
 import { colorVars } from '@/lib/style/contract/color.css';
-
 import { componentStyle } from '@/styles/layer.css';
 
 import { Theme } from '@/lib/style/theme';

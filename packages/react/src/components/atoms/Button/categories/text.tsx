@@ -1,21 +1,15 @@
 'use client';
 
 import * as base from '../styles/base.css';
-
 import * as s from '../styles/text.css';
-
 import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { HStack } from '@cottons-kr/react-foundation';
-
 import { Icon } from '@/components/foundations/Icon';
 
 import cn from 'classnames';
-
 import { type ReactNode, useMemo } from 'react';
-
 import { type IconName } from '@/components/foundations/Icon/shared';
-
 import { ButtonIconSizeMap, type ButtonPropsBase, ButtonSize, ButtonTypoSizeMap } from '../shared';
 
 const GapMap = {

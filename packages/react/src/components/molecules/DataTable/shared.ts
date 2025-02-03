@@ -1,5 +1,4 @@
 import { type ReactNode } from 'react';
-
 import { type IconName } from '@/components/foundations/Icon/shared';
 
 export type Column<T extends object, K extends keyof T> = {

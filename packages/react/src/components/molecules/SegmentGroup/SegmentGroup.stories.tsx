@@ -1,7 +1,6 @@
 import { Segment } from '@/components/atoms/Segment';
 
 import { type Meta, type StoryObj } from '@storybook/react';
-
 import { SegmentGroup } from '.';
 
 const meta: Meta<typeof SegmentGroup> = {

@@ -1,15 +1,10 @@
 import { colorBinding } from './styles.css';
 
 import cn from 'classnames';
-
 import GrayscaleLabel from './assets/grayscale-label.svg';
-
 import GrayscaleSymbol from './assets/grayscale-symbol.svg';
-
 import SolidLabel from './assets/solid-label.svg';
-
 import SolidSymbol from './assets/solid-symbol.svg';
-
 import type { TAPIESymbolSize } from './shared';
 
 type TAPIESymbolProps = {

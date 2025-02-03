@@ -1,17 +1,13 @@
 'use client';
 
 import { container, image } from './styles.css';
-
 import { radiusVars } from '@/lib/style/contract/component.css';
 
 import { Skeleton } from '@/components/atoms/Skeleton';
-
 import { Box } from '@/components/miscellaneous/layout/Box';
 
 import { useCallback, useMemo, useState } from 'react';
-
 import { useMountedState } from '@/hooks/use-mounted-state';
-
 import { type DefaultProps } from '@/types/prop';
 
 type ImageProps = DefaultProps<true> & {

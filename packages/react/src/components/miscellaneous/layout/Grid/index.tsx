@@ -1,9 +1,7 @@
 import { grid } from './styles.css';
 
 import cn from 'classnames';
-
 import { type DefaultProps } from '@/types/prop';
-
 import { Box } from '../Box';
 
 type GridProps = DefaultProps & {

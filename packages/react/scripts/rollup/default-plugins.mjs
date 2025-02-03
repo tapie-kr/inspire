@@ -1,23 +1,13 @@
-import { vanillaExtractPlugin } from '@vanilla-extract/rollup-plugin';
-
-import svgr from '@svgr/rollup';
-
-import strip from '@rollup/plugin-strip';
-
-import postcss from 'rollup-plugin-postcss';
-
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-
-import resolve from '@rollup/plugin-node-resolve';
-
 import commonjs from '@rollup/plugin-commonjs';
-
-import swc from '@rollup/plugin-swc';
-
 import json from '@rollup/plugin-json';
-
+import resolve from '@rollup/plugin-node-resolve';
+import strip from '@rollup/plugin-strip';
+import swc from '@rollup/plugin-swc';
+import svgr from '@svgr/rollup';
+import { vanillaExtractPlugin } from '@vanilla-extract/rollup-plugin';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import postcss from 'rollup-plugin-postcss';
 import preserveDirectives from './preserve-directives.mjs';
-
 import removeCSS from './remove-css.mjs';
 
 /**

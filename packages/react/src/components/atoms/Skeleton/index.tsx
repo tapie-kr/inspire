@@ -1,5 +1,4 @@
 import { skeleton } from './styles.css';
-
 import { radiusVars } from '@/lib/style/contract/component.css';
 
 import { Box } from '@/components/miscellaneous/layout/Box';

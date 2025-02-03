@@ -1,29 +1,19 @@
 'use client';
 
 import * as s from '../styles/draggable-file.css';
-
 import { colorVars } from '@/lib/style/contract/color.css';
-
 import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { HStack, VStack } from '@cottons-kr/react-foundation';
-
 import { Icon } from '@/components/foundations/Icon';
-
 import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
-
 import { Typo } from '@/components/foundations/Typography';
 
 import cn from 'classnames';
-
 import React, { useCallback, useMemo } from 'react';
-
 import { type IconName } from '@/components/foundations/Icon/shared';
-
 import { Weight } from '@/components/foundations/Typography/shared';
-
 import { useDraggableFileInputController } from '../hooks/use-draggable-file-input-controller';
-
 import { type HTMLInputProps, InputSize } from '../shared';
 
 type DraggableFileInputProps = HTMLInputProps & {

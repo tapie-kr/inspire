@@ -1,5 +1,4 @@
 import { typographyVars } from '@/lib/style/contract/typography.css';
-
 import { componentStyle } from '@/styles/layer.css';
 
 export const extrabold = componentStyle({ fontWeight: typographyVars.weight.extrabold });

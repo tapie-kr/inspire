@@ -1,7 +1,5 @@
 import { colorVars } from '@/lib/style/contract/color.css';
-
 import { radiusVars } from '@/lib/style/contract/component.css';
-
 import { componentStyle } from '@/styles/layer.css';
 
 export const indicator = componentStyle({

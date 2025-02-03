@@ -1,5 +1,4 @@
 import { utilityStyle } from './layer.css';
-
 import { colorVars } from '@/lib/style/contract/color.css';
 
 import { getCSSTransition } from '@/utils/motion/css';

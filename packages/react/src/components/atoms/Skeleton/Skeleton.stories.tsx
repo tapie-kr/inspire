@@ -3,9 +3,7 @@ import { radiusVars, spacingVars } from '@/lib/style/contract/component.css';
 import { VStack } from '@/components/miscellaneous/layout/VStack';
 
 import { type Meta, type StoryObj } from '@storybook/react';
-
 import { StackAlign } from '@/lib/layout/types';
-
 import { Skeleton } from '.';
 
 const meta: Meta = {
