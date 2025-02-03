@@ -112,11 +112,15 @@ export * from './components/molecules/SegmentGroup/context';
 
 export * from './components/molecules/SegmentGroup/index';
 
+export * from './hooks/use-media-query';
+
 export * from './hooks/use-mounted-state';
 
 export * from './hooks/use-toggle';
 
 export * from './lib/animation/cubic-bezier';
+
+export * from './lib/atoms';
 
 export * from './lib/layout/types';
 
