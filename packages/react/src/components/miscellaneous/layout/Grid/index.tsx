@@ -1,6 +1,9 @@
+'use client';
+
 import { grid } from './styles.css';
 
 import cn from 'classnames';
+import { useMediaQuery } from '@/hooks/use-media-query';
 import { type DefaultProps } from '@/types/prop';
 import { Box } from '../Box';
 
@@ -16,13 +19,15 @@ type GridProps = DefaultProps & {
 export function Grid(props: GridProps) {
   const { gap, rowGap, columnGap, columnCount, fullWidth, fullHeight, className, children } = props;
 
+  const isMobile = useMediaQuery();
+
   return (
     <Box
       className={cn(grid, className)}
       style={{
         rowGap:              rowGap || gap,
         columnGap:           columnGap || gap,
-        gridTemplateColumns: `repeat(${columnCount}, 1fr)`,
+        gridTemplateColumns: `repeat(${isMobile ? 1 : columnCount}, 1fr)`,
         width:               fullWidth ? '100%' : undefined,
         height:              fullHeight ? '100%' : undefined,
       }}

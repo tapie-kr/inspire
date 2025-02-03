@@ -4,7 +4,7 @@
     "packages/font-kit",
     "packages/react"
   ],
-  "version": "0.1.38",
+  "version": "0.1.39",
   "description": "React Component Collection for INSPIRE",
   "scripts": {
     "prepublishOnly": "pnpm build",
@@ -38,7 +38,8 @@
   ],
   "dependencies": {
     "@cottons-kr/react-foundation": "^0.3.4",
-    "classnames": "^2.5.1"
+    "classnames": "^2.5.1",
+    "jotai": "^2.11.3"
   },
   "peerDependencies": {
     "motion": "^12.0.3",
