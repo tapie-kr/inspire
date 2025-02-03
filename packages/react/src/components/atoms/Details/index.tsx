@@ -10,7 +10,7 @@ import { HStack } from '@/components/miscellaneous/layout/HStack';
 import { VStack } from '@/components/miscellaneous/layout/VStack';
 
 import cn from 'classnames';
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { type MouseEvent, type ReactNode, useCallback, useState } from 'react';
 import { StackAlign } from '@/lib/layout/types';
 import { utilityClass } from '@/lib/style/utility';

@@ -38,13 +38,13 @@
   ],
   "dependencies": {
     "@cottons-kr/react-foundation": "^0.3.4",
-    "classnames": "^2.5.1",
-    "jotai": "^2.11.3"
+    "classnames": "^2.5.1"
   },
   "peerDependencies": {
-    "motion": "^12.0.3",
+    "framer-motion": "^12.0.3",
     "react": "19.0.0",
-    "react-dom": "19.0.0"
+    "react-dom": "19.0.0",
+    "jotai": "^2.11.3"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.3",
@@ -92,7 +92,11 @@
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
     "vite-plugin-svgr": "^4.3.0",
-    "xmldom": "^0.6.0"
+    "xmldom": "^0.6.0",
+    "framer-motion": "^12.0.3",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "jotai": "^2.11.3"
   },
   "exports": {
     ".": {
