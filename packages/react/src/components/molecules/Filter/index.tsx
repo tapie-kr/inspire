@@ -44,7 +44,6 @@ export function Filter(props: FilterProps) {
             </Stack>
           ))}
         </VStack>
-
         <VStack
           spacing={spacingVars.micro}
           align={StackAlign.START}

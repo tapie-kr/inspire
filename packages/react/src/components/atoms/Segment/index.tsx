@@ -41,7 +41,6 @@ export function Segment(props: SegmentProps) {
         name={props.leadingIcon}
         size={20}
       />
-
       <Typo.Petite weight={isActive ? Weight.SEMIBOLD : Weight.MEDIUM}>{props.label}</Typo.Petite>
     </HStack>
   );

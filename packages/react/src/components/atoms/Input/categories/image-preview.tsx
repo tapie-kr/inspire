@@ -111,7 +111,6 @@ export function ImagePreviewInput(props: ImagePreviewInputProps) {
                 size={24}
                 color={colorVars.content.emphasized}
               />
-
               <Typo.Petite
                 weight={Weight.MEDIUM}
                 color={colorVars.content.emphasized}
@@ -120,7 +119,6 @@ export function ImagePreviewInput(props: ImagePreviewInputProps) {
               </Typo.Petite>
             </>
           )}
-
         <input
           {...restProps}
           className={s.input}

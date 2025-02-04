@@ -53,16 +53,17 @@ export function Image(props: ImageProps) {
           borderRadius={radiusVars.none}
         />
       )}
-
-      <img
-        className={image}
-        src={src}
-        alt={props.alt}
-        style={{ display: isLoading ? 'none' : 'block' }}
-        onLoadStart={handleLoadStart}
-        onLoad={handleLoad}
-        onError={handleLoad}
-      />
+      {isMounted && (
+        <img
+          className={image}
+          src={src}
+          alt={props.alt}
+          style={{ display: isLoading ? 'none' : 'block' }}
+          onLoadStart={handleLoadStart}
+          onLoad={handleLoad}
+          onError={handleLoad}
+        />
+      )}
     </Box>
   );
 }

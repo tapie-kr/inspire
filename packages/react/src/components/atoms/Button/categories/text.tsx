@@ -67,9 +67,7 @@ export function TextButton(props: DefaultButtonProps) {
           name={leadingIcon}
           size={ButtonIconSizeMap[size]}
         />
-
         <Typo>{children}</Typo>
-
         <Icon
           name={trailingIcon}
           size={ButtonIconSizeMap[size]}

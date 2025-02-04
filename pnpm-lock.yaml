@@ -59,11 +59,11 @@ importers:
         specifier: ^8.1.0
         version: 8.1.0(rollup@4.28.1)(typescript@5.7.2)
       '@tapie-kr/code-guideline-base':
-        specifier: ^0.1.9
-        version: 0.1.9(eslint@9.19.0)(typescript@5.7.2)
+        specifier: ^0.1.10
+        version: 0.1.10(eslint@9.19.0)(typescript@5.7.2)
       '@tapie-kr/code-guideline-react':
-        specifier: ^0.0.6
-        version: 0.0.6(@tapie-kr/code-guideline-base@0.1.9(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0)(typescript@5.7.2)
+        specifier: ^0.0.7
+        version: 0.0.7(@tapie-kr/code-guideline-base@0.1.10(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0)(typescript@5.7.2)
       '@types/css':
         specifier: ^0.0.38
         version: 0.0.38
@@ -1843,13 +1843,13 @@ packages:
   '@swc/types@0.1.17':
     resolution: {integrity: sha512-V5gRru+aD8YVyCOMAjMpWR1Ui577DD5KSJsHP8RAxopAH22jFz6GZd/qxqjO6MJHQhcsjvjOFXyDhyLQUnMveQ==}
 
-  '@tapie-kr/code-guideline-base@0.1.9':
-    resolution: {integrity: sha512-N/RJ530dxBtBJ4wR3lcyAf4uFLN3fv80q5r7c3GglrvKiOzJuVCN0ruSESSqm77ITEXmi/U68dSr1m6D+zeVCQ==}
+  '@tapie-kr/code-guideline-base@0.1.10':
+    resolution: {integrity: sha512-9KQcrJ4x/0MiM1Ahcrc1HDIpLSVRbQ0fiHk/ZaT0S58a3BGucAu0Qca3A20i+GKbZp9Q5pfoQw3gmBN0xC5Wwg==}
     peerDependencies:
       eslint: ^9.19.0
 
-  '@tapie-kr/code-guideline-react@0.0.6':
-    resolution: {integrity: sha512-dLCU8D1ZP4gX4xncsZWUDCNsqfGbr8AI7SqKOOd17Dv6ddfVEAPtlSDHSH52m/8nEtXqPjtVl4hmNgBOuXJj9w==}
+  '@tapie-kr/code-guideline-react@0.0.7':
+    resolution: {integrity: sha512-vexc15rvddhY0kufS9BXs6uQ5Cx5dWxqCLsT53bR3b1IqmHElKRLmu+Lxq4HTnbtjuZaYv6d7xcKoKo7Ql1gCQ==}
     peerDependencies:
       '@tapie-kr/code-guideline-base': ^0.1
       eslint: ^9.19.0
@@ -6187,7 +6187,7 @@ snapshots:
     dependencies:
       '@swc/counter': 0.1.3
 
-  '@tapie-kr/code-guideline-base@0.1.9(eslint@9.19.0)(typescript@5.7.2)':
+  '@tapie-kr/code-guideline-base@0.1.10(eslint@9.19.0)(typescript@5.7.2)':
     dependencies:
       '@stylistic/eslint-plugin': 3.0.1(eslint@9.19.0)(typescript@5.7.2)
       '@typescript-eslint/eslint-plugin': 8.22.0(@typescript-eslint/parser@8.22.0(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0)(typescript@5.7.2)
@@ -6201,10 +6201,10 @@ snapshots:
       - supports-color
       - typescript
 
-  '@tapie-kr/code-guideline-react@0.0.6(@tapie-kr/code-guideline-base@0.1.9(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0)(typescript@5.7.2)':
+  '@tapie-kr/code-guideline-react@0.0.7(@tapie-kr/code-guideline-base@0.1.10(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0)(typescript@5.7.2)':
     dependencies:
       '@stylistic/eslint-plugin': 3.0.1(eslint@9.19.0)(typescript@5.7.2)
-      '@tapie-kr/code-guideline-base': 0.1.9(eslint@9.19.0)(typescript@5.7.2)
+      '@tapie-kr/code-guideline-base': 0.1.10(eslint@9.19.0)(typescript@5.7.2)
       '@typescript-eslint/parser': 8.22.0(eslint@9.19.0)(typescript@5.7.2)
       eslint: 9.19.0
     transitivePeerDependencies:

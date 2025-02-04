@@ -39,7 +39,6 @@ export function Label(props: LabelProps) {
       gap={spacingVars.mini}
     >
       <LabelTypo>{props.children}</LabelTypo>
-
       <Icon
         name={isEssential && GlyphIcon.ASTERISK}
         size={isLarge ? 10 : isMedium ? 8 : 6}

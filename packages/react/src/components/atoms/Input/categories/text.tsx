@@ -57,7 +57,6 @@ export function TextInput(props: TextInputProps) {
           color={isFocused && colorVars.content.emphasized}
           size={isLarge ? 24 : 18}
         />
-
         <HStack className={cn(s.inputContainer)}>
           <input
             {...restProps}
@@ -67,7 +66,6 @@ export function TextInput(props: TextInputProps) {
           />
         </HStack>
       </HStack>
-
       <HStack
         fitContent
         gap={spacingVars.micro}
@@ -77,7 +75,6 @@ export function TextInput(props: TextInputProps) {
           name={showVisibilityButton && (hideValue ? GlyphIcon.VISIBILITY : GlyphIcon.VISIBILITY)}
           onClick={handleVisibilityButton}
         />
-
         <Icon
           name={showClearButton && GlyphIcon.CLOSE}
           size={20}

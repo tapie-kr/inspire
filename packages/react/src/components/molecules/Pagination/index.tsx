@@ -57,7 +57,6 @@ export function Pagination(props: PaginationProps) {
         type='previous'
         onClick={handlePrevious}
       />
-
       <HStack spacing={spacingVars.micro}>
         {currentItems.map(c => {
           if (c.type === 'ellipsis') {
@@ -83,7 +82,6 @@ export function Pagination(props: PaginationProps) {
           );
         })}
       </HStack>
-
       <ControlButton
         type='next'
         onClick={handleNext}

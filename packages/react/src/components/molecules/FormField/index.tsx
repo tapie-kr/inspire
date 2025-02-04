@@ -39,9 +39,7 @@ export function FormField(props: FormFieldProps) {
       >
         <Label isEssential={isEssential}>{label}</Label>
       </Box>
-
       {children}
-
       {description && (
         <Box
           fullWidth

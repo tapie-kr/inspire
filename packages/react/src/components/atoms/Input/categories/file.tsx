@@ -64,7 +64,6 @@ export function FileInput(props: FileInputProps) {
           color={hasValue ? colorVars.content.emphasized : colorVars.content.default}
           size={isLarge ? 24 : 18}
         />
-
         <HStack
           fullWidth
           className={s.inputContainer}
@@ -77,14 +76,12 @@ export function FileInput(props: FileInputProps) {
           >
             {hasValue && files ? files[0].name + String.fromCharCode(160) : placeholder}
           </Label>
-
           <Label
             nowrap
             color={colorVars.content.emphasized}
           >
             {hasValue && files && files.length > 1 ? `외 ${files.length - 1}개` : ''}
           </Label>
-
           <input
             {...restProps}
             className={s.input}
@@ -92,7 +89,6 @@ export function FileInput(props: FileInputProps) {
             {...controller}
           />
         </HStack>
-
         <Icon
           name={showClearButton && GlyphIcon.CLOSE}
           size={isLarge ? 20 : 16}

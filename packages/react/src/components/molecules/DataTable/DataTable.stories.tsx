@@ -139,10 +139,8 @@ export const FullExample: DataTableStory = {
             },
           ]}
         />
-
         <ExampleTable />
       </VStack>
-
       <Pagination
         min={1}
         max={20}

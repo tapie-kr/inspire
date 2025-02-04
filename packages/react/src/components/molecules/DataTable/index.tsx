@@ -24,7 +24,6 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
     <Table>
       <Table.Head>
         {props.showIndex && <Table.Head.Cell width={40}>#</Table.Head.Cell>}
-
         {props.columns.map(c => (
           <Table.Head.Cell
             key={c.key.toString()}
@@ -34,10 +33,8 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
             {c.label}
           </Table.Head.Cell>
         ))}
-
         {shouldShowActions && <Table.Head.Cell width={100}>액션</Table.Head.Cell>}
       </Table.Head>
-
       <Table.Body>
         {props.data.map((d, i) => (
           <Table.Body.Row key={i}>
@@ -51,7 +48,6 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
                 </Typo.Petite>
               </Table.Body.Cell>
             )}
-
             {props.columns.map(c => (
               <Table.Body.Cell key={c.key.toString()}>
                 {c.cell
@@ -59,7 +55,6 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
                   : <Typo.Base weight={Weight.MEDIUM}>{String(d[c.key])}</Typo.Base>}
               </Table.Body.Cell>
             ))}
-
             {shouldShowActions && (
               <Table.Body.Cell>
                 <HStack spacing={spacingVars.base}>

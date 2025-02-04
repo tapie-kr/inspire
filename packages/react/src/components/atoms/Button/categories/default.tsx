@@ -80,9 +80,7 @@ export function DefaultButton(props: DefaultButtonProps) {
           name={leadingIcon}
           size={ButtonIconSizeMap[size]}
         />
-
         <Typo>{props.children}</Typo>
-
         <Icon
           name={trailingIcon}
           size={ButtonIconSizeMap[size]}

@@ -49,7 +49,6 @@ export function ParagraphInput(props: ParagraphInputProps) {
           resize !== ParagraphInputResize.HORIZONTAL && s.baseHorizontal)}
         {...controller}
       />
-
       {props.maxLength && (
         <Typo.Mini
           color={colorVars.content.muted}

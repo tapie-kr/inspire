@@ -48,7 +48,6 @@ export function DefaultBadge(props: BadgeProps) {
           size={iconSize}
         />
       )}
-
       <Label weight={Weight.MEDIUM}>{label}</Label>
     </HStack>
   );

@@ -27,7 +27,6 @@ export function TableHeadCell(props: TableHeadCellProps) {
         justify={StackJustify.BETWEEN}
       >
         <Typo.Petite weight={Weight.MEDIUM}>{props.children}</Typo.Petite>
-
         <Icon
           name={props.isSortable && GlyphIcon.EXPAND_ALL}
           size={14}

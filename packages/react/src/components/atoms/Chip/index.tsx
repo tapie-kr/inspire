@@ -37,9 +37,7 @@ export function Chip(props: ChipProps) {
           name={leadingIcon}
           size={16}
         />
-
         <Typo.Tiny weight={Weight.MEDIUM}>{props.children}</Typo.Tiny>
-
         <Icon
           name={trailingIcon}
           size={16}

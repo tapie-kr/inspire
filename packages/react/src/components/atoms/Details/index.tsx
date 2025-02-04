@@ -64,14 +64,11 @@ export function Details(props: DetailsProps) {
               color={colorVars.content.default}
               size={16}
             />
-
             {title}
           </HStack>
         </summary>
-
         <div className={utilityClass.visuallyHidden}>{props.children}</div>
       </details>
-
       <motion.div
         aria-hidden
         initial={false}

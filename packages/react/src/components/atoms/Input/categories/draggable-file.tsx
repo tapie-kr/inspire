@@ -69,7 +69,6 @@ export function DraggableFileInput(props: DraggableFileInputProps) {
           />
         </div>
       )}
-
       <VStack
         fullWidth
         className={s.inputContainer}
@@ -93,7 +92,6 @@ export function DraggableFileInput(props: DraggableFileInputProps) {
               >
                 {file.name}
               </FileLabel>
-
               <Icon
                 color={colorVars.content.muted}
                 name={GlyphIcon.CLOSE}
@@ -112,7 +110,6 @@ export function DraggableFileInput(props: DraggableFileInputProps) {
               >
                 {placeholder}
               </Label>
-
               <DescriptionLabel
                 nowrap
                 color={colorVars.content.muted}
@@ -122,7 +119,6 @@ export function DraggableFileInput(props: DraggableFileInputProps) {
               </DescriptionLabel>
             </>
           )}
-
         <input
           {...restProps}
           className={s.input}
