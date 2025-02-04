@@ -19,7 +19,17 @@ function defaultPlugins(currentPath) {
     peerDepsExternal(),
     resolve({ extensions: ['.ts', '.tsx', '.svg'] }),
     commonjs(),
-    vanillaExtractPlugin({ identifiers: 'short' }),
+    vanillaExtractPlugin({
+      identifiers: meta => {
+        let target = meta.hash;
+
+        if (meta.debugId) {
+          target = meta.debugId;
+        }
+
+        return `isp_${target}`;
+      },
+    }),
     svgr({
       svgrOptions: { exportType: 'default' },
       include:     /\.svg$/,
