@@ -1,6 +1,12 @@
 'use client';
 
-import { details, icon, rotateIcon, summary, titleContainer } from './styles.css';
+import {
+  details,
+  icon,
+  rotateIcon,
+  summary,
+  titleContainer,
+} from './styles.css';
 import { colorVars } from '@/lib/style/contract/color.css';
 import { spacingVars } from '@/lib/style/contract/component.css';
 
@@ -11,7 +17,12 @@ import { VStack } from '@/components/miscellaneous/layout/VStack';
 
 import cn from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
-import { type MouseEvent, type ReactNode, useCallback, useState } from 'react';
+import {
+  type MouseEvent,
+  type ReactNode,
+  useCallback,
+  useState,
+} from 'react';
 import { StackAlign } from '@/lib/layout/types';
 import { utilityClass } from '@/lib/style/utility';
 import { type DefaultProps } from '@/types/prop';
@@ -26,7 +37,13 @@ type DetailsProps = DefaultProps & {
 };
 
 export function Details(props: DetailsProps) {
-  const { title, defaultOpen, hideDefaultIcon, disabled, onToggle } = props;
+  const {
+    title,
+    defaultOpen,
+    hideDefaultIcon,
+    disabled,
+    onToggle,
+  } = props;
 
   const [isOpened, setIsOpened] = useState(defaultOpen || false);
 
@@ -41,7 +58,11 @@ export function Details(props: DetailsProps) {
 
     onToggle?.(newIsOpened);
   },
-  [disabled, isOpened, onToggle]);
+  [
+    disabled,
+    isOpened,
+    onToggle,
+  ]);
 
   return (
     <VStack

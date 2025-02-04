@@ -1,8 +1,4 @@
-import {
-  interactive,
-  interactiveInverted,
-  interactiveNoBackground,
-} from '@/styles/interactive.css';
+import { interactive, interactiveInverted, interactiveNoBackground } from '@/styles/interactive.css';
 import {
   desktopOnly,
   forceHide,

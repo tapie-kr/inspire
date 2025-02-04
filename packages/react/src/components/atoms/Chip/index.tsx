@@ -20,7 +20,11 @@ type ChipProps = {
 };
 
 export function Chip(props: ChipProps) {
-  const { leadingIcon, trailingIcon, isActive = false } = props;
+  const {
+    leadingIcon,
+    trailingIcon,
+    isActive = false,
+  } = props;
 
   return (
     <button

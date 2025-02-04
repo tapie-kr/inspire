@@ -2,7 +2,8 @@ export type NestedObject<T> = T extends [infer First, ...infer Rest]
   ? First extends string
     ? { [K in First]: NestedObject<Rest> }
     : never
-  : {};
+  : {
+  };
 
 export type DeepPartial<T> = {
   [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];

@@ -25,7 +25,11 @@ type ParagraphInputProps = HTMLTextAreaProps & {
 };
 
 export function ParagraphInput(props: ParagraphInputProps) {
-  const { size = InputSize.LARGE, resize = ParagraphInputResize.NONE, ...restProps } = props;
+  const {
+    size = InputSize.LARGE,
+    resize = ParagraphInputResize.NONE,
+    ...restProps
+  } = props;
 
   const { value, controller } = useTextInputController<HTMLTextAreaProps>(restProps);
 

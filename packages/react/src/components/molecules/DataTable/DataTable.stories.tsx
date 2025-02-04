@@ -90,65 +90,63 @@ function ExampleTable() {
 
 export const Default: DataTableStory = { render: ExampleTable };
 
-export const FullExample: DataTableStory = {
-  render: () => (
+export const FullExample: DataTableStory = { render: () => (
+  <VStack
+    fullWidth
+    spacing={spacingVars.medium}
+  >
     <VStack
       fullWidth
-      spacing={spacingVars.medium}
+      spacing={spacingVars.petite}
+      align={StackAlign.START}
     >
-      <VStack
-        fullWidth
-        spacing={spacingVars.petite}
-        align={StackAlign.START}
-      >
-        <Filter
-          filters={[
-            {
-              label:   '상태',
-              options: [
-                {
-                  label: '전체',
-                  value: GlyphIcon.PALETTE,
-                },
-                {
-                  label: '활성',
-                  value: GlyphIcon.ADD,
-                },
-                {
-                  label: '비활성',
-                  value: GlyphIcon.CLOSE,
-                },
-              ],
-            },
-            {
-              label:   '타입1234',
-              options: [
-                {
-                  label: '전체',
-                  value: GlyphIcon.PALETTE,
-                },
-                {
-                  label: '타입1',
-                  value: GlyphIcon.ADD,
-                },
-                {
-                  label: '타입2',
-                  value: GlyphIcon.CLOSE,
-                },
-              ],
-            },
-          ]}
-        />
-        <ExampleTable />
-      </VStack>
-      <Pagination
-        min={1}
-        max={20}
-        visiblePages={10}
-        defaultPage={1}
+      <Filter
+        filters={[
+          {
+            label:   '상태',
+            options: [
+              {
+                label: '전체',
+                value: GlyphIcon.PALETTE,
+              },
+              {
+                label: '활성',
+                value: GlyphIcon.ADD,
+              },
+              {
+                label: '비활성',
+                value: GlyphIcon.CLOSE,
+              },
+            ],
+          },
+          {
+            label:   '타입1234',
+            options: [
+              {
+                label: '전체',
+                value: GlyphIcon.PALETTE,
+              },
+              {
+                label: '타입1',
+                value: GlyphIcon.ADD,
+              },
+              {
+                label: '타입2',
+                value: GlyphIcon.CLOSE,
+              },
+            ],
+          },
+        ]}
       />
+      <ExampleTable />
     </VStack>
-  ),
-};
+    <Pagination
+      min={1}
+      max={20}
+      visiblePages={10}
+      defaultPage={1}
+    />
+  </VStack>
+) };
 
 export default meta;

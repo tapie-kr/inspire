@@ -59,11 +59,11 @@ importers:
         specifier: ^8.1.0
         version: 8.1.0(rollup@4.28.1)(typescript@5.7.2)
       '@tapie-kr/code-guideline-base':
-        specifier: ^0.1.10
-        version: 0.1.10(eslint@9.19.0)(typescript@5.7.2)
+        specifier: ^0.1.15
+        version: 0.1.15(eslint@9.19.0)(typescript@5.7.2)
       '@tapie-kr/code-guideline-react':
         specifier: ^0.0.7
-        version: 0.0.7(@tapie-kr/code-guideline-base@0.1.10(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0)(typescript@5.7.2)
+        version: 0.0.7(@tapie-kr/code-guideline-base@0.1.15(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0)(typescript@5.7.2)
       '@types/css':
         specifier: ^0.0.38
         version: 0.0.38
@@ -1843,8 +1843,8 @@ packages:
   '@swc/types@0.1.17':
     resolution: {integrity: sha512-V5gRru+aD8YVyCOMAjMpWR1Ui577DD5KSJsHP8RAxopAH22jFz6GZd/qxqjO6MJHQhcsjvjOFXyDhyLQUnMveQ==}
 
-  '@tapie-kr/code-guideline-base@0.1.10':
-    resolution: {integrity: sha512-9KQcrJ4x/0MiM1Ahcrc1HDIpLSVRbQ0fiHk/ZaT0S58a3BGucAu0Qca3A20i+GKbZp9Q5pfoQw3gmBN0xC5Wwg==}
+  '@tapie-kr/code-guideline-base@0.1.15':
+    resolution: {integrity: sha512-qMenOYOqicOnq2o1+78pegKrOFw7OiNmJkKxOh+1cLBxOEpNFVuagv1UmdfH2Dqooi9thJRtN+CHEJl/Qpy07g==}
     peerDependencies:
       eslint: ^9.19.0
 
@@ -2636,6 +2636,13 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
 
+  eslint-plugin-import-newlines@1.4.0:
+    resolution: {integrity: sha512-+Cz1x2xBLtI9gJbmuYEpvY7F8K75wskBmJ7rk4VRObIJo+jklUJaejFJgtnWeL0dCFWabGEkhausrikXaNbtoQ==}
+    engines: {node: '>=10.0.0'}
+    hasBin: true
+    peerDependencies:
+      eslint: '>=6.0.0'
+
   eslint-plugin-import@2.31.0:
     resolution: {integrity: sha512-ixmkI62Rbc2/w8Vfxyh1jQRTdRTF52VxwRVHl/ykPAmqG+Nb7/kNn+byLP0LxPgI7zWA16Jt82SybJInmMia3A==}
     engines: {node: '>=4'}
@@ -2645,6 +2652,11 @@ packages:
     peerDependenciesMeta:
       '@typescript-eslint/parser':
         optional: true
+
+  eslint-plugin-newline-destructuring@1.2.2:
+    resolution: {integrity: sha512-QfKQpdx+ez2E233B6xSG82+SdkKhxSchTJCjUHjJ2RmMCq+v2IBTaR8wK2pejTBV05p/J1qB8QOOKXQNqWJGSA==}
+    peerDependencies:
+      eslint: '>=7.2.0'
 
   eslint-plugin-simple-import-sort@12.1.1:
     resolution: {integrity: sha512-6nuzu4xwQtE3332Uz0to+TxDQYRLTKRESSc2hefVT48Zc8JthmN23Gx9lnYhu0FtkRSL1oxny3kJ2aveVhmOVA==}
@@ -6187,13 +6199,15 @@ snapshots:
     dependencies:
       '@swc/counter': 0.1.3
 
-  '@tapie-kr/code-guideline-base@0.1.10(eslint@9.19.0)(typescript@5.7.2)':
+  '@tapie-kr/code-guideline-base@0.1.15(eslint@9.19.0)(typescript@5.7.2)':
     dependencies:
       '@stylistic/eslint-plugin': 3.0.1(eslint@9.19.0)(typescript@5.7.2)
       '@typescript-eslint/eslint-plugin': 8.22.0(@typescript-eslint/parser@8.22.0(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0)(typescript@5.7.2)
       '@typescript-eslint/parser': 8.22.0(eslint@9.19.0)(typescript@5.7.2)
       eslint: 9.19.0
       eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.22.0(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0)
+      eslint-plugin-import-newlines: 1.4.0(eslint@9.19.0)
+      eslint-plugin-newline-destructuring: 1.2.2(eslint@9.19.0)
       eslint-plugin-simple-import-sort: 12.1.1(eslint@9.19.0)
     transitivePeerDependencies:
       - eslint-import-resolver-typescript
@@ -6201,10 +6215,10 @@ snapshots:
       - supports-color
       - typescript
 
-  '@tapie-kr/code-guideline-react@0.0.7(@tapie-kr/code-guideline-base@0.1.10(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0)(typescript@5.7.2)':
+  '@tapie-kr/code-guideline-react@0.0.7(@tapie-kr/code-guideline-base@0.1.15(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0)(typescript@5.7.2)':
     dependencies:
       '@stylistic/eslint-plugin': 3.0.1(eslint@9.19.0)(typescript@5.7.2)
-      '@tapie-kr/code-guideline-base': 0.1.10(eslint@9.19.0)(typescript@5.7.2)
+      '@tapie-kr/code-guideline-base': 0.1.15(eslint@9.19.0)(typescript@5.7.2)
       '@typescript-eslint/parser': 8.22.0(eslint@9.19.0)(typescript@5.7.2)
       eslint: 9.19.0
     transitivePeerDependencies:
@@ -7272,6 +7286,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  eslint-plugin-import-newlines@1.4.0(eslint@9.19.0):
+    dependencies:
+      eslint: 9.19.0
+
   eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.22.0(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0):
     dependencies:
       '@rtsao/scc': 1.1.0
@@ -7300,6 +7318,10 @@ snapshots:
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
       - supports-color
+
+  eslint-plugin-newline-destructuring@1.2.2(eslint@9.19.0):
+    dependencies:
+      eslint: 9.19.0
 
   eslint-plugin-simple-import-sort@12.1.1(eslint@9.19.0):
     dependencies:

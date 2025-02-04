@@ -58,7 +58,9 @@ export const typographyWeightClass = {
   [TypographyWeight.LIGHT]:     weightStyles.light,
 };
 
-export { TypographyTag as Tag, TypographyVariant as Variant, TypographyWeight as Weight };
+export {
+  TypographyTag as Tag, TypographyVariant as Variant, TypographyWeight as Weight,
+};
 
 export type TypographyPropsBase = DetailsHTMLAttributes<
   HTMLHeadingElement | HTMLParagraphElement | HTMLSpanElement

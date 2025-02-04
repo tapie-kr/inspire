@@ -30,19 +30,17 @@ type ImageStory = StoryObj<typeof Image>;
 
 export const Default: ImageStory = { render: props => <Image {...props} /> };
 
-export const WithAspectRatio: ImageStory = {
-  render: props => (
-    <AspectRatio
-      ratio={16 / 9}
-      width={props.width}
-    >
-      <Image
-        {...props}
-        fullWidth
-        fullHeight
-      />
-    </AspectRatio>
-  ),
-};
+export const WithAspectRatio: ImageStory = { render: props => (
+  <AspectRatio
+    ratio={16 / 9}
+    width={props.width}
+  >
+    <Image
+      {...props}
+      fullWidth
+      fullHeight
+    />
+  </AspectRatio>
+) };
 
 export default meta;

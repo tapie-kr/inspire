@@ -30,17 +30,12 @@ const config = defineConfig([
     output:  outputGenerator(banner),
     plugins: [
       ...defaultPlugins(currentPath),
-      copy({
-        targets: [
-          {
-            src:  'src/assets/fonts/*.woff2',
-            dest: [
-              'dist/esm/assets/src/styles/typography/src/assets/fonts',
-              'dist/cjs/assets/src/styles/typography/src/assets/fonts',
-            ],
-          },
-        ],
-      }),
+      copy({ targets: [
+        {
+          src:  'src/assets/fonts/*.woff2',
+          dest: ['dist/esm/assets/src/styles/typography/src/assets/fonts', 'dist/cjs/assets/src/styles/typography/src/assets/fonts'],
+        },
+      ] }),
       customLogger('index', currentPath),
     ],
   },

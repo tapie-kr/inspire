@@ -10,7 +10,12 @@ import { Icon } from '@/components/foundations/Icon';
 import cn from 'classnames';
 import { type ReactNode, useMemo } from 'react';
 import { type IconName } from '@/components/foundations/Icon/shared';
-import { ButtonIconSizeMap, type ButtonPropsBase, ButtonSize, ButtonTypoSizeMap } from '../shared';
+import {
+  ButtonIconSizeMap,
+  type ButtonPropsBase,
+  ButtonSize,
+  ButtonTypoSizeMap,
+} from '../shared';
 
 const GapMap = {
   [ButtonSize.LARGE]:  spacingVars.tiny,

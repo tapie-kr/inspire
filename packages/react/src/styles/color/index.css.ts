@@ -9,11 +9,7 @@ import {
   lightGrayscaleSolid,
   lightGrayscaleTranslucent,
 } from './values/grayscale';
-import {
-  darkInteractionInverted,
-  interaction,
-  lightInteractionInverted,
-} from './values/interaction';
+import { darkInteractionInverted, interaction, lightInteractionInverted } from './values/interaction';
 import { darkLine, lightLine } from './values/line';
 import {
   darkSolidTranslucentBlue,

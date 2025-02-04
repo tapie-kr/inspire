@@ -29,7 +29,12 @@ type BadgeProps = {
 };
 
 export function DefaultBadge(props: BadgeProps) {
-  const { theme = BadgeTheme.MONOCHROME, size = BadgeSize.LARGE, leadingIcon, label } = props;
+  const {
+    theme = BadgeTheme.MONOCHROME,
+    size = BadgeSize.LARGE,
+    leadingIcon,
+    label,
+  } = props;
 
   const iconSize = IconSizeMap[size];
 

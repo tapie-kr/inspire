@@ -54,17 +54,31 @@ async function generateImportCssCode(moduleSystem: string,
 function getCSSInjectionPoint(providerSource: string) {
   const lines = providerSource.split('\n');
 
-  const commentToken = ['//', '/*', '*/', ' *'];
+  const commentToken = [
+    '//',
+    '/*',
+    '*/',
+    ' *',
+  ];
 
   const directiveToken = ['use strict', 'use client'];
 
-  const otherTokens = ['import', 'export', 'require', 'module.exports'];
+  const otherTokens = [
+    'import',
+    'export',
+    'require',
+    'module.exports',
+  ];
 
   for (let index = 0; index < lines.length; index++) {
     const targetLine = lines[index];
 
     if (
-      [commentToken, directiveToken, otherTokens].flat().some(token => targetLine.includes(token))
+      [
+        commentToken,
+        directiveToken,
+        otherTokens,
+      ].flat().some(token => targetLine.includes(token))
     ) {
       continue;
     }

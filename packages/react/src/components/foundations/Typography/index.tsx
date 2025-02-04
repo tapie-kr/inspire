@@ -1,5 +1,10 @@
 import TypographyBuilder from './builder';
-import { Tag, type TypographyProps, typographyVariantClass, Variant } from './shared';
+import {
+  Tag,
+  type TypographyProps,
+  typographyVariantClass,
+  Variant,
+} from './shared';
 
 const TypographyContract = {
   [Variant.GIANT]:    Tag.H1,
@@ -52,4 +57,6 @@ Typography.Tiny = typographyFactory(Variant.TINY);
 
 Typography.Mini = typographyFactory(Variant.MINI);
 
-export { Typography, Typography as Typo };
+export {
+  Typography, Typography as Typo,
+};

@@ -17,43 +17,47 @@ import removeCSS from './remove-css.mjs';
 function defaultPlugins(currentPath) {
   return [
     peerDepsExternal(),
-    resolve({ extensions: ['.ts', '.tsx', '.svg'] }),
+    resolve({ extensions: [
+      '.ts',
+      '.tsx',
+      '.svg',
+    ] }),
     commonjs(),
-    vanillaExtractPlugin({
-      identifiers: meta => {
-        let target = meta.hash;
+    vanillaExtractPlugin({ identifiers: meta => {
+      let target = meta.hash;
 
-        if (meta.debugId) {
-          target = meta.debugId;
-        }
+      if (meta.debugId) {
+        target = meta.debugId;
+      }
 
-        return `isp_${target}`;
-      },
-    }),
+      return `isp_${target}`;
+    } }),
     svgr({
       svgrOptions: { exportType: 'default' },
       include:     /\.svg$/,
     }),
     postcss({ inject: true }),
     json(),
-    swc({
-      swc: {
-        jsc: {
-          parser: {
-            syntax:  'typescript',
-            tsx:     true,
-            runtime: 'automatic',
-          },
-          transform: { react: { runtime: 'automatic' } },
-          baseUrl:   currentPath,
-          paths:     { '@/*': ['./src/*'] },
+    swc({ swc: {
+      jsc: {
+        parser: {
+          syntax:  'typescript',
+          tsx:     true,
+          runtime: 'automatic',
         },
-        sourceMaps: false,
-        minify:     true,
+        transform: { react: { runtime: 'automatic' } },
+        baseUrl:   currentPath,
+        paths:     { '@/*': ['./src/*'] },
       },
-    }),
+      sourceMaps: false,
+      minify:     true,
+    } }),
     strip({
-      functions: ['console.log', 'console.info', 'console.debug'],
+      functions: [
+        'console.log',
+        'console.info',
+        'console.debug',
+      ],
       sourceMap: false,
       exclude:   ['**/*.svg'],
     }),

@@ -15,7 +15,8 @@ import {
 } from '@/lib/layout/types';
 import { Box } from '../Box';
 
-type StackProps<T extends LayoutTag> = BaseStackProps<T> & {};
+type StackProps<T extends LayoutTag> = BaseStackProps<T> & {
+};
 
 export function Stack<T extends LayoutTag>(props: StackProps<T>) {
   const {

@@ -7,5 +7,9 @@ export function useToggle(initialState = false) {
 
   const setter = useCallback((value: boolean) => setState(value), []);
 
-  return [state, toggle, setter] as const;
+  return [
+    state,
+    toggle,
+    setter,
+  ] as const;
 }

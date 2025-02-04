@@ -18,12 +18,10 @@ export const base = style([
   },
 ]);
 
-export const baseDragging = style({
-  '::after': {
-    outline:    getShorthandedValue('1px', 'solid', colorVars.grayscale.translucent._30),
-    background: colorVars.interaction.hovered,
-  },
-});
+export const baseDragging = style({ '::after': {
+  outline:    getShorthandedValue('1px', 'solid', colorVars.grayscale.translucent._30),
+  background: colorVars.interaction.hovered,
+} });
 
 export const baseLarge = style({
   borderRadius: radiusVars.default,

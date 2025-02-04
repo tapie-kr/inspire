@@ -4,7 +4,9 @@ import cn from 'classnames';
 import { createElement } from 'react';
 import { type BaseLayoutProps, LayoutTag } from '@/lib/layout/types';
 
-type BoxProps<T extends LayoutTag> = BaseLayoutProps<T> & { padding?: string | number };
+type BoxProps<T extends LayoutTag> = BaseLayoutProps<T> & {
+  padding?: string | number;
+};
 
 export function Box<T extends LayoutTag>(props: BoxProps<T>) {
   const {

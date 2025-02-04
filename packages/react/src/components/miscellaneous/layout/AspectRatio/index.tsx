@@ -18,7 +18,15 @@ type AspectRatioProps = DefaultProps & {
 };
 
 export function AspectRatio(props: AspectRatioProps) {
-  const { ratio, width, height, fullWidth, fullHeight, className, children } = props;
+  const {
+    ratio,
+    width,
+    height,
+    fullWidth,
+    fullHeight,
+    className,
+    children,
+  } = props;
 
   const classNames = [
     container,

@@ -30,10 +30,7 @@ export function TextIndicatorBadge(props: TextIndicatorBadgeProps) {
     return children.toString();
   }, [children]);
 
-  const classNames = [
-    s.textIndicator,
-    variant === TextIndicatorBadgeVariant.EMPHASIZED && s.emphasized,
-  ];
+  const classNames = [s.textIndicator, variant === TextIndicatorBadgeVariant.EMPHASIZED && s.emphasized];
 
   return (
     <Flex

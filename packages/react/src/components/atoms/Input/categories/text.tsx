@@ -22,9 +22,19 @@ type TextInputProps = HTMLInputProps & {
 };
 
 export function TextInput(props: TextInputProps) {
-  const { leadingIcon, isSecure = false, size = InputSize.LARGE, ...restProps } = props;
+  const {
+    leadingIcon,
+    isSecure = false,
+    size = InputSize.LARGE,
+    ...restProps
+  } = props;
 
-  const { value, isFocused, tools, controller } = useTextInputController<TextInputProps>(restProps);
+  const {
+    value,
+    isFocused,
+    tools,
+    controller,
+  } = useTextInputController<TextInputProps>(restProps);
 
   const [hideValue, toggleHideValue] = useToggle(isSecure);
 

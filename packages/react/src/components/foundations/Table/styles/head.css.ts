@@ -9,10 +9,7 @@ export const head = style({
   color:     colorVars.content.muted,
 });
 
-export const cell = style([
-  baseCell,
-  { borderBottom: getShorthandedValue('1px', 'solid', colorVars.line.border) },
-]);
+export const cell = style([baseCell, { borderBottom: getShorthandedValue('1px', 'solid', colorVars.line.border) }]);
 
 export const cellContent = style([
   baseCellContent,

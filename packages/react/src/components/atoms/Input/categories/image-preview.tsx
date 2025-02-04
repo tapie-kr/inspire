@@ -11,7 +11,12 @@ import { Typo } from '@/components/foundations/Typography';
 import { AspectRatio } from '@/components/miscellaneous/layout/AspectRatio';
 
 import cn from 'classnames';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 import { Weight } from '@/components/foundations/Typography/shared';
 import { useFileInputController } from '../hooks/use-file-input-controller';
 import { type HTMLInputProps } from '../shared';
@@ -54,7 +59,11 @@ export function ImagePreviewInput(props: ImagePreviewInputProps) {
     } else if (preview) {
       setPreviewImage(preview);
     }
-  }, [hasValue, files, preview]);
+  }, [
+    hasValue,
+    files,
+    preview,
+  ]);
 
   const handleMouseEnter = useCallback(() => {
     setIsHover(true);

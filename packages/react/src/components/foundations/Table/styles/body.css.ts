@@ -7,7 +7,4 @@ export const body = style({});
 
 export const row = style({});
 
-export const cell = style([
-  baseCell,
-  { selectors: { [`${row}:first-of-type &`]: { paddingTop: `calc(${spacingVars.petite} + ${spacingVars.mini})` } } },
-]);
+export const cell = style([baseCell, { selectors: { [`${row}:first-of-type &`]: { paddingTop: `calc(${spacingVars.petite} + ${spacingVars.mini})` } } }]);

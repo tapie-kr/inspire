@@ -24,20 +24,18 @@ const meta: Meta = {
 
 type GridStory = StoryObj<typeof Grid>;
 
-export const Default: GridStory = {
-  render: props => (
-    <Box style={{ width: 600 }}>
-      <Grid {...props}>
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-      </Grid>
-    </Box>
-  ),
-};
+export const Default: GridStory = { render: props => (
+  <Box style={{ width: 600 }}>
+    <Grid {...props}>
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+    </Grid>
+  </Box>
+) };
 
 export default meta;
 

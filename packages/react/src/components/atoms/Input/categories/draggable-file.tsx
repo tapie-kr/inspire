@@ -22,9 +22,18 @@ type DraggableFileInputProps = HTMLInputProps & {
 };
 
 export function DraggableFileInput(props: DraggableFileInputProps) {
-  const { leadingIcon, size = InputSize.LARGE, placeholder, ...restProps } = props;
+  const {
+    leadingIcon,
+    size = InputSize.LARGE,
+    placeholder,
+    ...restProps
+  } = props;
 
-  const { files, tools, controller } = useDraggableFileInputController();
+  const {
+    files,
+    tools,
+    controller,
+  } = useDraggableFileInputController();
 
   const hasValue = useMemo(() => files != null && files.length > 0, [files]);
 

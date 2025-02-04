@@ -23,11 +23,9 @@ typographyGlobalStyle(':root', {
     size:          desktopSize,
     'line-height': desktopLineHeight,
   }),
-  ...getMobileMediaQuery({
-    vars: assignVars(typographyVars, {
-      weight,
-      size:          desktopSize,
-      'line-height': desktopLineHeight,
-    }),
-  }),
+  ...getMobileMediaQuery({ vars: assignVars(typographyVars, {
+    weight,
+    size:          desktopSize,
+    'line-height': desktopLineHeight,
+  }) }),
 });

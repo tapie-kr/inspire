@@ -22,9 +22,18 @@ type FileInputProps = HTMLInputProps & {
 };
 
 export function FileInput(props: FileInputProps) {
-  const { leadingIcon, size = InputSize.LARGE, placeholder, ...restProps } = props;
+  const {
+    leadingIcon,
+    size = InputSize.LARGE,
+    placeholder,
+    ...restProps
+  } = props;
 
-  const { files, tools, controller } = useFileInputController();
+  const {
+    files,
+    tools,
+    controller,
+  } = useFileInputController();
 
   const hasValue = useMemo(() => files != null && files.length > 0, [files]);
 

@@ -1,4 +1,9 @@
-import { type ChangeEvent, type DragEvent, useCallback, useState } from 'react';
+import {
+  type ChangeEvent,
+  type DragEvent,
+  useCallback,
+  useState,
+} from 'react';
 
 type FileInputValue = File[] | null;
 

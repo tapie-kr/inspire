@@ -20,7 +20,12 @@ export function Pagination(props: PaginationProps) {
   const [currentPage, setCurrentPage] = useState(props.defaultPage || props.min);
 
   const getCurrentVisiblePages = useCallback(() => _getCurrentVisiblePages(props.min, props.max, props.visiblePages || 10, currentPage),
-    [currentPage, props.max, props.min, props.visiblePages]);
+    [
+      currentPage,
+      props.max,
+      props.min,
+      props.visiblePages,
+    ]);
 
   const [currentItems, setCurrentItems] = useState(getCurrentVisiblePages());
 
@@ -46,7 +51,11 @@ export function Pagination(props: PaginationProps) {
 
   useEffect(() => {
     setCurrentItems(getCurrentVisiblePages());
-  }, [currentPage, getCurrentVisiblePages, props]);
+  }, [
+    currentPage,
+    getCurrentVisiblePages,
+    props,
+  ]);
 
   return (
     <HStack

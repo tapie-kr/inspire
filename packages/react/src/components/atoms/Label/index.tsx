@@ -23,7 +23,11 @@ type LabelProps = {
 };
 
 export function Label(props: LabelProps) {
-  const { isEssential, isDisabled, size = LabelSize.LARGE } = props;
+  const {
+    isEssential,
+    isDisabled,
+    size = LabelSize.LARGE,
+  } = props;
 
   const isLarge = size === LabelSize.LARGE;
 

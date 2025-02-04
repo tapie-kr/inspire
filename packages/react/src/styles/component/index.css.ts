@@ -11,10 +11,8 @@ componentGlobalStyle(':root', {
     radius:  desktopRadius,
     spacing: desktopSpacing,
   }),
-  ...getMobileMediaQuery({
-    vars: assignVars(componentVars, {
-      radius:  mobileRadius,
-      spacing: mobileSpacing,
-    }),
-  }),
+  ...getMobileMediaQuery({ vars: assignVars(componentVars, {
+    radius:  mobileRadius,
+    spacing: mobileSpacing,
+  }) }),
 });

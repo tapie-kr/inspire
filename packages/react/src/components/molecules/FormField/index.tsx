@@ -20,7 +20,13 @@ type FormFieldProps = {
 };
 
 export function FormField(props: FormFieldProps) {
-  const { label, isEssential, description, size, children } = props;
+  const {
+    label,
+    isEssential,
+    description,
+    size,
+    children,
+  } = props;
 
   const spacing = size === FormFieldSize.LARGE ? spacingVars.micro : spacingVars.mini;
 

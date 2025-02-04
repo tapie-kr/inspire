@@ -10,7 +10,12 @@ import { Icon } from '@/components/foundations/Icon';
 import cn from 'classnames';
 import { type IconName } from '@/components/foundations/Icon/shared';
 import { Theme } from '@/lib/style/theme';
-import { ButtonIconSizeMap, type ButtonPropsBase, ButtonSize, ButtonVariant } from '../shared';
+import {
+  ButtonIconSizeMap,
+  type ButtonPropsBase,
+  ButtonSize,
+  ButtonVariant,
+} from '../shared';
 
 type IconButtonProps = ButtonPropsBase & {
   variant?: ButtonVariant;

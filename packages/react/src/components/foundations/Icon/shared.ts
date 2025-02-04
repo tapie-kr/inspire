@@ -1,4 +1,9 @@
-import { type BrandIcon, BrandIconMap, type GlyphIcon, GlyphIconMap } from './icon-set';
+import {
+  type BrandIcon,
+  BrandIconMap,
+  type GlyphIcon,
+  GlyphIconMap,
+} from './icon-set';
 
 export type IconName = GlyphIcon | BrandIcon;
 

@@ -29,16 +29,14 @@ const meta: Meta = {
 
 type DetailsStory = StoryObj<typeof Details>;
 
-export const Default: DetailsStory = {
-  render: props => (
-    <VStack
-      spacing={spacingVars.base}
-      align={StackAlign.START}
-    >
-      <Details {...props} />
-      <Typo.Base>This text will move down smoothly</Typo.Base>
-    </VStack>
-  ),
-};
+export const Default: DetailsStory = { render: props => (
+  <VStack
+    spacing={spacingVars.base}
+    align={StackAlign.START}
+  >
+    <Details {...props} />
+    <Typo.Base>This text will move down smoothly</Typo.Base>
+  </VStack>
+) };
 
 export default meta;

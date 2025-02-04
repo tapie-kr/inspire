@@ -16,23 +16,21 @@ enum SegmentValue {
   THIRD = 'third',
 }
 
-export const Default: SegmentGroupStory = {
-  render: () => (
-    <SegmentGroup defaultValue={SegmentValue.FIRST}>
-      <Segment
-        label='첫번째'
-        value={SegmentValue.FIRST}
-      />
-      <Segment
-        label='두번째'
-        value={SegmentValue.SECOND}
-      />
-      <Segment
-        label='세번째'
-        value={SegmentValue.THIRD}
-      />
-    </SegmentGroup>
-  ),
-};
+export const Default: SegmentGroupStory = { render: () => (
+  <SegmentGroup defaultValue={SegmentValue.FIRST}>
+    <Segment
+      label='첫번째'
+      value={SegmentValue.FIRST}
+    />
+    <Segment
+      label='두번째'
+      value={SegmentValue.SECOND}
+    />
+    <Segment
+      label='세번째'
+      value={SegmentValue.THIRD}
+    />
+  </SegmentGroup>
+) };
 
 export default meta;

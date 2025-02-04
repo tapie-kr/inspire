@@ -11,7 +11,11 @@ type ElementType<T> = T extends HTMLInputProps
 export function useTextInputController<T extends HTMLInputProps | HTMLTextAreaProps>(inputProps: T) {
   const [value, setValue] = useState(valueConverter(inputProps.value || inputProps.defaultValue || ''));
 
-  const [isFocused, _, setIsFocused] = useToggle(false);
+  const [
+    isFocused,
+    _,
+    setIsFocused,
+  ] = useToggle(false);
 
   const onChange = useCallback((e: ChangeEvent<ElementType<T>>) => {
     if (inputProps.maxLength && e.target.value.length > inputProps.maxLength) {
