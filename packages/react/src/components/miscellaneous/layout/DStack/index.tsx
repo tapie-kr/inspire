@@ -15,7 +15,12 @@ type DStackProps<T extends LayoutTag> = Omit<BaseStackProps<T>, 'direction'> & {
 };
 
 export function DStack<T extends LayoutTag>(props: DStackProps<T>) {
-  const { defaultDirection, breakpoint } = props;
+  const {
+    defaultDirection,
+    breakpoint,
+    ...rest
+  } = props;
+
   const isInBreakpoint = useMediaQuery(breakpoint);
   const [direction, setDirection] = useState<StackDirection>(defaultDirection || StackDirection.ROW);
 
@@ -25,12 +30,12 @@ export function DStack<T extends LayoutTag>(props: DStackProps<T>) {
     } else {
       setDirection(defaultDirection || StackDirection.ROW);
     }
-  }, [isInBreakpoint]);
+  }, [isInBreakpoint, defaultDirection]);
 
   return (
     <Stack
       direction={direction}
-      {...props}
+      {...rest}
     />
   );
 }
