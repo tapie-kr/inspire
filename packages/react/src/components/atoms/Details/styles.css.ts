@@ -15,7 +15,5 @@ export const titleContainer = style({
 });
 
 export const icon = style({ transition: getCSSTransition('transform', 0.2) });
-
 export const rotateIcon = style({ transform: 'rotate(-90deg)' });
-
 export const content = style({});

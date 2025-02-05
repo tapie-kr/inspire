@@ -1,19 +1,12 @@
 import { addOpacity } from '@/utils/style/color/opacity';
 
 const WHITE = '#FFFFFF';
-
 const BLACK = '#0A0A0A';
-
 const REAL_BLACK = '#000000';
-
 const RED = '#F74C43';
-
 const GREEN = '#07D957';
-
 const BLUE = '#3130F0';
-
 const YELLOW = '#FFE100';
-
 const DARK_VISIBILITY_COMPENSATION = 0.05;
 
 enum grayscaleOpacityMap {

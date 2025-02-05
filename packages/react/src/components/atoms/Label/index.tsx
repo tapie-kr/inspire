@@ -30,9 +30,7 @@ export function Label(props: LabelProps) {
   } = props;
 
   const isLarge = size === LabelSize.LARGE;
-
   const isMedium = size === LabelSize.MEDIUM;
-
   const LabelTypo = isLarge ? Typo.Petite : isMedium ? Typo.Tiny : Typo.Mini;
 
   return (

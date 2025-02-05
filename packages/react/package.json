@@ -60,7 +60,7 @@
     "@storybook/react-vite": "^8.5.2",
     "@storybook/test": "^8.5.2",
     "@svgr/rollup": "^8.1.0",
-    "@tapie-kr/code-guideline-base": "^0.1.15",
+    "@tapie-kr/code-guideline-base": "^0.1.17",
     "@tapie-kr/code-guideline-react": "^0.0.7",
     "@types/css": "^0.0.38",
     "@types/node": "^22.10.2",

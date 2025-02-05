@@ -24,5 +24,4 @@ const meta: Meta = {
 type DefaultLabelStory = StoryObj<typeof Label>;
 
 export const Default: DefaultLabelStory = { render: props => <Label {...props} /> };
-
 export default meta;

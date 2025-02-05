@@ -9,7 +9,6 @@ type FileInputValue = File[] | null;
 
 export function useDraggableFileInputController() {
   const [files, setFiles] = useState<FileInputValue>(null);
-
   const [isDragging, setIsDragging] = useState(false);
 
   const handleFileChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {

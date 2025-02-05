@@ -22,5 +22,4 @@ const meta: Meta = {
 type TAPIESymbolStory = StoryObj<typeof TAPIESymbol>;
 
 export const Default: TAPIESymbolStory = { render: props => <TAPIESymbol {...props} /> };
-
 export default meta;

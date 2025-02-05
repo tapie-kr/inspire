@@ -3,7 +3,6 @@ import { bannerSvg } from './banner';
 
 export function showSignature() {
   const scale = 0.65;
-
   const svgUrl = 'data:image/svg+xml;base64,' + btoa(bannerSvg);
 
   const cssProperties = [

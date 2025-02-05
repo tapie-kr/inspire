@@ -2,7 +2,6 @@ import { typographyVars } from '@/lib/style/contract/typography.css';
 import { componentStyle } from '@/styles/layer.css';
 
 const size = typographyVars.size;
-
 const lineHeight = typographyVars['line-height'];
 
 export const giant = componentStyle({

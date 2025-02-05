@@ -15,11 +15,8 @@ type ControlButtonProps = {
 
 export function ControlButton(props: ControlButtonProps) {
   const isPrevious = props.type === 'previous';
-
   const icon = isPrevious ? GlyphIcon.CHEVRON_LEFT : GlyphIcon.CHEVRON_RIGHT;
-
   const label = isPrevious ? '이전' : '다음';
-
   const handleOnClick = props.onClick;
 
   return (

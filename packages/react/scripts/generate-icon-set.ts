@@ -57,13 +57,9 @@ async function renameSvgFiles(directory: string) {
 async function modifySvgFile(filePath: string) {
   try {
     const content = await fs.readFile(filePath, 'utf-8');
-
     const parser = new DOMParser;
-
     const doc = parser.parseFromString(content, 'image/svg+xml');
-
     const svg = doc.getElementsByTagName('svg')[0];
-
     const paths = doc.getElementsByTagName('path');
 
     svg.removeAttribute('width');
@@ -85,7 +81,6 @@ async function modifySvgFile(filePath: string) {
     }
 
     const serializer = new XMLSerializer;
-
     const modifiedContent = serializer.serializeToString(doc);
 
     await fs.writeFile(filePath, modifiedContent, 'utf-8');
@@ -97,7 +92,6 @@ async function modifySvgFile(filePath: string) {
 async function modifySvgFiles(directory: string) {
   try {
     const files = await fs.readdir(directory);
-
     const svgFiles = files.filter(file => path.extname(file).toLowerCase() === '.svg');
 
     for (const file of svgFiles) {
@@ -113,11 +107,8 @@ async function modifySvgFiles(directory: string) {
 async function generateIconSet() {
   try {
     const glyphFiles = await fs.readdir(PATH.GLYPH);
-
     const glyphSvgFiles = glyphFiles.filter(file => path.extname(file).toLowerCase() === '.svg');
-
     const brandFiles = await fs.readdir(PATH.BRAND);
-
     const brandSvgFiles = brandFiles.filter(file => path.extname(file).toLowerCase() === '.svg');
 
     const imports = [

@@ -37,7 +37,6 @@ export function DefaultBadge(props: BadgeProps) {
   } = props;
 
   const iconSize = IconSizeMap[size];
-
   const Label = size === BadgeSize.LARGE ? Typo.Tiny : Typo.Mini;
 
   return (

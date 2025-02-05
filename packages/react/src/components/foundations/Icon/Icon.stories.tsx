@@ -19,5 +19,4 @@ const meta: Meta = {
 type IconStory = StoryObj<typeof Icon>;
 
 export const Default: IconStory = { render: props => <Icon {...props} /> };
-
 export default meta;

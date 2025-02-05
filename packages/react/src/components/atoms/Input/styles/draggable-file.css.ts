@@ -59,11 +59,8 @@ export const file = style({
 });
 
 export const fileLarge = style({ padding: spacingVars.tiny });
-
 export const fileMedium = style({ padding: spacingVars.mini });
-
 export const inputLarge = style([typographyVariantClass[Variant.BASE]]);
-
 export const inputMedium = style([typographyVariantClass[Variant.PETITE]]);
 
 export const inputText = style({

@@ -49,7 +49,6 @@ export function DefaultButton(props: DefaultButtonProps) {
   } = props;
 
   const Typo = useMemo(() => ButtonTypoSizeMap[size], [size]);
-
   const themeClassName = variant === ButtonVariant.PRIMARY ? primaryThemes : secondaryThemes;
 
   const classNames = [

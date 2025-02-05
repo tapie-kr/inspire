@@ -9,5 +9,4 @@ const meta: Meta = {
 type BoxStory = StoryObj<typeof Box>;
 
 export const Default: BoxStory = { render: props => <Box {...props} /> };
-
 export default meta;

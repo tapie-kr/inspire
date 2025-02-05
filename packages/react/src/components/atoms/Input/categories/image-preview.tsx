@@ -42,15 +42,10 @@ export function ImagePreviewInput(props: ImagePreviewInputProps) {
   } = props;
 
   const { files, controller } = useFileInputController();
-
   const [isHover, setIsHover] = useState(false);
-
   const hasValue = useMemo(() => files != null && files.length > 0, [files]);
-
   const showPreview = (hasValue && files) || preview;
-
   const isCircle = shape === ImagePreviewShape.CIRCLE;
-
   const [previewImage, setPreviewImage] = useState<string | null>(null);
 
   useEffect(() => {

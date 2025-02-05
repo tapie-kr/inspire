@@ -24,7 +24,6 @@ function preserveDirectives() {
       for (const node of ast.body) {
         if (node.type === 'ExpressionStatement' && node.expression.type === 'Literal') {
           const directive = node.expression.value.toString();
-
           const value = node.expression.raw;
 
           if (!value) {

@@ -47,9 +47,7 @@ class SingleBarrelGenerator {
       }
 
       const files = await this.findExportableFiles(directory);
-
       const exports = this.getExportPaths(files);
-
       const content = this.generateBarrelContent(exports);
 
       this.writeBarrelFile(directory, content);
@@ -100,9 +98,7 @@ class SingleBarrelGenerator {
 
 const run = async () => {
   const targetDirectory = process.argv[2] || './src';
-
   const excludeDirectories = process.argv.slice(3) || [];
-
   const generator = new SingleBarrelGenerator({ exclude: excludeDirectories.map(dir => `${dir}/**`) });
 
   await generator.generate(targetDirectory);

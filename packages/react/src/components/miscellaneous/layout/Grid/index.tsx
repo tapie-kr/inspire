@@ -8,13 +8,14 @@ import { type DefaultProps } from '@/types/prop';
 import { Box } from '../Box';
 
 type GridProps = DefaultProps & {
-  gap?:           string | number;
-  rowGap?:        string | number;
-  columnGap?:     string | number;
-  columnCount?:   number;
-  disableMobile?: boolean;
-  fullWidth?:     boolean;
-  fullHeight?:    boolean;
+  gap?:                   string | number;
+  rowGap?:                string | number;
+  columnGap?:             string | number;
+  columnCount?:           number;
+  columnCountWhenMobile?: number;
+  disableMobile?:         boolean;
+  fullWidth?:             boolean;
+  fullHeight?:            boolean;
 };
 
 export function Grid(props: GridProps) {
@@ -23,6 +24,7 @@ export function Grid(props: GridProps) {
     rowGap,
     columnGap,
     columnCount,
+    columnCountWhenMobile = 1,
     disableMobile,
     fullWidth,
     fullHeight,
@@ -38,7 +40,7 @@ export function Grid(props: GridProps) {
       style={{
         rowGap:              rowGap || gap,
         columnGap:           columnGap || gap,
-        gridTemplateColumns: `repeat(${isMobile && !disableMobile ? 1 : columnCount}, 1fr)`,
+        gridTemplateColumns: `repeat(${isMobile && !disableMobile ? columnCountWhenMobile : columnCount}, 1fr)`,
         width:               fullWidth ? '100%' : undefined,
         height:              fullHeight ? '100%' : undefined,
       }}

@@ -21,9 +21,7 @@ type SegmentProps = {
 
 export function Segment(props: SegmentProps) {
   const { value, onChange } = useContext(SegmentGroupContext);
-
   const isContextInitialized = value !== undefined && onChange !== undefined;
-
   const isActive = useMemo(() => value === props.value, [value, props.value]);
 
   const handleClick = useCallback(() => {

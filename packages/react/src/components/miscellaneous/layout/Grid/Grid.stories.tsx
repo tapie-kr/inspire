@@ -9,16 +9,18 @@ const meta: Meta = {
   title:     'Miscellaneous/Layout/Grid',
   component: Grid,
   argTypes:  {
-    gap:         { control: { type: 'number' } },
-    rowGap:      { control: { type: 'number' } },
-    columnGap:   { control: { type: 'number' } },
-    columnCount: { control: { type: 'number' } },
-    fullWidth:   { control: { type: 'boolean' } },
-    fullHeight:  { control: { type: 'boolean' } },
+    gap:                   { control: { type: 'number' } },
+    rowGap:                { control: { type: 'number' } },
+    columnGap:             { control: { type: 'number' } },
+    columnCount:           { control: { type: 'number' } },
+    columnCountWhenMobile: { control: { type: 'number' } },
+    fullWidth:             { control: { type: 'boolean' } },
+    fullHeight:            { control: { type: 'boolean' } },
   },
   args: {
-    gap:         10,
-    columnCount: 3,
+    gap:                   10,
+    columnCount:           3,
+    columnCountWhenMobile: 2,
   },
 };
 

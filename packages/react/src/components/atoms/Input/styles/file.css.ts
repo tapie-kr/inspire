@@ -15,13 +15,9 @@ export const base = style({
 });
 
 export const baseLarge = style({ borderRadius: radiusVars.default });
-
 export const baseMedium = style({ borderRadius: radiusVars.subtle });
-
 export const label = style({ cursor: 'pointer' });
-
 export const labelLarge = style({ padding: spacingVars.petite });
-
 export const labelMedium = style({ padding: spacingVars.micro });
 
 export const inputContainer = style({
@@ -39,5 +35,4 @@ export const inputText = style({
 });
 
 export const inputLarge = style([typographyVariantClass[Variant.BASE]]);
-
 export const inputMedium = style([typographyVariantClass[Variant.PETITE]]);

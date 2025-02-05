@@ -29,7 +29,6 @@ export function FormField(props: FormFieldProps) {
   } = props;
 
   const spacing = size === FormFieldSize.LARGE ? spacingVars.micro : spacingVars.mini;
-
   const DescriptionText = size === FormFieldSize.LARGE ? Typo.Petite : Typo.Tiny;
 
   return (

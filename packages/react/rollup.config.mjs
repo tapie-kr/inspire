@@ -6,7 +6,6 @@ import defaultPlugins from './scripts/rollup/default-plugins.mjs';
 import outputGenerator from './scripts/rollup/output-generator.mjs';
 
 const currentPath = new URL('.', import.meta.url).pathname;
-
 const packageJson = JSON.parse(readFileSync(new URL('./package.json', import.meta.url)).toString());
 
 const banner = [

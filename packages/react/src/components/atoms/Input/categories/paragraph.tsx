@@ -32,9 +32,7 @@ export function ParagraphInput(props: ParagraphInputProps) {
   } = props;
 
   const { value, controller } = useTextInputController<HTMLTextAreaProps>(restProps);
-
   const isLarge = size === InputSize.LARGE;
-
   const heightText = typeof props.height === 'number' ? `${props.height}px` : props.height;
 
   return (

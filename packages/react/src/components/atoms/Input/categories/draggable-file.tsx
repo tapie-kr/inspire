@@ -36,7 +36,6 @@ export function DraggableFileInput(props: DraggableFileInputProps) {
   } = useDraggableFileInputController();
 
   const hasValue = useMemo(() => files != null && files.length > 0, [files]);
-
   const isLarge = size === InputSize.LARGE;
 
   const handleRemoveButton = useCallback((e: React.MouseEvent<SVGElement>, index: number) => {
@@ -51,9 +50,7 @@ export function DraggableFileInput(props: DraggableFileInputProps) {
   [tools]);
 
   const Label = isLarge ? Typo.Base : Typo.Petite;
-
   const DescriptionLabel = isLarge ? Typo.Tiny : Typo.Mini;
-
   const FileLabel = isLarge ? Typo.Micro : Typo.Mini;
 
   const handleDefendPropagation = useCallback((e: React.MouseEvent) => {

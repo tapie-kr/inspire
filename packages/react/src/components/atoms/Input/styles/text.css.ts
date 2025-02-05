@@ -36,5 +36,4 @@ export const input = style({
 });
 
 export const inputLarge = style([typographyVariantClass[Variant.BASE]]);
-
 export const inputMedium = style([typographyVariantClass[Variant.PETITE]]);

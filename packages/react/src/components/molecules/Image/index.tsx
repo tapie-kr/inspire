@@ -22,7 +22,6 @@ type ImageProps = DefaultProps<true> & {
 
 export function Image(props: ImageProps) {
   const [isLoading, setIsLoading] = useState(true);
-
   const isMounted = useMountedState();
 
   const src = useMemo(() => isMounted ? (typeof props.src === 'string' ? props.src : URL.createObjectURL(props.src)) : '',

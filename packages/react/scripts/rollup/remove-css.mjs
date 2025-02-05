@@ -7,9 +7,7 @@ function removeCSS() {
     name: 'remove-css',
     renderChunk(code, _chunk, options) {
       const isESM = options.format === 'es';
-
       const lines = code.split('\n');
-
       const importKeyword = isESM ? 'import' : 'require';
 
       code = lines

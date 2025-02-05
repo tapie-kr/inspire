@@ -42,7 +42,6 @@ export function TextButton(props: DefaultButtonProps) {
   } = props;
 
   const size = useMemo(() => propSize || ButtonSize.LARGE, [propSize]);
-
   const Typo = useMemo(() => ButtonTypoSizeMap[size], [size]);
 
   const classNames = [

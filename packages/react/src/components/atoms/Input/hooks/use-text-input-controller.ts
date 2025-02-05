@@ -27,9 +27,7 @@ export function useTextInputController<T extends HTMLInputProps | HTMLTextAreaPr
   [inputProps.maxLength]);
 
   const onFocus = useCallback(() => setIsFocused(true), [setIsFocused]);
-
   const onBlur = useCallback(() => setIsFocused(false), [setIsFocused]);
-
   const clearValue = useCallback(() => setValue(''), []);
 
   const controller = {

@@ -12,7 +12,6 @@ export const base = componentStyle({
 });
 
 export const primary = componentStyle([base, utilityClass.interactiveInverted]);
-
 export const secondary = componentStyle([base, utilityClass.interactive]);
 
 export const large = componentStyle({

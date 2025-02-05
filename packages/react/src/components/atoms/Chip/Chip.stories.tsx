@@ -24,5 +24,4 @@ const meta: Meta = {
 type DefaultChipStory = StoryObj<typeof Chip>;
 
 export const Default: DefaultChipStory = { render: props => <Chip {...props} /> };
-
 export default meta;

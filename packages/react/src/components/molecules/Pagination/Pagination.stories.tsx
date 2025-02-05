@@ -22,5 +22,4 @@ const meta: Meta = {
 type PaginationStory = StoryObj<typeof Pagination>;
 
 export const Default: PaginationStory = { render: props => <Pagination {...props} /> };
-
 export default meta;

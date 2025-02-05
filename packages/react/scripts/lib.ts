@@ -33,7 +33,6 @@ export function deepMerge<T extends Record<string, unknown>>(target: T, source: 
   if (isObject(target) && isObject(source)) {
     Object.keys(source).forEach(key => {
       const targetValue = target[key as keyof T];
-
       const sourceValue = source[key as keyof DeepPartial<T>];
 
       if (isObject(targetValue) && sourceValue !== undefined) {

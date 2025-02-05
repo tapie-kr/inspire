@@ -36,9 +36,7 @@ export function FileInput(props: FileInputProps) {
   } = useFileInputController();
 
   const hasValue = useMemo(() => files != null && files.length > 0, [files]);
-
   const showClearButton = hasValue;
-
   const isLarge = size === InputSize.LARGE;
 
   const handleClearButton = useCallback((e: React.MouseEvent<SVGElement>) => {

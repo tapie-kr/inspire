@@ -22,5 +22,4 @@ const meta: Meta<typeof Segment> = {
 type SegmentStory = StoryObj<typeof Segment>;
 
 export const Default: SegmentStory = { render: props => <Segment {...props} /> };
-
 export default meta;

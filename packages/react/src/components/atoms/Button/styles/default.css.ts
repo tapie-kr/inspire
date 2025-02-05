@@ -5,7 +5,6 @@ import { utilityClass } from '@/lib/style/utility';
 import { getShorthandedValue } from '@/utils/style/shorthand';
 
 export const primary = componentStyle([utilityClass.interactiveInverted]);
-
 export const secondary = componentStyle([utilityClass.interactive]);
 
 export const large = componentStyle({
