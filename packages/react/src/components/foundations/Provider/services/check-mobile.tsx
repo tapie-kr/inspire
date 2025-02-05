@@ -7,7 +7,7 @@ export function CheckMobileService() {
 
   useEffect(() => {
     const handleResize = () => {
-      setViewportWidth(window.innerWidth);
+      setViewportWidth(window.outerWidth);
     };
 
     handleResize();
