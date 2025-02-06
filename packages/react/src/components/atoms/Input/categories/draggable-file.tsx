@@ -33,7 +33,7 @@ export function DraggableFileInput(props: DraggableFileInputProps) {
     files,
     tools,
     controller,
-  } = useDraggableFileInputController();
+  } = useDraggableFileInputController(restProps);
 
   const hasValue = useMemo(() => files != null && files.length > 0, [files]);
   const isLarge = size === InputSize.LARGE;

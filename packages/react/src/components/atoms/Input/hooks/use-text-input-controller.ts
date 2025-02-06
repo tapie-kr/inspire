@@ -22,6 +22,10 @@ export function useTextInputController<T extends HTMLInputProps | HTMLTextAreaPr
       return;
     }
 
+    if (inputProps.onChange) {
+      inputProps.onChange(e as unknown as ChangeEvent<HTMLInputElement> & ChangeEvent<HTMLTextAreaElement>);
+    }
+
     setValue(valueConverter(e.target.value));
   },
   [inputProps.maxLength]);

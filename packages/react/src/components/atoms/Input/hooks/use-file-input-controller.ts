@@ -1,12 +1,17 @@
 import { type ChangeEvent, useCallback, useState } from 'react';
+import { type HTMLInputProps } from '../shared';
 
 type FileInputValue = File[] | null;
 
-export function useFileInputController() {
+export function useFileInputController(inputProps: HTMLInputProps) {
   const [files, setFiles] = useState<FileInputValue>(null);
 
   const handleFileChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     const fileList = e.target.files;
+
+    if (inputProps.onChange) {
+      inputProps.onChange(e);
+    }
 
     if (fileList && fileList.length > 0) {
       setFiles(Array.from(fileList));

@@ -4,15 +4,20 @@ import {
   useCallback,
   useState,
 } from 'react';
+import { type HTMLInputProps } from '../shared';
 
 type FileInputValue = File[] | null;
 
-export function useDraggableFileInputController() {
+export function useDraggableFileInputController(inputProps: HTMLInputProps) {
   const [files, setFiles] = useState<FileInputValue>(null);
   const [isDragging, setIsDragging] = useState(false);
 
   const handleFileChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     const fileList = e.target.files;
+
+    if (inputProps.onChange) {
+      inputProps.onChange(e);
+    }
 
     if (fileList && fileList.length > 0 && !fileList[0].webkitRelativePath) {
       setFiles(Array.from(fileList));

@@ -33,7 +33,7 @@ export function FileInput(props: FileInputProps) {
     files,
     tools,
     controller,
-  } = useFileInputController();
+  } = useFileInputController(restProps);
 
   const hasValue = useMemo(() => files != null && files.length > 0, [files]);
   const showClearButton = hasValue;

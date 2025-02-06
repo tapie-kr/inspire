@@ -41,7 +41,7 @@ export function ImagePreviewInput(props: ImagePreviewInputProps) {
     ...restProps
   } = props;
 
-  const { files, controller } = useFileInputController();
+  const { files, controller } = useFileInputController(restProps);
   const [isHover, setIsHover] = useState(false);
   const hasValue = useMemo(() => files != null && files.length > 0, [files]);
   const showPreview = (hasValue && files) || preview;
