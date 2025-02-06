@@ -1,12 +1,12 @@
 import { cell, cellContent } from '../styles/head.css';
 
+import { Icon } from '@/components/foundations/Icon';
+import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
+import { Typo } from '@/components/foundations/Typography';
 import { HStack } from '@/components/miscellaneous/layout/HStack';
 
+import { Weight } from '@/components/foundations/Typography/shared';
 import { StackAlign, StackJustify } from '@/lib/layout/types';
-import { Icon } from '../../Icon';
-import { GlyphIcon } from '../../Icon/icon-set';
-import { Typo } from '../../Typography';
-import { Weight } from '../../Typography/shared';
 
 type TableHeadCellProps = {
   width?:      number | string;

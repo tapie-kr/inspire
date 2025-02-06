@@ -59,11 +59,11 @@ importers:
         specifier: ^8.1.0
         version: 8.1.0(rollup@4.28.1)(typescript@5.7.2)
       '@tapie-kr/code-guideline-base':
-        specifier: ^0.1.18
-        version: 0.1.18(eslint@9.19.0)(typescript@5.7.2)
+        specifier: ^0.1.21
+        version: 0.1.21(eslint@9.19.0)(typescript@5.7.2)
       '@tapie-kr/code-guideline-react':
         specifier: ^0.0.7
-        version: 0.0.7(@tapie-kr/code-guideline-base@0.1.18(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0)(typescript@5.7.2)
+        version: 0.0.7(@tapie-kr/code-guideline-base@0.1.21(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0)(typescript@5.7.2)
       '@types/css':
         specifier: ^0.0.38
         version: 0.0.38
@@ -1843,8 +1843,8 @@ packages:
   '@swc/types@0.1.17':
     resolution: {integrity: sha512-V5gRru+aD8YVyCOMAjMpWR1Ui577DD5KSJsHP8RAxopAH22jFz6GZd/qxqjO6MJHQhcsjvjOFXyDhyLQUnMveQ==}
 
-  '@tapie-kr/code-guideline-base@0.1.18':
-    resolution: {integrity: sha512-3CzLM4/EqMATyghbvGgGjjrQ24k1mbO5nqZUaqD1fpnXx6mKA5cm79xBeOL7vBpy+0cZPINvsvXhuqJt7tBXiw==}
+  '@tapie-kr/code-guideline-base@0.1.21':
+    resolution: {integrity: sha512-UF0iM9A8EmlBCou5vAXfpa4cg4VtBdM3wFUUIgxro+hOJyLwQwITRYDW1ul+6vvsiDr4gMTH7tslqi9SlMqqPw==}
     peerDependencies:
       eslint: ^9.19.0
 
@@ -2662,6 +2662,15 @@ packages:
     resolution: {integrity: sha512-6nuzu4xwQtE3332Uz0to+TxDQYRLTKRESSc2hefVT48Zc8JthmN23Gx9lnYhu0FtkRSL1oxny3kJ2aveVhmOVA==}
     peerDependencies:
       eslint: '>=5.0.0'
+
+  eslint-plugin-unused-imports@4.1.4:
+    resolution: {integrity: sha512-YptD6IzQjDardkl0POxnnRBhU1OEePMV0nd6siHaRBbd+lyh6NAhFEobiznKU7kTsSsDeSD62Pe7kAM1b7dAZQ==}
+    peerDependencies:
+      '@typescript-eslint/eslint-plugin': ^8.0.0-0 || ^7.0.0 || ^6.0.0 || ^5.0.0
+      eslint: ^9.0.0 || ^8.0.0
+    peerDependenciesMeta:
+      '@typescript-eslint/eslint-plugin':
+        optional: true
 
   eslint-scope@8.2.0:
     resolution: {integrity: sha512-PHlWUfG6lvPc3yvP5A4PNyBL1W8fkDUccmI21JUu/+GKZBoH/W5u6usENXUrWFRsyoW5ACUjFGgAFQp5gUlb/A==}
@@ -6199,7 +6208,7 @@ snapshots:
     dependencies:
       '@swc/counter': 0.1.3
 
-  '@tapie-kr/code-guideline-base@0.1.18(eslint@9.19.0)(typescript@5.7.2)':
+  '@tapie-kr/code-guideline-base@0.1.21(eslint@9.19.0)(typescript@5.7.2)':
     dependencies:
       '@stylistic/eslint-plugin': 3.0.1(eslint@9.19.0)(typescript@5.7.2)
       '@typescript-eslint/eslint-plugin': 8.22.0(@typescript-eslint/parser@8.22.0(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0)(typescript@5.7.2)
@@ -6209,16 +6218,17 @@ snapshots:
       eslint-plugin-import-newlines: 1.4.0(eslint@9.19.0)
       eslint-plugin-newline-destructuring: 1.2.2(eslint@9.19.0)
       eslint-plugin-simple-import-sort: 12.1.1(eslint@9.19.0)
+      eslint-plugin-unused-imports: 4.1.4(@typescript-eslint/eslint-plugin@8.22.0(@typescript-eslint/parser@8.22.0(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0)
     transitivePeerDependencies:
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
       - supports-color
       - typescript
 
-  '@tapie-kr/code-guideline-react@0.0.7(@tapie-kr/code-guideline-base@0.1.18(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0)(typescript@5.7.2)':
+  '@tapie-kr/code-guideline-react@0.0.7(@tapie-kr/code-guideline-base@0.1.21(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0)(typescript@5.7.2)':
     dependencies:
       '@stylistic/eslint-plugin': 3.0.1(eslint@9.19.0)(typescript@5.7.2)
-      '@tapie-kr/code-guideline-base': 0.1.18(eslint@9.19.0)(typescript@5.7.2)
+      '@tapie-kr/code-guideline-base': 0.1.21(eslint@9.19.0)(typescript@5.7.2)
       '@typescript-eslint/parser': 8.22.0(eslint@9.19.0)(typescript@5.7.2)
       eslint: 9.19.0
     transitivePeerDependencies:
@@ -7326,6 +7336,12 @@ snapshots:
   eslint-plugin-simple-import-sort@12.1.1(eslint@9.19.0):
     dependencies:
       eslint: 9.19.0
+
+  eslint-plugin-unused-imports@4.1.4(@typescript-eslint/eslint-plugin@8.22.0(@typescript-eslint/parser@8.22.0(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0):
+    dependencies:
+      eslint: 9.19.0
+    optionalDependencies:
+      '@typescript-eslint/eslint-plugin': 8.22.0(@typescript-eslint/parser@8.22.0(eslint@9.19.0)(typescript@5.7.2))(eslint@9.19.0)(typescript@5.7.2)
 
   eslint-scope@8.2.0:
     dependencies:

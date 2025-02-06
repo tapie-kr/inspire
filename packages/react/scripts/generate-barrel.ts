@@ -1,6 +1,6 @@
-import * as fs from 'fs';
+import { existsSync, writeFileSync } from 'fs';
 import { glob } from 'glob';
-import * as path from 'path';
+import { basename, extname, join } from 'path';
 
 interface BarrelOptions {
   include:        string[];
@@ -42,7 +42,7 @@ class SingleBarrelGenerator {
   }
   public async generate(directory: string): Promise<void> {
     try {
-      if (!fs.existsSync(directory)) {
+      if (!existsSync(directory)) {
         throw new Error(`Directory not found: ${directory}`);
       }
 
@@ -70,7 +70,7 @@ class SingleBarrelGenerator {
   private getExportPaths(files: string[]): string[] {
     return files
       .map(file => {
-        const extension = path.extname(file);
+        const extension = extname(file);
 
         return file.slice(0, -extension.length);
       })
@@ -84,15 +84,15 @@ class SingleBarrelGenerator {
 
           return this.options.exportStyle === 'star'
             ? `export * from '${importPath}'`
-            : `export { default as ${path.basename(exportPath)} } from '${importPath}'`;
+            : `export { default as ${basename(exportPath)} } from '${importPath}'`;
         })
         .join('\n') + '\n'
     );
   }
   private writeBarrelFile(directory: string, content: string): void {
-    const barrelPath = path.join(directory, this.options.barrelFileName);
+    const barrelPath = join(directory, this.options.barrelFileName);
 
-    fs.writeFileSync(barrelPath, content);
+    writeFileSync(barrelPath, content);
   }
 }
 
