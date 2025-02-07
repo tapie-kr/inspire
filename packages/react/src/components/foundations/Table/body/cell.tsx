@@ -3,7 +3,7 @@ import { cell } from '../styles/body.css';
 
 import { Box } from '@/components/miscellaneous/layout/Box';
 
-import { type ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 type TableBodyCellProps = {
   children?: ReactNode;

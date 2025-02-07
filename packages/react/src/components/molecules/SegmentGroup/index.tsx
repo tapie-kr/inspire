@@ -5,7 +5,7 @@ import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { HStack } from '@/components/miscellaneous/layout/HStack';
 
-import { type ReactNode, useCallback, useState } from 'react';
+import { ReactNode, useCallback, useState } from 'react';
 import { SegmentGroupContext } from './context';
 
 type SegmentGroupProps = {

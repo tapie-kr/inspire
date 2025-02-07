@@ -1,5 +1,5 @@
 import { atom } from 'jotai';
-import { type OverlayMeta } from '@/types/atom';
+import { MousePosition, OverlayMeta } from '@/types/atom';
 
 export const viewportWidthAtom = atom<number | null>(null);
 
@@ -8,4 +8,9 @@ export const overlayAtom = atom<OverlayMeta>({
   dom:              null,
   activeChildren:   [],
   wrapperClassName: null,
+});
+
+export const mousePositionAtom = atom<MousePosition>({
+  x: 0,
+  y: 0,
 });

@@ -7,7 +7,7 @@ import { Icon } from '@/components/foundations/Icon';
 import { Typo } from '@/components/foundations/Typography';
 
 import cn from 'classnames';
-import { type IconName } from '@/components/foundations/Icon/shared';
+import { IconName } from '@/components/foundations/Icon/shared';
 import { Weight } from '@/components/foundations/Typography/shared';
 import { BadgeSize, BadgeTheme } from '../shared';
 

@@ -2,7 +2,7 @@ import { useAtomValue, useSetAtom } from 'jotai';
 import { useEffect, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { overlayAtom } from '@/lib/atoms';
-import { type DefaultProps } from '@/types/prop';
+import { DefaultProps } from '@/types/prop';
 
 type OverlayProps = DefaultProps & {
   key?: string;

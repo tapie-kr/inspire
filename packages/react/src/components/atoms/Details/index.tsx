@@ -18,14 +18,14 @@ import { VStack } from '@/components/miscellaneous/layout/VStack';
 import cn from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
-  type MouseEvent,
-  type ReactNode,
+  MouseEvent,
+  ReactNode,
   useCallback,
   useState,
 } from 'react';
 import { StackAlign } from '@/lib/layout/types';
 import { utilityClass } from '@/lib/style/utility';
-import { type DefaultProps } from '@/types/prop';
+import { DefaultProps } from '@/types/prop';
 import { getTransition } from '@/utils/motion/transition';
 
 type DetailsProps = DefaultProps & {

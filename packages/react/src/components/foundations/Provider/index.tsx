@@ -5,8 +5,9 @@ import { children, visible } from './styles.css';
 
 import cn from 'classnames';
 import { Provider as JotaiProvider } from 'jotai';
-import { type ReactNode, useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { CheckMobileService } from './services/check-mobile';
+import { MousePositionService } from './services/mouse-position';
 import { OverlayService } from './services/overlay';
 import { showSignature } from './shared';
 
@@ -35,6 +36,7 @@ export function InspireProvider(props: InspireProviderProps) {
       <noscript>{props.noScriptMessage || 'Javascript 실행을 허용해주세요.'}</noscript>
       <CheckMobileService />
       <OverlayService />
+      <MousePositionService />
     </JotaiProvider>
   );
 }

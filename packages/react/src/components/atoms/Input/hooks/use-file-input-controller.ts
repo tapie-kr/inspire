@@ -1,5 +1,5 @@
-import { type ChangeEvent, useCallback, useState } from 'react';
-import { type HTMLInputProps } from '../shared';
+import { ChangeEvent, useCallback, useState } from 'react';
+import { HTMLInputProps } from '../shared';
 
 type FileInputValue = File[] | null;
 

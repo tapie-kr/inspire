@@ -11,10 +11,10 @@ import { Typo } from '@/components/foundations/Typography';
 
 import cn from 'classnames';
 import React, { useCallback, useMemo } from 'react';
-import { type IconName } from '@/components/foundations/Icon/shared';
+import { IconName } from '@/components/foundations/Icon/shared';
 import { Weight } from '@/components/foundations/Typography/shared';
 import { useDraggableFileInputController } from '../hooks/use-draggable-file-input-controller';
-import { type HTMLInputProps, InputSize } from '../shared';
+import { HTMLInputProps, InputSize } from '../shared';
 
 type DraggableFileInputProps = HTMLInputProps & {
   leadingIcon?: IconName;

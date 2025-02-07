@@ -8,7 +8,7 @@ import { HStack } from '@/components/miscellaneous/layout/HStack';
 
 import { ButtonSize, ButtonVariant } from '@/components/atoms/Button/shared';
 import { Weight } from '@/components/foundations/Typography/shared';
-import { type ActionIcon, type Column } from './shared';
+import { ActionIcon, Column } from './shared';
 
 type DataTableProps<T extends object> = {
   columns:    Array<Column<T, keyof T>>;

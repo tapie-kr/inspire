@@ -3,7 +3,7 @@ import { radiusVars } from '@/lib/style/contract/component.css';
 
 import { Typo } from '@/components/foundations/Typography';
 
-import { type Meta } from '@storybook/react';
+import { Meta } from '@storybook/react';
 import { Box } from '../layout/Box';
 import { Overlay } from '.';
 

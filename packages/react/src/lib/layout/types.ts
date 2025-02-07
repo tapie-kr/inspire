@@ -1,4 +1,4 @@
-import { type HTMLAttributes, type ReactNode } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 
 export enum LayoutTag {
   DIV = 'div',

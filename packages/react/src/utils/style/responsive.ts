@@ -1,4 +1,4 @@
-import { type CSSProperties } from '@vanilla-extract/css';
+import { CSSProperties } from '@vanilla-extract/css';
 
 type CSSPropertiesWithVars = CSSProperties & {
   vars?: {
