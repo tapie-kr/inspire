@@ -6,8 +6,8 @@ import { primaryThemes } from '../styles/themes/primary.css';
 import { secondaryThemes } from '../styles/themes/secondary.css';
 import { spacingVars } from '@/lib/style/contract/component.css';
 
-import { HStack } from '@cottons-kr/react-foundation';
 import { Icon } from '@/components/foundations/Icon';
+import { HStack } from '@/components/miscellaneous/layout/HStack';
 
 import cn from 'classnames';
 import { ReactNode, useMemo } from 'react';
@@ -68,12 +68,9 @@ export function DefaultButton(props: DefaultButtonProps) {
       className={cn(classNames)}
     >
       <HStack
-        fitContent={!fullWidth}
-        fullWidth={fullWidth}
+        fullWidth
         fullHeight={fullHeight}
-        align='center'
-        justify='center'
-        gap={GapMap[size]}
+        spacing={GapMap[size]}
       >
         <Icon
           name={leadingIcon}
