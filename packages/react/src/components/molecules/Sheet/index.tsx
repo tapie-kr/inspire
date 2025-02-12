@@ -37,7 +37,6 @@ export function Sheet(props: SheetProps) {
         animate='visible'
         exit='hidden'
         transition={getTransition({ duration: 0.4 })}
-        onClick={e => e.stopPropagation()}
       >
         <VStack
           fullWidth

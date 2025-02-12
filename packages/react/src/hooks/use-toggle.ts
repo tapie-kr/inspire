@@ -11,3 +11,5 @@ export function useToggle(initialState = false) {
     setter,
   ] as const;
 }
+
+export type Toggler = ReturnType<typeof useToggle>;

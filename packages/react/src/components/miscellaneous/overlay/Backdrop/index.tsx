@@ -1,13 +1,13 @@
 'use client';
 
-import { backdrop } from './styles.css';
+import { backdrop, content } from './styles.css';
 
 import { AnimatePresence, motion } from 'framer-motion';
 import { useToggle } from '@/hooks/use-toggle';
 import { DefaultProps } from '@/types/prop';
 import { getTransition } from '@/utils/motion/transition';
 import { Overlay } from '../Overlay';
-import { BackdropContext, variants } from './context';
+import { BackdropContext, variants } from './shared';
 
 type BackdropProps = DefaultProps & {
   toggler: ReturnType<typeof useToggle>;
@@ -41,7 +41,12 @@ export function Backdrop(props: BackdropProps) {
             exit='hidden'
             transition={getTransition({ duration: 0.3 })}
             onClick={close}
-          >{children}
+          >
+            <div
+              className={content}
+              onClick={e => e.stopPropagation()}
+            >{children}
+            </div>
           </motion.div>
         </Overlay>
       )}

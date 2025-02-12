@@ -9,7 +9,7 @@ import { Typo } from '@/components/foundations/Typography';
 import { Box } from '@/components/miscellaneous/layout/Box';
 import { HStack } from '@/components/miscellaneous/layout/HStack';
 import { Stack } from '@/components/miscellaneous/layout/Stack';
-import { BackdropContext } from '@/components/miscellaneous/overlay/Backdrop/context';
+import { BackdropContext } from '@/components/miscellaneous/overlay/Backdrop/shared';
 
 import { useContext, useMemo } from 'react';
 import { ButtonSize, ButtonVariant } from '@/components/atoms/Button/shared';
