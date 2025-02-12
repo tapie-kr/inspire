@@ -10,11 +10,16 @@ import { Overlay } from '../Overlay';
 import { BackdropContext, variants } from './shared';
 
 type BackdropProps = DefaultProps & {
-  toggler: ReturnType<typeof useToggle>;
+  toggler:               ReturnType<typeof useToggle>;
+  preventBackdropClick?: boolean;
 };
 
 export function Backdrop(props: BackdropProps) {
-  const { toggler, children } = props;
+  const {
+    toggler,
+    preventBackdropClick,
+    children,
+  } = props;
 
   const [
     isOpen,
@@ -40,7 +45,7 @@ export function Backdrop(props: BackdropProps) {
             animate='visible'
             exit='hidden'
             transition={getTransition({ duration: 0.3 })}
-            onClick={close}
+            onClick={preventBackdropClick ? undefined : close}
           >
             <div
               className={content}

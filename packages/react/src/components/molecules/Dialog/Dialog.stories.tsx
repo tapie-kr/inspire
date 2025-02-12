@@ -14,18 +14,24 @@ import { StackAlign } from '@/lib/layout/types';
 import { Dialog } from '.';
 
 const meta: Meta = {
-  title: 'Molecules/Dialog', component: Dialog,
+  title:     'Molecules/Dialog',
+  component: Dialog,
+  argTypes:  { modal: { control: { type: 'boolean' } } },
+  args:      { modal: false },
 };
 
 type DialogStory = StoryObj<typeof Dialog>;
 
-export const Default: DialogStory = { render: () => {
+export const Default: DialogStory = { render: props => {
   const toggler = useToggle();
 
   return (
     <>
       <Button.Default onClick={toggler[1]}>Open Dialog</Button.Default>
-      <Dialog toggler={toggler}>
+      <Dialog
+        {...props}
+        toggler={toggler}
+      >
         <VStack
           fullWidth
           spacing={spacingVars.moderate}

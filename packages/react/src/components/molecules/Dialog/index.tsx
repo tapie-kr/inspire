@@ -10,11 +10,15 @@ import { variants } from './shared';
 
 type DialogProps = DefaultProps & {
   toggler: Toggler;
+  modal?:  boolean;
 };
 
 export function Dialog(props: DialogProps) {
   return (
-    <Backdrop toggler={props.toggler}>
+    <Backdrop
+      toggler={props.toggler}
+      preventBackdropClick={props.modal}
+    >
       <motion.div
         className={base}
         variants={variants}
