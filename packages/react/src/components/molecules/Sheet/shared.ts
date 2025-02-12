@@ -1,12 +1,4 @@
 import { Variants } from 'framer-motion';
-import { createContext } from 'react';
-
-type SheetContextType = {
-  direction: SheetDirection;
-  close:     () => void;
-};
-
-export const SheetContext = createContext({} as SheetContextType);
 
 export enum SheetHeaderType {
   TITLE = 'title',

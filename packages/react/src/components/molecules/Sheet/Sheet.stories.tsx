@@ -48,6 +48,7 @@ function SheetWrapper() {
         </Grid>
       </Box>
       <Sheet
+        title='Sheet Example'
         direction={direction}
         toggler={toggler}
       >

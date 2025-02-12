@@ -1,6 +1,6 @@
 'use client';
 
-import { bar, handleBar, title } from './styles/header.css';
+import { bar, handleBar, title as titleStyle } from './styles/header.css';
 import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { Button } from '@/components/atoms/Button';
@@ -9,19 +9,22 @@ import { Typo } from '@/components/foundations/Typography';
 import { Box } from '@/components/miscellaneous/layout/Box';
 import { HStack } from '@/components/miscellaneous/layout/HStack';
 import { Stack } from '@/components/miscellaneous/layout/Stack';
+import { BackdropContext } from '@/components/miscellaneous/overlay/Backdrop/context';
 
 import { useContext, useMemo } from 'react';
 import { ButtonSize, ButtonVariant } from '@/components/atoms/Button/shared';
 import { useMediaQuery } from '@/hooks/use-media-query';
-import { SheetContext, SheetDirection, SheetHeaderType } from './shared';
+import { SheetDirection, SheetHeaderType } from './shared';
 
 type SheetHeaderProps = {
-  title?: string;
+  title?:    string;
+  direction: SheetDirection;
 };
 
-export function SheetHeader(_props: SheetHeaderProps) {
+export function SheetHeader(props: SheetHeaderProps) {
   const isMobile = useMediaQuery();
-  const { direction, close } = useContext(SheetContext);
+  const { title, direction } = props;
+  const { close } = useContext(BackdropContext);
 
   const type = useMemo(() => {
     if (isMobile && direction === SheetDirection.BOTTOM) {
@@ -35,11 +38,11 @@ export function SheetHeader(_props: SheetHeaderProps) {
     ? (
       <HStack
         fullWidth
-        className={title}
+        className={titleStyle}
         spacing={spacingVars.mini}
       >
         <Box fullWidth>
-          <Typo.Base>Title</Typo.Base>
+          <Typo.Base>{title}</Typo.Base>
         </Box>
         <Button.Icon
           icon={GlyphIcon.CLOSE}

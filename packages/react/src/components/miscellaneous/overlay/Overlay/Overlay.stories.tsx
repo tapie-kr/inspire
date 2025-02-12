@@ -2,9 +2,9 @@ import { colorVars } from '@/lib/style/contract/color.css';
 import { radiusVars } from '@/lib/style/contract/component.css';
 
 import { Typo } from '@/components/foundations/Typography';
+import { Box } from '@/components/miscellaneous/layout/Box';
 
 import { Meta } from '@storybook/react';
-import { Box } from '../layout/Box';
 import { Overlay } from '.';
 
 const meta: Meta = {

@@ -6,15 +6,6 @@ import { getMobileMediaQuery } from '@/utils/style/responsive';
 import { getShorthandedValue } from '@/utils/style/shorthand';
 import { SheetDirection } from '../shared';
 
-export const backdrop = style({
-  position:   'absolute',
-  top:        0,
-  bottom:     0,
-  width:      '100%',
-  height:     '100%',
-  transition: 'none',
-});
-
 export const sheet = style({
   position:   'absolute',
   background: colorVars.surface.default,
