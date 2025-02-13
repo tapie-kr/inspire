@@ -1,6 +1,6 @@
 import { Variants } from 'framer-motion';
 
-export const variants: Variants = {
+export const dialogVariants: Variants = {
   hidden: {
     y:       5,
     opacity: 0,

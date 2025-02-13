@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { Toggler } from '@/hooks/use-toggle';
 import { DefaultProps } from '@/types/prop';
 import { getTransition } from '@/utils/motion/transition';
-import { variants } from './shared';
+import { dialogVariants } from './shared';
 
 type DialogProps = DefaultProps & {
   toggler: Toggler;
@@ -21,7 +21,7 @@ export function Dialog(props: DialogProps) {
     >
       <motion.div
         className={base}
-        variants={variants}
+        variants={dialogVariants}
         initial='hidden'
         animate='visible'
         exit='hidden'
