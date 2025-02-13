@@ -11,7 +11,7 @@ export type Column<T extends object, K extends keyof T> = {
   };
 }[K];
 
-export type ActionIcon = {
-  icon:    IconName;
-  onClick: (index: number) => unknown;
+export type ActionIcon<T> = {
+  icon:    IconName | ((data: T) => IconName);
+  onClick: (data: T) => unknown;
 };
