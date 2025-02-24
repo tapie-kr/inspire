@@ -9,6 +9,7 @@ export * from './components/atoms/Button/categories/text';
 export * from './components/atoms/Button/index';
 export * from './components/atoms/Button/shared';
 export * from './components/atoms/Chip/index';
+export * from './components/atoms/DatePicker/index';
 export * from './components/atoms/Details/index';
 export * from './components/atoms/Input/categories/draggable-file';
 export * from './components/atoms/Input/categories/file';
