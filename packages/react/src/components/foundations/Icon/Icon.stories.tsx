@@ -1,4 +1,4 @@
-import { type Meta, type StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { getIconArgType } from '@/lib/storybook/icon';
 import { Icon } from '.';
 import { GlyphIcon } from './icon-set';

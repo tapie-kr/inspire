@@ -1,6 +1,6 @@
 import { InspireProvider } from '@/components/foundations/Provider';
 
-import { type Decorator } from '@storybook/react';
+import { Decorator } from '@storybook/react';
 
 export const parameters = { themes: {
   default: 'light',

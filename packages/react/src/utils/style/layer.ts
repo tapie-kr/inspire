@@ -1,4 +1,4 @@
-import { globalStyle as _globalStyle, style as _style, type StyleRule } from '@vanilla-extract/css';
+import { globalStyle as _globalStyle, style as _style, StyleRule } from '@vanilla-extract/css';
 
 type StyleFunction = typeof _style;
 

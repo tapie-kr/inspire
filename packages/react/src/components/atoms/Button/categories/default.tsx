@@ -6,16 +6,16 @@ import { primaryThemes } from '../styles/themes/primary.css';
 import { secondaryThemes } from '../styles/themes/secondary.css';
 import { spacingVars } from '@/lib/style/contract/component.css';
 
-import { HStack } from '@cottons-kr/react-foundation';
 import { Icon } from '@/components/foundations/Icon';
+import { HStack } from '@/components/miscellaneous/layout/HStack';
 
 import cn from 'classnames';
-import { type ReactNode, useMemo } from 'react';
-import { type IconName } from '@/components/foundations/Icon/shared';
+import { ReactNode, useMemo } from 'react';
+import { IconName } from '@/components/foundations/Icon/shared';
 import { Theme } from '@/lib/style/theme';
 import {
   ButtonIconSizeMap,
-  type ButtonPropsBase,
+  ButtonPropsBase,
   ButtonSize,
   ButtonTypoSizeMap,
   ButtonVariant,
@@ -68,12 +68,9 @@ export function DefaultButton(props: DefaultButtonProps) {
       className={cn(classNames)}
     >
       <HStack
-        fitContent={!fullWidth}
-        fullWidth={fullWidth}
+        fullWidth
         fullHeight={fullHeight}
-        align='center'
-        justify='center'
-        gap={GapMap[size]}
+        spacing={GapMap[size]}
       >
         <Icon
           name={leadingIcon}

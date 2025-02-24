@@ -1,6 +1,6 @@
 import { base } from './styles/base.css';
 
-import { type ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { TableBody } from './body';
 import { TableHead } from './head';
 

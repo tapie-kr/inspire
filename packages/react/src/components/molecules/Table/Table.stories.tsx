@@ -1,8 +1,8 @@
-import { type Meta, type StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Table } from '.';
 
 const meta: Meta = {
-  title:     'Foundations/Table',
+  title:     'Molecules/Table',
   component: Table,
 };
 

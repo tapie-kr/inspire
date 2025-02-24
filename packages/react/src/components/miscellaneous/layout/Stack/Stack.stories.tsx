@@ -1,6 +1,6 @@
 import { spacingVars } from '@/lib/style/contract/component.css';
 
-import { type Meta, type StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import {
   LayoutTag,
   StackAlign,

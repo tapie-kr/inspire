@@ -2,18 +2,18 @@ import { colorVars } from '@/lib/style/contract/color.css';
 import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { Button } from '@/components/atoms/Button';
-import { Table } from '@/components/foundations/Table';
 import { Typo } from '@/components/foundations/Typography';
 import { HStack } from '@/components/miscellaneous/layout/HStack';
+import { Table } from '@/components/molecules/Table';
 
 import { ButtonSize, ButtonVariant } from '@/components/atoms/Button/shared';
 import { Weight } from '@/components/foundations/Typography/shared';
-import { type ActionIcon, type Column } from './shared';
+import { ActionIcon, Column } from './shared';
 
 type DataTableProps<T extends object> = {
   columns:    Array<Column<T, keyof T>>;
   data:       Array<T>;
-  actions?:   Array<ActionIcon<T>>;
+  actions?:   Array<ActionIcon<T, Array<T>>>;
   showIndex?: boolean;
 };
 
@@ -59,7 +59,7 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
               <Table.Body.Cell>
                 <HStack spacing={spacingVars.base}>
                   {props.actions?.map((a, i) => {
-                    const handleClick = () => a.onClick(d);
+                    const handleClick = () => a.onClick(d, props.data, i);
 
                     return (
                       <Button.Icon

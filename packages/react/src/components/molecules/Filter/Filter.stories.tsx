@@ -1,6 +1,6 @@
 import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
 
-import { type Meta, type StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Filter } from '.';
 
 const meta: Meta = {

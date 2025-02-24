@@ -6,8 +6,8 @@ import * as wrapStyle from './styles/wrap.css';
 
 import cn from 'classnames';
 import {
-  type BaseStackProps,
-  type LayoutTag,
+  BaseStackProps,
+  LayoutTag,
   StackAlign,
   StackDirection,
   StackJustify,

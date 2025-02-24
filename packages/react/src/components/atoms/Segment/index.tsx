@@ -10,7 +10,7 @@ import { SegmentGroupContext } from '@/components/molecules/SegmentGroup/context
 
 import cn from 'classnames';
 import { useCallback, useContext, useMemo } from 'react';
-import { type IconName } from '@/components/foundations/Icon/shared';
+import { IconName } from '@/components/foundations/Icon/shared';
 import { Weight } from '@/components/foundations/Typography/shared';
 
 type SegmentProps = {

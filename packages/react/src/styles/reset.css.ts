@@ -19,13 +19,14 @@ resetGlobalStyle('html, body', {
 });
 
 resetGlobalStyle('*', {
-  boxSizing:      'border-box',
-  margin:         0,
-  padding:        0,
-  fontFamily:     inspireFontKit,
-  fontSynthesis:  'none',
-  shapeRendering: 'geometricPrecision',
-  transition:     [
+  boxSizing:               'border-box',
+  margin:                  0,
+  padding:                 0,
+  fontFamily:              inspireFontKit,
+  fontSynthesis:           'none',
+  shapeRendering:          'geometricPrecision',
+  WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
+  transition:              [
     getCSSTransition('background-color', 0.3),
     getCSSTransition('background', 0.3),
     getCSSTransition('border-color', 0.3),

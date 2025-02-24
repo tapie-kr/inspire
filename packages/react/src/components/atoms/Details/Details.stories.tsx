@@ -3,7 +3,7 @@ import { spacingVars } from '@/lib/style/contract/component.css';
 import { Typo } from '@/components/foundations/Typography';
 import { VStack } from '@/components/miscellaneous/layout/VStack';
 
-import { type Meta, type StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { StackAlign } from '@/lib/layout/types';
 import { loremIpsum } from '@/lib/storybook/shared';
 import { Details } from '.';

@@ -1,6 +1,6 @@
 import { AspectRatio } from '@/components/miscellaneous/layout/AspectRatio';
 
-import { type Meta, type StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Image } from '.';
 
 const meta: Meta = {

@@ -1,7 +1,7 @@
 import {
-  type BrandIcon,
+  BrandIcon,
   BrandIconMap,
-  type GlyphIcon,
+  GlyphIcon,
   GlyphIconMap,
 } from './icon-set';
 
