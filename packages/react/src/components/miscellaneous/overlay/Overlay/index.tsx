@@ -1,3 +1,5 @@
+'use client';
+
 import { useAtomValue, useSetAtom } from 'jotai';
 import { useEffect, useMemo } from 'react';
 import { createPortal } from 'react-dom';
