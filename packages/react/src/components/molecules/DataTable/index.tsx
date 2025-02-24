@@ -2,9 +2,9 @@ import { colorVars } from '@/lib/style/contract/color.css';
 import { spacingVars } from '@/lib/style/contract/component.css';
 
 import { Button } from '@/components/atoms/Button';
-import { Table } from '@/components/foundations/Table';
 import { Typo } from '@/components/foundations/Typography';
 import { HStack } from '@/components/miscellaneous/layout/HStack';
+import { Table } from '@/components/molecules/Table';
 
 import { ButtonSize, ButtonVariant } from '@/components/atoms/Button/shared';
 import { Weight } from '@/components/foundations/Typography/shared';
