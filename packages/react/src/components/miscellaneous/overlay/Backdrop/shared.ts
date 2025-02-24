@@ -1,3 +1,5 @@
+'use client';
+
 import { Variants } from 'framer-motion';
 import { createContext } from 'react';
 
