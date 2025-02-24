@@ -4,18 +4,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Select } from '.';
 import { SelectSize } from './shared';
 
-const meta = {
-  title:      'Atoms/Select',
-  component:  Select,
-  parameters: { layout: 'centered' },
-  tags:       ['autodocs'],
-} satisfies Meta<typeof Select>;
+const meta: Meta = {
+  title:     'Atoms/Select',
+  component: Select,
+};
 
-export default meta;
+type SelectStory = StoryObj<typeof meta>;
 
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {
+export const Default: SelectStory = {
   render: props => (
     <div style={{ width: 250 }}>
       <Select
@@ -60,3 +56,5 @@ export const Default: Story = {
     ),
   },
 };
+
+export default meta;
