@@ -1,3 +1,5 @@
+'use client';
+
 import { base } from './styles.css';
 
 import { Backdrop } from '@/components/miscellaneous/overlay/Backdrop';

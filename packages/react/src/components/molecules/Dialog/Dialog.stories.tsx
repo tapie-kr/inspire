@@ -25,9 +25,15 @@ type DialogStory = StoryObj<typeof Dialog>;
 export const Default: DialogStory = { render: props => {
   const toggler = useToggle();
 
+  const [
+    _isModalOpen,
+    toggleModal,
+    _setToggleOpen,
+  ] = toggler;
+
   return (
     <>
-      <Button.Default onClick={toggler[1]}>Open Dialog</Button.Default>
+      <Button.Default onClick={toggleModal}>Open Dialog</Button.Default>
       <Dialog
         {...props}
         toggler={toggler}
