@@ -13,7 +13,7 @@ import { ActionIcon, Column } from './shared';
 type DataTableProps<T extends object> = {
   columns:    Array<Column<T, keyof T>>;
   data:       Array<T>;
-  actions?:   Array<ActionIcon>;
+  actions?:   Array<ActionIcon<T, Array<T>>>;
   showIndex?: boolean;
 };
 
@@ -59,7 +59,7 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
               <Table.Body.Cell>
                 <HStack spacing={spacingVars.base}>
                   {props.actions?.map((a, i) => {
-                    const handleClick = () => a.onClick(i + 1);
+                    const handleClick = () => a.onClick(d, props.data, i);
 
                     return (
                       <Button.Icon

@@ -8,10 +8,10 @@ export type Column<T extends object, K extends keyof T> = {
     width?:      number | string;
     isSortable?: boolean;
     cell?:       (value: T[U], index: number, data: T) => ReactNode;
-  };
+  }
 }[K];
 
-export type ActionIcon = {
+export type ActionIcon<T extends object, K extends object> = {
   icon:    IconName;
-  onClick: (index: number) => unknown;
+  onClick: (value: T, data: K, index: number) => unknown;
 };
