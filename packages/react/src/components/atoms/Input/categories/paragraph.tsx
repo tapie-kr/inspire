@@ -8,7 +8,7 @@ import { Typo } from '@/components/foundations/Typography';
 
 import cn from 'classnames';
 import { useTextInputController } from '../hooks/use-text-input-controller';
-import { HTMLTextAreaProps, InputSize } from '../shared';
+import { type HTMLTextAreaProps, InputSize } from '../shared';
 import { DraggableFileInput } from './draggable-file';
 
 export enum ParagraphInputResize {

@@ -12,7 +12,7 @@ import { Stack } from '@/components/miscellaneous/layout/Stack';
 import { VStack } from '@/components/miscellaneous/layout/VStack';
 
 import { StackAlign } from '@/lib/layout/types';
-import { FilterGroup } from './shared';
+import { type FilterGroup } from './shared';
 
 type FilterProps = {
   filters?:     Array<FilterGroup>;

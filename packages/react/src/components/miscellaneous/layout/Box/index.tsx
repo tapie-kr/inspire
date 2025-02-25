@@ -2,7 +2,7 @@ import * as s from './styles.css';
 
 import cn from 'classnames';
 import { createElement } from 'react';
-import { BaseLayoutProps, LayoutTag } from '@/lib/layout/types';
+import { type BaseLayoutProps, LayoutTag } from '@/lib/layout/types';
 
 type BoxProps<T extends LayoutTag> = BaseLayoutProps<T> & {
   padding?: string | number;

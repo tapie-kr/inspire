@@ -1,7 +1,7 @@
 import { Input } from '@/components/atoms/Input';
 import { Box } from '@/components/miscellaneous/layout/Box';
 
-import { Meta, StoryObj } from '@storybook/react';
+import { type Meta, type StoryObj } from '@storybook/react';
 import { getEnumArgType } from '@/lib/storybook/enum';
 import { FormField } from '.';
 import { FormFieldSize } from './shared';

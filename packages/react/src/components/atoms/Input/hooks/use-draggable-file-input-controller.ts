@@ -1,10 +1,10 @@
 import {
-  ChangeEvent,
-  DragEvent,
+  type ChangeEvent,
+  type DragEvent,
   useCallback,
   useState,
 } from 'react';
-import { HTMLInputProps } from '../shared';
+import { type HTMLInputProps } from '../shared';
 
 type FileInputValue = File[] | null;
 

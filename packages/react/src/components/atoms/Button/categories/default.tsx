@@ -10,12 +10,12 @@ import { Icon } from '@/components/foundations/Icon';
 import { HStack } from '@/components/miscellaneous/layout/HStack';
 
 import cn from 'classnames';
-import { ReactNode, useMemo } from 'react';
-import { IconName } from '@/components/foundations/Icon/shared';
+import { type ReactNode, useMemo } from 'react';
+import { type IconName } from '@/components/foundations/Icon/shared';
 import { Theme } from '@/lib/style/theme';
 import {
   ButtonIconSizeMap,
-  ButtonPropsBase,
+  type ButtonPropsBase,
   ButtonSize,
   ButtonTypoSizeMap,
   ButtonVariant,

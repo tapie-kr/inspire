@@ -1,6 +1,6 @@
 'use client';
 
-import { Variants } from 'framer-motion';
+import { type Variants } from 'framer-motion';
 import { createContext } from 'react';
 
 type BackdropContextType = {

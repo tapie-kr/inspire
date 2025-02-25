@@ -5,8 +5,8 @@ import { base } from './styles.css';
 import { Backdrop } from '@/components/miscellaneous/overlay/Backdrop';
 
 import { motion } from 'framer-motion';
-import { Toggler } from '@/hooks/use-toggle';
-import { DefaultProps } from '@/types/prop';
+import { type Toggler } from '@/hooks/use-toggle';
+import { type DefaultProps } from '@/types/prop';
 import { getTransition } from '@/utils/motion/transition';
 import { dialogVariants } from './shared';
 

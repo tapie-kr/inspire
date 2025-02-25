@@ -1,7 +1,7 @@
 import { colorVars } from '@/lib/style/contract/color.css';
 import { radiusVars, spacingVars } from '@/lib/style/contract/component.css';
 
-import { Meta, StoryObj } from '@storybook/react';
+import { type Meta, type StoryObj } from '@storybook/react';
 import { StackDirection } from '@/lib/layout/types';
 import { getEnumArgType } from '@/lib/storybook/enum';
 import { Box } from '../Box';

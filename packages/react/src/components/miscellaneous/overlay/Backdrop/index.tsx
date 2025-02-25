@@ -3,8 +3,8 @@
 import { backdrop, content } from './styles.css';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { useToggle } from '@/hooks/use-toggle';
-import { DefaultProps } from '@/types/prop';
+import { type useToggle } from '@/hooks/use-toggle';
+import { type DefaultProps } from '@/types/prop';
 import { getTransition } from '@/utils/motion/transition';
 import { Overlay } from '../Overlay';
 import { BackdropContext, variants } from './shared';

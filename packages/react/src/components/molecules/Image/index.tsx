@@ -8,7 +8,7 @@ import { Box } from '@/components/miscellaneous/layout/Box';
 
 import { useCallback, useMemo, useState } from 'react';
 import { useMountedState } from '@/hooks/use-mounted-state';
-import { DefaultProps } from '@/types/prop';
+import { type DefaultProps } from '@/types/prop';
 
 type ImageProps = DefaultProps<true> & {
   src:         string | File | Blob;

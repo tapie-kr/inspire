@@ -11,9 +11,9 @@ import { Typo } from '@/components/foundations/Typography';
 
 import cn from 'classnames';
 import React, { useCallback, useMemo } from 'react';
-import { IconName } from '@/components/foundations/Icon/shared';
+import { type IconName } from '@/components/foundations/Icon/shared';
 import { useFileInputController } from '../hooks/use-file-input-controller';
-import { HTMLInputProps, InputSize } from '../shared';
+import { type HTMLInputProps, InputSize } from '../shared';
 import { DraggableFileInput } from './draggable-file';
 
 type FileInputProps = HTMLInputProps & {

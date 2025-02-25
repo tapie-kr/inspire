@@ -1,6 +1,6 @@
 import { body } from '../styles/body.css';
 
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import { TableBodyCell } from './cell';
 import { TableBodyRow } from './row';
 

@@ -1,7 +1,7 @@
 import * as variantStyles from './styles/variant.css';
 import * as weightStyles from './styles/weight.css';
 
-import { DetailsHTMLAttributes, ReactNode } from 'react';
+import { type DetailsHTMLAttributes, type ReactNode } from 'react';
 
 export enum TypographyTag {
   H1 = 'h1',

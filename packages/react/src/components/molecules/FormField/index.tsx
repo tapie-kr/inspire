@@ -7,7 +7,7 @@ import { Typo } from '@/components/foundations/Typography';
 import { Box } from '@/components/miscellaneous/layout/Box';
 import { VStack } from '@/components/miscellaneous/layout/VStack';
 
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import { StackAlign } from '@/lib/layout/types';
 import { FormFieldSize } from './shared';
 

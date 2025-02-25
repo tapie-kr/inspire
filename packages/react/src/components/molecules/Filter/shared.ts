@@ -1,4 +1,4 @@
-import { IconName } from '@/components/foundations/Icon/shared';
+import { type IconName } from '@/components/foundations/Icon/shared';
 
 export type FilterGroup = {
   label:   string;

@@ -1,6 +1,6 @@
 import { head } from '../styles/head.css';
 
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import { TableHeadCell } from './cell';
 
 type TableHeadProps = {

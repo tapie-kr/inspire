@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import {
-  BaseStackProps,
-  LayoutTag,
+  type BaseStackProps,
+  type LayoutTag,
   Stack,
   StackDirection,
   useMediaQuery,

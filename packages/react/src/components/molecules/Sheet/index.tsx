@@ -7,9 +7,9 @@ import { Backdrop } from '@/components/miscellaneous/overlay/Backdrop';
 
 import cn from 'classnames';
 import { motion } from 'framer-motion';
-import { useToggle } from '@/hooks/use-toggle';
+import { type useToggle } from '@/hooks/use-toggle';
 import { StackAlign } from '@/lib/layout/types';
-import { DefaultProps } from '@/types/prop';
+import { type DefaultProps } from '@/types/prop';
 import { getTransition } from '@/utils/motion/transition';
 import { SheetHeader } from './header';
 import { SheetDirection, sheetVariants } from './shared';

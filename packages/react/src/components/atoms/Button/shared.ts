@@ -1,6 +1,6 @@
 import { Typo } from '@/components/foundations/Typography';
 
-import { ButtonHTMLAttributes } from 'react';
+import { type ButtonHTMLAttributes } from 'react';
 
 export enum ButtonVariant {
   PRIMARY = 'primary',

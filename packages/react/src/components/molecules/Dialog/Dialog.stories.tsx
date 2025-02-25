@@ -6,7 +6,7 @@ import { Typo } from '@/components/foundations/Typography';
 import { HStack } from '@/components/miscellaneous/layout/HStack';
 import { VStack } from '@/components/miscellaneous/layout/VStack';
 
-import { Meta, StoryObj } from '@storybook/react';
+import { type Meta, type StoryObj } from '@storybook/react';
 import { ButtonVariant } from '@/components/atoms/Button/shared';
 import { Weight } from '@/components/foundations/Typography/shared';
 import { useToggle } from '@/hooks/use-toggle';

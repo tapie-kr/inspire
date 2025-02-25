@@ -1,7 +1,7 @@
 import TypographyBuilder from './builder';
 import {
   Tag,
-  TypographyProps,
+  type TypographyProps,
   typographyVariantClass,
   Variant,
 } from './shared';

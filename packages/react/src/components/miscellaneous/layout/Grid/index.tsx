@@ -4,7 +4,7 @@ import { grid } from './styles.css';
 
 import cn from 'classnames';
 import { useMediaQuery } from '@/hooks/use-media-query';
-import { DefaultProps } from '@/types/prop';
+import { type DefaultProps } from '@/types/prop';
 import { Box } from '../Box';
 
 type GridProps = DefaultProps & {

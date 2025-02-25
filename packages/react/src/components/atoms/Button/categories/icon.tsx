@@ -8,11 +8,11 @@ import { secondaryThemes } from '../styles/themes/secondary.css';
 import { Icon } from '@/components/foundations/Icon';
 
 import cn from 'classnames';
-import { IconName } from '@/components/foundations/Icon/shared';
+import { type IconName } from '@/components/foundations/Icon/shared';
 import { Theme } from '@/lib/style/theme';
 import {
   ButtonIconSizeMap,
-  ButtonPropsBase,
+  type ButtonPropsBase,
   ButtonSize,
   ButtonVariant,
 } from '../shared';

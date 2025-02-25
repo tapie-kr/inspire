@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { createElement } from 'react';
 import {
   Tag,
-  TypographyProps,
+  type TypographyProps,
   typographyWeightClass,
   Weight,
 } from './shared';

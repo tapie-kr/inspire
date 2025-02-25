@@ -5,7 +5,7 @@ import { children, visible } from './styles.css';
 
 import cn from 'classnames';
 import { Provider as JotaiProvider } from 'jotai';
-import { ReactNode, useEffect, useState } from 'react';
+import { type ReactNode, useEffect, useState } from 'react';
 import { CheckMobileService } from './services/check-mobile';
 import { MousePositionService } from './services/mouse-position';
 import { OverlayService } from './services/overlay';

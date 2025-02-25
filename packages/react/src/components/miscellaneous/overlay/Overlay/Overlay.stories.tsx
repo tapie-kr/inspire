@@ -4,7 +4,7 @@ import { radiusVars } from '@/lib/style/contract/component.css';
 import { Typo } from '@/components/foundations/Typography';
 import { Box } from '@/components/miscellaneous/layout/Box';
 
-import { Meta } from '@storybook/react';
+import { type Meta } from '@storybook/react';
 import { Overlay } from '.';
 
 const meta: Meta = {

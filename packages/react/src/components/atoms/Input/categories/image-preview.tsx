@@ -19,7 +19,7 @@ import {
 } from 'react';
 import { Weight } from '@/components/foundations/Typography/shared';
 import { useFileInputController } from '../hooks/use-file-input-controller';
-import { HTMLInputProps } from '../shared';
+import { type HTMLInputProps } from '../shared';
 
 export enum ImagePreviewShape {
   DEFAULT = 'default',

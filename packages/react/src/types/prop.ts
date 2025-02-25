@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 
 export type DefaultProps<NO_CHILDREN extends boolean = false> = {
   className?: string;

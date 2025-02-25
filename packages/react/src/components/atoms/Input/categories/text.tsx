@@ -10,10 +10,10 @@ import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
 
 import cn from 'classnames';
 import { useCallback, useMemo } from 'react';
-import { IconName } from '@/components/foundations/Icon/shared';
+import { type IconName } from '@/components/foundations/Icon/shared';
 import { useToggle } from '@/hooks/use-toggle';
 import { useTextInputController } from '../hooks/use-text-input-controller';
-import { HTMLInputProps, InputSize } from '../shared';
+import { type HTMLInputProps, InputSize } from '../shared';
 
 type TextInputProps = HTMLInputProps & {
   leadingIcon?: IconName;

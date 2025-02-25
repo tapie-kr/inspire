@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { type Meta, type StoryObj } from '@storybook/react';
 import { getIconArgType } from '@/lib/storybook/icon';
 import { Badge } from '.';
 import { TextIndicatorBadgeVariant } from './categories/text-indicator';

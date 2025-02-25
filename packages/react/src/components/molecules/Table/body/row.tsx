@@ -1,6 +1,6 @@
 import { row } from '../styles/body.css';
 
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 
 type TableBodyRowProps = {
   children?: ReactNode;
