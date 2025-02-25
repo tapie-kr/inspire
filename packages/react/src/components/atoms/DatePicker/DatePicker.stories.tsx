@@ -1,6 +1,6 @@
 import { Box } from '@/components/miscellaneous/layout/Box';
 
-import { Meta, StoryObj } from '@storybook/react';
+import { type Meta, type StoryObj } from '@storybook/react';
 import { DatePicker } from '.';
 
 const meta: Meta  = {

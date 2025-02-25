@@ -4,7 +4,7 @@ import { base, input } from './styles.css';
 
 import { HStack } from '@/components/miscellaneous/layout/HStack';
 
-import { InputHTMLAttributes } from 'react';
+import { type InputHTMLAttributes } from 'react';
 
 type DatePickerProps = InputHTMLAttributes<HTMLInputElement> & {
   withTime?: boolean;
