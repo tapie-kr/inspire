@@ -89,18 +89,30 @@ export function Select(props: SelectProps) {
           />
         </motion.div>
       </HStack>
-      <AnimatePresence>
+      <AnimatePresence mode='popLayout'>
         {isOpen && (
           <motion.div
-            style={{ zIndex: 1000 }}
+            style={{
+              zIndex:   1000,
+              position: 'absolute',
+              top:      '100%',
+              left:     0,
+              width:    '100%',
+            }}
             exit={{
-              y: -10, opacity: 0,
+              y:       -10,
+              opacity: 0,
+              zIndex:  1000,
             }}
             initial={{
-              y: -10, opacity: 0,
+              y:       -10,
+              opacity: 0,
+              zIndex:  1000,
             }}
             animate={{
-              y: 0, opacity: 1,
+              y:       0,
+              opacity: 1,
+              zIndex:  1000,
             }}
           >
             <VStack
