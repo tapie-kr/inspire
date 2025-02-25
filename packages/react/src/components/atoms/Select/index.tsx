@@ -92,7 +92,6 @@ export function Select(props: SelectProps) {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            style={{ zIndex: -1 }}
             exit={{
               y: -10, opacity: 0,
             }}
