@@ -62,7 +62,9 @@ export const DraggableFile: FormFieldStory = { render: props => (
 export const ImagePreview: FormFieldStory = { render: props => (
   <Box style={{ width: 320 }}>
     <FormField {...props}>
-      <Input.ImagePreview placeholder='Placeholder' />
+      <Input.ImagePreview
+        placeholder='Placeholder'
+      />
     </FormField>
   </Box>
 ) };
