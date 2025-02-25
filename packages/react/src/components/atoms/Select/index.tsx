@@ -11,16 +11,17 @@ import { Typo } from '@/components/foundations/Typography';
 
 import cn from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Children, isValidElement, useRef } from 'react';
+import { useRef } from 'react';
 import { type IconName } from '@/components/foundations/Icon/shared';
+import { useClickOutside } from './hooks/use-click-outside';
 import { useSelectController } from './hooks/use-select-controller';
-import SelectItem from './SelectItem';
 import { type HTMLSelectProps, type SelectItemProps, SelectSize } from './shared';
 
 type SelectProps = HTMLSelectProps & {
   leadingIcon?: IconName;
   size?:        SelectSize;
   placeholder?: string;
+  options?:     SelectItemProps[];
 };
 
 export function Select(props: SelectProps) {
@@ -36,19 +37,19 @@ export function Select(props: SelectProps) {
     isFocused,
     toggleOpen,
     handleSelect,
-    onFocus,
-    onBlur,
   } = useSelectController(restProps);
 
   const isLarge = size === SelectSize.LARGE;
   const containerRef = useRef<HTMLDivElement>(null);
-
-  const selectedLabel = Children.toArray(props.children)
-    .filter((child): child is React.ReactElement<SelectItemProps> => isValidElement(child) && 'value' in (child.props as SelectItemProps))
-    .find(child => child.props.value === value)?.props.label || '';
-
+  const selectedLabel = props.options?.find(option => option.value === value)?.label || props.placeholder;
   const Label = isLarge ? Typo.Base : Typo.Petite;
   const focusColor = isFocused ? colorVars.content.emphasized : colorVars.content.default;
+
+  useClickOutside(containerRef as React.RefObject<HTMLElement>, () => {
+    if (isOpen) {
+      toggleOpen();
+    }
+  });
 
   return (
     <div
@@ -65,8 +66,6 @@ export function Select(props: SelectProps) {
         gap={isLarge ? spacingVars.mini : spacingVars.tiny}
         tabIndex={0}
         onClick={toggleOpen}
-        onFocus={onFocus}
-        onBlur={onBlur}
       >
         <HStack gap={isLarge ? spacingVars.mini : spacingVars.optical}>
           <Icon
@@ -107,19 +106,15 @@ export function Select(props: SelectProps) {
             <VStack
               className={s.dropdown}
             >
-              {Children.map(props.children, child => {
-                if (!isValidElement<SelectItemProps>(child)) return null;
-
-                return (
-                  <div
-                    className={s.option}
-                    data-selected={child.props.value === value}
-                    onClick={() => handleSelect(child.props.value)}
-                  >
-                    {child.props.label}
-                  </div>
-                );
-              })}
+              {props.options?.map(option => (
+                <div
+                  className={s.option}
+                  data-selected={option.value === value}
+                  onMouseUp={() => handleSelect(option.value)}
+                >
+                  {option.label}
+                </div>
+              ))}
             </VStack>
           </motion.div>
         )}
@@ -127,5 +122,3 @@ export function Select(props: SelectProps) {
     </div>
   );
 }
-
-Select.Item = SelectItem;

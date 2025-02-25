@@ -18,42 +18,27 @@ export const Default: SelectStory = {
         leadingIcon={GlyphIcon.BADGE}
         placeholder='Placeholder'
         size={SelectSize.MEDIUM}
+        options={[
+          {
+            value: '1',
+            label: 'Option 1',
+          },
+          {
+            value: '2',
+            label: 'Option 2',
+          },
+          {
+            value: '3',
+            label: 'Option 3',
+          },
+        ]}
         {...props}
-      >
-        <Select.Item
-          value='1'
-          label='Option 1'
-        />
-        <Select.Item
-          value='2'
-          label='Option 2'
-        />
-        <Select.Item
-          value='3'
-          label='Option 3'
-        />
-      </Select>
+      />
     </div>
   ),
   args: {
     leadingIcon: GlyphIcon.BADGE,
     placeholder: 'Placeholder',
-    children:    (
-      <>
-        <Select.Item
-          value='1'
-          label='Option 1'
-        />
-        <Select.Item
-          value='2'
-          label='Option 2'
-        />
-        <Select.Item
-          value='3'
-          label='Option 3'
-        />
-      </>
-    ),
   },
 };
 
