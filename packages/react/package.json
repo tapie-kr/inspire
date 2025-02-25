@@ -4,9 +4,9 @@
     "packages/font-kit",
     "packages/react"
   ],
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "React Component Collection for INSPIRE",
-  "scripts": { 
+  "scripts": {
     "prepublishOnly": "pnpm build",
     "build:types": "tsc --project tsconfig.lib.json && tsc-alias -p tsconfig.lib.json",
     "build": "rimraf dist && pnpm generate && pnpm build:types && rollup -c --silent && pnpm process:css",
@@ -38,6 +38,7 @@
   ],
   "dependencies": {
     "@cottons-kr/react-foundation": "^0.3.9",
+    "@js-temporal/polyfill": "^0.4.4",
     "classnames": "^2.5.1"
   },
   "peerDependencies": {
