@@ -15,6 +15,7 @@ type FormFieldProps = {
   label:        string;
   isEssential?: boolean;
   description?: string;
+  fitContent?:  boolean;
   size?:        FormFieldSize;
   children?:    ReactNode;
 };
@@ -25,6 +26,7 @@ export function FormField(props: FormFieldProps) {
     isEssential,
     description,
     size = FormFieldSize.LARGE,
+    fitContent = false,
     children,
   } = props;
 
@@ -33,7 +35,7 @@ export function FormField(props: FormFieldProps) {
 
   return (
     <VStack
-      fullWidth
+      fullWidth={!fitContent}
       tag='label'
       spacing={spacing}
       align={StackAlign.START}

@@ -13,12 +13,14 @@ const meta: Meta = {
     label:       { control: 'text' },
     isEssential: { control: 'boolean' },
     description: { control: 'text' },
+    fitContent:  { control: 'boolean' },
     size:        getEnumArgType(FormFieldSize),
   },
   args: {
     label:       'Label',
     isEssential: false,
     description: 'Description',
+    fitContent:  false,
     size:        FormFieldSize.LARGE,
   },
 };

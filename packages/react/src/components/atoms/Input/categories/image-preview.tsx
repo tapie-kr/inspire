@@ -18,6 +18,7 @@ import {
   useState,
 } from 'react';
 import { Weight } from '@/components/foundations/Typography/shared';
+import { StackAlign, StackJustify } from '@/lib/layout/types';
 import { useFileInputController } from '../hooks/use-file-input-controller';
 import { type HTMLInputProps } from '../shared';
 
@@ -84,8 +85,8 @@ export function ImagePreviewInput(props: ImagePreviewInputProps) {
         fullWidth
         fullHeight
         className={cn(s.base, isCircle && s.circle, showPreview && s.baseHasValue)}
-        justify='center'
-        align='center'
+        justify={StackJustify.CENTER}
+        align={StackAlign.CENTER}
         gap={spacingVars.mini}
         tag='label'
         style={{ backgroundImage: backgroundImageSrc }}
@@ -97,8 +98,8 @@ export function ImagePreviewInput(props: ImagePreviewInputProps) {
 
             <HStack
               fitContent
-              justify='center'
-              align='center'
+              justify={StackJustify.CENTER}
+              align={StackAlign.CENTER}
               className={cn(s.overlay, isHover && s.overlayVisible)}
             >
               <Typo.Micro
