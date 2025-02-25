@@ -52,8 +52,9 @@ export function Select(props: SelectProps) {
   return (
     <div
       ref={containerRef}
-      className={s.container}
-      style={{ position: 'relative' }}
+      style={{
+        position: 'relative', width: '100%',
+      }}
     >
       <HStack
         fullWidth
