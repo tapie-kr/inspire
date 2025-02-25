@@ -4,7 +4,7 @@
     "packages/font-kit",
     "packages/react"
   ],
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "React Component Collection for INSPIRE",
   "scripts": { 
     "prepublishOnly": "pnpm build",

@@ -18,7 +18,6 @@ export const base = style([
     justifyContent: 'space-between',
     padding:        spacingVars.micro,
     borderRadius:   radiusVars.subtle,
-    zIndex:         1,
   },
 ]);
 
