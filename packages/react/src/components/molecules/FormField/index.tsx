@@ -24,7 +24,7 @@ export function FormField(props: FormFieldProps) {
     label,
     isEssential,
     description,
-    size,
+    size = FormFieldSize.LARGE,
     children,
   } = props;
 
