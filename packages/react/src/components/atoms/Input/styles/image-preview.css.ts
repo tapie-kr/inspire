@@ -5,6 +5,8 @@ import { style } from '@vanilla-extract/css';
 import { typographyVariantClass, Variant } from '@/components/foundations/Typography/shared';
 import { getShorthandedValue } from '@/utils/style/shorthand';
 
+export const container = style({ overflow: 'hidden' });
+
 export const base = style({
   background:     colorVars.surface.default,
   color:          colorVars.content.default,
@@ -19,18 +21,19 @@ export const base = style({
   selectors:      { '&:has(:focus)': { borderColor: colorVars.grayscale.translucent._70 } },
 });
 
-export const baseCircle = style({ borderRadius: radiusVars.full });
+export const circle = style({ borderRadius: radiusVars.full });
 
 export const overlay = style({
-  display:        'none',
+  opacity:        0,
   borderRadius:   radiusVars.pill,
   background:     colorVars.solid.translucent.black._30,
   backdropFilter: 'blur(4px)',
   position:       'absolute',
   padding:        getShorthandedValue(spacingVars.mini, spacingVars.micro),
+  transition:     getShorthandedValue('opacity', '0.2s', 'ease-in-out'),
 });
 
-export const overlayVisible = style({ display: 'flex' });
+export const overlayVisible = style({ opacity: 1 });
 export const baseHasValue = style({ borderColor: colorVars.line.border });
 
 export const iconContainer = style({

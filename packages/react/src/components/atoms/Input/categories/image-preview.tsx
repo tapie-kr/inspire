@@ -78,11 +78,12 @@ export function ImagePreviewInput(props: ImagePreviewInputProps) {
     <AspectRatio
       ratio={1}
       width={size}
+      className={cn(s.container, isCircle && s.circle)}
     >
       <VStack
         fullWidth
         fullHeight
-        className={cn(s.base, isCircle && s.baseCircle, showPreview && s.baseHasValue)}
+        className={cn(s.base, isCircle && s.circle, showPreview && s.baseHasValue)}
         justify='center'
         align='center'
         gap={spacingVars.mini}
@@ -93,6 +94,7 @@ export function ImagePreviewInput(props: ImagePreviewInputProps) {
       >
         {showPreview
           ? (
+
             <HStack
               fitContent
               justify='center'
