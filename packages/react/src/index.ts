@@ -24,6 +24,7 @@ export * from './components/atoms/Input/shared';
 export * from './components/atoms/Label/index';
 export * from './components/atoms/Segment/index';
 export * from './components/atoms/Select/SelectItem';
+export * from './components/atoms/Select/hooks/use-click-outside';
 export * from './components/atoms/Select/hooks/use-select-controller';
 export * from './components/atoms/Select/index';
 export * from './components/atoms/Select/shared';

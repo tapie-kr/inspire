@@ -106,8 +106,9 @@ export function Select(props: SelectProps) {
             <VStack
               className={s.dropdown}
             >
-              {props.options?.map(option => (
+              {props.options?.map((option, index) => (
                 <div
+                  key={index}
                   className={s.option}
                   data-selected={option.value === value}
                   onMouseUp={() => handleSelect(option.value)}

@@ -4,9 +4,9 @@
     "packages/font-kit",
     "packages/react"
   ],
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "React Component Collection for INSPIRE",
-  "scripts": {
+  "scripts": { 
     "prepublishOnly": "pnpm build",
     "build:types": "tsc --project tsconfig.lib.json && tsc-alias -p tsconfig.lib.json",
     "build": "rimraf dist && pnpm generate && pnpm build:types && rollup -c --silent && pnpm process:css",
