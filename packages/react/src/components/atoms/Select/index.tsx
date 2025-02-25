@@ -10,6 +10,7 @@ import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
 import { Typo } from '@/components/foundations/Typography';
 
 import cn from 'classnames';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Children, isValidElement, useRef } from 'react';
 import { type IconName } from '@/components/foundations/Icon/shared';
 import { useSelectController } from './hooks/use-select-controller';
@@ -79,31 +80,50 @@ export function Select(props: SelectProps) {
           >{selectedLabel || props.placeholder}
           </Label>
         </HStack>
-        <Icon
-          name={isOpen ? GlyphIcon.KEYBOARD_ARROW_UP : GlyphIcon.KEYBOARD_ARROW_DOWN}
-          color={colorVars.content.default}
-        />
-      </HStack>
-      {isOpen && (
-        <VStack
-          tag='ul'
-          className={s.dropdown}
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
         >
-          {Children.map(props.children, child => {
-            if (!isValidElement<SelectItemProps>(child)) return null;
+          <Icon
+            name={GlyphIcon.KEYBOARD_ARROW_UP}
+            color={colorVars.content.default}
+          />
+        </motion.div>
+      </HStack>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            style={{ zIndex: -1 }}
+            exit={{
+              y: -10, opacity: 0,
+            }}
+            initial={{
+              y: -10, opacity: 0,
+            }}
+            animate={{
+              y: 0, opacity: 1,
+            }}
+          >
+            <VStack
+              className={s.dropdown}
+            >
+              {Children.map(props.children, child => {
+                if (!isValidElement<SelectItemProps>(child)) return null;
 
-            return (
-              <div
-                className={s.option}
-                data-selected={child.props.value === value}
-                onClick={() => handleSelect(child.props.value)}
-              >
-                {child.props.label}
-              </div>
-            );
-          })}
-        </VStack>
-      )}
+                return (
+                  <div
+                    className={s.option}
+                    data-selected={child.props.value === value}
+                    onClick={() => handleSelect(child.props.value)}
+                  >
+                    {child.props.label}
+                  </div>
+                );
+              })}
+            </VStack>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

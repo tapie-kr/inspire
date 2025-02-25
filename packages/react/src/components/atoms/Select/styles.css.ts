@@ -2,20 +2,25 @@ import { colorVars } from '@/lib/style/contract/color.css';
 import { radiusVars, spacingVars } from '@/lib/style/contract/component.css';
 
 import { style } from '@vanilla-extract/css';
+import { utilityClass } from '@/lib/style/utility';
 import { getShorthandedValue } from '@/utils/style/shorthand';
 
 export const container = style({ width: '100%' });
 
-export const base = style({
-  background:     colorVars.surface.default,
-  color:          colorVars.content.default,
-  border:         getShorthandedValue('1px', 'solid', colorVars.grayscale.translucent._10),
-  cursor:         'pointer',
-  display:        'flex',
-  justifyContent: 'space-between',
-  padding:        spacingVars.micro,
-  borderRadius:   radiusVars.subtle,
-});
+export const base = style([
+  utilityClass.interactive,
+  {
+    background:     colorVars.surface.default,
+    color:          colorVars.content.default,
+    border:         getShorthandedValue('1px', 'solid', colorVars.grayscale.translucent._10),
+    cursor:         'pointer',
+    display:        'flex',
+    justifyContent: 'space-between',
+    padding:        spacingVars.micro,
+    borderRadius:   radiusVars.subtle,
+    zIndex:         1,
+  },
+]);
 
 export const baseLarge = style({
   padding:      spacingVars.petite,
@@ -56,14 +61,16 @@ export const dropdown = style({
   zIndex:       1000,
 });
 
-export const option = style({
-  padding:      getShorthandedValue(spacingVars.tiny, spacingVars.petite),
-  borderRadius: radiusVars.subtle,
-  cursor:       'pointer',
-  color:        colorVars.content.default,
-  selectors:    { '&[data-selected="true"]': {
-    background: colorVars.surface.elevated,
-    color:      colorVars.content.emphasized,
-  } },
-});
-
+export const option = style([
+  utilityClass.interactive,
+  {
+    padding:      getShorthandedValue(spacingVars.tiny, spacingVars.petite),
+    borderRadius: radiusVars.subtle,
+    cursor:       'pointer',
+    color:        colorVars.content.default,
+    selectors:    { '&[data-selected="true"]': {
+      background: colorVars.surface.elevated,
+      color:      colorVars.content.emphasized,
+    } },
+  },
+]);
