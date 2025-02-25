@@ -61,6 +61,7 @@
     "@storybook/react-vite": "^8.5.3",
     "@storybook/test": "^8.5.3",
     "@svgr/rollup": "^8.1.0",
+    "@swc/core": "^1.11.1",
     "@tapie-kr/code-guideline-base": "^0.1.23",
     "@tapie-kr/code-guideline-react": "^0.0.7",
     "@types/css": "^0.0.38",
