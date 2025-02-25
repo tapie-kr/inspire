@@ -8,12 +8,12 @@ import { Temporal } from '@js-temporal/polyfill';
 import { type InputHTMLAttributes, useRef } from 'react';
 import { StackJustify } from '@/lib/layout/types';
 
-type DatePickerProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'> & {
-  value?:    Temporal.PlainDate;
-  onChange?: (date: Temporal.PlainDate | undefined) => void;
+type DatetimePickerProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'> & {
+  value?:    Temporal.PlainDateTime;
+  onChange?: (date: Temporal.PlainDateTime | undefined) => void;
 };
 
-export function DatePicker(props: DatePickerProps) {
+export function DatetimePicker(props: DatetimePickerProps) {
   const {
     value,
     onChange,
@@ -38,7 +38,7 @@ export function DatePicker(props: DatePickerProps) {
     }
 
     try {
-      onChange?.(Temporal.PlainDate.from(inputValue));
+      onChange?.(Temporal.PlainDateTime.from(inputValue));
     } catch {
       console.error('Invalid date format:', inputValue);
     }
@@ -66,7 +66,7 @@ export function DatePicker(props: DatePickerProps) {
       <input
         ref={inputRef}
         className={input}
-        type='date'
+        type='datetime-local'
         value={value ? value.toString() : ''}
         onChange={handleChange}
         onClick={event => event.stopPropagation()}
