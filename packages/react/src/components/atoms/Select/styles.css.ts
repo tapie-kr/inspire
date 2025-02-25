@@ -4,6 +4,8 @@ import { radiusVars, spacingVars } from '@/lib/style/contract/component.css';
 import { style } from '@vanilla-extract/css';
 import { getShorthandedValue } from '@/utils/style/shorthand';
 
+export const container = style({ width: '100%' });
+
 export const base = style({
   background:     colorVars.surface.default,
   color:          colorVars.content.default,

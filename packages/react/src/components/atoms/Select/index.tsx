@@ -52,6 +52,7 @@ export function Select(props: SelectProps) {
   return (
     <div
       ref={containerRef}
+      className={s.container}
       style={{ position: 'relative' }}
     >
       <HStack
