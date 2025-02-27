@@ -1,4 +1,9 @@
-import { type ChangeEvent, useCallback, useState } from 'react';
+import {
+  type ChangeEvent,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
 import { useToggle } from '@/hooks/use-toggle';
 import { type HTMLInputProps, type HTMLTextAreaProps } from '../shared';
 
@@ -22,17 +27,30 @@ export function useTextInputController<T extends HTMLInputProps | HTMLTextAreaPr
       return;
     }
 
+    if (inputProps.disabled) {
+      return;
+    }
+
     if (inputProps.onChange) {
       inputProps.onChange(e as unknown as ChangeEvent<HTMLInputElement> & ChangeEvent<HTMLTextAreaElement>);
     }
 
     setValue(valueConverter(e.target.value));
   },
-  [inputProps.maxLength]);
+  [
+    inputProps.maxLength,
+    inputProps.disabled,
+    inputProps.onChange,
+  ]);
 
   const onFocus = useCallback(() => setIsFocused(true), [setIsFocused]);
   const onBlur = useCallback(() => setIsFocused(false), [setIsFocused]);
-  const clearValue = useCallback(() => setValue(''), []);
+
+  const clearValue = useCallback(() => {
+    if (!inputProps.disabled) {
+      setValue('');
+    }
+  }, [inputProps.disabled]);
 
   const controller = {
     value,
@@ -42,6 +60,10 @@ export function useTextInputController<T extends HTMLInputProps | HTMLTextAreaPr
   };
 
   const tools = { clearValue };
+
+  useEffect(() => {
+    setValue(valueConverter(inputProps.value || ''));
+  }, [inputProps.value]);
 
   return {
     value,

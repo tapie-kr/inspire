@@ -36,7 +36,7 @@ export const Text: TextInputStory = {
   },
   args: {
     leadingIcon: GlyphIcon.SEARCH,
-    isSecure:    true,
+    isSecure:    false,
     placeholder: 'Placeholder',
   },
 };

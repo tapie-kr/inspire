@@ -38,7 +38,7 @@ export function TextInput(props: TextInputProps) {
 
   const [hideValue, toggleHideValue] = useToggle(isSecure);
   const hasValue = useMemo(() => value.length > 0, [value]);
-  const showClearButton = hasValue;
+  const showClearButton = hasValue && !restProps.disabled;
   const showVisibilityButton = useMemo(() => hasValue && isSecure, [hasValue, isSecure]);
   const isLarge = size === InputSize.LARGE;
   const handleVisibilityButton = useCallback(() => toggleHideValue(), [toggleHideValue]);
