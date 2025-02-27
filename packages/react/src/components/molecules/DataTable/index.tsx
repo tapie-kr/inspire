@@ -67,6 +67,7 @@ export function DataTable<T extends object>(props: DataTableProps<T>) {
                         variant={ButtonVariant.SECONDARY}
                         size={ButtonSize.MEDIUM}
                         icon={typeof a.icon === 'function' ? a.icon(d) : a.icon}
+                        disabled={typeof a.disabled === 'function' ? a.disabled(d) : a.disabled}
                         color={colorVars.content.default}
                         onClick={handleClick}
                       />

@@ -8,7 +8,6 @@ import { HStack, VStack } from '@cottons-kr/react-foundation';
 import { Icon } from '@/components/foundations/Icon';
 import { GlyphIcon } from '@/components/foundations/Icon/icon-set';
 import { Typo } from '@/components/foundations/Typography';
-import { AspectRatio } from '@/components/miscellaneous/layout/AspectRatio';
 
 import cn from 'classnames';
 import {
@@ -29,7 +28,6 @@ export enum ImagePreviewShape {
 
 type ImagePreviewInputProps = HTMLInputProps & {
   shape?:   ImagePreviewShape;
-  size?:    string | number;
   preview?: string;
 };
 
@@ -38,7 +36,6 @@ export function ImagePreviewInput(props: ImagePreviewInputProps) {
     shape = ImagePreviewShape.DEFAULT,
     preview,
     placeholder,
-    size = 100,
     ...restProps
   } = props;
 
@@ -76,64 +73,58 @@ export function ImagePreviewInput(props: ImagePreviewInputProps) {
   }, [previewImage, showPreview]);
 
   return (
-    <AspectRatio
-      ratio={1}
-      width={size}
-      className={cn(s.container, isCircle && s.circle)}
+    <VStack
+      fullWidth
+      fullHeight
+      className={cn(s.base, isCircle && s.circle, showPreview && s.baseHasValue)}
+      justify={StackJustify.CENTER}
+      align={StackAlign.CENTER}
+      gap={spacingVars.mini}
+      tag='label'
+      style={{ backgroundImage: backgroundImageSrc }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
-      <VStack
-        fullWidth
-        fullHeight
-        className={cn(s.base, isCircle && s.circle, showPreview && s.baseHasValue)}
-        justify={StackJustify.CENTER}
-        align={StackAlign.CENTER}
-        gap={spacingVars.mini}
-        tag='label'
-        style={{ backgroundImage: backgroundImageSrc }}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        {showPreview
-          ? (
+      {showPreview
+        ? (
 
-            <HStack
-              fitContent
-              justify={StackJustify.CENTER}
-              align={StackAlign.CENTER}
-              className={cn(s.overlay, isHover && s.overlayVisible)}
+          <HStack
+            fitContent
+            justify={StackJustify.CENTER}
+            align={StackAlign.CENTER}
+            className={cn(s.overlay, isHover && s.overlayVisible)}
+          >
+            <Typo.Micro
+              nowrap
+              weight={Weight.MEDIUM}
+              color={colorVars.solid.translucent.white._90}
             >
-              <Typo.Micro
-                nowrap
-                weight={Weight.MEDIUM}
-                color={colorVars.solid.translucent.white._90}
-              >
-                클릭해 바꾸기
-              </Typo.Micro>
-            </HStack>
-          )
-          : (
-            <>
-              <Icon
-                name={GlyphIcon.DEFAULT}
-                size={24}
-                color={colorVars.content.emphasized}
-              />
-              <Typo.Petite
-                weight={Weight.MEDIUM}
-                color={colorVars.content.emphasized}
-              >
-                {placeholder}
-              </Typo.Petite>
-            </>
-          )}
-        <input
-          {...restProps}
-          className={s.input}
-          type='file'
-          accept={'image/*'}
-          {...controller}
-        />
-      </VStack>
-    </AspectRatio>
+              클릭해 바꾸기
+            </Typo.Micro>
+          </HStack>
+        )
+        : (
+          <>
+            <Icon
+              name={GlyphIcon.DEFAULT}
+              size={24}
+              color={colorVars.content.emphasized}
+            />
+            <Typo.Petite
+              weight={Weight.MEDIUM}
+              color={colorVars.content.emphasized}
+            >
+              {placeholder}
+            </Typo.Petite>
+          </>
+        )}
+      <input
+        {...restProps}
+        className={s.input}
+        type='file'
+        accept={'image/*'}
+        {...controller}
+      />
+    </VStack>
   );
 }
