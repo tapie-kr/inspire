@@ -19,7 +19,6 @@ import { type HTMLInputProps, InputSize } from '../shared';
 type DraggableFileInputProps = HTMLInputProps & {
   leadingIcon?: IconName;
   size?:        InputSize;
-  onDelete?:    () => void;
 };
 
 export function DraggableFileInput(props: DraggableFileInputProps) {
@@ -27,7 +26,6 @@ export function DraggableFileInput(props: DraggableFileInputProps) {
     leadingIcon,
     size = InputSize.LARGE,
     placeholder,
-    onDelete,
     ...restProps
   } = props;
 
@@ -48,10 +46,6 @@ export function DraggableFileInput(props: DraggableFileInputProps) {
     e.nativeEvent.stopImmediatePropagation();
 
     tools.removeFile(index);
-
-    if (onDelete) {
-      onDelete();
-    }
   },
   [tools]);
 
