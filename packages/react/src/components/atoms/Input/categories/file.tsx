@@ -19,7 +19,7 @@ import { DraggableFileInput } from './draggable-file';
 type FileInputProps = HTMLInputProps & {
   leadingIcon?: IconName;
   size?:        InputSize;
-  onDelete?: () => void;
+  onDelete?:    () => void;
 };
 
 export function FileInput(props: FileInputProps) {
