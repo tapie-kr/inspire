@@ -49,7 +49,7 @@ export function DraggableFileInput(props: DraggableFileInputProps) {
 
     tools.removeFile(index);
 
-    if(onDelete) {
+    if (onDelete) {
       onDelete();
     }
   },
