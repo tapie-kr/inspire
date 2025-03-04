@@ -19,7 +19,6 @@ import { DraggableFileInput } from './draggable-file';
 type FileInputProps = HTMLInputProps & {
   leadingIcon?: IconName;
   size?:        InputSize;
-  onDelete?:    () => void;
 };
 
 export function FileInput(props: FileInputProps) {
@@ -27,7 +26,6 @@ export function FileInput(props: FileInputProps) {
     leadingIcon,
     size = InputSize.LARGE,
     placeholder,
-    onDelete,
     ...restProps
   } = props;
 
@@ -48,8 +46,6 @@ export function FileInput(props: FileInputProps) {
 
     setTimeout(() => {
       tools.clearFiles();
-
-      onDelete?.();
     }, 0);
   },
   [tools]);
