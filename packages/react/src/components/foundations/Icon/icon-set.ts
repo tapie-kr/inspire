@@ -151,8 +151,8 @@ export enum GlyphIcon {
   ATTACH_FILE = 'attach_file',
   BADGE = 'badge',
   BLOCK = 'block',
-  BOOKMARK = 'bookmark',
   BOOK_RIBBON = 'book_ribbon',
+  BOOKMARK = 'bookmark',
   BRUSH = 'brush',
   BUG_REPORT = 'bug_report',
   CALENDAR_MONTH = 'calendar_month',
@@ -256,8 +256,8 @@ export const GlyphIconMap = {
   [GlyphIcon.ATTACH_FILE]:            AttachFileGlyph,
   [GlyphIcon.BADGE]:                  BadgeGlyph,
   [GlyphIcon.BLOCK]:                  BlockGlyph,
-  [GlyphIcon.BOOKMARK]:               BookmarkGlyph,
   [GlyphIcon.BOOK_RIBBON]:            BookRibbonGlyph,
+  [GlyphIcon.BOOKMARK]:               BookmarkGlyph,
   [GlyphIcon.BRUSH]:                  BrushGlyph,
   [GlyphIcon.BUG_REPORT]:             BugReportGlyph,
   [GlyphIcon.CALENDAR_MONTH]:         CalendarMonthGlyph,
@@ -351,8 +351,8 @@ export const GlyphIconMap = {
 
 export enum BrandIcon {
   ANDROID = 'android',
-  APPLE = 'apple',
   APP_STORE = 'app_store',
+  APPLE = 'apple',
   BEHANCE = 'behance',
   CLOUDFLARE = 'cloudflare',
   CSS3 = 'css3',
@@ -392,8 +392,8 @@ export enum BrandIcon {
 
 export const BrandIconMap = {
   [BrandIcon.ANDROID]:      AndroidBrand,
-  [BrandIcon.APPLE]:        AppleBrand,
   [BrandIcon.APP_STORE]:    AppStoreBrand,
+  [BrandIcon.APPLE]:        AppleBrand,
   [BrandIcon.BEHANCE]:      BehanceBrand,
   [BrandIcon.CLOUDFLARE]:   CloudflareBrand,
   [BrandIcon.CSS3]:         Css3Brand,
