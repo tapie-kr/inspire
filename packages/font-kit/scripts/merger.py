@@ -46,7 +46,7 @@ class FontMerger:
     if style not in self.styles:
       return 'regular'
     return style
-
+  
   def set_meta(self, font, family, style):
     self.debug_print(f"디버그: 메타데이터 설정 시작 - 스타일: {style}")
 
@@ -79,16 +79,17 @@ class FontMerger:
 
     name = font['name']
     style_name = style.capitalize()
+    family_no_space = family.replace(" ", "")
     platforms = [(1, 0, 0), (3, 1, 0x409)]
     
     names = {
       0: "Copyright (c) 2025 TAPIE",
       1: family,
       2: style_name,
-      3: f"{family}-{style_name}",
+      3: f"{family_no_space}-{style_name}; Version {version}",
       4: f"{family} {style_name}",
       5: f"Version {version}", 
-      6: f"{family}-{style_name}".replace(" ", ""),
+      6: f"{family_no_space}-{style_name}",
       13: "This Font Software is licensed under the SIL Open Font License, Version 1.1.",
       14: "http://scripts.sil.org/OFL",
       16: family,
